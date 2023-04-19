@@ -1,0 +1,30 @@
+import Image from 'next/image'
+import { Project } from 'components/Project'
+import { ProjectsArea } from 'components/ProjectsArea'
+
+# Was gibt es in Rössing?
+
+[Rössing](<https://de.wikipedia.org/wiki/R%C3%B6ssing_(Nordstemmen)>) ist ein Dorf in Niedersachsen und gehört zur Gemeinde Nordstemmen im Landkreis Hildesheim. Wir haben im Moment etwa
+1600 Einwohner:innen und zahlreiche Vereine und Organe. Hier findet sich eine Übersicht.
+
+<ProjectsArea>
+  <Project
+    imageSource="/images/dorfpflege.jpg"
+    title="Die Dorfpflege"
+    subtitle="Rössings Natur und Grünflächen in Schuss halten"
+    linkUrl="https://www.dorfpflege-roessing.de"
+  >
+    Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese der Gemeinde
+    kümmert, gemeinsam Müll sammelt und sich um die Pflegemaßnahmen der
+    Grünflächen und -bereiche kümmert. Außerdem organisiert die Dorfpflege das
+    Osterfeuer und den Weihnachtsmarkt von Rössing.
+  </Project>
+  <Project
+    imageSource="/images/dorfpflege.jpg"
+    title="Die Freiwillige Feuerwehr"
+    subtitle="Retten, sichern und bergen in und um Rössing"
+    linkUrl="https://www.ff-roessing.de"
+  >
+    Natürlich hat Rössing auch eine freiwillige Feuerwehr!
+  </Project>
+</ProjectsArea>

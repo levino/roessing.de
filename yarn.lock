@@ -59,6 +59,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@floating-ui/core@npm:1.2.6"
+  checksum: bd5688b85c48cca3814b4345625190390960cc700af5928dbbbeaf6ad6b65e8f11a41df739f2a00f656bae806537307a934ae7981afc782ec368f9939680e5d0
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.2.1":
+  version: 1.2.6
+  resolution: "@floating-ui/dom@npm:1.2.6"
+  dependencies:
+    "@floating-ui/core": "npm:^1.2.6"
+  checksum: 72758f27e54c489b40618e27ab55e842b74b72e8c85e6adbc83500dd970318383ccf82b7ad84da3b02ebcac8d03894f49abf8fed49669d3618a2e04f033c22ba
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@floating-ui/react-dom@npm:1.3.0"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.2.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 812f947197d72fad1a3ce08d86cf896a35c0df77cf322f0fbc3d7874c0fb1aaadbe3baa869da7db6bc508a67516d85ebb5682ec42cbf061bb578fe51f92cc49a
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.20.1":
+  version: 0.20.1
+  resolution: "@floating-ui/react@npm:0.20.1"
+  dependencies:
+    "@floating-ui/react-dom": "npm:^1.3.0"
+    aria-hidden: "npm:^1.1.3"
+    tabbable: "npm:^6.0.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 0abf7e915c974e182360b0c245e6b19c6cbae6cc07fd90058765da3d3735d142bf021b7047fb213d75df21510e172991c8fb5e8c31fb3c51b70699e8f86a8b03
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -414,7 +456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.6":
+"@popperjs/core@npm:^2.11.6, @popperjs/core@npm:^2.9.3":
   version: 2.11.7
   resolution: "@popperjs/core@npm:2.11.7"
   checksum: 6d9dfd4ce852e6c6d6f4d27ae955d29869bc6f511fefcf1b80881029b072fe663d70f7fc7959ad6f3e6ad1a686d1141658a46e1d44c15d88c12f14907a2c352a
@@ -895,6 +937,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aria-hidden@npm:^1.1.3":
+  version: 1.2.3
+  resolution: "aria-hidden@npm:1.2.3"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  checksum: b7d0f367dc7d1fa6b56461d86834ca135185d6d4ac5de61e679173c15773313512036c75694837f5fc520f80b2213ee1cdc57661bcde725087f67e52c2cfa614
+  languageName: node
+  linkType: hard
+
 "array-union@npm:^2.1.0":
   version: 2.1.0
   resolution: "array-union@npm:2.1.0"
@@ -1169,6 +1220,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.6, classnames@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: ecbd166e986b9095e01eba91958907ed43026e35aac98d667a9e958642795632c15a88f36785c66bcfbe05df32e47c1575d22faa46c29de271b013eb00202498
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -1334,6 +1392,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debounce@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "debounce@npm:1.2.1"
+  checksum: c6d705fa583a2280582ed3b4beb76b83d0727e20c9d16111c1d210f04c3b926ced882d97e054df172a615c0c781714ba2582220cfd0952213e97bc47fa364dfd
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -1438,6 +1503,13 @@ __metadata:
   dependencies:
     esutils: "npm:^2.0.2"
   checksum: 6b38a63fa66847d80e130bb85c83c173b1050037fffac3d5f740c8c691243d5b6fadc5ec502ae8297c474680d879eb24ad8ec7f901673704fe40c8dedc1bee62
+  languageName: node
+  linkType: hard
+
+"easy-bem@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "easy-bem@npm:1.1.1"
+  checksum: 1aa25439f85790782b22f89b7dce19deb160a2ab583b3d001d181f931aa7a328fb629cc4b68dd18c0e88e6b4284ddd6792ede6eb230210f28f495f0d9e743740
   languageName: node
   linkType: hard
 
@@ -1958,6 +2030,33 @@ __metadata:
   version: 0.7.31
   resolution: "flexsearch@npm:0.7.31"
   checksum: 199e82e8363acd16f43cec2dc485a374889408e4ac2c7e0e935c1769238774e2b29e9e92a44470d23b213fdbe4596ae3369352c316cb6c1ee15386a50e76f1ae
+  languageName: node
+  linkType: hard
+
+"flowbite-react@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "flowbite-react@npm:0.4.3"
+  dependencies:
+    "@floating-ui/react": "npm:^0.20.1"
+    classnames: "npm:^2.3.2"
+    react-icons: "npm:^4.7.1"
+    react-indiana-drag-scroll: "npm:^2.2.0"
+  peerDependencies:
+    flowbite: ^1
+    react: ^18
+    react-dom: ^18
+    tailwindcss: ^3
+  checksum: 27aec7ba8e720d864776180bdcc82363d1237ed1e88ad04ee33dce0f3cebe4bf9c85b9027f6fc6f2d94e77f030b827787529281b46e2731edce3c2f5d3cc926f
+  languageName: node
+  linkType: hard
+
+"flowbite@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "flowbite@npm:1.6.5"
+  dependencies:
+    "@popperjs/core": "npm:^2.9.3"
+    mini-svg-data-uri: "npm:^1.4.3"
+  checksum: d71ddde96c8033c0fc237762052965e0af7ab3b8e0f28290008e8cb451fc3452befc2ed41284935cb1d607afd83b6df4e534dbd8e655f7a44e0e9b836b6e8af4
   languageName: node
   linkType: hard
 
@@ -3662,6 +3761,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mini-svg-data-uri@npm:^1.4.3":
+  version: 1.4.4
+  resolution: "mini-svg-data-uri@npm:1.4.4"
+  bin:
+    mini-svg-data-uri: cli.js
+  checksum: 8c8d0a94e35dcd90d69a345c3773e0b4b51cfb1a28588fcd4a3e353588adb42092bb7075c44a81624bed47e5284e2209469745917fb6deeb12d066b50897f0a7
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^3.0.4":
   version: 3.0.4
   resolution: "minimatch@npm:3.0.4"
@@ -4483,6 +4591,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^4.7.1":
+  version: 4.8.0
+  resolution: "react-icons@npm:4.8.0"
+  peerDependencies:
+    react: "*"
+  checksum: 18ff21e05b3ee10c34dccb930f60956c6124461cc5ef317e81a82bb88b61458f7b5e0afa47e79f24f793785fd3ae6b4775c2e1275cbf20be99fc7578e0b98628
+  languageName: node
+  linkType: hard
+
+"react-indiana-drag-scroll@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-indiana-drag-scroll@npm:2.2.0"
+  dependencies:
+    classnames: "npm:^2.2.6"
+    debounce: "npm:^1.2.0"
+    easy-bem: "npm:^1.1.1"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 993024746bc4614d358071d9f9ac9cb1b56d27c5334bcc7d2355efbdb7599ed1720ee9d181c50aa4b4e238ad7d434a6e9f6e4678f9b0623262322604582ff867
+  languageName: node
+  linkType: hard
+
 "react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -5140,6 +5271,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.0.1":
+  version: 6.1.1
+  resolution: "tabbable@npm:6.1.1"
+  checksum: 1262773c403e05837eafec340206445a8d70e48fe303b0f6d3922b8073b04e5645122d502978067faacbe0d27fbff9da16f51ef6aa55f9c5f5182e61d706fff8
+  languageName: node
+  linkType: hard
+
 "table@npm:^5.2.3":
   version: 5.4.6
   resolution: "table@npm:5.4.6"
@@ -5296,7 +5434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.4.0, tslib@npm:^2.5.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
   checksum: 5a6ee935f56cd653af29de928483acbab7323f964b053e98b6b318abc69431fb0e4f660c4f4a396e2e93852510bef25eeb9f1d951d060b2d7bcc313811e5da6f
@@ -5351,6 +5489,8 @@ __metadata:
     eslint-config-prettier: "npm:^7.0.0"
     eslint-plugin-mdx: "npm:^2.0.5"
     eslint-plugin-prettier: "npm:^3.2.0"
+    flowbite: "npm:^1.6.5"
+    flowbite-react: "npm:^0.4.3"
     next: "npm:^13.2"
     nextra: "npm:^2.4.0"
     nextra-theme-docs: "npm:^2.4.0"

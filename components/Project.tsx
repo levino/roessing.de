@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
+import { Card } from 'flowbite-react'
 interface ProjectProps {
   imageSource: string
   title: string
@@ -16,31 +16,17 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = ({
   children,
   linkUrl,
 }) => (
-  <a
+  <Card
     href={linkUrl}
     rel="noopener noreferrer"
     target="_blank"
-    className="m-20 block max-w-md mx-auto bg-white dark:bg-slate-600 rounded-xl shadow-md overflow-hidden md:max-w-2xl"
+    horizontal
+    imgSrc={imageSource}
   >
-    <div className="md:flex">
-      <div className="md:shrink-0">
-        <Image
-          width={500}
-          height={500}
-          className="h-48 w-full object-cover md:h-full md:w-48"
-          src={imageSource}
-          alt="Leute von der Dorfpflege auf der Streuobstwiese mit Anhänger voller Äpfel"
-        />
-      </div>
-      <div className="p-8">
-        <div className="uppercase tracking-wide text-sm text-indigo-500 dark:text-white font-semibold">
-          {title}
-        </div>
-        <div className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-          {subtitle}
-        </div>
-        <span className="mt-2 text-slate-500">{children}</span>
-      </div>
-    </div>
-  </a>
+    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {title}
+    </h5>
+    <p className="font-normal text-gray-700 dark:text-gray-400">{subtitle}</p>
+    <span className="mt-2 text-slate-500">{children}</span>
+  </Card>
 )

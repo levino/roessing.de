@@ -1,7 +1,6 @@
 {
   "name": "typescript-eslint-prettier-template",
   "version": "1.0.0",
-  "main": "./build/index.js",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18",
@@ -24,6 +23,8 @@
   },
   "packageManager": "yarn@4.0.0-rc.42",
   "dependencies": {
+    "flowbite": "^1.6.5",
+    "flowbite-react": "^0.4.3",
     "next": "^13.2",
     "nextra": "^2.4.0",
     "nextra-theme-docs": "^2.4.0",

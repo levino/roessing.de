@@ -4,7 +4,6 @@
   "main": "./build/index.js",
   "license": "MIT",
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.29.5-appdir.0",
     "@types/node": "18.15.11",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -25,7 +24,7 @@
   },
   "packageManager": "yarn@4.0.0-rc.42",
   "dependencies": {
-    "next": "~13.2",
+    "next": "^13.2",
     "nextra": "^2.4.0",
     "nextra-theme-docs": "^2.4.0",
     "react": "^18.2.0",

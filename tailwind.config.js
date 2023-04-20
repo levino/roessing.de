@@ -10,5 +10,5 @@ module.exports = {
     extend: {},
   },
   darkMode: ['class', 'html[class~="dark"]'],
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin'), require('@tailwindcss/typography')],
 }

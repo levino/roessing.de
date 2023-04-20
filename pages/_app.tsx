@@ -1,7 +1,10 @@
+import React from 'react'
 import type { AppProps } from 'next/app'
 import '../globals.css'
 import { ReactNode } from 'react'
 
-export default ({ Component, pageProps }: AppProps): ReactNode => (
+const Wrapper = ({ Component, pageProps }: AppProps): ReactNode => (
   <Component {...pageProps} />
 )
+
+export default Wrapper

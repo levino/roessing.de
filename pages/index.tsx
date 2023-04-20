@@ -1,6 +1,5 @@
 import React from 'react'
 import { Project } from 'components/Project'
-import { ProjectsArea } from 'components/ProjectsArea'
 import { Jumbotron } from 'components/Jumbotron'
 
 const LandingPage = () => (
@@ -19,7 +18,7 @@ const LandingPage = () => (
       </div>
     </Jumbotron>
 
-    <ProjectsArea>
+    <div className="max-w-7xl mx-auto gap-10 grid grid-cols-3 py-32">
       <Project
         imageSource="/images/dorfpflege.jpg"
         title="Die Dorfpflege"
@@ -42,7 +41,23 @@ const LandingPage = () => (
       >
         <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
       </Project>
-    </ProjectsArea>
+      <Project
+        imageSource="/images/ffw.jpg"
+        title="Die Freiwillige Feuerwehr"
+        subtitle="Retten, sichern und bergen in und um Rössing"
+        linkUrl="https://www.ff-roessing.de"
+      >
+        <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
+      </Project>
+      <Project
+        imageSource="/images/ffw.jpg"
+        title="Die Freiwillige Feuerwehr"
+        subtitle="Retten, sichern und bergen in und um Rössing"
+        linkUrl="https://www.ff-roessing.de"
+      >
+        <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
+      </Project>
+    </div>
   </>
 )
 

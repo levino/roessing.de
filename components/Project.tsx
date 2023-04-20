@@ -4,7 +4,6 @@ interface ProjectProps {
   imageSource: string
   title: string
   subtitle: string
-  description: string
   linkUrl: string
 }
 
@@ -20,7 +19,6 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = ({
     rel="noopener noreferrer"
     //@ts-expect-error props are passed to the anchor element but documentation is incorrect
     target="_blank"
-    horizontal
     imgSrc={imageSource}
   >
     <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

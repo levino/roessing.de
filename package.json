@@ -23,7 +23,9 @@
   },
   "type": "module",
   "scripts": {
-    "build": "next build"
+    "build": "next build",
+    "lint": "eslint .",
+    "test": "exit 0;"
   },
   "packageManager": "yarn@4.0.0-rc.42",
   "dependencies": {

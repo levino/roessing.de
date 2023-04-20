@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "next build",
-    "lint": "eslint .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint . -c eslint.config.mjs",
     "test": "exit 0;"
   },
   "packageManager": "yarn@4.0.0-rc.42",

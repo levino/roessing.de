@@ -18,7 +18,7 @@ const LandingPage = () => (
       </div>
     </Jumbotron>
 
-    <div className="max-w-7xl mx-auto gap-10 grid grid-cols-3 py-32">
+    <div className="container max-w-7xl px-4 mx-auto gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-32">
       <Project
         imageSource="/images/dorfpflege.jpg"
         title="Die Dorfpflege"

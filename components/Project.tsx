@@ -4,7 +4,6 @@ interface ProjectProps {
   imageSource: string
   title: string
   subtitle: string
-  description: string
   linkUrl: string
 }
 

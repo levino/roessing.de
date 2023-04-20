@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { Card } from 'flowbite-react'
 interface ProjectProps {
   imageSource: string
@@ -19,6 +18,7 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = ({
   <Card
     href={linkUrl}
     rel="noopener noreferrer"
+    //@ts-expect-error props are passed to the anchor element but documentation is incorrect
     target="_blank"
     horizontal
     imgSrc={imageSource}

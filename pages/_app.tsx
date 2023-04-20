@@ -1,10 +1,8 @@
-import React from 'react'
 import type { AppProps } from 'next/app'
-import '../globals.css'
-import { ReactNode } from 'react'
+import 'tailwindcss/tailwind.css'
 
-const Wrapper = ({ Component, pageProps }: AppProps): ReactNode => (
-  <Component {...pageProps} />
-)
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
 
-export default Wrapper
+export default MyApp

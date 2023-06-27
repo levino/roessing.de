@@ -1,0 +1,76 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Sommermusikfestival",
+    "startDate": "2023-08-10T18:00:00+02:00",
+    "endDate": "2023-08-12T23:59:59+02:00",
+    "location": {
+      "@type": "Place",
+      "name": "Central Park",
+      "address": "123 Hauptstraße, New York, NY 10001"
+    },
+    "image": ["https://picsum.photos/800/400?random=1"],
+    "description": "Kommen Sie zu einem dreitägigen Musikfestival im Central Park und genießen Sie Live-Auftritte von Top-Künstlern aus aller Welt."
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Tech-Konferenz 2023",
+    "startDate": "2023-09-15T09:00:00-07:00",
+    "endDate": "2023-09-17T17:00:00-07:00",
+    "location": {
+      "@type": "Place",
+      "name": "Kongresszentrum",
+      "address": "456 Tech-Straße, San Francisco, CA 94101"
+    },
+    "image": ["https://picsum.photos/800/400?random=2"],
+
+    "description": "Treffen Sie Branchenführer, Innovatoren und Technikbegeisterte auf der Tech-Konferenz 2023 mit Hauptvorträgen, Podiumsdiskussionen und Networking-Möglichkeiten."
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Wohltätigkeitsgala-Dinner",
+    "startDate": "2023-11-20T19:30:00+03:00",
+    "endDate": "2023-11-20T23:00:00+03:00",
+    "location": {
+      "@type": "Place",
+      "name": "Großer Ballsaal",
+      "address": "789 Wohltätigkeitsstraße, London, England"
+    },
+    "image": ["https://picsum.photos/800/400?random=3"],
+
+    "description": "Nehmen Sie an einem eleganten Abend beim Wohltätigkeitsgala-Dinner teil, bei dem wir Gelder für einen guten Zweck sammeln möchten. Genießen Sie exquisite Speisen, Live-Unterhaltung und eine Auktion."
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Kunstausstellung: Farben der Natur",
+    "startDate": "2023-10-05T10:00:00+02:00",
+    "endDate": "2023-10-08T18:00:00+02:00",
+    "location": {
+      "@type": "Place",
+      "name": "Kunstgalerie Berlin",
+      "address": "789 Kunststraße, Berlin, Deutschland"
+    },
+    "image": ["https://picsum.photos/800/400?random=4"],
+
+    "description": "Erleben Sie eine Kunstausstellung mit dem Thema 'Farben der Natur'. Tauchen Sie ein in die Welt der Kunstwerke, die die Schönheit und Vielfalt der Natur widerspiegeln."
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Weihnachtsmarkt",
+    "startDate": "2023-12-01T16:00:00+01:00",
+    "endDate": "2023-12-24T22:00:00+01:00",
+    "location": {
+      "@type": "Place",
+      "name": "Marktplatz",
+      "address": "Hauptstraße, München, Deutschland"
+    },
+    "image": ["https://picsum.photos/800/400?random=5"],
+
+    "description": "Besuchen Sie den traditionellen Weihnachtsmarkt auf dem Marktplatz in München. Genießen Sie festliche Atmosphäre, Glühwein, Lebkuchen und finden Sie einzigartige Geschenke für Ihre Lieben."
+  }
+]

@@ -3,8 +3,12 @@ import React from 'react'
 import { Event as EventProps } from './types'
 import Link from 'next/link'
 
-export const Event: React.FC<EventProps & { id: string }> = (event) => (
-  <Link href={`/events/${event.id}`} className="flex mb-4">
+type Props = EventProps & {
+  id: string
+}
+
+export const Event: React.FC<Props> = (event) => (
+  <Link href={getHref(event)} target={getTarget(event)} className="flex mb-4">
     <div className="w-1/3">
       <Image
         src={event.image?.[0] || ''}
@@ -30,3 +34,6 @@ const timeAndDate = (date: string) =>
     hour: 'numeric',
     minute: 'numeric',
   })
+
+const getHref = (event: Props): string => event.link ?? `/events/${event.id}`
+const getTarget = (event: Props): string => (event.link ? '_blank' : '_self')

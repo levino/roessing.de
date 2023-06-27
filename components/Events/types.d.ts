@@ -11,4 +11,5 @@ export interface Event {
   }
   description: string
   image?: string[]
+  link?: string
 }

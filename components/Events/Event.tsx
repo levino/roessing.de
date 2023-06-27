@@ -15,9 +15,18 @@ export const Event: React.FC<EventProps & { id: string }> = (event) => (
       />
     </div>
     <div className="w-2/3 pl-4">
-      <p className="font-bold">{event.startDate}</p>
-      <p className="text-gray-600">{event.endDate}</p>
+      <p className="font-bold">{event.name}</p>
+      <p className="text-gray-600">{timeAndDate(event.startDate)}</p>
       <p className="text-sm mt-2">{event.description}</p>
     </div>
   </Link>
 )
+
+const timeAndDate = (date: string) =>
+  new Date(date).toLocaleString('de-DE', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  })

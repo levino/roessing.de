@@ -1,11 +1,9 @@
 import React from 'react'
 import { Project } from 'components/Project'
 import { Jumbotron } from 'components/Jumbotron'
-import { NavBar } from 'components/NavBar'
 
 const LandingPage = () => (
   <>
-    <NavBar />
     <Jumbotron>
       <div className="m-auto max-w-2xl text-center">
         <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl">

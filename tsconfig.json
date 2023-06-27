@@ -14,7 +14,8 @@
     "jsx": "preserve",
     "incremental": true,
     "module": "esnext",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "downlevelIteration": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

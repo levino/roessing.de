@@ -7,8 +7,9 @@ export interface Event {
   location: {
     '@type': string
     name: string
-    address: string
+    address?: string
   }
   description: string
   image?: string[]
+  link?: string
 }

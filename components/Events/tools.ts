@@ -1,18 +1,5 @@
 import * as R from 'ramda'
-
-interface Event {
-  '@context': string
-  '@type': string
-  name: string
-  startDate: string
-  endDate: string
-  location: {
-    '@type': string
-    name: string
-    address: string
-  }
-  description: string
-}
+import { Event } from './types'
 
 const isoStringToDate: (isodate: string) => Date = R.constructN(1, Date)
 

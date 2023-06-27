@@ -18,7 +18,8 @@ export const EventOverviewPage: React.FC<{ events: EventProps[] }> = ({
           <h2 className="text-2xl font-bold mb-4">{month}</h2>
 
           {groupedEvents[month].map((event, index) => (
-            <Event key={index} id={index.toString()} {...event} />
+            //TODO: Remove the ugly id hack!
+            <Event key={index} id="" {...event} />
           ))}
         </div>
       ))}

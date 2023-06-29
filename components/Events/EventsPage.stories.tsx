@@ -15,5 +15,6 @@ type Story = StoryObj<typeof EventOverviewPage>
  * to learn how to use render functions.
  */
 export const Primary: Story = {
+  //@ts-expect-error Autotypes of json import are incorrect
   render: () => <EventOverviewPage events={events} />,
 }

@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => ({
 })
 
 const Page: React.FC<{ id: string }> = ({ id }) => (
+  //@ts-expect-error Autotypes of json import are incorrect
   <EventPage id={id} {...events[parseInt(id)]} />
 )
 

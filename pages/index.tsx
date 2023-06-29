@@ -41,22 +41,6 @@ const LandingPage = () => (
       >
         <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
       </Project>
-      <Project
-        imageSource="/images/ffw.jpg"
-        title="Die Freiwillige Feuerwehr"
-        subtitle="Retten, sichern und bergen in und um Rössing"
-        linkUrl="https://www.ff-roessing.de"
-      >
-        <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
-      </Project>
-      <Project
-        imageSource="/images/ffw.jpg"
-        title="Die Freiwillige Feuerwehr"
-        subtitle="Retten, sichern und bergen in und um Rössing"
-        linkUrl="https://www.ff-roessing.de"
-      >
-        <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
-      </Project>
     </div>
   </>
 )

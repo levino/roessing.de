@@ -11,7 +11,14 @@ export const EventPage: React.FC<EventProps & { id: string }> = (event) => {
 
   return (
     <>
-      <NextSeo title={event.name} description={event.description} />
+      <NextSeo
+        title={event.name}
+        description={event.description}
+        openGraph={{
+          title: event.name,
+          description: event.description,
+        }}
+      />
       <Script id="eventData" type="application/ld+json">
         {JSON.stringify(event)}
       </Script>

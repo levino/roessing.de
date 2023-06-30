@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const NavBar = () => {
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 z-10">
       <nav className="flex items-center justify-between p-4 bg-gray-800 text-white">
         <Link href="/" className="text-xl font-bold">
           Startseite

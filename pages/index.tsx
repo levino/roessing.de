@@ -26,8 +26,7 @@ const LandingPage = () => (
         linkUrl="https://www.dorfpflege-roessing.de"
       >
         <p>
-          Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese der
-          Gemeinde kümmert, gemeinsam Müll sammelt und sich um die
+          Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese im Dorf kümmert, gemeinsam Müll sammelt und sich um die
           Pflegemaßnahmen der Grünflächen und -bereiche kümmert. Außerdem
           organisiert die Dorfpflege das Osterfeuer und den Weihnachtsmarkt von
           Rössing.

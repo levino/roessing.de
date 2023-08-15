@@ -30,6 +30,7 @@ export const EventPage: React.FC<EventType> = (event) => {
       <div className="flex flex-col mb-4 container mx-auto">
         <div className="w-full mx-auto max-h-64 overflow-hidden my-12">
           <Image
+            sizes="100vw"
             placeholder="blur"
             priority
             src={image}

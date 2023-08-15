@@ -13,11 +13,12 @@ export const Event: React.FC<EventType> = (event) => (
     <Link className="flex" href={getHref(event)} target={getTarget(event)}>
       <div className="hidden md:flex flex grow mb-4">
         <div className="w-1/3 flex items-center">
-          {event.image ? (
-            <Image src={event.image} alt="Event Preview" className="rounded" />
-          ) : (
-            <div className="flex self-stretchgrow" />
-          )}
+          <Image
+            placeholder="blur"
+            src={event.image}
+            alt="Event Preview"
+            className="rounded"
+          />
         </div>
         <div className="w-2/3 pl-4 my-auto">
           <p className="font-bold">{event.name}</p>
@@ -32,15 +33,12 @@ export const Event: React.FC<EventType> = (event) => (
       <div className="flex flex-col md:hidden mb-8 grow">
         <div className="flex grow mb-2">
           <div className="w-1/3 flex items-center">
-            {event.image ? (
-              <Image
-                src={event.image || ''}
-                alt="Event Preview"
-                className="rounded"
-              />
-            ) : (
-              <div className="flex self-stretch grow" />
-            )}
+            <Image
+              placeholder="blur"
+              src={event.image}
+              alt="Event Preview"
+              className="rounded"
+            />
           </div>
           <div className="w-2/3 pl-2">
             <p className="font-bold">{event.name}</p>

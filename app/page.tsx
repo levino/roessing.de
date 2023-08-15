@@ -1,8 +1,8 @@
 import React from 'react'
 import { Project } from 'components/Project'
 import { Jumbotron } from 'components/Jumbotron'
-import dorfpflegeImage from './images/dorfpflege.jpg'
-import ffwImage from './images/ffw.jpg'
+import dorfpflegeImage from '../public/images/dorfpflege.jpg'
+import ffwImage from '../public/images/ffw.jpg'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

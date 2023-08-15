@@ -17,6 +17,7 @@ export const Event: React.FC<EventType> = (event) => (
             placeholder="blur"
             src={event.image}
             alt="Event Preview"
+            sizes="100vw"
             className="rounded"
           />
         </div>
@@ -37,6 +38,7 @@ export const Event: React.FC<EventType> = (event) => (
               placeholder="blur"
               src={event.image}
               alt="Event Preview"
+              sizes="100vw"
               className="rounded"
             />
           </div>

@@ -1,7 +1,14 @@
 import React from 'react'
 import { Project } from 'components/Project'
 import { Jumbotron } from 'components/Jumbotron'
+import dorfpflegeImage from './images/dorfpflege.jpg'
+import ffwImage from './images/ffw.jpg'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Rössing',
+  description: 'Alle Infos über Rössing',
+}
 const LandingPage = () => (
   <>
     <Jumbotron>
@@ -20,20 +27,20 @@ const LandingPage = () => (
 
     <div className="container max-w-7xl px-4 mx-auto gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-32">
       <Project
-        imageSource="/images/dorfpflege.jpg"
+        imageSource={dorfpflegeImage}
         title="Die Dorfpflege"
         subtitle="Rössings Natur und Grünflächen in Schuss halten"
         linkUrl="https://www.dorfpflege-roessing.de"
       >
         <p>
-          Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese im Dorf kümmert, gemeinsam Müll sammelt und sich um die
-          Pflegemaßnahmen der Grünflächen und -bereiche kümmert. Außerdem
-          organisiert die Dorfpflege das Osterfeuer und den Weihnachtsmarkt von
-          Rössing.
+          Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese im Dorf
+          kümmert, gemeinsam Müll sammelt und sich um die Pflegemaßnahmen der
+          Grünflächen und -bereiche kümmert. Außerdem organisiert die Dorfpflege
+          das Osterfeuer und den Weihnachtsmarkt von Rössing.
         </p>
       </Project>
       <Project
-        imageSource="/images/ffw.jpg"
+        imageSource={ffwImage}
         title="Die Freiwillige Feuerwehr"
         subtitle="Retten, sichern und bergen in und um Rössing"
         linkUrl="https://www.ff-roessing.de"

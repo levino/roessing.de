@@ -106,9 +106,8 @@ dist
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+.pnp.*
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
@@ -131,5 +130,6 @@ yarn-error.log*
 
 build
 
-/.idea
-/.vscode
+.idea/
+.vscode/
+out/

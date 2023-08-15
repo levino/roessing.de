@@ -1,10 +1,13 @@
-import * as R from 'ramda'
-import { Event } from './types'
+export const getMonth: (date: Date) => string = (date) =>
+  date.toLocaleString('de-DE', {
+    month: 'long',
+  })
 
-const isoStringToDate: (isodate: string) => Date = R.constructN(1, Date)
-
-export const getMonth: (event: Event) => string = R.pipe(
-  R.prop('startDate'),
-  isoStringToDate,
-  (date) => date.toLocaleString('de-DE', { month: 'long' })
-)
+export const timeAndDate = (date: Date) =>
+  date.toLocaleString('de-DE', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  })

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 import Image from 'next/image'
-import heroImage from 'app/images/hero.jpg'
+import heroImage from 'public/images/hero.jpg'
 export const Jumbotron: React.FC<PropsWithChildren> = ({ children }) => (
   <section className="flex relative h-[50vh] align-middle">
     <div className="absolute overflow-hidden h-[50vh] h-full w-full -z-10">

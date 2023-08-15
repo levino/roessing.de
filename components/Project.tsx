@@ -1,7 +1,9 @@
 import React from 'react'
-import { Card } from 'flowbite-react'
+import { Card } from './Card'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+
 interface ProjectProps {
-  imageSource: string
+  imageSource: StaticImport
   title: string
   subtitle: string
   linkUrl: string
@@ -14,13 +16,7 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = ({
   children,
   linkUrl,
 }) => (
-  <Card
-    href={linkUrl}
-    rel="noopener noreferrer"
-    //@ts-expect-error props are passed to the anchor element but documentation is incorrect
-    target="_blank"
-    imgSrc={imageSource}
-  >
+  <Card href={linkUrl} imgSrc={imageSource} imgAlt="event image">
     <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       {title}
     </h5>

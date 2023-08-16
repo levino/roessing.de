@@ -5,6 +5,7 @@ import React from 'react'
 import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
 import { AddressLink, Description } from './Components'
+import { StaticImport, StaticRequire } from 'next/dist/shared/lib/get-img-props'
 
 const EndDate: React.FC<{ endDate: Option<Date>; className: string }> = ({
   endDate,
@@ -24,19 +25,24 @@ export const EventPage: React.FC<EventType> = (event) => {
           ...EventType.encode(event),
           url: `https://rössing.de/events/${event.slug}`,
           '@context': 'https://schema.org',
-          image: [`https://rössing.de/${event.image.default.src}`],
+          ...ImageJson(event.image),
         })}
       </Script>
       <div className="flex flex-col mb-4 container mx-auto">
         <div className="w-full mx-auto max-h-64 overflow-hidden my-12">
-          <Image
-            sizes="100vw"
-            placeholder="blur"
-            priority
-            src={image}
-            alt="Event Preview"
-            className="rounded mb-4"
-          />
+          {O.match(
+            () => null,
+            (image: StaticImport) => (
+              <Image
+                sizes="100vw"
+                placeholder="blur"
+                priority
+                src={image}
+                alt="Event Preview"
+                className="rounded mb-4"
+              />
+            )
+          )(image)}
         </div>
         <div className="w-full md:w-1/2 lg:w-2/3 pl-4">
           <p className="font-bold text-xl mb-2">{name}</p>
@@ -58,6 +64,13 @@ export const EventPage: React.FC<EventType> = (event) => {
     </>
   )
 }
+
+const ImageJson = O.match(
+  () => ({}),
+  (image: StaticRequire) => ({
+    image: [`https://rössing.de/${image.default.src}`],
+  })
+)
 
 const timeAndDate = (date: Date) =>
   date.toLocaleString('de-DE', {

@@ -3,17 +3,13 @@ import * as Images from './images'
 import { Event as SchemaOrgEvent } from 'schema-dts'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
-type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
-  [Property in Key]-?: Type[Property]
-}
-export type Event = Omit<
-  WithRequiredProperty<SchemaOrgEvent, 'startDate'>,
-  'image' | 'url' | 'description' | 'string'
-> & {
+import { locations } from './locations'
+import { organisations } from './organisations'
+
+type Event = Omit<SchemaOrgEvent, 'image'> & {
   image?: StaticImport
   url?: string
   description?: string
-  name?: string
   slug: string
 }
 
@@ -36,16 +32,7 @@ export const events: Event[] = [
   {
     '@type': 'Event',
     name: 'Altpapiersammlung',
-    location: {
-      '@type': 'Place',
-      name: 'Hof Könneke',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Pfarrstr. 6',
-        postalCode: '31171',
-        addressLocality: 'Nordstemmen',
-      },
-    },
+    location: locations.hofKoenneke,
     startDate: '2023-07-08T09:00',
     endDate: '2023-07-08T12:00',
     image: Images.papiersammlung,
@@ -166,17 +153,45 @@ export const events: Event[] = [
     '@type': 'Event',
     slug: 'braunkohlWanderung2023Kleingarten',
     name: 'Braunkohlwanderung',
-    startDate: '2023-12-17',
+    startDate: '2023-12-17T00:00:00+01:00',
+    organizer: organisations.kleingartenVerein,
+    location: locations.kleingartenVerein,
+    url: 'https://www.kgv-roessing.de/termine/',
+  },
+  {
+    '@type': 'Event',
+    slug: 'altpapierOktober2023',
+    startDate: '2023-10-14T09:00:00+02:00',
+    location: locations.hofKoenneke,
+    name: 'Altpapiersammlung',
+    image: Images.papiersammlung,
+  },
+  {
+    '@type': 'Event',
+    slug: 'einschulungsGottesDienst2023',
+    startDate: '2023-08-19T12:00:00+02:00',
+    name: 'Einschlungsgottesdienst',
+    location: locations.kirche,
+  },
+  {
+    '@type': 'Event',
+    slug: 'kleingartenFamilienFruehstueck2023',
+    startDate: '2023-08-20T10:00:00+02:00',
+    name: 'Familienfrühstück',
+    organizer: organisations.kleingartenVerein,
+    location: locations.kleingartenVerein,
+    url: 'https://www.kgv-roessing.de/termine/',
+  },
+  {
+    '@type': 'Event',
+    slug: 'spdFahrradTour2023',
+    startDate: '2023-08-20T10:30:00+02:00',
+    name: 'Fahrradtour',
+    location: locations.dorfgemeinschaftshausBarnten,
     organizer: {
       '@type': 'Organization',
-      name: 'Kleingartenverein Rössing e.V.',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Am Rössingbach',
-        addressLocality: 'Nordstemmen',
-        postalCode: '31171',
-        telephone: '+4950693109',
-      },
+      name: 'SPD',
     },
+    url: 'https://spd-nordstemmen.de/termine/spd-ortsverein-barnten-roessing-fahrradtour',
   },
 ]

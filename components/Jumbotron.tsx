@@ -15,6 +15,7 @@ export const Jumbotron: React.FC<PropsWithChildren> = ({ children }) => (
           objectFit: 'cover',
         }}
         className="brightness-50"
+        priority
       />
     </div>
     {children}

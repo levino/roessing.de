@@ -6,6 +6,7 @@ import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
 import { AddressLink, Description } from './Components'
 import { StaticImport, StaticRequire } from 'next/dist/shared/lib/get-img-props'
+import { timeAndDate } from './tools'
 
 const EndDate: React.FC<{ endDate: Option<Date>; className: string }> = ({
   endDate,
@@ -71,12 +72,3 @@ const ImageJson = O.match(
     image: [`https://rössing.de/${image.default.src}`],
   })
 )
-
-const timeAndDate = (date: Date) =>
-  date.toLocaleString('de-DE', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  })

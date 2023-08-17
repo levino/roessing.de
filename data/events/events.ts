@@ -194,4 +194,14 @@ export const events: Event[] = [
     },
     url: 'https://spd-nordstemmen.de/termine/spd-ortsverein-barnten-roessing-fahrradtour',
   },
+  {
+    '@type': 'Event',
+    slug: 'heckenschnittDorfpflegeAug2023',
+    startDate: '2023-08-26T09:30:00+02:00',
+    endDate: '2023-08-26T12:30:00+02:00',
+    name: 'Heckenschnitt Streuobstwiese',
+    organizer: organisations.dorfpflege,
+    location: locations.streuobstwiese,
+    description: `Die Mitglieder des Arbeitskreises 2 (Umwelt und Natur) schneiden die Hecke auf der Streuobstwiese und pflegen das Areal. Im Anschluss gibt es ein Treffen für die Helfer auf dem Hof Köhler.`,
+  },
 ]

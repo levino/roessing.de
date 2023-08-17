@@ -34,19 +34,21 @@ export const Location = t.type({
   name: t.string,
   address: optionFromNullable(Address),
 })
+
 export const Event = t.type({
   startDate: DateFromISOString,
   endDate: optionFromNullable(DateFromISOString),
   name: t.string,
   location: Location,
-  image: staticImport,
+  image: optionFromNullable(staticImport),
   description: optionFromNullable(t.string),
   url: optionFromNullable(t.string),
   slug: t.string,
+  organizer: optionFromNullable(Organization),
 })
 
 export type Event = t.TypeOf<typeof Event>
-
+export type Organization = t.TypeOf<typeof Organization>
 export type Address = t.TypeOf<typeof Address>
 
 export type Validation = ReturnType<typeof Event.decode>

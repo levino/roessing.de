@@ -23,4 +23,14 @@ export const organisations = {
       telephone: '+4950693109',
     },
   } as Organization,
+  dorfpflege: {
+    '@type': 'Organization',
+    name: 'Dorfpflege Rössing e.V.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Stettiner Straße 3',
+      addressLocality: 'Nordstemmen',
+      postalCode: '31171',
+    },
+  } as Organization,
 }

@@ -42,4 +42,13 @@ export const locations = {
       ...nordstemmen,
     },
   } as Place,
+  streuobstwiese: {
+    '@type': 'Place',
+    name: 'Streuobstwiese Rössing',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Am Rössingbach',
+      ...nordstemmen,
+    },
+  } as Place,
 }

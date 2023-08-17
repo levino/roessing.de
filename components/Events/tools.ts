@@ -1,6 +1,7 @@
 export const getMonth: (date: Date) => string = (date) =>
   date.toLocaleString('de-DE', {
     month: 'long',
+    timeZone: 'Europe/Berlin',
   })
 
 export const timeAndDate = (date: Date) =>
@@ -10,4 +11,5 @@ export const timeAndDate = (date: Date) =>
     year: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
+    timeZone: 'Europe/Berlin',
   })

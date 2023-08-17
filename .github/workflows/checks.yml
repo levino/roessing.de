@@ -25,8 +25,7 @@ jobs:
           cache: yarn
       - run: yarn
       - run: yarn lint
-  lhci:
-    name: Lighthouse
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -36,7 +35,39 @@ jobs:
         with:
           node-version: lts/*
       - run: yarn
+      - uses: actions/cache@v3
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: prod-build
+          path: .next
+
+  lhci:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - run: yarn
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: prod-build
+          path: .next
       - run: yarn lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

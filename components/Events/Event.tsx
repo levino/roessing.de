@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import { Event as EventType, Organization } from 'src/event'
@@ -7,8 +6,9 @@ import { constant, pipe } from 'fp-ts/function'
 import * as S from 'fp-ts-std/Struct'
 import { Description } from './Components'
 import { timeAndDate } from './tools'
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import { Option } from 'fp-ts/Option'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import Image from 'next/image'
 
 export const Event: React.FC<EventType> = (event) => (
   <>
@@ -41,7 +41,7 @@ export const Event: React.FC<EventType> = (event) => (
           </div>
         </div>
         <Description
-          className="text-sm mt-2 whitespace-pre-line"
+          className="text-sm line-clamp-3"
           description={event.description}
         />
       </div>
@@ -56,7 +56,6 @@ const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>
       <p className="text-gray-500">Veranstalter:in: {organizer.name}</p>
     )
   )(organizer)
-
 const OptionalImage = ({ image }: { image: Option<StaticImport> }) =>
   O.match(
     () => null,
@@ -70,6 +69,7 @@ const OptionalImage = ({ image }: { image: Option<StaticImport> }) =>
       />
     )
   )(image)
+
 const getHref = (event: EventType): string =>
   pipe(
     event,

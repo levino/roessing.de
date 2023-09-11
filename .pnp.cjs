@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/nextjs", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:7.3.0"],\
             ["@storybook/react", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:7.3.0"],\
             ["@storybook/testing-library", "npm:0.0.14-next.2"],\
+            ["@tailwindcss/line-clamp", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.4.4"],\
             ["@tailwindcss/typography", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.5.9"],\
             ["@testing-library/react", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:14.0.0"],\
             ["@types/babel__core", "npm:7.20.1"],\
@@ -51,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:5.62.0"],\
             ["@typescript-eslint/parser", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:5.62.0"],\
             ["autoprefixer", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:10.4.15"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-prettier", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:8.10.0"],\
             ["eslint-plugin-storybook", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.6.13"],\
@@ -6391,6 +6393,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@tailwindcss/line-clamp", [\
+        ["npm:0.4.4", {\
+          "packageLocation": "./.yarn/cache/@tailwindcss-line-clamp-npm-0.4.4-23cb911440-3d2ad992aa.zip/node_modules/@tailwindcss/line-clamp/",\
+          "packageDependencies": [\
+            ["@tailwindcss/line-clamp", "npm:0.4.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.4.4", {\
+          "packageLocation": "./.yarn/__virtual__/@tailwindcss-line-clamp-virtual-ae52b07674/0/cache/@tailwindcss-line-clamp-npm-0.4.4-23cb911440-3d2ad992aa.zip/node_modules/@tailwindcss/line-clamp/",\
+          "packageDependencies": [\
+            ["@tailwindcss/line-clamp", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.4.4"],\
+            ["@types/tailwindcss", null],\
+            ["tailwindcss", "npm:3.3.3"]\
+          ],\
+          "packagePeers": [\
+            "@types/tailwindcss",\
+            "tailwindcss"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@tailwindcss/typography", [\
         ["npm:0.5.9", {\
           "packageLocation": "./.yarn/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip/node_modules/@tailwindcss/typography/",\
@@ -9353,6 +9377,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cipher-base", "npm:1.0.4"],\
             ["inherits", "npm:2.0.4"],\
             ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -19228,6 +19261,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/nextjs", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:7.3.0"],\
             ["@storybook/react", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:7.3.0"],\
             ["@storybook/testing-library", "npm:0.0.14-next.2"],\
+            ["@tailwindcss/line-clamp", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.4.4"],\
             ["@tailwindcss/typography", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.5.9"],\
             ["@testing-library/react", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:14.0.0"],\
             ["@types/babel__core", "npm:7.20.1"],\
@@ -19241,6 +19275,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:5.62.0"],\
             ["@typescript-eslint/parser", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:5.62.0"],\
             ["autoprefixer", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:10.4.15"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-prettier", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:8.10.0"],\
             ["eslint-plugin-storybook", "virtual:5135cc64264511bf07c763f0a36f586315982c65ac3b1b581856c1df1cdaf6725dc888b565a28ec03682ea653dd4a6267d5777ec1d7c6974915c4c285ffa2ffa#npm:0.6.13"],\

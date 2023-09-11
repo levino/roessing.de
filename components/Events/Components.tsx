@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
 import { Address } from '../../src/event'
-
+import cn from 'classnames'
+import { onRight } from './tools'
 const addressToString = (address: Address) =>
   `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
 export const AddressLink: React.FC<{
@@ -12,7 +13,7 @@ export const AddressLink: React.FC<{
   O.match(
     () => null,
     (address: Address) => (
-      <a
+      <ExternalLink
         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
           addressToString(address)
         )}`}
@@ -21,14 +22,23 @@ export const AddressLink: React.FC<{
         className={className}
       >
         {addressToString(address)}
-      </a>
+      </ExternalLink>
     )
   )(address)
 export const Description: React.FC<{
   className: string
-  description: Option<string>
+  description: Option<ReactNode>
 }> = ({ className, description }) =>
-  O.match(
-    () => null,
-    (value: string) => <div className={className}>{value}</div>
-  )(description)
+  onRight((value: ReactNode) => <div className={className}>{value}</div>)(
+    description
+  )
+export const ExternalLink: React.FC<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+> = (props) => (
+  <a
+    rel="noreferrer noopener"
+    target="_blank"
+    className={cn(props.className, 'text-blue-500 hover:underline')}
+    {...props}
+  />
+)

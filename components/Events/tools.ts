@@ -1,3 +1,6 @@
+import React from 'react'
+import * as O from 'fp-ts/Option'
+
 export const getMonth: (date: Date) => string = (date) =>
   date.toLocaleString('de-DE', {
     month: 'long',
@@ -13,3 +16,5 @@ export const timeAndDate = (date: Date) =>
     minute: 'numeric',
     timeZone: 'Europe/Berlin',
   })
+export const onRight = <T>(render: (value: T) => React.ReactNode) =>
+  O.match(() => null, render)

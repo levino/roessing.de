@@ -51,6 +51,8 @@
   },
   "packageManager": "yarn@3.6.1",
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "classnames": "^2.3.2",
     "fp-ts": "^2.16.1",
     "fp-ts-std": "^0.17.1",
     "io-ts": "^2.2.20",

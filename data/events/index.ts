@@ -33,6 +33,13 @@ const byDate = pipe(D.Ord, contramap<Date, EventType>(S.get('startDate')))
 const sortEventsByStartDate: (events: EventType[]) => EventType[] = A.sortBy([
   byDate,
 ])
+
+const now = new Date()
+
+const removePastEvents = A.filter(
+  (event: Event) => D.Ord.compare(now, event.startDate) === -1
+)
+
 const failedValidations = A.filter(E.isLeft)(events)
 
 if (failedValidations.length > 0) {
@@ -44,6 +51,7 @@ export const validEventsByMonth = pipe(
   events,
   A.partitionMap<EventValidation, Errors, EventType>(identity),
   S.get('right'),
+  removePastEvents,
   sortEventsByStartDate,
   groupEventsByMonth
 )

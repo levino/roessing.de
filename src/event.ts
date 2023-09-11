@@ -2,11 +2,19 @@ import { DateFromISOString, optionFromNullable } from 'io-ts-types'
 
 import * as t from 'io-ts'
 import { StaticRequire } from 'next/dist/shared/lib/get-img-props'
+import { ReactNode } from 'react'
 
 const staticImport = new t.Type<StaticRequire, StaticRequire, unknown>(
   'StaticImport',
   (input): input is StaticRequire => true,
   (input) => t.success(input as StaticRequire),
+  t.identity
+)
+
+const reactNode = new t.Type<ReactNode, ReactNode, unknown>(
+  'ReactNode',
+  (input): input is ReactNode => true,
+  (input) => t.success(input as ReactNode),
   t.identity
 )
 
@@ -41,7 +49,7 @@ export const Event = t.type({
   name: t.string,
   location: Location,
   image: optionFromNullable(staticImport),
-  description: optionFromNullable(t.string),
+  description: optionFromNullable(reactNode),
   url: optionFromNullable(t.string),
   slug: t.string,
   organizer: optionFromNullable(Organization),

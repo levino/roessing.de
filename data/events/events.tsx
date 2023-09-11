@@ -5,11 +5,13 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 import { locations } from './locations'
 import { organisations } from './organisations'
+import { ReactElement } from 'react'
+import { ExternalLink } from '../../components/Events/Components'
 
-type Event = Omit<SchemaOrgEvent, 'image'> & {
+type Event = Omit<SchemaOrgEvent, 'image' | 'description'> & {
   image?: StaticImport
   url?: string
-  description?: string
+  description?: ReactElement
   slug: string
 }
 
@@ -24,8 +26,15 @@ export const events: Event[] = [
       name: 'Rössing',
     },
     image: Images.flohmarkt,
-    description:
-      'Der traditionelle Hof- und Garagenflohmarkt in Rössing findet am 15. Juli 2023 statt. An diesem Tag öffnen die Rössinger ihre Höfe und Garagen und bieten ihre Schätze zum Verkauf an. Die Bürgerstiftung Rössing organisiert den Flohmarkt und bietet auf dem Dorfplatz Kaffee und Kuchen an. Der Erlös kommt der Bürgerstiftung zugute.',
+    description: (
+      <p>
+        Der traditionelle Hof- und Garagenflohmarkt in Rössing findet am 15.
+        Juli 2023 statt. An diesem Tag öffnen die Rössinger ihre Höfe und
+        Garagen und bieten ihre Schätze zum Verkauf an. Die Bürgerstiftung
+        Rössing organisiert den Flohmarkt und bietet auf dem Dorfplatz Kaffee
+        und Kuchen an. Der Erlös kommt der Bürgerstiftung zugute.
+      </p>
+    ),
     url: 'https://buergerstiftung-roessing.de/aktuelles/',
     slug: 'garagenFlohmarkt2023',
   },
@@ -37,8 +46,16 @@ export const events: Event[] = [
     endDate: '2023-07-08T12:00',
     image: Images.papiersammlung,
     slug: 'altpapier2023',
-    description:
-      'Die Fußballer*innen der SG Rössing/Barnten werden wieder Euer Altpapier entgegennehmen.\nEs wird nicht mehr eingesammelt!\nAchtung: Es wird ein Großraumcontainer auf dem Hof Könneke, in der Pfarrstr. 6, für das Altpapier bereitstehen. Wer keine Möglichkeit hat, das Altpapier zu bringen, kann sich bei Erich Könneke melden. Die Erlöse kommen allen Mannschaften der Fußballsparte zugute.',
+    description: (
+      <p>
+        Die Fußballer*innen der SG Rössing/Barnten werden wieder Euer Altpapier
+        entgegennehmen.\nEs wird nicht mehr eingesammelt!\nAchtung: Es wird ein
+        Großraumcontainer auf dem Hof Könneke, in der Pfarrstr. 6, für das
+        Altpapier bereitstehen. Wer keine Möglichkeit hat, das Altpapier zu
+        bringen, kann sich bei Erich Könneke melden. Die Erlöse kommen allen
+        Mannschaften der Fußballsparte zugute.
+      </p>
+    ),
   },
   {
     '@type': 'Event',
@@ -71,8 +88,17 @@ export const events: Event[] = [
       telephone: '05069/7410',
       email: 'kontakt@tv-roessing.de',
     },
-    description:
-      'Komm und feiere mit uns beim Sommerfest des Tennisvereins! Es erwartet dich ein geselliges Fest mit gutem Essen und kühlem Bier. Genieße leckere Würstchen und erfrischende Getränke. Die Stimmung wird mit mitreißender Musik angeheizt, sodass du die Tanzfläche erobern kannst. Lerne neue Leute kennen, unterhalte dich und tanze bis Mitternacht. Alle sind herzlich eingeladen, einen unvergesslichen Abend mit uns zu verbringen!',
+    description: (
+      <p>
+        Komm und feiere mit uns beim Sommerfest des Tennisvereins! Es erwartet
+        dich ein geselliges Fest mit gutem Essen und kühlem Bier. Genieße
+        leckere Würstchen und erfrischende Getränke. Die Stimmung wird mit
+        mitreißender Musik angeheizt, sodass du die Tanzfläche erobern kannst.
+        Lerne neue Leute kennen, unterhalte dich und tanze bis Mitternacht. Alle
+        sind herzlich eingeladen, einen unvergesslichen Abend mit uns zu
+        verbringen!
+      </p>
+    ),
   },
 
   {
@@ -105,8 +131,15 @@ export const events: Event[] = [
         addressCountry: 'Deutschland',
       },
     },
-    description:
-      'Die Mischung aus Deko, mit Sand, Palmen und Licht, die Düfte der Food Stände und die gemeinsame Freude zur Live-Musik, sorgt für eine Illusion der Besucher, einen Kurzurlaub zu genießen. Vor verschiedenen Bühnen gilt es sich zum Rhythmus zu bewegen oder sich in den verteilten Lounges einfach mal eine Auszeit zu gönnen.',
+    description: (
+      <p>
+        Die Mischung aus Deko, mit Sand, Palmen und Licht, die Düfte der Food
+        Stände und die gemeinsame Freude zur Live-Musik, sorgt für eine Illusion
+        der Besucher, einen Kurzurlaub zu genießen. Vor verschiedenen Bühnen
+        gilt es sich zum Rhythmus zu bewegen oder sich in den verteilten Lounges
+        einfach mal eine Auszeit zu gönnen.
+      </p>
+    ),
   },
   {
     '@type': 'Event',
@@ -144,8 +177,17 @@ export const events: Event[] = [
         contactType: 'customer service',
       },
     },
-    description:
-      'Hilf Leben retten! Wir laden dich herzlich zur Blutspende ein. Deine Blutspende kann einen Unterschied machen und Leben verändern. Jede Spende zählt und kann Menschen in Not helfen. Komm zu unserer Blutspendeaktion und unterstütze diese wichtige Sache. Als Dankeschön erwartet dich neben der Möglichkeit, Leben zu retten, auch eine Stärkung mit belegten Brötchen. Bitte sei Teil dieser wertvollen Aktion und komm vorbei. Deine Spende kann Leben retten!',
+    description: (
+      <p>
+        Hilf Leben retten! Wir laden dich herzlich zur Blutspende ein. Deine
+        Blutspende kann einen Unterschied machen und Leben verändern. Jede
+        Spende zählt und kann Menschen in Not helfen. Komm zu unserer
+        Blutspendeaktion und unterstütze diese wichtige Sache. Als Dankeschön
+        erwartet dich neben der Möglichkeit, Leben zu retten, auch eine Stärkung
+        mit belegten Brötchen. Bitte sei Teil dieser wertvollen Aktion und komm
+        vorbei. Deine Spende kann Leben retten!
+      </p>
+    ),
     image: Images.blutspende,
     url: 'https://www.drk-blutspende.de/blutspendetermine/termine/284042?term=31171',
   },
@@ -202,6 +244,39 @@ export const events: Event[] = [
     name: 'Heckenschnitt Streuobstwiese',
     organizer: organisations.dorfpflege,
     location: locations.streuobstwiese,
-    description: `Die Mitglieder des Arbeitskreises 2 (Umwelt und Natur) schneiden die Hecke auf der Streuobstwiese und pflegen das Areal. Im Anschluss gibt es ein Treffen für die Helfer auf dem Hof Köhler.`,
+    description: (
+      <p>
+        Die Mitglieder des Arbeitskreises 2 (Umwelt und Natur) schneiden die
+        Hecke auf der Streuobstwiese und pflegen das Areal. Im Anschluss gibt es
+        ein Treffen für die Helfer auf dem Hof Köhler.
+      </p>
+    ),
+  },
+  {
+    '@type': 'Event',
+    slug: 'sensenkursHerbst2023',
+    startDate: '2023-10-14T08:00:00+02:00',
+    endDate: '2023-10-14T12:00:00+02:00',
+    name: 'Sensenkurs der Dorfpflege',
+    organizer: {
+      ...organisations.dorfpflege,
+      email: 'post@levinkeller.de',
+      telephone: '+4915156041082',
+    },
+    location: locations.streuobstwiese,
+    description: (
+      <span>
+        Die Dorfpflege Rössing e.V. veranstaltet für interessierte Mitglieder
+        und Gäste einen kostenlosen Sensenkurs. Es gibt eine Einführung in
+        Schnitttechnik, Schleifen und Dengeln. Körperliche Fitness und
+        Durchhaltevermögen wird vorausgesetzt, denn der Kurs dient auch dazu,
+        die Streuobstwiese zu mähen. Um{' '}
+        <ExternalLink href="https://forms.gle/xyPEyx1A3g2wibwt6">
+          Anmeldung
+        </ExternalLink>{' '}
+        wird gebeten.
+      </span>
+    ),
+    image: Images.sensenkurs,
   },
 ]

@@ -1,5 +1,5 @@
-import { Organization } from 'schema-dts'
-
+import { Organization as DTSOrganization } from 'schema-dts'
+type Organization = Exclude<DTSOrganization, string>
 export const organisations = {
   vsv: {
     name: 'Volkssportvereinigung von 1897 Rössing e.V.',

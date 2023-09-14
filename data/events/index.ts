@@ -15,15 +15,6 @@ import * as E from 'fp-ts/Either'
 import { groupBy } from 'fp-ts/NonEmptyArray'
 import { PathReporter } from 'io-ts/PathReporter'
 export const events = pipe(rawEvents, A.map(Event.decode))
-export const eventsBySlug: Record<string, Event> = pipe(
-  events,
-  A.partitionMap<EventValidation, Errors, Event>(identity),
-  S.get('right'),
-  A.reduce({}, (acc, event) => ({
-    [event.slug]: event,
-    ...acc,
-  }))
-)
 
 const groupEventsByMonth = groupBy<EventType>(
   flow(S.get('startDate'), getMonth)
@@ -47,11 +38,21 @@ if (failedValidations.length > 0) {
   failedValidations.forEach(flow(PathReporter.report, console.log))
 }
 
-export const validEventsByMonth = pipe(
+const validEvents = pipe(
   events,
   A.partitionMap<EventValidation, Errors, EventType>(identity),
-  S.get('right'),
-  removePastEvents,
-  sortEventsByStartDate,
-  groupEventsByMonth
+  S.get('right')
+)
+
+const validFutureEvents = pipe(validEvents, removePastEvents)
+
+const eventsByMonth = flow(sortEventsByStartDate, groupEventsByMonth)
+export const futureEvents = pipe(validFutureEvents, eventsByMonth)
+
+export const allEventsBySlug: Record<string, Event> = pipe(
+  validEvents,
+  A.reduce({}, (acc, event) => ({
+    [event.slug]: event,
+    ...acc,
+  }))
 )

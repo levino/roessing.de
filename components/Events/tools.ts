@@ -1,4 +1,3 @@
-import React from 'react'
 import * as O from 'fp-ts/Option'
 
 export const getMonth: (date: Date) => string = (date) =>
@@ -16,5 +15,5 @@ export const timeAndDate = (date: Date) =>
     minute: 'numeric',
     timeZone: 'Europe/Berlin',
   })
-export const onRight = <T>(render: (value: T) => React.ReactNode) =>
+export const onRight = <T, U>(render: (value: T) => U) =>
   O.match(() => null, render)

@@ -1,17 +1,17 @@
 import { Event } from '../../components/Events/Event'
 
-import { validEventsByMonth } from '../../data/events'
+import { futureEvents } from '../../data/events'
 
 const EventOverviewPage: React.FC = () => (
   <>
     <div className="container mx-auto p-8">
       <h1 className="text-4xl font-bold mb-8">Veranstaltungen in Rössing</h1>
 
-      {Object.keys(validEventsByMonth).map((month) => (
+      {Object.keys(futureEvents).map((month) => (
         <div key={month} className="mb-8">
           <h2 className="text-2xl font-bold mb-4">{month}</h2>
 
-          {validEventsByMonth[month].map((event, index) => (
+          {futureEvents[month].map((event, index) => (
             <Event key={index} {...event} />
           ))}
         </div>

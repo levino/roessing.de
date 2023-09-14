@@ -53,6 +53,9 @@ export const Event = t.type({
   url: optionFromNullable(t.string),
   slug: t.string,
   organizer: optionFromNullable(Organization),
+  og: t.type({
+    description: optionFromNullable(t.string),
+  }),
 })
 
 export type Event = t.TypeOf<typeof Event>

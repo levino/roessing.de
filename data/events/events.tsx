@@ -13,11 +13,15 @@ type Event = Omit<SchemaOrgEvent, 'image' | 'description'> & {
   url?: string
   description?: ReactElement
   slug: string
+  og: {
+    description?: string
+  }
 }
 
 export const events: Event[] = [
   {
     '@type': 'Event',
+    og: {},
     name: '5. Hof- und Garagenflohmarkt',
     startDate: '2023-07-15T10:00:00+02:00',
     endDate: '2023-07-15T16:00:00+02:00',
@@ -40,6 +44,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     name: 'Altpapiersammlung',
     location: locations.hofKoenneke,
     startDate: '2023-07-08T09:00',
@@ -59,6 +64,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     name: 'Sommerfest Tennis',
     slug: 'sommerfestTennis2023',
     startDate: '2023-07-01T18:00:00',
@@ -103,6 +109,7 @@ export const events: Event[] = [
 
   {
     '@type': 'Event',
+    og: {},
     name: 'Weedbeat - Festival',
     slug: 'weedbeat2023',
     startDate: '2023-07-14T18:00:00',
@@ -143,6 +150,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'blutspendeJuli2023',
     name: 'Blutspende DRK',
     startDate: '2023-07-24T16:30:00',
@@ -193,6 +201,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'braunkohlWanderung2023Kleingarten',
     name: 'Braunkohlwanderung',
     startDate: '2023-12-17T00:00:00+01:00',
@@ -202,6 +211,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'altpapierOktober2023',
     startDate: '2023-10-14T09:00:00+02:00',
     location: locations.hofKoenneke,
@@ -210,6 +220,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'einschulungsGottesDienst2023',
     startDate: '2023-08-19T12:00:00+02:00',
     name: 'Einschlungsgottesdienst',
@@ -217,6 +228,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'kleingartenFamilienFruehstueck2023',
     startDate: '2023-08-20T10:00:00+02:00',
     name: 'Familienfrühstück',
@@ -226,6 +238,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'spdFahrradTour2023',
     startDate: '2023-08-20T10:30:00+02:00',
     name: 'Fahrradtour',
@@ -238,6 +251,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'heckenschnittDorfpflegeAug2023',
     startDate: '2023-08-26T09:30:00+02:00',
     endDate: '2023-08-26T12:30:00+02:00',
@@ -254,6 +268,7 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {},
     slug: 'sensenkursHerbst2023',
     startDate: '2023-10-14T08:00:00+02:00',
     endDate: '2023-10-14T12:00:00+02:00',
@@ -281,6 +296,10 @@ export const events: Event[] = [
   },
   {
     '@type': 'Event',
+    og: {
+      description:
+        'Die Mitglieder des Kulturkreises, also die Vorstände aller Rössinger Vereine und Verbände, treffen sich zur Herbstversammlung im Dorfgemeinschaftshaus.   Hauptthema ist der Ausblick auf 2024 und die Heersumer Sommerspiele in Rössing. Die Initiatorinnen Tita von Rössing und Barbara Benthin sind als Gäste dabei.',
+    },
     slug: 'kulturkreisversammlung2023',
     startDate: '2023-10-17T19:00:00+02:00',
     name: 'Vollversammlung Kulturkreis',

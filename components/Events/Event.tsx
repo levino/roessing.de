@@ -23,7 +23,7 @@ export const Event: React.FC<EventType> = (event) => (
           <p className="text-gray-800">Ort: {event.location.name}</p>
           <p className="text-gray-600">{timeAndDate(event.startDate)}</p>
           <Description
-            className="text-sm mt-2 whitespace-pre-line"
+            className="text-sm mt-2 whitespace-pre-line line-clamp-3"
             description={event.description}
           />
         </div>

@@ -33,4 +33,10 @@ export const organisations = {
       postalCode: '31171',
     },
   } as Organization,
+  kulturkreis: {
+    '@type': 'Organization',
+    name: 'Kulturkreis Rössing e.V.',
+    email: 'roessingerkulturkreis@gmail.com',
+    telephone: '+49506934413',
+  } as Organization,
 }

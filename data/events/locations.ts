@@ -51,4 +51,13 @@ export const locations = {
       ...nordstemmen,
     },
   } as Place,
+  dorfgemeinschaftshausRoessing: {
+    '@type': 'Place',
+    name: 'Dorfgemeinschaftshaus Rössing',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Kirchstraße 2',
+      ...nordstemmen,
+    },
+  } as Place,
 }

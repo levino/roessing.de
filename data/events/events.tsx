@@ -279,4 +279,28 @@ export const events: Event[] = [
     ),
     image: Images.sensenkurs,
   },
+  {
+    '@type': 'Event',
+    slug: 'kulturkreisversammlung2023',
+    startDate: '2023-10-17T19:00:00+02:00',
+    name: 'Vollversammlung Kulturkreis',
+    organizer: {
+      ...organisations.kulturkreis,
+    },
+    location: locations.dorfgemeinschaftshausRoessing,
+    description: (
+      <>
+        <p>
+          Die Mitglieder des Kulturkreises, also die Vorstände aller Rössinger
+          Vereine und Verbände, treffen sich zur Herbstversammlung im
+          Dorfgemeinschaftshaus.
+        </p>
+        <p>
+          Hauptthema ist der Ausblick auf 2024 und die Heersumer Sommerspiele in
+          Rössing. Die Initiatorinnen Tita von Rössing und Barbara Benthin sind
+          als Gäste dabei.
+        </p>
+      </>
+    ),
+  },
 ]

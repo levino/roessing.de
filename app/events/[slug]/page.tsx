@@ -1,6 +1,8 @@
 import { allEventsBySlug } from 'data/events'
 import { EventPage } from 'components/Events/EventPage'
 import React from 'react'
+import { onRight } from '../../../components/Events/tools'
+import { identity } from 'fp-ts/function'
 export const generateStaticParams = async () => Object.keys(allEventsBySlug)
 
 interface EventPageProps {
@@ -8,13 +10,16 @@ interface EventPageProps {
 }
 
 export const generateMetadata = ({ params: { slug } }: EventPageProps) => {
-  const { name: title, description } = allEventsBySlug[slug]
+  const {
+    name: title,
+    og: { description },
+  } = allEventsBySlug[slug]
   return {
     title,
     description,
     openGraph: {
       title,
-      description,
+      description: onRight(identity)(description),
     },
   }
 }

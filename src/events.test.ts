@@ -11,6 +11,7 @@ describe('Event parsing', () => {
     pipe(
       {
         name: 'Altpapiersammlung',
+        og: {},
         location: {
           name: 'Hof Könneke',
           address: {
@@ -38,6 +39,7 @@ describe('Event parsing', () => {
     pipe(
       {
         name: 'Altpapiersammlung',
+        og: {},
         location: {
           name: 'Hof Könneke',
           address: {
@@ -64,6 +66,7 @@ describe('Event parsing', () => {
     pipe(
       {
         name: 'Altpapiersammlung',
+        og: {},
         location: {
           name: 'Hof Könneke',
           address: {

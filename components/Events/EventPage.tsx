@@ -43,17 +43,21 @@ export const EventPage: React.FC<EventType> = (event) => {
       <div className="flex flex-col mb-4 container mx-auto">
         <div className="w-full md:w-1/2 lg:w-2/3 pl-4 mx-auto">
           <div className="pb-2">
-            <h1 className="font-bold text-2xl mb-2">{name}</h1>
-            <p className="text-gray-600">Beginn: {timeAndDate(startDate)}</p>
+            <h1 className="font-bold text-2xl mb-2 dark:text-slate-100">
+              {name}
+            </h1>
+            <p className="text-gray-600 dark:text-slate-200">
+              Beginn: {timeAndDate(startDate)}
+            </p>
             <EndDate endDate={endDate} className="text-gray-600 mb-2" />
-            <p className="text-gray-600 mb-2">
+            <p className="text-gray-600 mb-2 dark:text-slate-300">
               Ort:{' '}
               <AddressLink
                 address={location.address}
                 className="text-blue-500 hover:underline"
               />
             </p>
-            <div className="prose">
+            <div className="prose dark:prose-invert">
               <event.default />
             </div>
           </div>
@@ -77,13 +81,13 @@ const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>
       <>
         <h2 className="font-bold text-lg">{organizer.name}</h2>
         {onRight((email: string) => (
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-slate-200">
             E-Mail:{' '}
             <ExternalLink href={`mailto:${email}`}>{email}</ExternalLink>
           </p>
         ))(organizer.email)}
         {onRight((telephone: string) => (
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-slate-200">
             Telefon:{' '}
             <ExternalLink href={`tel:${telephone}`}>{telephone}</ExternalLink>
           </p>

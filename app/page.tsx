@@ -32,7 +32,7 @@ const LandingPage = () => (
         subtitle="Rössings Natur und Grünflächen in Schuss halten"
         linkUrl="https://www.dorfpflege-roessing.de"
       >
-        <p>
+        <p className="dark:text-slate-200">
           Die Dorfpflege ist ein Verein, der sich um die Streuobstwiese im Dorf
           kümmert, gemeinsam Müll sammelt und sich um die Pflegemaßnahmen der
           Grünflächen und -bereiche kümmert. Außerdem organisiert die Dorfpflege
@@ -45,7 +45,10 @@ const LandingPage = () => (
         subtitle="Retten, sichern und bergen in und um Rössing"
         linkUrl="https://www.ff-roessing.de"
       >
-        <p> Natürlich hat Rössing auch eine freiwillige Feuerwehr!</p>
+        <p className="dark:text-slate-200">
+          {' '}
+          Natürlich hat Rössing auch eine freiwillige Feuerwehr!
+        </p>
       </Project>
     </div>
   </>

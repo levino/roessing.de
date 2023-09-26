@@ -8,11 +8,15 @@ const EventOverviewPage = async () => {
   return (
     <>
       <div className="container flex flex-col mx-auto p-8">
-        <h1 className="text-4xl font-bold mb-8">Veranstaltungen in Rössing</h1>
+        <h1 className="text-4xl font-bold mb-8 dark:text-slate-100">
+          Veranstaltungen in Rössing
+        </h1>
 
         {Object.keys(futureEvents).map((month) => (
           <div key={month} className="mb-8 flex flex-col">
-            <h2 className="text-2xl font-bold mb-4">{month}</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-slate-200">
+              {month}
+            </h2>
             <div className="flex flex-col mx-auto">
               {futureEvents[month].map((event, index) => (
                 <Event key={index} {...event} />

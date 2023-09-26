@@ -10,18 +10,20 @@ import Image, { StaticImageData } from 'next/image'
 
 export const Event: React.FC<EventType> = (props) => (
   <Link
-    className="my-4 flex flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+    className="my-4 flex md:h-48 flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     href={getHref(props)}
     target={getTarget(props)}
   >
     {onRight((image: StaticImageData) => (
-      <Image
-        className="object-cover w-full rounded-t-lg h-32 md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg"
-        src={image}
-        placeholder="blur"
-        alt="Event Preview"
-        sizes="100vw"
-      />
+      <div className="w-full rounded-t-lg md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg overflow-hidden">
+        <Image
+          className="object-cover h-32 md:h-48"
+          src={image}
+          placeholder="blur"
+          alt="Event Preview"
+          sizes="100vw"
+        />
+      </div>
     ))(props.data.image)}
     <div className="flex flex-col justify-between p-4 leading-normal w-full md:w-2/3">
       <p className="font-bold">{props.data.name}</p>

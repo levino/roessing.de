@@ -4,6 +4,7 @@ import { Option } from 'fp-ts/Option'
 import { Address } from '../../data/events/event'
 import cn from 'classnames'
 import { onRight } from './tools'
+import NextLink, { LinkProps } from 'next/link'
 const addressToString = (address: Address) =>
   `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
 export const AddressLink: React.FC<{
@@ -32,13 +33,20 @@ export const Description: React.FC<{
   onRight((value: ReactNode) => <div className={className}>{value}</div>)(
     description
   )
+
+export const Link: React.FC<LinkProps> = (props) => (
+  <NextLink {...props} className="text-blue-500 dark:text-blue-400" />
+)
 export const ExternalLink: React.FC<
   React.AnchorHTMLAttributes<HTMLAnchorElement>
 > = (props) => (
   <a
     rel="noreferrer noopener"
     target="_blank"
-    className={cn(props.className, 'text-blue-500 hover:underline')}
+    className={cn(
+      props.className,
+      'text-blue-500 hover:underline dark:text-blue-400'
+    )}
     {...props}
   />
 )

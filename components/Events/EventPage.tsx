@@ -22,8 +22,11 @@ export const EventPage: React.FC<EventType> = (event) => {
     <>
       <Script id="eventData" type="application/ld+json">
         {JSON.stringify({
+          '@type': 'Event',
           ...EventData.encode(event.data),
-          url: `https://rössing.de/events/${event.slug}`,
+          url: onRight((slug) => `https://rössing.de/events/${slug}`)(
+            event.slug
+          ),
           '@context': 'https://schema.org',
           ...ImageJson(image),
         })}

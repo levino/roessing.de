@@ -17,6 +17,7 @@ export const generateStaticParams = () =>
 export default async function Event({ params: { slug } }: EventPageProps) {
   const postValidation = getEvent({
     file: await import(`events/${slug.join('-')}.mdx`),
+    slug: slug.join('/'),
   })
   if (isLeft(postValidation)) {
     return (

@@ -1,25 +1,30 @@
 import { Event } from '../../components/Events/Event'
+import { getFutureEvents } from '../../data/events'
 
-import { futureEvents } from '../../data/events'
+export const revalidate = 3600
 
-const EventOverviewPage: React.FC = () => (
-  <>
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8">Veranstaltungen in Rössing</h1>
+const EventOverviewPage = async () => {
+  const futureEvents = await getFutureEvents()
+  return (
+    <>
+      <div className="container flex flex-col mx-auto p-8">
+        <h1 className="text-4xl font-bold mb-8">Veranstaltungen in Rössing</h1>
 
-      {Object.keys(futureEvents).map((month) => (
-        <div key={month} className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">{month}</h2>
-
-          {futureEvents[month].map((event, index) => (
-            <Event key={index} {...event} />
-          ))}
-        </div>
-      ))}
-    </div>
-    <StickyButton />
-  </>
-)
+        {Object.keys(futureEvents).map((month) => (
+          <div key={month} className="mb-8 flex flex-col">
+            <h2 className="text-2xl font-bold mb-4">{month}</h2>
+            <div className="flex flex-col mx-auto">
+              {futureEvents[month].map((event, index) => (
+                <Event key={index} {...event} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <StickyButton />
+    </>
+  )
+}
 
 const StickyButton = () => (
   <a

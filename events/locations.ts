@@ -69,4 +69,13 @@ export const locations = {
       ...nordstemmen,
     },
   } as Place,
+  hofBaumgarten: {
+    '@type': 'Place',
+    name: 'Hof Baumgarten',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Lange Straße 4A',
+      ...nordstemmen,
+    },
+  } as Place,
 }

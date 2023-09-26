@@ -1,4 +1,0 @@
-{
-  "*.{ts,tsx,js,jsx,html}": ["prettier -c", "eslint --max-warnings=0"],
-  "*.scss": "prettier -c"
-}

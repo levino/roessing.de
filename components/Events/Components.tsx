@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
-import { Address } from '../../src/event'
+import { Address } from '../../data/events/event'
 import cn from 'classnames'
 import { onRight } from './tools'
 const addressToString = (address: Address) =>

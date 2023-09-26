@@ -1,52 +1,38 @@
 import React from 'react'
 import Link from 'next/link'
-import { Event as EventType, Organization } from 'src/event'
+import { Event as EventType, Organization } from 'data/events/event'
 import * as O from 'fp-ts/Option'
-import { constant, pipe } from 'fp-ts/function'
-import * as S from 'fp-ts-std/Struct'
-import { Description } from './Components'
-import { timeAndDate } from './tools'
-import { Option } from 'fp-ts/Option'
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
-import Image from 'next/image'
 
-export const Event: React.FC<EventType> = (event) => (
-  <>
-    <Link className="flex" href={getHref(event)} target={getTarget(event)}>
-      <div className="hidden md:flex flex grow mb-4">
-        <div className="w-1/3 flex items-center">
-          <OptionalImage image={event.image} />
-        </div>
-        <div className="w-2/3 pl-4 my-auto">
-          <p className="font-bold">{event.name}</p>
-          <Organizer organizer={event.organizer} />
-          <p className="text-gray-800">Ort: {event.location.name}</p>
-          <p className="text-gray-600">{timeAndDate(event.startDate)}</p>
-          <Description
-            className="text-sm mt-2 whitespace-pre-line line-clamp-3"
-            description={event.description}
-          />
-        </div>
+import { constant, identity } from 'fp-ts/function'
+import { onRight, timeAndDate } from './tools'
+import { Option } from 'fp-ts/Option'
+import Image, { StaticImageData } from 'next/image'
+
+export const Event: React.FC<EventType> = (props) => (
+  <Link
+    className="my-4 flex flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+    href={getHref(props)}
+    target={getTarget(props)}
+  >
+    {onRight((image: StaticImageData) => (
+      <Image
+        className="object-cover w-full rounded-t-lg h-32 md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg"
+        src={image}
+        placeholder="blur"
+        alt="Event Preview"
+        sizes="100vw"
+      />
+    ))(props.data.image)}
+    <div className="flex flex-col justify-between p-4 leading-normal w-full md:w-2/3">
+      <p className="font-bold">{props.data.name}</p>
+      <Organizer organizer={props.data.organizer} />
+      <p className="text-gray-800">Ort: {props.data.location.name}</p>
+      <p className="text-gray-600">{timeAndDate(props.data.startDate)}</p>
+      <div className="text-gray-800">
+        {onRight(identity)(props.data.description)}
       </div>
-      <div className="flex flex-col md:hidden mb-8 grow">
-        <div className="flex grow mb-2">
-          <div className="w-1/3 flex items-center">
-            <OptionalImage image={event.image} />
-          </div>
-          <div className="w-2/3 pl-2">
-            <p className="font-bold">{event.name}</p>
-            <Organizer organizer={event.organizer} />
-            <p className="text-gray-800">Ort: {event.location.name}</p>
-            <p className="text-gray-600">{timeAndDate(event.startDate)}</p>
-          </div>
-        </div>
-        <Description
-          className="text-sm line-clamp-3"
-          description={event.description}
-        />
-      </div>
-    </Link>
-  </>
+    </div>
+  </Link>
 )
 
 const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>
@@ -56,26 +42,16 @@ const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>
       <p className="text-gray-500">Veranstalter:in: {organizer.name}</p>
     )
   )(organizer)
-const OptionalImage = ({ image }: { image: Option<StaticImport> }) =>
-  O.match(
-    () => null,
-    (image: StaticImport) => (
-      <Image
-        placeholder="blur"
-        src={image}
-        alt="Event Preview"
-        sizes="100vw"
-        className="rounded"
-      />
-    )
-  )(image)
 
-const getHref = (event: EventType): string =>
-  pipe(
-    event,
-    S.get('url'),
-    O.getOrElse(() => `/events/${event.slug}`)
-  )
+const getHref = ({ slug, data: { url } }: EventType): string =>
+  O.match(
+    () =>
+      O.match(
+        () => '',
+        (value: string) => `/events/${value}`
+      )(slug),
+    (value: string) => value
+  )(url)
 
 const getTarget = (event: EventType): string =>
-  O.match(constant('_self'), constant('_blank'))(event.url)
+  O.match(constant('_self'), constant('_blank'))(event.data.url)

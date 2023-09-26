@@ -1,10 +1,13 @@
-// @ts-check
-
 /**
  * @type {import('next').NextConfig}
  **/
+import withMdx from '@next/mdx'
 
 const nextConfig = {
+  experimental: {
+    mdxRs: true,
+  },
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     remotePatterns: [
       {
@@ -17,7 +20,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
-
-// If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
+export default withMdx()(nextConfig)

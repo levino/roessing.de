@@ -1,11 +1,10 @@
 import Script from 'next/script'
-import { Event as EventType, Organization } from 'src/event'
-import Image from 'next/image'
+import { Event as EventType, EventData, Organization } from 'data/events/event'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
-import { AddressLink, Description, ExternalLink } from './Components'
-import { StaticImport, StaticRequire } from 'next/dist/shared/lib/get-img-props'
+import { AddressLink, ExternalLink } from './Components'
 import { onRight, timeAndDate } from './tools'
 
 const EndDate: React.FC<{ endDate: Option<Date>; className: string }> = ({
@@ -18,20 +17,19 @@ const EndDate: React.FC<{ endDate: Option<Date>; className: string }> = ({
   )(endDate)
 
 export const EventPage: React.FC<EventType> = (event) => {
-  const { location, name, startDate, endDate, description, image, organizer } =
-    event
+  const { location, name, startDate, endDate, image, organizer } = event.data
   return (
     <>
       <Script id="eventData" type="application/ld+json">
         {JSON.stringify({
-          ...EventType.encode(event),
+          ...EventData.encode(event.data),
           url: `https://rössing.de/events/${event.slug}`,
           '@context': 'https://schema.org',
-          ...ImageJson(event.image),
+          ...ImageJson(image),
         })}
       </Script>
       <div className="w-full mx-auto max-h-32 md:max-h-48 lg:max-h-64 overflow-hidden mb-4">
-        {onRight((image: StaticImport) => (
+        {onRight((image: StaticImageData) => (
           <Image
             sizes="100vw"
             placeholder="blur"
@@ -55,10 +53,9 @@ export const EventPage: React.FC<EventType> = (event) => {
                 className="text-blue-500 hover:underline"
               />
             </p>
-            <Description
-              description={description}
-              className="text-gray-800 mt-2 whitespace-pre-line mb-2"
-            />
+            <div className="prose">
+              <event.default />
+            </div>
           </div>
           <Organizer organizer={organizer} />
         </div>
@@ -69,8 +66,8 @@ export const EventPage: React.FC<EventType> = (event) => {
 
 const ImageJson = O.match(
   () => ({}),
-  (image: StaticRequire) => ({
-    image: [`https://rössing.de/${image.default.src}`],
+  (image: StaticImageData) => ({
+    image: [`https://rössing.de${image.src}`],
   })
 )
 const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>

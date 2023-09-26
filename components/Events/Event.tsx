@@ -26,11 +26,15 @@ export const Event: React.FC<EventType> = (props) => (
       </div>
     ))(props.data.image)}
     <div className="flex flex-col justify-between p-4 leading-normal w-full md:w-2/3">
-      <p className="font-bold">{props.data.name}</p>
+      <p className="font-bold dark:text-slate-200">{props.data.name}</p>
       <Organizer organizer={props.data.organizer} />
-      <p className="text-gray-800">Ort: {props.data.location.name}</p>
-      <p className="text-gray-600">{timeAndDate(props.data.startDate)}</p>
-      <div className="text-gray-800">
+      <p className="text-gray-800 dark:text-slate-400">
+        Ort: {props.data.location.name}
+      </p>
+      <p className="text-gray-600 dark:text-slate-100">
+        {timeAndDate(props.data.startDate)}
+      </p>
+      <div className="text-gray-800 dark:text-slate-100">
         {onRight(identity)(props.data.description)}
       </div>
     </div>

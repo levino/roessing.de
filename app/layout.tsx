@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="dark:bg-slate-900">
+        <NavBar />
         <div className="min-h-screen flex flex-col justify-between">
-          <NavBar />
           <div className="flex-grow">{children}</div>
           <Footer />
         </div>

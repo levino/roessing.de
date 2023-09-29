@@ -26,6 +26,8 @@ export const organisations = {
   dorfpflege: {
     '@type': 'Organization',
     name: 'Dorfpflege Rössing e.V.',
+    url: 'https://dorfplege-roessing.de',
+    email: 'dorfpflege.roessing@gmail.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Stettiner Straße 3',
@@ -50,5 +52,9 @@ export const organisations = {
       addressLocality: 'Nordstemmen',
       postalCode: '31171',
     },
+  } as Organization,
+  ortsrat: {
+    '@type': 'Organization',
+    name: 'Ortsrat Rössing',
   } as Organization,
 }

@@ -39,7 +39,7 @@ export const EventPage: React.FC<EventType> = (event) => {
             priority
             src={image}
             alt="Event Preview"
-            className="rounded mb-4 -translate-y-2/4"
+            className="rounded mb-4 -translate-y-2/4 mx-auto"
           />
         ))(image)}
       </div>

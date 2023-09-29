@@ -15,6 +15,9 @@
     "incremental": true,
     "module": "esnext",
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "downlevelIteration": true,
     "plugins": [
       {

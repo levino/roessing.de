@@ -17,11 +17,11 @@ export const Event: React.FC<EventType> = (props) => (
     {onRight((image: StaticImageData) => (
       <div className="w-full rounded-t-lg md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg overflow-hidden">
         <Image
-          className="object-cover h-32 md:h-48"
+          className="object-cover h-32 md:h-48 "
           src={image}
           placeholder="blur"
-          alt="Event Preview"
-          sizes="100vw"
+          alt="Event Teaser Image"
+          sizes="(max-width: 768px) 100vw, 12rem"
         />
       </div>
     ))(props.data.image)}

@@ -56,7 +56,7 @@ export const locations = {
     name: 'Dorfgemeinschaftshaus Rössing',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Kirchstraße 2',
+      streetAddress: 'Kirchstraße 3',
       ...nordstemmen,
     },
   } as Place,

@@ -32,7 +32,7 @@ const EventOverviewPage = async () => {
 
 const StickyButton = () => (
   <a
-    className="button fixed bottom-4 right-4 z-50 p-4 text-white bg-green-700 rounded-full min-w-200 shadow-lg lg:bottom-8 lg:right-8"
+    className="button fixed bottom-4 right-4 z-50 p-4 text-white bg-teal-700 rounded-full min-w-200 shadow-lg lg:bottom-8 lg:right-8"
     href="https://docs.google.com/forms/d/e/1FAIpQLSd7uyj3bMztiZZMhCc2dZR-Zr3sZBrEqIi7ZJSbFTwjbbS4QQ/viewform?usp=sf_link"
     target="_blank"
     rel="noopener noreferrer"

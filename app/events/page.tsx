@@ -10,14 +10,18 @@ const EventOverviewPage = async () => {
           Veranstaltungen in Rössing
         </h1>
 
-        {Object.keys(futureEvents).map((month) => (
+        {Object.keys(futureEvents).map((month, monthIndex) => (
           <div key={month} className="mb-8 flex flex-col">
             <h2 className="text-2xl font-bold mb-4 dark:text-slate-200">
               {month}
             </h2>
             <div className="flex flex-col mx-auto">
               {futureEvents[month].map((event, index) => (
-                <Event key={index} {...event} />
+                <Event
+                  key={index}
+                  {...event}
+                  loadImageEager={monthIndex === 0 && index === 0}
+                />
               ))}
             </div>
           </div>

@@ -78,4 +78,13 @@ export const locations = {
       ...nordstemmen,
     },
   } as Place,
+  ehrenmal: {
+    '@type': 'Place',
+    name: 'Rössinger Ehrenmal',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Karlstraße 2',
+      ...nordstemmen,
+    },
+  } as Place,
 }

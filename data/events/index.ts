@@ -12,6 +12,7 @@ import * as E from 'fp-ts/Either'
 import { groupBy } from 'fp-ts/NonEmptyArray'
 import { PathReporter } from 'io-ts/PathReporter'
 import * as Str from 'fp-ts/string'
+import { cache } from 'react'
 const getStartDate: (event: Event) => Date = flow(
   S.get('data'),
   S.get('startDate')
@@ -78,8 +79,12 @@ const getValidFutureEvents = (now: Date) =>
   getValidEvents().then(removePastEvents(now))
 
 const eventsByMonth = flow(sortEventsByStartDate, groupEventsByMonth)
-export const getFutureEvents = () =>
+
+export const revalidate = 3600
+
+export const getFutureEvents = cache(() =>
   getValidFutureEvents(new Date()).then(eventsByMonth)
+)
 
 export const getAllSlugs = () =>
   getAllEventFilenames().then(A.map(fileNameToSlug))

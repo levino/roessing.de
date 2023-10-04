@@ -8,7 +8,9 @@ import { onRight, timeAndDate } from './tools'
 import { Option } from 'fp-ts/Option'
 import Image, { StaticImageData } from 'next/image'
 
-export const Event: React.FC<EventType> = (props) => (
+export const Event: React.FC<EventType & { loadImageEager: boolean }> = (
+  props
+) => (
   <Link
     className="my-4 flex md:h-48 flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     href={getHref(props)}
@@ -19,6 +21,7 @@ export const Event: React.FC<EventType> = (props) => (
         <Image
           className="object-cover h-32 md:h-48 "
           src={image}
+          loading={props.loadImageEager ? 'eager' : 'lazy'}
           placeholder="blur"
           alt="Event Teaser Image"
           sizes="(max-width: 768px) 100vw, 12rem"

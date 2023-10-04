@@ -9,8 +9,19 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  overrides: [
+    {
+      files: ['*.mdx'],
+      extends: ['plugin:mdx/recommended', 'plugin:react/recommended'],
+    },
+  ],
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
   },
   root: true,
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }

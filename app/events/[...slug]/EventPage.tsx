@@ -4,8 +4,11 @@ import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import * as O from 'fp-ts/Option'
 import { Option } from 'fp-ts/Option'
-import { AddressLink, ExternalLink } from './Components'
-import { onRight, timeAndDate } from './tools'
+import {
+  AddressLink,
+  ExternalLink,
+} from '../../../components/Events/Components'
+import { onRight, timeAndDate } from '../../../components/Events/tools'
 
 const EndDate: React.FC<{ endDate: Option<Date>; className: string }> = ({
   endDate,

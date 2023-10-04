@@ -4,7 +4,7 @@ import { Event as EventType, Organization } from 'data/events/event'
 import * as O from 'fp-ts/Option'
 
 import { constant, identity } from 'fp-ts/function'
-import { onRight, timeAndDate } from './tools'
+import { onRight, timeAndDate } from '../../components/Events/tools'
 import { Option } from 'fp-ts/Option'
 import Image, { StaticImageData } from 'next/image'
 

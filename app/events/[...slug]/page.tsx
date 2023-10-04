@@ -1,4 +1,4 @@
-import { EventPage } from 'components/Events/EventPage'
+import { EventPage } from '@/app/events/[...slug]/EventPage'
 import { Event as EventType } from '@/data/events/event'
 import { getAllSlugs, getEvent } from '../../../data/events'
 import * as A from 'fp-ts/Array'
@@ -10,20 +10,20 @@ import * as S from 'fp-ts-std/Struct'
 import { StaticImageData } from 'next/image'
 import * as E from 'fp-ts/Either'
 import * as O from 'fp-ts/Option'
+import { timeAndDate } from '@/components/Events/tools'
 interface EventPageProps {
   params: { slug: string[] }
 }
 const getTitle = (event: EventType) => `${event.data.name} - rössing.de`
 
-const getDescriptionObject: (event: EventType) => { description?: string } =
-  flow(
-    S.get('data'),
-    S.get('description'),
-    O.match(
-      () => ({}),
-      (description) => ({ description })
-    )
+const getDescription: (event: EventType) => string = flow(
+  S.get('data'),
+  S.get('description'),
+  O.match(
+    () => '',
+    (description) => ` - ${description}`
   )
+)
 
 const getImagesObject: (event: EventType) => { src?: string } = flow(
   S.get('data'),
@@ -45,10 +45,14 @@ export const generateMetadata = async ({
     () => ({}),
     (event: EventType) => ({
       title: getTitle(event),
-      ...getDescriptionObject(event),
+      description: `${timeAndDate(event.data.startDate)}${getDescription(
+        event
+      )}`,
       openGraph: {
         title: getTitle(event),
-        ...getDescriptionObject(event),
+        description: `${timeAndDate(event.data.startDate)}${getDescription(
+          event
+        )}`,
         ...getImagesObject(event),
       },
     })

@@ -1,4 +1,4 @@
-import { Event } from '../../components/Events/Event'
+import { Event } from './Event'
 import { getFutureEvents } from '../../data/events'
 
 const EventOverviewPage = async () => {

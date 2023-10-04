@@ -7,13 +7,10 @@ export const getMonth: (date: Date) => string = (date) =>
   })
 
 export const timeAndDate = (date: Date) =>
-  date.toLocaleString('de-DE', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
+  `${date.toLocaleString('de-DE', {
+    dateStyle: 'long',
+    timeStyle: 'short',
     timeZone: 'Europe/Berlin',
-  })
+  })} Uhr`
 export const onRight = <T, U>(render: (value: T) => U) =>
   O.match(() => null, render)

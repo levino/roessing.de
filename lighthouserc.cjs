@@ -5,7 +5,7 @@ module.exports = {
     },
     collect: {
       url: ['http://localhost:3000', 'http://localhost:3000/events'],
-      startServerCommand: 'yarn start',
+      startServerCommand: 'bun start',
     },
     assert: {
       preset: 'lighthouse:no-pwa',

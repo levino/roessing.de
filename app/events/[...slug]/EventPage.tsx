@@ -85,7 +85,9 @@ const Organizer = ({ organizer }: { organizer: Option<Organization> }) =>
     () => null,
     (organizer: Organization) => (
       <>
-        <h2 className="font-bold text-lg">{organizer.name}</h2>
+        <h2 className="font-bold text-lg text-slate-700 dark:text-slate-300">
+          {organizer.name}
+        </h2>
         {onRight((email: string) => (
           <p className="text-gray-600 dark:text-slate-200">
             E-Mail:{' '}

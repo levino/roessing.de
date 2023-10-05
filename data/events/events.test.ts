@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test } from 'bun:test'
 import { EventData } from './event'
 import { pipe } from 'fp-ts/function'
 import * as E from 'fp-ts/Either'

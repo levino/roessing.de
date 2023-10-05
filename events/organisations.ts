@@ -57,4 +57,8 @@ export const organisations = {
     '@type': 'Organization',
     name: 'Ortsrat Rössing',
   } as Organization,
+  drk: {
+    '@type': 'Organization',
+    name: 'DRK-Blutspendedienst',
+  } as Organization,
 }

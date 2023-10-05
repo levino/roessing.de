@@ -18,6 +18,7 @@
     "paths": {
       "@/*": ["./*"]
     },
+    "types": ["bun-types"],
     "downlevelIteration": true,
     "plugins": [
       {

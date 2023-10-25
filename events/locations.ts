@@ -1,48 +1,12 @@
 import { Place } from 'schema-dts'
-
 const nordstemmen = {
   addressLocality: 'Nordstemmen',
   postalCode: '31171',
+  addressCountry: 'DE',
 }
+
 export const locations = {
-  hofKoenneke: {
-    '@type': 'Place',
-    name: 'Hof Könneke',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Pfarrstr. 6',
-      ...nordstemmen,
-    },
-  } as Place,
-  kleingartenVerein: {
-    '@type': 'Place',
-    name: 'Kleingartenverein Rössing e.V.',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Am Rössingbach',
-      ...nordstemmen,
-      telephone: '+4950693109',
-    },
-  } as Place,
-  kirche: {
-    '@type': 'Place',
-    name: 'St. Peter und Paul Kirche',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Kirchstraße 9',
-      ...nordstemmen,
-    },
-  } as Place,
-  dorfgemeinschaftshausBarnten: {
-    '@type': 'Place',
-    name: 'Dorfgemeinschaftshaus Barnten',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Glückaufstraße 1',
-      ...nordstemmen,
-    },
-  } as Place,
-  streuobstwiese: {
+  streuobstwieseRoessing: {
     '@type': 'Place',
     name: 'Streuobstwiese Rössing',
     address: {
@@ -84,6 +48,15 @@ export const locations = {
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Karlstraße 2',
+      ...nordstemmen,
+    },
+  } as Place,
+  schlosssaal: {
+    '@type': 'Place',
+    name: 'Schlosssaal im Schloss Rössing',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Unter den Eichen 3',
       ...nordstemmen,
     },
   } as Place,

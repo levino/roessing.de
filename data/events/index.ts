@@ -1,5 +1,6 @@
 import { Event, Validation as EventValidation } from 'data/events/event'
 import { flow, pipe, identity } from 'fp-ts/function'
+import { ifElse } from 'fp-ts-std/Function'
 import * as A from 'fp-ts/Array'
 
 import fs from 'fs/promises'
@@ -62,15 +63,12 @@ const sortEventsByStartDate: (events: Event[]) => Event[] = A.sortBy([byDate])
 const removePastEvents = (now: Date): ((events: Event[]) => Event[]) =>
   A.filter((event: Event) => D.Ord.compare(now, event.data.startDate) === -1)
 
-const getFailedValidations = () => getEvents().then(A.filter(E.isLeft))
-
 ;(() =>
-  getFailedValidations().then((failedValidations) => {
-    if (failedValidations.length > 0) {
-      console.log('Some validations failed!')
-      failedValidations.forEach(flow(PathReporter.report, console.log))
-    }
-  }))()
+  getEvents().then((events) =>
+    events.forEach(
+      ifElse(flow(PathReporter.report, console.log))(() => void 0)(E.isLeft)
+    )
+  ))()
 
 const getValidEvents: () => Promise<Event[]> = () =>
   getEvents().then(flow(A.partitionMap(identity), S.get('right')))

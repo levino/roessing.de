@@ -1,6 +1,8 @@
 import { Event } from './Event'
 import { getFutureEvents } from '../../data/events'
 
+export const revalidate = 3600
+
 const EventOverviewPage = async () => {
   const futureEvents = await getFutureEvents()
   return (

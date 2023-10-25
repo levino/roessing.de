@@ -1,4 +1,5 @@
-import { Organization as DTSOrganization } from 'schema-dts'
+import { Organization as DTSOrganization, Person } from 'schema-dts'
+
 type Organization = Exclude<DTSOrganization, string>
 export const organisations = {
   vsv: {
@@ -61,4 +62,9 @@ export const organisations = {
     '@type': 'Organization',
     name: 'DRK-Blutspendedienst',
   } as Organization,
+  titaVonRoessing: {
+    '@type': 'Person',
+    name: 'Tita von Rössing',
+    email: 'tita@vonroessing.com',
+  } as Person,
 }

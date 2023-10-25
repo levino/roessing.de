@@ -1,10 +1,7 @@
-import { Event, Validation as EventValidation } from 'data/events/event'
+import { Event } from 'data/events/event'
 import { flow, pipe, identity } from 'fp-ts/function'
 import { ifElse } from 'fp-ts-std/Function'
 import * as A from 'fp-ts/Array'
-
-import fs from 'fs/promises'
-import path from 'path'
 import * as S from 'fp-ts-std/Struct'
 import { getMonth } from '../../components/Events/tools'
 import * as D from 'fp-ts/Date'
@@ -14,46 +11,30 @@ import { groupBy } from 'fp-ts/NonEmptyArray'
 import { PathReporter } from 'io-ts/PathReporter'
 import * as Str from 'fp-ts/string'
 import { cache } from 'react'
+
 const getStartDate: (event: Event) => Date = flow(
   S.get('data'),
   S.get('startDate')
 )
 
-type EventFileData = {
-  slug?: string
-  file: object
-}
-
-const getAllEventFilenames = () =>
-  fs.readdir(path.join('events')).then(A.filter(Str.endsWith('.mdx')))
-
-const getAllEventFiles = () =>
-  getAllEventFilenames()
-    .then(
-      A.map(async (filename) => ({
-        file: await import(`/events/${filename}`),
-        slug: fileNameToSlug(filename),
-      }))
-    )
-    .then(
-      Promise.all.bind(Promise) as (
-        eventFileData: Promise<EventFileData>[]
-      ) => Promise<EventFileData[]>
-    )
-
 const fileNameToSlug = flow(
-  Str.replace(/\.[^/.]+$/, ''),
-  (withoutFileExtension: string) => withoutFileExtension.replaceAll('-', '/')
+  Str.replace(/^\.\//, ''),
+  (withoutFileExtension: string) => withoutFileExtension.replaceAll('-', '/'),
+  Str.replace(/\.mdx$/, '')
 )
 
-export const getEvent = ({ file, slug }: EventFileData) =>
+const eventsContext = require.context('../../events', false, /\.mdx$/)
+
+export const importEvent = (filename: string) =>
   Event.decode({
-    ...file,
-    slug,
+    ...eventsContext(filename),
+    slug: fileNameToSlug(filename),
   })
 
-export const getEvents: () => Promise<EventValidation[]> = () =>
-  getAllEventFiles().then(A.map(getEvent))
+const events = eventsContext
+  .keys()
+  .filter((key) => !key.startsWith('events/'))
+  .map(importEvent)
 
 const groupEventsByMonth = groupBy<Event>(flow(getStartDate, getMonth))
 const byDate = pipe(D.Ord, contramap<Date, Event>(getStartDate))
@@ -63,26 +44,27 @@ const sortEventsByStartDate: (events: Event[]) => Event[] = A.sortBy([byDate])
 const removePastEvents = (now: Date): ((events: Event[]) => Event[]) =>
   A.filter((event: Event) => D.Ord.compare(now, event.data.startDate) === -1)
 
-;(() =>
-  getEvents().then((events) =>
-    events.forEach(
-      ifElse(flow(PathReporter.report, console.log))(() => void 0)(E.isLeft)
-    )
-  ))()
+events.forEach(
+  ifElse(flow(PathReporter.report, console.log))(() => void 0)(E.isLeft)
+)
 
-const getValidEvents: () => Promise<Event[]> = () =>
-  getEvents().then(flow(A.partitionMap(identity), S.get('right')))
+const validEvents: Event[] = pipe(
+  events,
+  A.partitionMap(identity),
+  S.get('right')
+)
 
-const getValidFutureEvents = (now: Date) =>
-  getValidEvents().then(removePastEvents(now))
+const getValidFutureEvents = (now: Date) => removePastEvents(now)(validEvents)
 
 const eventsByMonth = flow(sortEventsByStartDate, groupEventsByMonth)
 
 export const revalidate = 3600
 
 export const getFutureEvents = cache(() =>
-  getValidFutureEvents(new Date()).then(eventsByMonth)
+  pipe(new Date(), getValidFutureEvents, eventsByMonth)
 )
 
-export const getAllSlugs = () =>
-  getAllEventFilenames().then(A.map(fileNameToSlug))
+export const allSlugs = eventsContext
+  .keys()
+  .filter((key) => !key.startsWith('events/'))
+  .map(fileNameToSlug)

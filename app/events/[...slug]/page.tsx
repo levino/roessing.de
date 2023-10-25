@@ -1,11 +1,11 @@
 import { EventPage } from '@/app/events/[...slug]/EventPage'
 import { Event as EventType } from '@/data/events/event'
-import { getAllSlugs, getEvent } from '../../../data/events'
+import { allSlugs, importEvent } from '../../../data/events'
 import * as A from 'fp-ts/Array'
 import * as Str from 'fp-ts/string'
 import { PathReporter } from 'io-ts/PathReporter'
 import { isLeft } from 'fp-ts/Either'
-import { flow } from 'fp-ts/function'
+import { flow, pipe } from 'fp-ts/function'
 import * as S from 'fp-ts-std/Struct'
 import { StaticImageData } from 'next/image'
 import * as E from 'fp-ts/Either'
@@ -37,10 +37,7 @@ const getImagesObject: (event: EventType) => { src?: string } = flow(
 export const generateMetadata = async ({
   params: { slug },
 }: EventPageProps) => {
-  const postValidation = getEvent({
-    file: await import(`events/${slug.join('-')}.mdx`),
-    slug: slug.join('/'),
-  })
+  const postValidation = importEvent(`events/${slug.join('-')}.mdx`)
   return E.match(
     () => ({}),
     (event: EventType) => ({
@@ -59,15 +56,14 @@ export const generateMetadata = async ({
   )(postValidation)
 }
 export const generateStaticParams = () =>
-  getAllSlugs()
-    .then(A.map(Str.split('/')))
-    .then(A.map((slug) => ({ slug })))
+  pipe(
+    allSlugs,
+    A.map(Str.split('/')),
+    A.map((slug) => ({ slug }))
+  )
 
 export default async function Event({ params: { slug } }: EventPageProps) {
-  const postValidation = getEvent({
-    file: await import(`events/${slug.join('-')}.mdx`),
-    slug: slug.join('/'),
-  })
+  const postValidation = importEvent(`events/${slug.join('-')}.mdx`)
   if (isLeft(postValidation)) {
     return (
       <div>

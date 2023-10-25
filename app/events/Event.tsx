@@ -37,7 +37,7 @@ export const Event: React.FC<EventType & { loadImageEager: boolean }> = (
       <p className="text-gray-600 dark:text-slate-100">
         {timeAndDate(props.data.startDate)}
       </p>
-      <div className="text-gray-800 dark:text-slate-100">
+      <div className="text-gray-800 dark:text-slate-100 line-clamp-3">
         {onRight(identity)(props.data.description)}
       </div>
     </div>

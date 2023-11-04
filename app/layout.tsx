@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body className="dark:bg-slate-900">
         <NavBar />
         <div className="min-h-screen flex flex-col justify-between">

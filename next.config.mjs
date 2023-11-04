@@ -7,10 +7,6 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
-  i18n: {
-    locales: ["de"],
-    defaultLocale: "de",
-  },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     remotePatterns: [

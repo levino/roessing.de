@@ -135,3 +135,5 @@ build
 out/
 .vercel
 .lighthouseci
+
+.unlighthouse/

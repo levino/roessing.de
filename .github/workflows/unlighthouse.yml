@@ -1,0 +1,18 @@
+name: performance
+
+on:
+  deployment_status:
+
+jobs:
+  ping-sitemap:
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - name: Log deployment url
+        run: echo ${{github.event.deployment_status.target_url}}
+      - name: run unlighthouse
+        run: |
+          bun unlighthouse-ci --site ${{github.event.deployment_status.target_url}}

@@ -1,19 +1,18 @@
 import { generateStaticParams } from './events/[...slug]/page'
-
+const BASE_URL = 'https://www.xn--rssing-wxa.de'
 const allEvents = generateStaticParams().map(({ slug }) => ({
-  url: `https://www.rössing.de/events/${slug.join('/')}`,
+  url: `${BASE_URL}/events/${slug.join('/')}`,
 }))
 
-export default async () =>
-  Promise.all([
-    {
-      url: 'https://www.rössing.de',
-    },
-    {
-      url: 'https://www.rössing.de/events',
-    },
-    {
-      url: 'https://www.rössing.de/imprint',
-    },
-    ...allEvents,
-  ])
+export default () => [
+  {
+    url: `${BASE_URL}`,
+  },
+  {
+    url: `${BASE_URL}/events`,
+  },
+  {
+    url: `${BASE_URL}/imprint`,
+  },
+  ...allEvents,
+]

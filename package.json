@@ -51,7 +51,8 @@
     "start": "next start",
     "dev": "next dev",
     "unlighthouse": "unlighthouse-ci --site http://localhost:3000",
-    "performance": "start-server-and-test 'bun start' 3000 'bun run unlighthouse'"
+    "performance:check": "start-server-and-test 'bun start' 3000 'bun run unlighthouse'",
+    "performance:build": "start-server-and-test 'bun start' 3000 'bun run unlighthouse --build-static'"
   },
   "packageManager": "yarn@3.6.3",
   "dependencies": {

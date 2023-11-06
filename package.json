@@ -51,7 +51,7 @@
     "start": "next start",
     "dev": "next dev",
     "unlighthouse": "unlighthouse-ci --site http://localhost:3000",
-    "performance": "start-server-and-test start http://localhost:3000 unlighthouse"
+    "performance": "start-server-and-test 'bun start' 3000 'bun run unlighthouse'"
   },
   "packageManager": "yarn@3.6.3",
   "dependencies": {
@@ -66,7 +66,6 @@
     "eslint-plugin-react": "^7.33.2",
     "fp-ts": "^2.16.1",
     "fp-ts-std": "^0.17.1",
-    "glob": "^10.3.10",
     "gray-matter": "^4.0.3",
     "io-ts": "^2.2.20",
     "io-ts-types": "^0.5.19",

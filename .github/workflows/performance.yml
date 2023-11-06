@@ -1,4 +1,4 @@
-name: Vercel Preview Deployment
+name: Performance Report Deployment
 env:
   VERCEL_PROJECT_ID: ${{ vars.VERCEL_UNLIGHTHOUSE_PROJECT_ID }}
 

@@ -14,5 +14,8 @@ export default () => [
   {
     url: `${BASE_URL}/imprint`,
   },
+  {
+    url: `${BASE_URL}/about`,
+  },
   ...allEvents,
 ]

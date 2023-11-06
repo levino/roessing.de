@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: update sitemap
         run: |
-          curl -f -X GET "http://www.google.com/ping?sitemap=https%3A%2F%2Fwww.r%C3%B6ssing.de%2Fsitemap.xml"
+          curl -f -X GET "http://www.google.com/ping?sitemap=https%3A%2F%2Fwww.xn--rssing-wxa.de%2Fsitemap.xml"

@@ -46,7 +46,6 @@ const LandingPage = () => (
         linkUrl="https://www.ff-roessing.de"
       >
         <p className="dark:text-slate-200">
-          {' '}
           Natürlich hat Rössing auch eine freiwillige Feuerwehr!
         </p>
       </Project>

@@ -35,7 +35,7 @@ export const Description: React.FC<{
   )
 
 export const Link: React.FC<LinkProps> = (props) => (
-  <NextLink {...props} className="text-blue-500 dark:text-blue-400" />
+  <NextLink {...props} className="text-blue-800 dark:text-blue-400" />
 )
 export const ExternalLink: React.FC<
   React.AnchorHTMLAttributes<HTMLAnchorElement>
@@ -45,7 +45,7 @@ export const ExternalLink: React.FC<
     target="_blank"
     className={cn(
       props.className,
-      'text-blue-500 hover:underline dark:text-blue-400'
+      'text-blue-800 hover:underline dark:text-blue-400'
     )}
     {...props}
   />

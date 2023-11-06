@@ -60,7 +60,7 @@ export const EventPage: React.FC<EventType> = (event) => {
               Ort:{' '}
               <AddressLink
                 address={location.address}
-                className="text-blue-500 hover:underline"
+                className="text-blue-800 hover:underline"
               />
             </p>
             <div className="prose dark:prose-invert">

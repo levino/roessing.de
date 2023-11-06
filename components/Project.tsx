@@ -17,9 +17,9 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = ({
   linkUrl,
 }) => (
   <Card href={linkUrl} imgSrc={imageSource} imgAlt="event image">
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       {title}
-    </h5>
+    </h2>
     <p className="font-normal text-gray-700 dark:text-gray-400">{subtitle}</p>
     <span className="mt-2 text-slate-500">{children}</span>
   </Card>

@@ -7,4 +7,7 @@ export default {
       seo: 90,
     },
   },
+  puppeteerOptions: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
 }

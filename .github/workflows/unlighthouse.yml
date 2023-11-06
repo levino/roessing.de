@@ -4,7 +4,7 @@ on:
   deployment_status:
 
 jobs:
-  ping-sitemap:
+  check:
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
     steps:

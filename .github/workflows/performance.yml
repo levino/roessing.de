@@ -1,6 +1,7 @@
 name: Performance Report Deployment
 env:
-  VERCEL_PROJECT_ID: ${{ vars.VERCEL_UNLIGHTHOUSE_PROJECT_ID }}
+  VERCEL_PROJECT_ID: ${{ vars.VERCEL_PERFORMANCE_PROJECT_ID }}
+  VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
 
 on:
   push:

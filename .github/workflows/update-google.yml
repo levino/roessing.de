@@ -1,0 +1,15 @@
+name: Ping Sitemap to Google
+
+on:
+  deployment_status:
+
+jobs:
+  ping-sitemap:
+    runs-on: ubuntu-latest
+    if:
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'production'
+    steps:
+      - name: Ping Google about Sitemap Update
+        run: |
+          curl -X GET "http://www.google.com/ping?sitemap=https://www.rössing.de/sitemap.xml"

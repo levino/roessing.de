@@ -41,7 +41,7 @@
     "storybook": "^7.0.23",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.1.6",
-    "vercel": "^31.3.1"
+    "vercel": "^32.5.0"
   },
   "scripts": {
     "build": "next build",

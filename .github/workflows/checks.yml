@@ -55,4 +55,4 @@ jobs:
         with:
           name: prod-build
           path: .next
-      - run: bun performance
+      - run: bun performance:check

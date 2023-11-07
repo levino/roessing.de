@@ -6,6 +6,7 @@ import withMdx from '@next/mdx'
 const nextConfig = {
   experimental: {
     mdxRs: true,
+    webpackBuildWorker: true,
   },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {

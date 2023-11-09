@@ -1,4 +1,7 @@
 export default {
+  chrome: {
+    useSystem: false,
+  },
   ci: {
     budget: {
       performance: 50,

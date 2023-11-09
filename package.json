@@ -52,7 +52,9 @@
     "dev": "next dev",
     "unlighthouse": "unlighthouse-ci --site http://localhost:3000",
     "performance:check": "start-server-and-test 'bun start' 3000 'bun run unlighthouse'",
-    "performance:build": "start-server-and-test 'bun start' 3000 'bun run unlighthouse --build-static'"
+    "performance:build": "start-server-and-test 'bun start' 3000 'bun run unlighthouse --build-static'",
+    "postinstall": "bun x @puppeteer/browsers install chrome@stable --path $HOME/.cache/puppeteer",
+    "postinstall:comment": "https://github.com/oven-sh/bun/issues/4705#issuecomment-1712545662"
   },
   "packageManager": "yarn@3.6.3",
   "dependencies": {
@@ -83,5 +85,8 @@
     "sharp": "0.33.0-alpha.10",
     "unlighthouse": "^0.10.0",
     "usehooks-ts": "^2.9.1"
-  }
+  },
+  "trustedDependencies": [
+    "puppeteer"
+  ]
 }

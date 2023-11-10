@@ -22,5 +22,8 @@ den Rössinger Vereinen, mit vielen köstlichen Speisen und Getränken. Auch fü
 Kinder wird es Unterhaltung geben. Wir freuen uns auf Ihren Besuch!
 ```
 
-Please take attached image and turn it into a new MDX-file for the described
-event.
+I give you this as an example for how I want event data to be structured. I
+attach an image which contains information about a different event. Please use
+above template to create a new mdx file for the event described in the image.
+Please do not explain, just provide the content of the new mdx file for the
+images event with a proper filename.

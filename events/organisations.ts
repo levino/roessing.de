@@ -67,4 +67,9 @@ export const organisations = {
     name: 'Tita von Rössing',
     email: 'tita@vonroessing.com',
   } as Person,
+  landfrauen: {
+    '@type': 'Organization',
+    name: 'Landfrauen Rössing-Barnten',
+    email: 'hesse.roessing@t-online.de',
+  } as Organization,
 }

@@ -14,7 +14,7 @@ export const locations = {
       streetAddress: 'Am Rössingbach',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   dorfgemeinschaftshausRoessing: {
     '@type': 'Place',
     name: 'Dorfgemeinschaftshaus Rössing',
@@ -23,7 +23,17 @@ export const locations = {
       streetAddress: 'Kirchstraße 3',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
+  stubenrauchHalle: {
+    '@type': 'Place',
+
+    name: 'Alfred Stubenrauch Halle',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Loderwinkel 2A',
+      ...nordstemmen,
+    },
+  } satisfies Place,
   hofKoenneke: {
     '@type': 'Place',
     name: 'Hof Könneke',
@@ -32,7 +42,7 @@ export const locations = {
       streetAddress: 'Pfarrstr. 6',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   kleingartenVerein: {
     '@type': 'Place',
     name: 'Kleingartenverein Rössing e.V.',
@@ -42,7 +52,7 @@ export const locations = {
       ...nordstemmen,
       telephone: '+4950693109',
     },
-  } as Place,
+  } satisfies Place,
   kirche: {
     '@type': 'Place',
     name: 'St. Peter und Paul Kirche',
@@ -51,7 +61,7 @@ export const locations = {
       streetAddress: 'Kirchstraße 9',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   dorfgemeinschaftshausBarnten: {
     '@type': 'Place',
     name: 'Dorfgemeinschaftshaus Barnten',
@@ -60,7 +70,7 @@ export const locations = {
       streetAddress: 'Glückaufstraße 1',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   langeWanne: {
     '@type': 'Place',
     name: 'Lange Wanne',
@@ -69,7 +79,7 @@ export const locations = {
       streetAddress: 'Lange Wanne',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   hofBaumgarten: {
     '@type': 'Place',
     name: 'Hof Baumgarten',
@@ -78,7 +88,7 @@ export const locations = {
       streetAddress: 'Lange Straße 4A',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   ehrenmal: {
     '@type': 'Place',
     name: 'Rössinger Ehrenmal',
@@ -87,7 +97,7 @@ export const locations = {
       streetAddress: 'Karlstraße 2',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
   schlosssaal: {
     '@type': 'Place',
     name: 'Schlosssaal im Schloss Rössing',
@@ -96,5 +106,5 @@ export const locations = {
       streetAddress: 'Unter den Eichen 3',
       ...nordstemmen,
     },
-  } as Place,
+  } satisfies Place,
 }

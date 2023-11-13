@@ -3,7 +3,7 @@ import { Card } from './Card'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 interface ProjectProps {
-  imageSource: StaticImport
+  imageSource?: StaticImport
   title: string
   subtitle: string
   linkUrl: string

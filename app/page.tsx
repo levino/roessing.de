@@ -1,7 +1,6 @@
 import React from 'react'
 import { Project } from 'components/Project'
 import { Jumbotron } from 'components/Jumbotron'
-import dorfpflegeImage from '../public/images/dorfpflege.jpg'
 import ffwImage from '../public/images/ffw.jpg'
 import { Metadata } from 'next'
 
@@ -27,7 +26,6 @@ const LandingPage = () => (
 
     <div className="container max-w-7xl px-4 mx-auto gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-32">
       <Project
-        imageSource={dorfpflegeImage}
         title="Die Dorfpflege"
         subtitle="Rössings Natur und Grünflächen in Schuss halten"
         linkUrl="https://www.dorfpflege-roessing.de"

@@ -1,0 +1,7 @@
+name: 'Dorfgemeinschaftshaus Barnten'
+address:
+  '@type': 'PostalAddress'
+  streetAddress: 'Glückaufstraße 1'
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

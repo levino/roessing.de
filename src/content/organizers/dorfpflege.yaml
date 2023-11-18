@@ -1,0 +1,9 @@
+name: Dorfpflege Rössing e.V.
+url: https://dorfplege-roessing.de
+email: dorfpflege.roessing@gmail.com
+address:
+  '@type': PostalAddress
+  streetAddress: Stettiner Straße 3
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Organization

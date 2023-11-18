@@ -1,0 +1,9 @@
+name: CDU Rössing
+email: udietrich-roessing@t-online.de
+telephone: '+49506934413'
+address:
+  '@type': PostalAddress
+  streetAddress: Maschstraße 6
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Organization

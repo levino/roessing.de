@@ -1,0 +1,7 @@
+name: 'Hof Könneke'
+address:
+  '@type': 'PostalAddress'
+  streetAddress: 'Pfarrstr. 6'
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

@@ -1,0 +1,8 @@
+name: Kleingartenverein Rössing e.V.
+address:
+  '@type': PostalAddress
+  streetAddress: Am Rössingbach
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+telephone: '+4950693109'
+'@type': Organization

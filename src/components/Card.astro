@@ -1,0 +1,27 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+interface Props {
+  imgSrc: ImageMetadata | undefined
+  imgAlt: string
+  href: string
+}
+
+const { imgSrc, imgAlt, href } = Astro.props
+---
+
+<a
+  href={href}
+  rel="noopener noreferrer"
+  target="_blank"
+  class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+  {
+    imgSrc ? (
+      <Image class="rounded-t-lg" src={imgSrc} alt={imgAlt} sizes="100vw" />
+    ) : null
+  }
+  <div class="flex h-full flex-col justify-center gap-4 p-6">
+    <slot />
+  </div>
+</a>

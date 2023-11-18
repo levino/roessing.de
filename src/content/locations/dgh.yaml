@@ -1,0 +1,7 @@
+name: Dorfgemeinschaftshaus Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Kirchstraße 3
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

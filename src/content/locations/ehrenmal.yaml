@@ -1,0 +1,7 @@
+name: Rössinger Ehrenmal
+address:
+  '@type': PostalAddress
+  streetAddress: Karlstraße 2
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

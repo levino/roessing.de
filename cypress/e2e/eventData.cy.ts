@@ -8,6 +8,7 @@ describe('template spec', () => {
       expect(jsonData).to.have.property('name').and.to.be.a('string')
       expect(jsonData.location.name).to.equal('Dorfgemeinschaftshaus Rössing')
       expect(jsonData.organizer.name).to.equal('Dorfpflege Rössing e.V.')
+      expect(jsonData.image).to.be.a('string')
     })
   })
 })

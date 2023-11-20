@@ -4,6 +4,7 @@ import { getCollection, getEntry } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
 import Event from '@/components/Event.astro'
 import type { Event as EventType, FullEvent } from '@/types'
+import { getImage } from 'astro:assets'
 export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getCollection('events')
   return events.map((entry) => ({
@@ -40,6 +41,9 @@ const googleStructuredEventData = JSON.stringify({
   ...event.data,
   ...(event.data.organizer ? { organizer: event.data.organizer.data } : {}),
   ...(event.data.location ? { location: event.data.location.data } : {}),
+  ...(entry.data.image
+    ? { image: (await getImage({ src: event.data.image?.src || '' })).src }
+    : {}),
 })
 ---
 

@@ -1,0 +1,7 @@
+name: 'St. Peter und Paul Kirche'
+address:
+  '@type': 'PostalAddress'
+  streetAddress: 'Kirchstraße 9'
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

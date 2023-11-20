@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+import heroImage from './hero.jpeg'
+---
+
+<section class="flex relative h-[50vh] align-middle">
+  <div class="absolute overflow-hidden h-[50vh] h-full w-full -z-10">
+    <Image
+      alt="Blumenwiese"
+      src={heroImage}
+      quality={100}
+      sizes="100vw"
+      style={{
+        objectFit: 'cover',
+      }}
+      class="brightness-50"
+    />
+  </div>
+  <slot />
+</section>

@@ -1,0 +1,7 @@
+'@type': Place
+name: Lange Wanne
+address:
+  '@type': PostalAddress
+  streetAddress: Lange Wanne
+  addressLocality: Nordstemmen
+  postalCode: '31171'

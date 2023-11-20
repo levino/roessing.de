@@ -1,0 +1,40 @@
+---
+import Footer from '@/components/Footer.astro'
+import NavBar from '@/components/NavBar.astro'
+
+interface Props {
+  title: string
+  description: string
+  frontmatter?: {
+    title: string
+    description: string
+  }
+}
+const title = Astro.props.title || Astro.props.frontmatter?.title
+const description =
+  Astro.props.description || Astro.props.frontmatter?.description
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="dark:bg-slate-900">
+    <div class="min-h-screen flex flex-col">
+      <NavBar />
+      <div class="flex flex-col flex-grow">
+        <slot />
+        <div class="mt-auto">
+          <Footer />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

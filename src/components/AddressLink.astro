@@ -1,0 +1,23 @@
+---
+import type { Address } from '@/schema'
+const addressToString = (address: Address) =>
+  `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
+
+interface Props {
+  address: Address
+  className?: string
+}
+
+const { address, className } = Astro.props
+---
+
+<a
+  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    addressToString(address),
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={className}
+>
+  {addressToString(address)}
+</a>

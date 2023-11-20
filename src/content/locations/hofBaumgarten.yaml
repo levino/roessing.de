@@ -1,0 +1,7 @@
+'@type': Place
+name: Hof Baumgarten
+address:
+  '@type': PostalAddress
+  streetAddress: Lange Straße 4A
+  addressLocality: Nordstemmen
+  postalCode: '31171'

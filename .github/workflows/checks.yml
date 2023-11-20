@@ -18,8 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v1
-      - run: bun install
-      - run: bun test:e2e
+      - uses: cypress-io/github-action@v6
+        with:
+          build: bun run build
+          start: bun preview --host 127.0.0.1
+          install-command: bun i
   lint:
     runs-on: ubuntu-latest
     steps:

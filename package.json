@@ -59,6 +59,7 @@
   },
   "trustedDependencies": [
     "puppeteer",
-    "sharp"
+    "sharp",
+    "cypress"
   ]
 }

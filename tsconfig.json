@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "verbatimModuleSyntax": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
@@ -11,6 +11,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "jsxImportSource": "react"
   }
 }

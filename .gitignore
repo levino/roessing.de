@@ -22,3 +22,7 @@ pnpm-debug.log*
 .unlighthouse
 cypress/screenshots
 .turbo
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

@@ -1,6 +1,6 @@
 ---
 import Footer from '@/components/Footer.astro'
-import NavBar from '@/components/NavBar.astro'
+import { NavBar } from '@/components/NavBar.tsx'
 
 interface Props {
   title: string
@@ -28,7 +28,7 @@ const description =
   </head>
   <body class="dark:bg-slate-900">
     <div class="min-h-screen flex flex-col">
-      <NavBar />
+      <NavBar client:idle />
       <div class="flex flex-col flex-grow">
         <slot />
         <div class="mt-auto">

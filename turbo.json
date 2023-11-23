@@ -2,10 +2,12 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["lint", "prettier", "check"]
+      "outputs": ["dist/**"],
+      "dependsOn": ["check"]
     },
-    "lint": {},
-    "prettier": {},
+    "check": {
+      "outputs": [".astro/types.d.ts"]
+    },
     "e2e": {
       "dependsOn": ["build"]
     },
@@ -13,6 +15,11 @@
       "dependsOn": ["build"]
     },
     "performance:check": {
+      "outputs": [".unlighthouse/**"],
+      "dependsOn": ["build"]
+    },
+    "performance:build": {
+      "outputs": [".unlighthouse/**"],
       "dependsOn": ["build"]
     }
   }

@@ -1,7 +1,0 @@
-{
-  "semi": false,
-  "singleQuote": true,
-  "proseWrap": "always",
-  "plugins": ["prettier-plugin-astro"],
-  "trailingComma": "all"
-}

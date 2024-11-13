@@ -35,19 +35,25 @@ const event = {
   },
 } as FullEvent
 
+const imageUrl= entry.data.image
+    ? (await getImage({ src: event.data.image?.src || '' })).src
+    : undefined
+
+const ogImage = entry.data.image
+    ? (await getImage({ src: event.data.image?.src || '', width: 1200 }))
+    : undefined
+
 const googleStructuredEventData = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Event',
   ...event.data,
   ...(event.data.organizer ? { organizer: event.data.organizer.data } : {}),
   ...(event.data.location ? { location: event.data.location.data } : {}),
-  ...(entry.data.image
-    ? { image: (await getImage({ src: event.data.image?.src || '' })).src }
-    : {}),
+  ...(imageUrl ? { image: imageUrl } : {}),
 })
 ---
 
-<Layout title={event?.data.name} description={event?.data.description}>
+<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src}>
   <Event event={event} />
 </Layout>
 

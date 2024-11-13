@@ -5,8 +5,10 @@ export const getMonth: (date: Date) => string = (date) =>
   })
 
 export const timeAndDate = (date: Date) =>
-  `${date.toLocaleString('de-DE', {
-    dateStyle: 'long',
-    timeStyle: 'short',
-    timeZone: 'Europe/Berlin',
-  })} Uhr`
+  `${
+    date.toLocaleString('de-DE', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+      timeZone: 'Europe/Berlin',
+    })
+  } Uhr`

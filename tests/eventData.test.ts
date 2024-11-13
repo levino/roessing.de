@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('Google Event Data', async ({ page }) => {
   await page.goto('http://127.0.0.1:4321/events/2023-12-02-weihnachtsmarkt')

@@ -65,4 +65,5 @@ jobs:
         with:
           cache: npm
       - run: npm i
+      - run: deno task build
       - run: deno task performance:check

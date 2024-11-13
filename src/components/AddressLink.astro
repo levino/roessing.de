@@ -5,10 +5,11 @@ const addressToString = (address: Address) =>
 
 interface Props {
   address: Address
-  className?: string
+  className?: string,
+  name?: string
 }
 
-const { address, className } = Astro.props
+const { address, className, name } = Astro.props
 ---
 
 <a
@@ -19,5 +20,5 @@ const { address, className } = Astro.props
   rel="noopener noreferrer"
   class={className}
 >
-  {addressToString(address)}
+  {name ? `${name}, ` : ''}{addressToString(address)}
 </a>

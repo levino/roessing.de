@@ -1,8 +1,8 @@
 import {
   defineCollection,
-  z,
   reference,
   type SchemaContext,
+  z,
 } from 'astro:content'
 
 export const addressSchema = z.object({

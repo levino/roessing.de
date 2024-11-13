@@ -1,8 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
+import process from 'node:process'
 
 export default defineConfig({
   webServer: {
-    command: 'pnpm preview',
+    command: 'npm run preview',
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: !process.env.CI,
   },

@@ -50,6 +50,7 @@ const { Content } = await event.render()
           <p class="text-gray-600 mb-2 dark:text-slate-300">
             Ort:{' '}
             <AddressLink
+              name={location.data.name}
               address={location.data.address}
               className="text-blue-800 dark:text-blue-400 hover:underline"
             />

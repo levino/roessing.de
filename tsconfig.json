@@ -3,15 +3,10 @@
   "compilerOptions": {
     "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    },
-    "jsxImportSource": "react"
-  }
+    }
+  },
+  "exclude": ["dist", "node_modules", "public"]
 }

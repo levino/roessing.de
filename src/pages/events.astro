@@ -28,12 +28,6 @@ const futureEvents = await getCollection(
   'events',
   ({ data }) => data.startDate > new Date(),
 )
-  .then((events) => {
-    if (events.length === 0) {
-      throw new Error('No events found')
-    }
-    return events
-  })
   .then(
     (events) =>
       events.map(async (event) => ({

@@ -4,10 +4,10 @@ startDate: 2024-11-19T19:00:00+01:00
 location: dgh
 organizer: buergerstiftung
 description:
-  19. November, 19 Uhr, Dorfgemeinschafthaus - Arbeitstreffen der Bürgerstiftung für die Vorbereitung der Teilnahme am Wettbewerb "Unser Dorf hat Zukunft".
+  19. November, 19 Uhr, Dorfgemeinschaftshaus - Arbeitstreffen der Bürgerstiftung für die Vorbereitung der Teilnahme am Wettbewerb "Unser Dorf hat Zukunft".
 image:
   src: ./images/udhz-arbeitstreffen.webp
-  alt: Das Rössinger Ehrenmal
+  alt: Mood picture - Menschen bei der Arbeit
 ---
 
 Die Bürgerstiftung Rössing lädt alle interessierten Bürgerinnen und Bürger von

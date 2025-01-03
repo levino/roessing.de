@@ -36,7 +36,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  lint: 
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

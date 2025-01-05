@@ -1,0 +1,7 @@
+name: Alfred-Stubenrauch-Halle
+address:
+  '@type': PostalAddress
+  streetAddress: Loderwinkel 2A
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

@@ -1,0 +1,7 @@
+name: Vereinshaus NKV
+'@type': Place
+address:
+  '@type': PostalAddress
+  streetAddress: Rittergut 1
+  addressLocality: Nordstemmen
+  postalCode: '31171'

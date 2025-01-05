@@ -1,0 +1,8 @@
+name: Niedersächsische Kameradschaftsvereinigung e.V.
+'@type': Organization
+address:
+  '@type': PostalAddress
+  streetAddress: Loderwinkel 13b
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+  contactPerson: Roland Schlichting

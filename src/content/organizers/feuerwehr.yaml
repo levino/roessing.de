@@ -1,0 +1,7 @@
+name: Freiwillige Feuerwehr Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Rathausstr. 3
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Organization

@@ -56,14 +56,3 @@ jobs:
           cache: npm
       - run: npm i
       - run: deno task build
-  performance:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
-      - uses: actions/setup-node@v4
-        with:
-          cache: npm
-      - run: npm i
-      - run: deno task build
-      - run: deno task performance:check

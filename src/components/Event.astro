@@ -1,20 +1,20 @@
 ---
-import { timeAndDate } from '@/tools/events'
-import type { FullEvent } from '@/types'
-import { Image } from 'astro:assets'
-import AddressLink from './AddressLink.astro'
+import { timeAndDate } from "@/tools/events";
+import type { FullEvent } from "@/types";
+import { Image } from "astro:assets";
+import AddressLink from "./AddressLink.astro";
 
 interface Props {
-  event: FullEvent
+  event: FullEvent;
 }
 const {
   event: {
     data: { name, startDate, endDate, image, location, organizer },
   },
   event,
-} = Astro.props
+} = Astro.props;
 
-const { Content } = await event.render()
+const { Content } = await event.render();
 ---
 
 <div
@@ -33,7 +33,7 @@ const { Content } = await event.render()
 <div class="flex flex-col mb-4 container">
   <div class="w-full md:w-1/2 lg:w-2/3 pl-4 mx-auto">
     <div class="pb-2">
-      <h1 class="font-bold text-2xl mb-2 dark:text-slate-100">
+      <h1 class="font-bold text-4xl mb-2 dark:text-slate-100">
         {name}
       </h1>
       <p class="text-gray-600 dark:text-slate-200">
@@ -48,7 +48,7 @@ const { Content } = await event.render()
       {
         location?.data.address && (
           <p class="text-gray-600 mb-2 dark:text-slate-300">
-            Ort:{' '}
+            Ort:{" "}
             <AddressLink
               name={location.data.name}
               address={location.data.address}
@@ -61,35 +61,31 @@ const { Content } = await event.render()
         <Content />
       </div>
     </div>
-    <>
-      {
-        organizer && (
+    {
+      organizer && (
+        <div class="pt-4">
+          <div class="text-slate-400 dark:text-slate-400 pb-2 font-bold text-md">Veranstalter:in</div>
           <h2 class="font-bold text-lg text-slate-700 dark:text-slate-300">
             {organizer.data.name}
           </h2>
-        )
-      }
-      {
-        organizer?.data.email && (
-          <p class="text-gray-600 dark:text-slate-200">
-            E-Mail:{' '}
-            <a href={`mailto:${organizer.data.email}`}>
-              {organizer.data.email}
-            </a>
-          </p>
-        )
-      }
-
-      {
-        organizer?.data.telephone && (
-          <p class="text-gray-600 dark:text-slate-200">
-            Telefon:{' '}
-            <a href={`tel:${organizer?.data.telephone}`}>
-              {organizer.data.telephone}
-            </a>
-          </p>
-        )
-      }
-    </>
+          {organizer?.data.email && (
+            <p class="text-gray-600 dark:text-slate-200">
+              E-Mail:{" "}
+              <a href={`mailto:${organizer.data.email}`}>
+                {organizer.data.email}
+              </a>
+            </p>
+          )}
+          {organizer?.data.telephone && (
+            <p class="text-gray-600 dark:text-slate-200">
+              Telefon:{" "}
+              <a href={`tel:${organizer?.data.telephone}`}>
+                {organizer.data.telephone}
+              </a>
+            </p>
+          )}
+        </div>
+      )
+    }
   </div>
 </div>

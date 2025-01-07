@@ -1,7 +1,7 @@
 ---
 startDate: 2025-01-25T19:30:00+01:00
 location: sporthalle
-organizer: foerdervereinMusikzug
+organizer: foerdervereinmusikzug
 description: Das Jahreskonzert des Musikzugs der Freiwilligen Feuerwehr in der Alfred-Stubenrauch-Halle.
 name: Jahreskonzert des Musikzugs
 ---

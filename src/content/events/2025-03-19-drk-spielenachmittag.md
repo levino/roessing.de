@@ -6,6 +6,9 @@ organizer: drk
 description:
   Das DRK Rössing lädt zum Spielenachmittag ins Dorfgemeinschaftshaus.
 name: Spielenachmittag
+image:
+  alt: Spielende Menschen
+  src: ./images/spielenachmittag.png
 ---
 
 Der Ortsverein vom Deutschen Roten Kreuz Rössing lädt alle Interessierten am

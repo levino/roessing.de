@@ -1,7 +1,7 @@
 ---
 startDate: 2025-01-18T13:30:00+01:00
 endDate: 2025-01-18T18:00:00+01:00
-location: dghBarnten
+location: dghbarnten
 organizer: awo
 description: Die AWO lädt zur traditionellen Grünkohlwanderung ein.
 name: Grünkohlwanderung der AWO

@@ -9,7 +9,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getCollection('events')
   return events.map((entry) => ({
     params: {
-      slug: entry.slug,
+      id: entry.id,
     },
     props: {
       entry,

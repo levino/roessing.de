@@ -9,7 +9,7 @@ location: dgh
 name:
   Jahreshauptversammlung des Fördervereins des Musikzugs der Freiwilligen
   Feuerwehr
-organizer: foerdervereinMusikzug
+organizer: foerdervereinmusikzug
 startDate: 2024-02-14T19:00:00
 ---
 

@@ -6,7 +6,8 @@
       "build",
       ".docusaurus",
       "static/public/pocketbase.umd.js",
-      "static/public/infima.css"
+      "static/public/infima.css",
+      "package-lock.json"
     ]
   },
   "lint": {

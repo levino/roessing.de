@@ -2,7 +2,7 @@
 startDate: 2023-11-20T16:30:00+01:00
 endDate: 2023-11-20T19:30:00+01:00
 location: dgh
-organizer: drk
+organizer: drkBlutspende
 description:
   Auf gehts – Zum Blutspendetermin am 20.11.2023 in 31171 Nordstemmen - Rössing
 image:

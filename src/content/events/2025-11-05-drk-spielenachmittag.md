@@ -1,6 +1,6 @@
 ---
-startDate: 2025-01-08T15:00:00+01:00
-endDate: 2025-01-08T18:00:00+01:00
+startDate: 2025-11-05T15:00:00+01:00
+endDate: 2025-11-05T18:00:00+01:00
 location: dgh
 organizer: drk
 description:

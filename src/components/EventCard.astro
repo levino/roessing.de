@@ -19,7 +19,7 @@ const target = event.data.url ? '_blank' : '_self'
 
 <a
   class="my-4 flex md:h-48 flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-  href={event.data.url ?? `events/${event.slug}`}
+  href={event.data.url ?? `events/${event.id}`}
   target={target}
 >
   {

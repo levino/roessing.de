@@ -2,7 +2,7 @@
 name: Kinderweihnachtsfeier
 startDate: 2023-12-09T15:00:00+01:00
 endDate: 2023-12-09T20:00:00+01:00
-location: stubenrauchHalle
+location: stubenrauchhalle
 organizer: vsv
 description:
   Die traditionelle Kinder Weihnachtsfeier in Rössing. Kommt und genießt einen

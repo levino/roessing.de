@@ -4,6 +4,7 @@ import {
   type SchemaContext,
   z,
 } from 'astro:content'
+import { glob } from 'astro/loaders'
 
 export const addressSchema = z.object({
   '@type': z.enum(['PostalAddress']),
@@ -55,21 +56,21 @@ const createEventSchema = ({ image }: SchemaContext) =>
       .optional(),
   })
 const eventCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/events' }),
   schema: createEventSchema,
 })
 
 const locationCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.yaml', base: './src/data/locations' }),
   schema: locationSchema,
 })
-const organizationCollection = defineCollection({
-  type: 'data',
+const organizersCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.yaml', base: './src/data/organizers' }),
   schema: organizerSchema,
 })
 
 export const collections = {
   events: eventCollection,
   locations: locationCollection,
-  organizers: organizationCollection,
+  organizers: organizersCollection,
 }

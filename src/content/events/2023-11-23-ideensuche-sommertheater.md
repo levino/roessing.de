@@ -2,7 +2,7 @@
 name: Ideensuche für das Sommertheater in Rössing 2024
 startDate: 2023-11-23T18:30:00+01:00
 location: schlosssaal
-organizer: titaVonRoessing
+organizer: tita-von-roessing
 description:
   Einladung an alle zur Ideensuche für das Sommertheater in Rössing 2024. Das
   künstlerische Team aus Heersum möchte wissen, welche Themen in Rössing auf der

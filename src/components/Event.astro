@@ -2,6 +2,7 @@
 import { timeAndDate } from "@/tools/events";
 import type { FullEvent } from "@/types";
 import { Image } from "astro:assets";
+import { render } from "astro:content"
 import AddressLink from "./AddressLink.astro";
 
 interface Props {
@@ -14,7 +15,7 @@ const {
   event,
 } = Astro.props;
 
-const { Content } = await event.render();
+const { Content } = await render(event);
 ---
 
 <div

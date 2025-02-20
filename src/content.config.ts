@@ -5,6 +5,7 @@ import {
   z,
 } from 'astro:content'
 import { glob } from 'astro/loaders'
+import { docsSchema } from '@levino/shipyard-docs'
 
 export const addressSchema = z.object({
   '@type': z.enum(['PostalAddress']),
@@ -68,9 +69,14 @@ const organizersCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/data/organizers' }),
   schema: organizerSchema,
 })
+const docs = defineCollection({
+  schema: docsSchema,
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/docs' }),
+})
 
 export const collections = {
   events: eventCollection,
   locations: locationCollection,
   organizers: organizersCollection,
+  docs,
 }

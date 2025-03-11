@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-
+import shipyard from '@levino/shipyard-base'
+import shipyardDocs from '@levino/shipyard-docs'
 import react from '@astrojs/react'
 import process from 'node:process'
 
@@ -13,7 +14,34 @@ export default defineConfig({
     : process.env.VERCEL_ENV === 'preview'
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : 'http://localhost:4321',
-  integrations: [tailwind(), mdx(), sitemap(), react()],
+  integrations: [
+    tailwind(),
+    mdx(),
+    sitemap(),
+    react(),
+    shipyard({
+      locales: ['de'],
+      defaultLocale: 'de',
+      navigation: {
+        events: {
+          label: 'Events',
+          href: '/events',
+        },
+        docs: {
+          label: 'Wissen',
+          href: '/docs/intro',
+        },
+        about: {
+          label: 'Mitmachen',
+          href: '/about',
+        },
+      },
+      title: 'Rössing',
+      tagline: 'Über den Ort Rössing',
+      brand: 'Rössing',
+    }),
+    shipyardDocs(['docs']),
+  ],
   vite: {
     ssr: {
       noExternal: ['fp-ts', 'usehooks-ts'],

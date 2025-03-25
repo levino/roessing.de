@@ -36,16 +36,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
-      - uses: actions/setup-node@v4
-        with:
-          cache: npm
-      - run: npm i
-      - run: deno lint && deno fmt --check
   build:
     runs-on: ubuntu-latest
     steps:

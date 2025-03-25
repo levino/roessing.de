@@ -4,17 +4,17 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers-community/features/deno:1": {}
   },
-
   "postCreateCommand": "npm install && sudo npx playwright install-deps",
   "customizations": {
     "vscode": {
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
-        "editor.defaultFormatter": "denoland.vscode-deno",
-        "deno.enable": false,
-        "cSpell.language": "de-DE"
+        "cSpell.language": "de-DE",
+        "cSpell.words": [
+          "Nordstemmen",
+          "Rössing"
+        ]
       },
       "extensions": [
         "esbenp.prettier-vscode",
@@ -22,7 +22,6 @@
         "unifiedjs.vscode-mdx",
         "bradlc.vscode-tailwindcss",
         "eamodio.gitlens",
-        "denoland.vscode-deno",
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
         "ms-playwright.playwright"

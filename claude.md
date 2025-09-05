@@ -29,3 +29,7 @@ Dieses Projekt ist eine Astro-basierte Website. Bei der Arbeit mit diesem Reposi
 
 - Für das Schließen von Issues die englischen GitHub Magic Words verwenden: "Fix", "Close", "Resolve" (nicht "Schließt" oder andere deutsche Begriffe)
 - Commit-Messages auf Englisch verfassen (Standard in der Softwareentwicklung)
+- Für automatisches Schließen von Issues in Commit-Messages englische GitHub-Keywords verwenden:
+  - "Fix #123" oder "Fixes #123" (nicht "Schließt #123")
+  - "Close #123" oder "Closes #123"
+  - "Resolve #123" oder "Resolves #123"

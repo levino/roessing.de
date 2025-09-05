@@ -14,6 +14,10 @@ export default defineConfig({
     : process.env.VERCEL_ENV === 'preview'
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : 'http://localhost:4321',
+  i18n: {
+    defaultLocale: 'de',
+    locales: ['de'],
+  },
   integrations: [
     tailwind(),
     mdx(),
@@ -39,6 +43,12 @@ export default defineConfig({
       title: 'Rössing',
       tagline: 'Über den Ort Rössing',
       brand: 'Rössing',
+      scripts: [
+        {
+          src: 'https://analytics.levinkeller.de/js/script.js',
+          defer: true,
+        },
+      ],
     }),
     shipyardDocs(['docs']),
   ],

@@ -18,6 +18,14 @@ Dieses Projekt ist eine Astro-basierte Website. Bei der Arbeit mit diesem Reposi
 - Tailwind CSS für Styling nutzen
 - Tests mit Vitest und Playwright ausführen
 
+## GitHub Integration
+
+### Magic Words für Issues
+Bei der Erstellung von Pull Requests, die Issues schließen sollen:
+
+- **Verwende**: "Fix #123", "Fixes #123", "Close #123", "Closes #123", "Resolve #123", "Resolves #123"
+- **Nicht verwenden**: "Schließt #123" - dies ist kein GitHub Magic Word und schließt Issues nicht automatisch
+
 ## Kommunikationsrichtlinien
 
 - Höflich und professionell kommunizieren

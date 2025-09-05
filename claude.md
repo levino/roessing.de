@@ -24,3 +24,8 @@ Dieses Projekt ist eine Astro-basierte Website. Bei der Arbeit mit diesem Reposi
 - Kurze, präzise Antworten geben
 - Bei komplexen Aufgaben Schritt-für-Schritt-Erklärungen liefern
 - Code-Beispiele mit deutschen Kommentaren versehen
+
+## GitHub Richtlinien
+
+- Für das Schließen von Issues die englischen GitHub Magic Words verwenden: "Fix", "Close", "Resolve" (nicht "Schließt" oder andere deutsche Begriffe)
+- Commit-Messages auf Englisch verfassen (Standard in der Softwareentwicklung)

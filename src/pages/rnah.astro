@@ -1,0 +1,86 @@
+---
+import Project from '../components/Project.astro'
+import Jumbotron from '../components/Jumbotron.astro'
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+
+const metadata = {
+  title: 'RNah Dorfladen Rössing',
+  description: 'Der RNah Dorfladen - Rössings Nahversorger und Dorfgemeinschaftstreffpunkt seit 2014',
+}
+---
+
+<Layout {...metadata}>
+  <Jumbotron>
+    <div class="m-auto max-w-2xl text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl">
+        RNah Dorfladen
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-slate-300">
+        Rössings Nahversorger und Dorfgemeinschaftstreffpunkt seit 2014.
+        Ein Gemeinschaftsprojekt von Bürgern für Bürger.
+      </p>
+    </div>
+  </Jumbotron>
+
+  <div class="container max-w-4xl mx-auto px-4 py-16">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <h2>Was ist RNah?</h2>
+      <p>
+        Der RNah Dorfladen ist seit 2014 Rössings zentraler Nahversorger und wichtiger 
+        Treffpunkt der Dorfgemeinschaft. Der Name "RNah" steht für "R" (Rössing) und 
+        "-nah" (Nahversorger) - ein Konzept, das Einkaufen und Begegnung miteinander verbindet.
+      </p>
+
+      <h2>Standort und Tradition</h2>
+      <p>
+        Der Dorfladen befindet sich in der Kirchstraße 10, einem historischen Standort:
+        Schon seit über 100 Jahren werden in diesem zentral gelegenen Haus Lebensmittel verkauft.
+        Nach dem Schließen des letzten privaten Lebensmittelladens entstand die Initiative 
+        für diesen genossenschaftlichen Dorfladen.
+      </p>
+
+      <h2>Konzept und Gemeinschaft</h2>
+      <p>
+        RNah funktioniert als Gemeinschaftsprojekt der Rössinger Bürger. Das Team versorgt 
+        das Dorf nicht nur mit Lebensmitteln, sondern schafft auch einen Ort der Begegnung,
+        wo sich Alt und Jung bei einer Tasse Kaffee und einem Stück Kuchen treffen können.
+        Ehrenamtliche Unterstützung ist ein wesentlicher Bestandteil des Konzepts.
+      </p>
+
+      <h2>Organisation und Team</h2>
+      <ul>
+        <li><strong>Geschäftsführerin:</strong> Tita von Rössing</li>
+        <li><strong>Verkaufsteam:</strong> Sandra Georg, Siri Ritter, Florian Steinwedel, Hannah Kese</li>
+        <li><strong>Treugeberbeirat:</strong> Sebastian Könneke (1. Vorsitzender), Ulf Gremmel, Michael Kuhaupt</li>
+      </ul>
+
+      <h2>Finanzierungsmodell</h2>
+      <p>
+        RNah ist als GmbH organisiert, deren Gesellschafter die Dorfbewohner sind. 
+        Das besondere Finanzierungsmodell basiert auf Treugebern mit einer Mindesteinlage 
+        von 100 Euro pro Anteilschein. Diese Anteile werden treuhänderisch vom 
+        Treugeberbeirat verwaltet.
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        <strong>Adresse:</strong> Kirchstraße 10, 31171 Rössing<br>
+        <strong>Website:</strong> <a href="https://www.rnah.de" target="_blank" rel="noopener">www.rnah.de</a><br>
+        <strong>E-Mail:</strong> t.vonroessing@rnah.de
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <Project
+        title="Die Geschichte von RNah"
+        subtitle="Von der Idee zur erfolgreichen Dorfgemeinschaft"
+        linkUrl="/rnah-geschichte"
+      >
+        <p class="dark:text-slate-200">
+          Erfahren Sie mehr über die 10-jährige Erfolgsgeschichte des RNah Dorfladens,
+          die besondere Finanzierungsstruktur und warum das Treugebermodell gewählt wurde.
+        </p>
+      </Project>
+    </div>
+  </div>
+</Layout>

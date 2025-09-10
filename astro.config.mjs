@@ -1,3 +1,5 @@
+//@ts-check
+
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
@@ -14,18 +16,12 @@ export default defineConfig({
     : process.env.VERCEL_ENV === 'preview'
     ? `https://${process.env.VERCEL_BRANCH_URL}`
     : 'http://localhost:4321',
-  i18n: {
-    defaultLocale: 'de',
-    locales: ['de'],
-  },
   integrations: [
     tailwind(),
     mdx(),
     sitemap(),
     react(),
     shipyard({
-      locales: ['de'],
-      defaultLocale: 'de',
       navigation: {
         events: {
           label: 'Events',
@@ -47,10 +43,11 @@ export default defineConfig({
         {
           src: 'https://analytics.levinkeller.de/js/script.js',
           defer: true,
+          ['data-domain']: 'rössing.de',
         },
       ],
     }),
-    shipyardDocs(['docs']),
+    shipyardDocs(),
   ],
   vite: {
     ssr: {

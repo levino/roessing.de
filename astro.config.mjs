@@ -1,3 +1,5 @@
+//@ts-check
+
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
@@ -20,8 +22,6 @@ export default defineConfig({
     sitemap(),
     react(),
     shipyard({
-      locales: ['de'],
-      defaultLocale: 'de',
       navigation: {
         events: {
           label: 'Events',
@@ -39,8 +39,15 @@ export default defineConfig({
       title: 'Rössing',
       tagline: 'Über den Ort Rössing',
       brand: 'Rössing',
+      scripts: [
+        {
+          src: 'https://analytics.levinkeller.de/js/script.js',
+          defer: true,
+          ['data-domain']: 'rössing.de',
+        },
+      ],
     }),
-    shipyardDocs(['docs']),
+    shipyardDocs(),
   ],
   vite: {
     ssr: {

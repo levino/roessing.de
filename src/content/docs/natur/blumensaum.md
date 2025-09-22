@@ -1,83 +1,19 @@
 ---
-title: Rössinger Wildblumensaum
+title: 'Wildblumensaum'
 ---
 
-# Rössinger Wildblumensaum
+# Wildblumensaum
 
-Der Rössinger Wildblumensaum ist ein wichtiger Beitrag zum Naturschutz und zur Biodiversität in unserem Dorf. Als wertvoller Lebensraum für Insekten, Vögel und andere Tiere bereichert er nicht nur die lokale Ökologie, sondern auch das Landschaftsbild von Rössing.
+Wir sind stolz auf unseren schönen [Wildblumensaum](https://goo.gl/maps/LYvsj8V6xDXahSew9). Er ist ein wichtiger Lebensraum für viele Insekten und andere Tiere. Wir haben ihn im Jahr **2022** angelegt und pflegen ihn seitdem regelmäßig. Um die Blumen noch besser genießen zu können, erhalten wir einen Weg durch den Saum.
 
-## Anlage und Entwicklung
+## Begriffsklärung
 
-Der Wildblumensaum wurde im Jahr **2022** angelegt und wird seitdem regelmäßig gepflegt. Die Initiative zeigt das Engagement der Rössinger Gemeinschaft für den Umwelt- und Naturschutz. Um die Schönheit der Blumenvielfalt noch besser erleben zu können, ist ein Weg durch den Saum geplant.
+Ein Blumensaum ist von einer Blumenwiese zu unterscheiden. Der Saum wird weniger oft gemäht und bietet daher mehr Samen für Vögel und ermöglicht es Insekten in den Stengeln der Pflanzen zu überwintern.
 
-## Ökologische Bedeutung
+## Mahdfrequenz und -zeitpunkt
 
-### Lebensraum für die Tierwelt
-- **Insekten**: Schmetterlinge, Wildbienen und andere Bestäuber finden hier Nahrung und Nistplätze
-- **Vögel**: Nutzen die Samen als Nahrungsquelle und die Vegetation als Deckung
-- **Überwinterung**: Die Stängel der Pflanzen bieten Insekten Schutz während der Wintermonate
+Wir haben einen Wildblumensaum mit der Mischung **"Schmetterlings- und Wildbienensaum"** der Firma Rieger Hofmann angelegt. Wir mähen den Saum entsprechend der Anleitung von Rieger Hofmann nur einmal pro Jahr zwischen dem **15. März und 15. April**.
 
-### Begriffsklärung: Blumensaum vs. Blumenwiese
-Ein Blumensaum unterscheidet sich grundlegend von einer herkömmlichen Blumenwiese:
-- **Geringere Mahdfrequenz**: Seltener gemäht als Blumenwiesen
-- **Mehr Samenverfügbarkeit**: Bietet Vögeln reichlich Nahrung durch stehen gelassene Samen
-- **Überwinterungshabitat**: Ermöglicht Insekten das Überwintern in den Pflanzenstängeln
+## Ablauf der Pflege
 
-## Botanische Ausstattung
-
-### Saatgutmischung
-Für den Rössinger Wildblumensaum wurde die hochwertige Mischung **"Schmetterlings- und Wildbienensaum"** der renommierten Firma **Rieger Hofmann** verwendet. Diese speziell entwickelte Mischung:
-- Ist optimal auf die Bedürfnisse von Schmetterlingen und Wildbienen abgestimmt
-- Enthält heimische Wildpflanzen
-- Gewährleistet eine lange Blütezeit von Frühjahr bis Herbst
-- Bietet verschiedene Wuchshöhen für strukturelle Vielfalt
-
-## Pflege und Management
-
-### Mahdkonzept
-Die Pflege erfolgt nach wissenschaftlichen Erkenntnissen und den Empfehlungen von Rieger Hofmann:
-- **Mahdhäufigkeit**: Nur einmal pro Jahr
-- **Optimaler Zeitpunkt**: Zwischen dem 15. März und 15. April
-- **Grund**: Schutz überwinternder Insekten und Erhaltung der Samenstrukturen
-
-### Praktische Durchführung
-Aufgrund der Größe der Fläche ist eine maschinelle Bearbeitung erforderlich:
-- **Benötigte Technik**: Tellermäher und Heuladewagen oder Ballenpresse
-- **Durchführung**: Beauftragung eines Landwirts durch den Vorstand der Dorfpflege
-- **Mahdgut-Entsorgung**: Fachgerechte Entfernung des geschnittenen Materials
-
-## Finanzierung und Trägerschaft
-
-### Finanzierung
-Die **Bürgerstiftung Rössing** übernimmt die Kosten für:
-- Die jährliche Mahd
-- Die fachgerechte Entsorgung des Mahdguts
-- Eventuelle Nachsaaten oder Pflegemaßnahmen
-
-### Verantwortlichkeit
-- **Organisation**: Dorfpflege Rössing e.V.
-- **Finanzierung**: Bürgerstiftung Rössing
-- **Ausführung**: Beauftragte Landwirte aus der Region
-
-## Zukunftsperspektiven
-
-### Erweiterungsmöglichkeiten
-Der Erfolg des Wildblumensaums könnte als Vorbild für weitere ökologische Projekte in Rössing dienen:
-- Anlage weiterer Blumensäume
-- Vernetzung verschiedener Biotope
-- Bildungsangebote für Schulkinder und interessierte Bürger
-
-### Fundraising-Potenzial
-Der Wildblumensaum eignet sich hervorragend für die Akquise von Fördermitteln:
-- **Umweltschutzförderung** von Land und Bund
-- **EU-Biodiversitätsprogramme**
-- **Sponsoring** durch lokale Unternehmen
-- **Patenschaften** von Bürgern für einzelne Abschnitte
-
-## Standort und Zugänglichkeit
-
-Der Wildblumensaum ist über [Google Maps](https://goo.gl/maps/LYvsj8V6xDXahSew9) zu finden und bietet Besuchern die Möglichkeit, die Biodiversität hautnah zu erleben. Der geplante Weg durch den Saum wird das Naturerlebnis für alle Altersgruppen zugänglich machen.
-
----
-
-*Für weitere Informationen oder bei Interesse an einer Patenschaft wenden Sie sich bitte an die Dorfpflege Rössing e.V. oder die Bürgerstiftung Rössing.*
+Die Fläche des Wildblumensaums ist zu groß für eine händische Mahd. Die Dorfpflege hat auch die benötigten Gerätschaften nicht. Wir benötigen eine:n Landwirt:in mit einem **Tellermäher** und einem **Heuladewagen** oder einer **Ballenpresse**. Ein:e Landwirt:in wird vom Vorstand der Dorfpflege beauftragt die Arbeiten durchzuführen und das Mahdgut korrekt zu entsorgen. Die Kosten übernimmt die **Bürgerstiftung**.

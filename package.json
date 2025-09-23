@@ -36,7 +36,6 @@
     "daisyui": "^4.12.23",
     "fp-ts": "^2.16.1",
     "fp-ts-std": "^0.18.0",
-    "hygen": "^6.2.11",
     "io-ts": "^2.2.20",
     "ramda": "^0.29.1",
     "react": "^18.0.0",
@@ -45,6 +44,7 @@
     "usehooks-ts": "^3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
     "@playwright/test": "^1.48.2",
     "@types/ramda": "^0.29.9",
     "@unlighthouse/cli": "^0.14",

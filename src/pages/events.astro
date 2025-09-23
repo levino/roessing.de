@@ -1,13 +1,13 @@
 ---
 import { getCollection, getEntry } from 'astro:content'
-import { nonEmptyArray } from 'fp-ts'
 import Layout from '@levino/shipyard-base/layouts/Page.astro'
-import EventCard from '../components/EventCard.astro'
-import StickyButton from '../components/StickyButton.astro'
-import type { FullEvent } from '@/types'
+import { nonEmptyArray } from 'fp-ts'
+import * as A from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
 import * as R from 'fp-ts/Record'
-import * as A from 'fp-ts/Array'
+import type { FullEvent } from '@/types'
+import EventCard from '../components/EventCard.astro'
+import StickyButton from '../components/StickyButton.astro'
 
 const MONTHS = [
   'Januar',

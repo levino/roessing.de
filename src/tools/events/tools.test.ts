@@ -1,5 +1,6 @@
-import { getMonth } from './index'
 import { describe, expect, test } from 'vitest'
+import { getMonth } from './index'
+
 describe('tools', () => {
   test('getMonth', () => expect(getMonth(event.startDate)).toEqual('August'))
 })

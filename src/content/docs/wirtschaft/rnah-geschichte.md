@@ -17,7 +17,7 @@ Die Geschichte des RNah Dorfladens ist eine erfolgreiche Geschichte bürgerschaf
 ### 2012: Gründungsphase
 **Oktober 2012**: Gründung einer **GmbH** als rechtliche Grundlage für den Dorfladen. Die Dorfbewohner werden zu Gesellschaftern durch Zahlung eines Mindestbeitrags von **100 EUR pro Anteil**.
 
-**Besonderheit der Finanzierungsstruktur**: Die Anteile werden **treuhänderisch durch einen Treugeberbeirat verwaltet**. Diese Struktur wird gewählt, um die gemeinschaftliche Verwaltung zu ermöglichen und gleichzeitig rechtliche Klarheit zu schaffen.
+**Besonderheit der Finanzierungsstruktur**: Die Anteile werden **treuhänderisch durch einen Treugeberbeirat verwaltet**. Diese Struktur wird gewählt, um die gemeinschaftliche Verwaltung zu ermöglichen und gleichzeitig rechtliche Klarheit zu schaffen. Sie bietet zudem konkrete Vorteile wie eine reduzierte Verwaltungsbelastung für die Gesellschafter, Schutz der Anonymität der Anteilseigner sowie eine vereinfachte und transparente Governance-Struktur.
 
 ### 2013: Vorbereitung und Planung
 **25. Oktober 2013**: Abschluss des **Gesellschaftervertrags** mit einem Stammkapital von **25.000 EUR**.

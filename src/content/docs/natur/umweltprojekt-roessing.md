@@ -4,7 +4,7 @@ title: Umweltprojekt Rössing
 
 ## Ein gemeinschaftliches Naturschutzprojekt für Biodiversität und Umweltbildung
 
-Das Umweltprojekt Rössing ist ein vorbildliches Beispiel für gemeinschaftliches Engagement im Natur- und Umweltschutz. Durch die Initiative der Bürgerstiftung Rössing und die Zusammenarbeit verschiedener lokaler Vereine entstanden zwei wichtige Teilprojekte: ein Naturlehrpfad am Freizeitsee und ein Wildblumensaum im Ortskern.
+Durch die Initiative der Bürgerstiftung Rössing und die Zusammenarbeit verschiedener lokaler Vereine entstanden zwei wichtige Teilprojekte: ein Naturlehrpfad am Freizeitsee und ein Wildblumensaum im Ortskern.
 
 ## Das Umweltprojekt
 
@@ -48,23 +48,13 @@ Der Verein Freizeitsee Rössing setzt sich seit Beginn für die Renaturierung un
 
 #### Standort und Anlage
 
-Der Wildblumensaum wurde 2022 angelegt und befindet sich am ehemaligen Karussellplatz in Rössing. Die etwa 5.000 Quadratmeter große Fläche wurde mit der speziellen Saatgutmischung "Schmetterlings- und Wildbienensaum" der renommierten Firma Rieger-Hofmann eingesät.
+Der Wildblumensaum wurde 2022 angelegt und befindet sich am ehemaligen [Karussellplatz](https://maps.app.goo.gl/M5BZPnTHYYsTHTm66) in Rössing. Die etwa 5.000 Quadratmeter große Fläche wurde mit der speziellen Saatgutmischung "Schmetterlings- und Wildbienensaum" der renommierten Firma Rieger-Hofmann eingesät.
 
 #### Ökologische Bedeutung
 
-**Begriffsklärung**: Ein Wildblumensaum unterscheidet sich wesentlich von einer Blumenwiese:
-- **Seltenere Mahd**: Nur einmal jährlich zwischen 15. März und 15. April
 - **Überwinterungsmöglichkeiten**: Insekten können in den Pflanzenstängeln überwintern
 - **Nahrungsangebot**: Samen stehen Vögeln als Winternahrung zur Verfügung
 - **Strukturvielfalt**: Unterschiedliche Wuchshöhen bieten vielfältige Lebensräume
-
-#### Pflegekonzept
-
-Die fachgerechte Pflege erfolgt nach wissenschaftlichen Erkenntnissen:
-- **Mahdzeitpunkt**: Einmal jährlich zwischen 15. März und 15. April
-- **Mahdtechnik**: Einsatz eines Tellermähers durch beauftragte Landwirte
-- **Mahdgutentsorgung**: Fachgerechte Entsorgung zur Nährstoffabreicherung
-- **Finanzierung der Pflege**: Übernahme der Kosten durch die Bürgerstiftung
 
 ## Projektpartner
 
@@ -88,37 +78,12 @@ Unter der Leitung von Julia Kantack übernahm die Dorfpflege die praktische Umse
 
 Beide Teilprojekte erhielten überwältigend positive Rückmeldungen aus der Bevölkerung. Dr. Udo Noack, aktiv in der Projektleitung, berichtet von zahlreichen begeisterten Reaktionen. Sowohl der Naturlehrpfad am Freizeitsee als auch der Wildblumensaum am ehemaligen Karussellplatz wurden zu beliebten Anziehungspunkten für Naturbeobachter, Familien und Spaziergänger. Das Umweltprojekt zeigt eindrucksvoll, wie gemeinschaftliches Engagement die Lebensqualität im Ort nachhaltig verbessern kann.
 
-## Zukunftsperspektiven
-
-Um das Umweltprojekt Rössing weiter auszubauen, sind folgende Maßnahmen geplant:
-
-### Für den Wildblumensaum:
-- Anlage eines Weges durch den Wildblumensaum
-- Weitere Informationstafeln zur Umweltbildung
-- Installation eines Insektenhotels
-- Erweiterung der Fläche bei verfügbaren Mitteln
-
-### Für den Naturlehrpfad:
-- Erweiterung der Informationstafeln
-- Ausbau des Umweltbildungsprogramms
-- Weitere Baumpflanzungen durch Patenschaften
-
-## Unterstützungsmöglichkeiten
-
-Das Projekt lebt vom Engagement der Gemeinschaft. Sie können uns unterstützen durch:
-
-- **Finanzielle Förderung**: Spenden an die Bürgerstiftung Rössing
-- **Patenschaften**: Übernahme von Pflegepatenschaften für Teilbereiche
-- **Mitarbeit**: Aktive Teilnahme bei Pflegeaktionen
-- **Öffentlichkeitsarbeit**: Bekanntmachung des Projekts
-
 ## Kontakt
 
 **Bürgerstiftung Rössing**
 [www.buergerstiftung-roessing.de](https://buergerstiftung-roessing.de)
 
 **Dorfpflege Rössing e.V.**
-Vorsitzende: Julia Kantack
 [www.dorfpflege-roessing.de](https://www.dorfpflege-roessing.de)
 
 **Verein Freizeitsee Rössing e.V.**

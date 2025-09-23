@@ -79,6 +79,13 @@ npm run prettier   # Code-Formatierung prüfen
 - Format: `type(scope): description`
 - Typen: feat, fix, docs, style, refactor, test, chore
 
+### GitHub-Keywords:
+**⚠️ WICHTIG: GitHub-Keywords MÜSSEN auf Englisch bleiben!**
+- Keywords wie `fix`, `fixes`, `close`, `closes`, `resolve`, `resolves` für automatisches Issue-Schließen
+- Diese Keywords funktionieren nur auf Englisch und sollten NICHT übersetzt werden
+- Beispiel: `fix: Update navigation (#123)` - "fix" bleibt Englisch
+- In PR-Beschreibungen: `Closes #123` - nicht "Schließt #123"
+
 ### Branch-Namen:
 - Feature: `feature/beschreibung`
 - Bugfix: `fix/beschreibung`

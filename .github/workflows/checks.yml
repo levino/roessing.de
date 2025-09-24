@@ -4,31 +4,34 @@ on:
   push:
     branches: ['main']
   pull_request:
-env:
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: biomejs/setup-biome@v2
+        with:
+          version: 2.2.4
+      - run: biome ci .
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
       - uses: actions/setup-node@v4
         with:
           cache: npm
-      - run: npm i
-      - run: deno task test
+      - run: npm install
+      - run: npm run test
   e2e:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
       - uses: actions/setup-node@v4
         with:
           cache: npm
-      - run: npm i
+      - run: npm install
       - run: npx playwright install --with-deps
-      - run: deno task build
+      - run: npm run build
       - run: npm run e2e
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -40,9 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
       - uses: actions/setup-node@v4
         with:
           cache: npm
-      - run: npm i
-      - run: deno task build
+      - run: npm install
+      - run: npm run build

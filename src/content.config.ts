@@ -4,8 +4,8 @@ import {
   type SchemaContext,
   z,
 } from 'astro:content'
-import { glob } from 'astro/loaders'
 import { docsSchema } from '@levino/shipyard-docs'
+import { glob } from 'astro/loaders'
 
 export const addressSchema = z.object({
   '@type': z.enum(['PostalAddress']),

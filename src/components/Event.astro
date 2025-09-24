@@ -1,21 +1,21 @@
 ---
-import { timeAndDate } from "@/tools/events";
-import type { FullEvent } from "@/types";
-import { Image } from "astro:assets";
-import { render } from "astro:content"
-import AddressLink from "./AddressLink.astro";
+import { Image } from 'astro:assets'
+import { render } from 'astro:content'
+import { timeAndDate } from '@/tools/events'
+import type { FullEvent } from '@/types'
+import AddressLink from './AddressLink.astro'
 
 interface Props {
-  event: FullEvent;
+  event: FullEvent
 }
 const {
   event: {
     data: { name, startDate, endDate, image, location, organizer },
   },
   event,
-} = Astro.props;
+} = Astro.props
 
-const { Content } = await render(event);
+const { Content } = await render(event)
 ---
 
 <div

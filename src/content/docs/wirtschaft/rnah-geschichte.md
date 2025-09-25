@@ -14,15 +14,15 @@ Die Geschichte des RNah Dorfladens ist eine erfolgreiche Geschichte bürgerschaf
 
 **März 2012**: Tita Baronin von Rössing, die Ortsbürgermeisterin, entwickelt die **Idee eines genossenschaftlich organisierten Dorfladens**. Sie beginnt damit, die Dorfbewohner von diesem innovativen Projekt zu überzeugen.
 
-### 2012: Gründungsphase
-**Oktober 2012**: Gründung einer **GmbH** als rechtliche Grundlage für den Dorfladen. Die Dorfbewohner werden zu Gesellschaftern durch Zahlung eines Mindestbeitrags von **100 EUR pro Anteil**.
-
-**Besonderheit der Finanzierungsstruktur**: Die Anteile werden **treuhänderisch durch einen Treugeberbeirat verwaltet**. Diese Struktur wird gewählt, um die gemeinschaftliche Verwaltung zu ermöglichen und gleichzeitig rechtliche Klarheit zu schaffen. Sie bietet zudem konkrete Vorteile wie eine reduzierte Verwaltungsbelastung für die Gesellschafter, Schutz der Anonymität der Anteilseigner sowie eine vereinfachte und transparente Governance-Struktur.
-
 ### 2013: Vorbereitung und Planung
 **25. Oktober 2013**: Abschluss des **Gesellschaftervertrags** mit einem Stammkapital von **25.000 EUR**.
 
 **Herbst 2013**: Beginn der **Renovierungsarbeiten** am historischen Standort Kirchstraße 10. Um wirtschaftlich zu arbeiten, werden auch gebrauchte Materialien verwendet, was jedoch zu Verzögerungen bei den ursprünglich geplanten Fertigstellungsterminen führt.
+
+### 2014: Gründungsphase und Eröffnung
+**Frühjahr 2014**: Gründung der **GmbH** als rechtliche Grundlage für den Dorfladen. Die Dorfbewohner werden zu Gesellschaftern durch Zahlung eines Mindestbeitrags von **100 EUR pro Anteil**.
+
+**Besonderheit der Finanzierungsstruktur**: Die Anteile werden **treuhänderisch durch einen Treugeberbeirat verwaltet**. Diese Struktur wird gewählt, um die gemeinschaftliche Verwaltung zu ermöglichen und gleichzeitig rechtliche Klarheit zu schaffen. Sie bietet zudem konkrete Vorteile wie eine reduzierte Verwaltungsbelastung für die Gesellschafter, Schutz der Anonymität der Anteilseigner sowie eine vereinfachte und transparente Governance-Struktur.
 
 ### 2014: Erfolgreiche Eröffnung
 **16. Mai 2014**: **Offizielle Eröffnung** des RNah Dorfladens. Der Name "RNah" kombiniert geschickt "R" für Rössing mit "nah" für Nahversorger.

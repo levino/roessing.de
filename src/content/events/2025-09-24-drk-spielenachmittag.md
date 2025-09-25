@@ -12,7 +12,7 @@ image:
 ---
 
 Der Ortsverein vom Deutschen Roten Kreuz Rössing lädt alle Interessierten am
-Sonntag, den 8. Januar 2025 ab 15 Uhr zu einem Kaffee-, Klön- und
+Mittwoch, den 24. September 2025 ab 15 Uhr zu einem Kaffee-, Klön- und
 Spielenachmittag im Dorfgemeinschaftshaus ein.
 
 Alle sind eingeladen, auch Nichtmitglieder sind herzlich willkommen.

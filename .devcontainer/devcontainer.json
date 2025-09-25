@@ -9,7 +9,6 @@
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "postCreateCommand": "npm install && sudo npx playwright install-deps",
   "customizations": {
     "vscode": {
       "settings": {

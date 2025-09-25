@@ -1,0 +1,7 @@
+name: Freizeitsee Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Am Freizeitsee
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

@@ -1,0 +1,7 @@
+name: Peter-Winkler-Platz
+address:
+  '@type': PostalAddress
+  streetAddress: Peter-Winkler-Platz
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

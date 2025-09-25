@@ -1,0 +1,7 @@
+name: Schlosspark Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Schlosspark
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

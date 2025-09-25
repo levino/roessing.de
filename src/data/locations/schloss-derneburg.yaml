@@ -1,0 +1,7 @@
+name: Schloss Derneburg
+address:
+  '@type': PostalAddress
+  streetAddress: Astenbeck 42
+  addressLocality: Holle
+  postalCode: '31188'
+'@type': Place

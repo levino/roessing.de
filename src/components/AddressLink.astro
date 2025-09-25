@@ -1,11 +1,12 @@
 ---
 import type { Address } from '@/content/config'
+
 const addressToString = (address: Address) =>
   `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
 
 interface Props {
   address: Address
-  className?: string,
+  className?: string
   name?: string
 }
 

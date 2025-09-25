@@ -1,9 +1,13 @@
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "postCreateCommand": "npm install && sudo npx playwright install-deps",
   "customizations": {
@@ -11,10 +15,7 @@
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
         "cSpell.language": "de-DE",
-        "cSpell.words": [
-          "Nordstemmen",
-          "Rössing"
-        ]
+        "cSpell.words": ["Nordstemmen", "Rössing"]
       },
       "extensions": [
         "esbenp.prettier-vscode",
@@ -24,7 +25,8 @@
         "eamodio.gitlens",
         "streetsidesoftware.code-spell-checker",
         "streetsidesoftware.code-spell-checker-german",
-        "ms-playwright.playwright"
+        "ms-playwright.playwright",
+        "biomejs.biome"
       ]
     }
   }

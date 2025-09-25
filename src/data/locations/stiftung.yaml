@@ -1,0 +1,7 @@
+name: St. Peter und Paul Stiftung
+address:
+  '@type': PostalAddress
+  streetAddress: Kirchstraße
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

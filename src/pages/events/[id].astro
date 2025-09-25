@@ -1,10 +1,10 @@
 ---
-import type { GetStaticPaths } from 'astro'
+import { getImage } from 'astro:assets'
 import { getCollection, getEntry } from 'astro:content'
 import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
 import type { Event as EventType, FullEvent } from '@/types'
-import { getImage } from 'astro:assets'
 export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getCollection('events')
   return events.map((entry) => ({
@@ -35,13 +35,13 @@ const event = {
   },
 } as FullEvent
 
-const imageUrl= entry.data.image
-    ? (await getImage({ src: event.data.image?.src || '' })).src
-    : undefined
+const imageUrl = entry.data.image
+  ? (await getImage({ src: event.data.image?.src || '' })).src
+  : undefined
 
 const ogImage = entry.data.image
-    ? (await getImage({ src: event.data.image?.src || '', width: 1200 }))
-    : undefined
+  ? await getImage({ src: event.data.image?.src || '', width: 1200 })
+  : undefined
 
 const googleStructuredEventData = JSON.stringify({
   '@context': 'https://schema.org',

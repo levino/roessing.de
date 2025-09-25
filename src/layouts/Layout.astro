@@ -1,21 +1,21 @@
 ---
-import Footer from "@/components/Footer.astro";
-import { NavBar } from "@/components/NavBar.tsx";
+import Footer from '@/components/Footer.astro'
+import { NavBar } from '@/components/NavBar.tsx'
 
 interface Props {
-  title: string;
-  description: string;
+  title: string
+  description: string
   frontmatter?: {
-    title: string;
-    description: string;
-  };
-  ogImage?: string | undefined;
+    title: string
+    description: string
+  }
+  ogImage?: string | undefined
 }
-const title = Astro.props.title || Astro.props.frontmatter?.title;
+const title = Astro.props.title || Astro.props.frontmatter?.title
 const description =
-  Astro.props.description || Astro.props.frontmatter?.description;
+  Astro.props.description || Astro.props.frontmatter?.description
 
-const ogImage = `${Astro.site?.origin}${Astro.props.ogImage}`;
+const ogImage = `${Astro.site?.origin}${Astro.props.ogImage}`
 ---
 
 <!doctype html>

@@ -1,0 +1,7 @@
+name: Gasthaus Volkening
+address:
+  '@type': PostalAddress
+  streetAddress: Hauptstraße
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

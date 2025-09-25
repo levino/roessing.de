@@ -1,0 +1,7 @@
+name: Akkurat Hair Beauty & Café
+address:
+  '@type': PostalAddress
+  streetAddress: Friedrichstraße 8
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

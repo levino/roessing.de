@@ -1,0 +1,7 @@
+name: Sportplatz Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Am Sportplatz
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

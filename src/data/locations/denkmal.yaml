@@ -1,0 +1,7 @@
+name: Am Denkmal
+address:
+  '@type': PostalAddress
+  streetAddress: Am Denkmal
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

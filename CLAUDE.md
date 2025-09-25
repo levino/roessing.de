@@ -8,9 +8,10 @@
 - **Alle** Antworten, Code-Kommentare und Erklärungen müssen auf Deutsch verfasst werden
 - Deutsche Terminologie für technische Begriffe verwenden, wo sinnvoll
 - Bei Code-Reviews und technischen Diskussionen deutsche Fachsprache nutzen
-- Commit-Messages können auf Englisch bleiben (Standard in der Softwareentwicklung)
+- Commit-Messages auch auf Deutsch
 - GitHub Issues und Pull Requests auf Deutsch beantworten
 - Fehlermeldungen und Statusberichte auf Deutsch formulieren
+- Magic keywords von github auf English nutzen (fixes, closes, close, fix). Deutsche Übersetztungen funktionieren nicht.
 
 ## 📁 Projektübersicht
 

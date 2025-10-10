@@ -1,5 +1,5 @@
 ---
-startDate: 2025-11-29T14:00:00+01:00
+startDate: 2025-11-29T15:00:00+01:00
 endDate: 2025-11-29T20:00:00+01:00
 location: dgh
 organizer: dorfpflege

@@ -10,13 +10,6 @@ assignees: ''
 
 <!-- Kopiere hier einfach den kompletten Text mit allen Termin-Infos rein (z.B. aus E-Mail, Flyer, Einladung) -->
 
-```
-Beispiel:
-Eine öffentliche Sitzung des Ortsrates Rössing findet am Dienstag, dem 28. Oktober 2025, 19:00
-Uhr, im Dorfgemeinschaftshaus Rössing, Sitzungszimmer, Kirchstraße 3, statt.
-...
-```
-
 ## Zusätzliche Hinweise (optional)
 
 <!-- Falls Claude weitere Infos braucht oder du Besonderheiten angeben willst -->

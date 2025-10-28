@@ -1,5 +1,5 @@
 name: Neuer Termin
-description: Einen neuen Termin/Event für die Website eintragen
+description: Termin-Infos einfach reinkopieren
 title: "[TERMIN] "
 labels: ["termin", "content"]
 body:
@@ -7,166 +7,28 @@ body:
     attributes:
       value: |
         ## Neuen Termin hinzufügen
-        Bitte fülle alle Pflichtfelder aus. Claude wird dann automatisch die Termin-Datei erstellen.
-
-  - type: input
-    id: event-name
-    attributes:
-      label: Name des Events
-      description: Der Titel der Veranstaltung
-      placeholder: z.B. "Spielenachmittag", "Jahreshauptversammlung CDU", "Vortrag Klimawandel"
-    validations:
-      required: true
-
-  - type: input
-    id: start-date
-    attributes:
-      label: Startdatum
-      description: "Datum im Format: YYYY-MM-DD"
-      placeholder: "2025-12-24"
-    validations:
-      required: true
-
-  - type: input
-    id: start-time
-    attributes:
-      label: Startzeit
-      description: "Uhrzeit im Format: HH:MM"
-      placeholder: "15:00"
-    validations:
-      required: true
-
-  - type: input
-    id: end-date
-    attributes:
-      label: Enddatum (optional)
-      description: "Nur ausfüllen, wenn das Event an einem anderen Tag endet. Format: YYYY-MM-DD"
-      placeholder: "2025-12-25"
-    validations:
-      required: false
-
-  - type: input
-    id: end-time
-    attributes:
-      label: Endzeit (optional)
-      description: "Format: HH:MM"
-      placeholder: "18:00"
-    validations:
-      required: false
-
-  - type: dropdown
-    id: location
-    attributes:
-      label: Veranstaltungsort
-      description: Wähle den Ort der Veranstaltung
-      options:
-        - akkurat
-        - denkmal
-        - dgh
-        - dghbarnten
-        - ehrenmal
-        - freizeitsee
-        - gasthaus-volkening
-        - hof-baumgarten
-        - hof-koenneke
-        - kirche
-        - kleingartenverein
-        - lange-wanne
-        - nkv
-        - peter-winkler-platz
-        - roessing
-        - schloss-derneburg
-        - schlosspark
-        - schlosssaal
-        - sportplatz
-        - sporthalle
-        - stiftung
-        - streuobstwiese
-        - stubenrauchhalle
-        - unter-den-eichen
-        - "Anderer Ort (bitte in Beschreibung angeben)"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: organizer
-    attributes:
-      label: Veranstalter
-      description: Wer organisiert das Event?
-      options:
-        - awo
-        - bdv
-        - bergmannsverein
-        - buergerstiftung
-        - cdu
-        - dorfpflege
-        - drk
-        - drk-blutspende
-        - feuerwehr
-        - foerdervereinmusikzug
-        - freizeitsee
-        - gruene-nordstemmen
-        - kleingartenverein
-        - kulturkreis
-        - landfrauen
-        - nkv
-        - ortsrat
-        - spd
-        - tita-von-roessing
-        - vsv
-        - "Anderer Veranstalter (bitte in Beschreibung angeben)"
-    validations:
-      required: true
+        Einfach den Termin-Text hier reinkopieren (z.B. aus E-Mail, Flyer, Einladung).
+        Claude extrahiert automatisch die Infos und erstellt die Event-Datei(en).
 
   - type: textarea
-    id: description
+    id: termin-text
     attributes:
-      label: Kurzbeschreibung
-      description: Eine kurze Beschreibung des Events (wird in der Übersicht angezeigt)
-      placeholder: "z.B. Das DRK Rössing lädt zum Spielenachmittag ins Dorfgemeinschaftshaus."
-    validations:
-      required: true
-
-  - type: input
-    id: url
-    attributes:
-      label: URL (optional)
-      description: Link zur Event-Website oder weiteren Informationen
-      placeholder: "https://..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: details
-    attributes:
-      label: Ausführliche Details (optional)
-      description: |
-        Längerer Text mit weiteren Informationen zum Event.
-        Wird auf der Event-Seite angezeigt. Du kannst hier Markdown verwenden.
+      label: Termin-Information
+      description: Kopiere hier einfach den kompletten Text mit allen Termin-Infos rein
       placeholder: |
-        Weitere Informationen zur Veranstaltung...
-
-        ## Programm
-        - Punkt 1
-        - Punkt 2
+        z.B.:
+        Eine öffentliche Sitzung des Ortsrates Rössing findet am Dienstag, dem 28. Oktober 2025, 19:00
+        Uhr, im Dorfgemeinschaftshaus Rössing, Sitzungszimmer, Kirchstraße 3, statt.
+        ...
     validations:
-      required: false
+      required: true
 
-  - type: input
-    id: image-path
+  - type: textarea
+    id: zusatzinfos
     attributes:
-      label: Bild-Pfad (optional)
-      description: "Relativer Pfad zum Bild im images-Ordner, z.B. ./images/spielenachmittag.png"
-      placeholder: "./images/event-name.png"
-    validations:
-      required: false
-
-  - type: input
-    id: image-alt
-    attributes:
-      label: Bild-Beschreibung (optional)
-      description: "Alt-Text für das Bild (für Barrierefreiheit)"
-      placeholder: "Beschreibung des Bildes"
+      label: Zusätzliche Hinweise (optional)
+      description: Falls Claude weitere Infos braucht oder du Besonderheiten angeben willst
+      placeholder: z.B. "Bitte Bild xyz.jpg verwenden" oder "Das ist eine besonders wichtige Veranstaltung"
     validations:
       required: false
 
@@ -175,15 +37,55 @@ body:
       value: |
         ---
 
-        ## Aufgabe für Claude
+        ## 🤖 Aufgabe für Claude
 
-        Erstelle eine neue Event-Datei im Verzeichnis `src/content/events/` mit folgendem Schema:
-        - Dateiname: `YYYY-MM-DD-event-name.md` (Datum aus Startdatum, Name aus Event-Name, kleingeschrieben, mit Bindestrichen)
-        - Frontmatter mit allen angegebenen Informationen im korrekten Format
-        - Startzeit im Format: `YYYY-MM-DDTHH:MM:00+01:00` (mit Timezone)
-        - Falls angegeben: Endzeit im selben Format
-        - Location und Organizer als Reference (ohne Dateierweiterung)
-        - Wenn ein Bild angegeben ist: image-Objekt mit src und alt
-        - Ausführliche Details als Markdown-Body (falls angegeben)
+        **Bitte analysiere den eingegebenen Text und erstelle automatisch Event-Datei(en):**
 
-        Committe die Änderung und pushe zum Branch.
+        ### Deine Aufgaben:
+        1. **Extrahiere** alle relevanten Informationen aus dem Text:
+           - Datum(e) und Uhrzeit(en)
+           - Event-Name(n)
+           - Veranstaltungsort(e)
+           - Veranstalter
+           - Beschreibung
+           - Zusätzliche Details (Tagesordnung, Programm, etc.)
+
+        2. **Mappe** die Informationen auf das Schema:
+           - **Location**: Suche in den verfügbaren Locations (`src/data/locations/`)
+             - "Dorfgemeinschaftshaus" → `dgh`
+             - "Kirche" → `kirche`
+             - "Sportplatz" → `sportplatz`
+             - etc.
+           - **Organizer**: Suche in den verfügbaren Organizers (`src/data/organizers/`)
+             - "Ortsrat" → `ortsrat`
+             - "DRK" → `drk`
+             - "CDU" → `cdu`
+             - "Landfrauen" / "Landfrauenverein" → `landfrauen`
+             - etc.
+
+        3. **Erstelle** Event-Datei(en) in `src/content/events/`:
+           - **Dateiname**: `YYYY-MM-DD-kurzer-name.md`
+           - **Frontmatter**:
+             ```yaml
+             ---
+             startDate: YYYY-MM-DDTHH:MM:00+01:00
+             endDate: YYYY-MM-DDTHH:MM:00+01:00  # optional
+             location: location-id  # ohne .yaml
+             organizer: organizer-id  # ohne .yaml
+             description: Kurze Beschreibung für die Übersicht
+             name: Event-Name
+             ---
+             ```
+           - **Body**: Alle weiteren Details als Markdown (Tagesordnung, Programm, etc.)
+
+        4. **Hinweise**:
+           - Wenn mehrere Events im Text sind (z.B. Bürgergespräch + Ortsratssitzung), erstelle separate Dateien
+           - Sei smart beim Mapping: "Dorfgemeinschaftshaus Rössing, Sitzungszimmer" → `dgh`
+           - Wenn Location/Organizer nicht in den Daten existiert, wähle die passendste oder frage nach
+           - Deutsche Zeitzone verwenden: `+01:00` (Winterzeit) oder `+02:00` (Sommerzeit)
+           - Kurzbeschreibung sollte prägnant sein (1-2 Sätze)
+           - Längere Infos gehören in den Markdown-Body
+
+        5. **Committe** die Änderung(en) und **pushe** zum Branch
+
+        **Wichtig**: Schau dir zur Orientierung existierende Event-Dateien in `src/content/events/` an!

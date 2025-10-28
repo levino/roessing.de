@@ -1,0 +1,189 @@
+name: Neuer Termin
+description: Einen neuen Termin/Event für die Website eintragen
+title: "[TERMIN] "
+labels: ["termin", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Neuen Termin hinzufügen
+        Bitte fülle alle Pflichtfelder aus. Claude wird dann automatisch die Termin-Datei erstellen.
+
+  - type: input
+    id: event-name
+    attributes:
+      label: Name des Events
+      description: Der Titel der Veranstaltung
+      placeholder: z.B. "Spielenachmittag", "Jahreshauptversammlung CDU", "Vortrag Klimawandel"
+    validations:
+      required: true
+
+  - type: input
+    id: start-date
+    attributes:
+      label: Startdatum
+      description: "Datum im Format: YYYY-MM-DD"
+      placeholder: "2025-12-24"
+    validations:
+      required: true
+
+  - type: input
+    id: start-time
+    attributes:
+      label: Startzeit
+      description: "Uhrzeit im Format: HH:MM"
+      placeholder: "15:00"
+    validations:
+      required: true
+
+  - type: input
+    id: end-date
+    attributes:
+      label: Enddatum (optional)
+      description: "Nur ausfüllen, wenn das Event an einem anderen Tag endet. Format: YYYY-MM-DD"
+      placeholder: "2025-12-25"
+    validations:
+      required: false
+
+  - type: input
+    id: end-time
+    attributes:
+      label: Endzeit (optional)
+      description: "Format: HH:MM"
+      placeholder: "18:00"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: location
+    attributes:
+      label: Veranstaltungsort
+      description: Wähle den Ort der Veranstaltung
+      options:
+        - akkurat
+        - denkmal
+        - dgh
+        - dghbarnten
+        - ehrenmal
+        - freizeitsee
+        - gasthaus-volkening
+        - hof-baumgarten
+        - hof-koenneke
+        - kirche
+        - kleingartenverein
+        - lange-wanne
+        - nkv
+        - peter-winkler-platz
+        - roessing
+        - schloss-derneburg
+        - schlosspark
+        - schlosssaal
+        - sportplatz
+        - sporthalle
+        - stiftung
+        - streuobstwiese
+        - stubenrauchhalle
+        - unter-den-eichen
+        - "Anderer Ort (bitte in Beschreibung angeben)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: organizer
+    attributes:
+      label: Veranstalter
+      description: Wer organisiert das Event?
+      options:
+        - awo
+        - bdv
+        - bergmannsverein
+        - buergerstiftung
+        - cdu
+        - dorfpflege
+        - drk
+        - drk-blutspende
+        - feuerwehr
+        - foerdervereinmusikzug
+        - freizeitsee
+        - gruene-nordstemmen
+        - kleingartenverein
+        - kulturkreis
+        - landfrauen
+        - nkv
+        - ortsrat
+        - spd
+        - tita-von-roessing
+        - vsv
+        - "Anderer Veranstalter (bitte in Beschreibung angeben)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Kurzbeschreibung
+      description: Eine kurze Beschreibung des Events (wird in der Übersicht angezeigt)
+      placeholder: "z.B. Das DRK Rössing lädt zum Spielenachmittag ins Dorfgemeinschaftshaus."
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL (optional)
+      description: Link zur Event-Website oder weiteren Informationen
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Ausführliche Details (optional)
+      description: |
+        Längerer Text mit weiteren Informationen zum Event.
+        Wird auf der Event-Seite angezeigt. Du kannst hier Markdown verwenden.
+      placeholder: |
+        Weitere Informationen zur Veranstaltung...
+
+        ## Programm
+        - Punkt 1
+        - Punkt 2
+    validations:
+      required: false
+
+  - type: input
+    id: image-path
+    attributes:
+      label: Bild-Pfad (optional)
+      description: "Relativer Pfad zum Bild im images-Ordner, z.B. ./images/spielenachmittag.png"
+      placeholder: "./images/event-name.png"
+    validations:
+      required: false
+
+  - type: input
+    id: image-alt
+    attributes:
+      label: Bild-Beschreibung (optional)
+      description: "Alt-Text für das Bild (für Barrierefreiheit)"
+      placeholder: "Beschreibung des Bildes"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Aufgabe für Claude
+
+        Erstelle eine neue Event-Datei im Verzeichnis `src/content/events/` mit folgendem Schema:
+        - Dateiname: `YYYY-MM-DD-event-name.md` (Datum aus Startdatum, Name aus Event-Name, kleingeschrieben, mit Bindestrichen)
+        - Frontmatter mit allen angegebenen Informationen im korrekten Format
+        - Startzeit im Format: `YYYY-MM-DDTHH:MM:00+01:00` (mit Timezone)
+        - Falls angegeben: Endzeit im selben Format
+        - Location und Organizer als Reference (ohne Dateierweiterung)
+        - Wenn ein Bild angegeben ist: image-Objekt mit src und alt
+        - Ausführliche Details als Markdown-Body (falls angegeben)
+
+        Committe die Änderung und pushe zum Branch.

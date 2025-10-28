@@ -26,7 +26,7 @@
     "@astrojs/react": "^4.1.2",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
-    "@levino/shipyard-base": "^0.5.2",
+    "@levino/shipyard-base": "^0.5.7",
     "@levino/shipyard-docs": "^0.4.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.0.21",

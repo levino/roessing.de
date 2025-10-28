@@ -82,7 +82,10 @@ body:
            - Wenn mehrere Events im Text sind (z.B. Bürgergespräch + Ortsratssitzung), erstelle separate Dateien
            - Sei smart beim Mapping: "Dorfgemeinschaftshaus Rössing, Sitzungszimmer" → `dgh`
            - Wenn Location/Organizer nicht in den Daten existiert, wähle die passendste oder frage nach
-           - Deutsche Zeitzone verwenden: `+01:00` (Winterzeit) oder `+02:00` (Sommerzeit)
+           - **WICHTIG - Zeitzone**: Deutsche Zeitzone verwenden: `+01:00` (Winterzeit) oder `+02:00` (Sommerzeit)
+             - Die `startDate` ist die **tatsächliche Startzeit** der ersten Aktivität
+             - Beispiel: Bürgergespräch 18:30 Uhr + Sitzung 19:00 Uhr → `startDate: 18:30:00+02:00`
+             - Die Zeit im ISO 8601 Format mit Zeitzone wird korrekt für die Website-Anzeige konvertiert
            - Kurzbeschreibung sollte prägnant sein (1-2 Sätze)
            - Längere Infos gehören in den Markdown-Body
 

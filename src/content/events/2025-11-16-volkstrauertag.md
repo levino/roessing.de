@@ -14,4 +14,4 @@ Die Ansprache zu diesem traurigen Gedenktag hält Ehrenortsbürgermeister Peter 
 
 Die musikalische Umrahmung erfolgt durch den Musikzug der Freiwilligen Feuerwehr Rössing.
 
-Wir würden uns freuen, wenn Sie durch Ihre Teilnahme ein Zeichen der Erinnerung und des Friedens setzen.
+Der Ortsrat würde sich freuen, wenn Sie durch Ihre Teilnahme ein Zeichen der Erinnerung und des Friedens setzen.

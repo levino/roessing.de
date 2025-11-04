@@ -8,6 +8,10 @@ description:
 name: Volkstrauertag
 ---
 
-Der Ortsrat lädt zur Gedenkfeier zum Volkstrauertag mit Kranzniederlegung am Denkmal ein.
+Der Ortsrat Rössing lädt anlässlich des Volkstrauertags zu einer Gedenkfeier am Ehrenmal ein.
 
-Gedenken an die Opfer von Krieg und Gewaltherrschaft. Mit musikalischer Umrahmung.
+Die Ansprache zu diesem traurigen Gedenktag hält Ehrenortsbürgermeister Peter Winkler.
+
+Die musikalische Umrahmung erfolgt durch den Musikzug der Freiwilligen Feuerwehr Rössing.
+
+Der Ortsrat würde sich freuen, wenn Sie durch Ihre Teilnahme ein Zeichen der Erinnerung und des Friedens setzen.

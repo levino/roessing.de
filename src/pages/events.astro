@@ -64,43 +64,89 @@ const events = pipe(
     ),
   ),
 )
+
+const totalEvents = futureEvents.length
 ---
 
 <Layout
   title="Veranstaltungen in Rössing"
   description="Hier finden Sie alle Veranstaltungen in Rössing."
 >
-  <div class="container flex flex-col mx-auto p-8">
-    <h1 class="text-4xl font-bold mb-8 dark:text-slate-100">
-      Veranstaltungen in Rössing
-    </h1>
-    {
-      pipe(
-        events,
-        R.toEntries,
-        A.map(([year, eventsInThisYearByMonth]) => (
-          <>
-            <div>{year}</div>
-            {MONTHS.map((month) => {
-              const eventsInThisMonth = eventsInThisYearByMonth[month]
-              if (!eventsInThisMonth) return null
-              return (
-                <div class="mb-8 flex flex-col">
-                  <h2 class="text-2xl font-bold mb-4 dark:text-slate-200">
-                    {month}
-                  </h2>
-                  <div class="flex flex-col mx-auto">
-                    {eventsInThisMonth.map((event) => (
-                      <EventCard event={event} />
-                    ))}
+  <div class="min-h-screen bg-gradient-to-b from-base-100 to-base-200">
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+      <header class="text-center mb-12">
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-slate-100"
+        >
+          Veranstaltungen in Rössing
+        </h1>
+        <p class="text-gray-600 dark:text-slate-400 text-lg">
+          {totalEvents} kommende {totalEvents === 1 ? 'Veranstaltung' : 'Veranstaltungen'}
+        </p>
+      </header>
+
+      {
+        pipe(
+          events,
+          R.toEntries,
+          A.map(([year, eventsInThisYearByMonth]) => (
+            <section class="mb-16">
+              <div class="divider divider-primary">
+                <span class="badge badge-primary badge-lg text-xl font-bold px-6 py-4">
+                  {year}
+                </span>
+              </div>
+
+              {MONTHS.map((month) => {
+                const eventsInThisMonth = eventsInThisYearByMonth[month]
+                if (!eventsInThisMonth) return null
+                return (
+                  <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                      <h2 class="text-2xl font-semibold">{month}</h2>
+                      <span class="badge badge-ghost badge-sm">
+                        {eventsInThisMonth.length}{' '}
+                        {eventsInThisMonth.length === 1
+                          ? 'Veranstaltung'
+                          : 'Veranstaltungen'}
+                      </span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                      {eventsInThisMonth.map((event) => (
+                        <EventCard event={event} />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            })}
-          </>
-        )),
-      )
-    }
+                )
+              })}
+            </section>
+          )),
+        )
+      }
+
+      {
+        totalEvents === 0 && (
+          <div class="text-center py-16">
+            <svg
+              class="w-24 h-24 mx-auto text-gray-300 dark:text-slate-600 mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <p class="text-xl text-gray-500 dark:text-slate-400">
+              Aktuell sind keine Veranstaltungen geplant.
+            </p>
+          </div>
+        )
+      }
+    </div>
   </div>
   <StickyButton />
 </Layout>

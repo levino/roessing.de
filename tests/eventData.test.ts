@@ -15,7 +15,8 @@ async function getSchemaOrgData(page: import('@playwright/test').Page) {
 }
 
 test('Google Event Data', async ({ page }) => {
-  await page.goto('http://127.0.0.1:4321/events/2023-12-02-weihnachtsmarkt')
+  // Volkstrauertag-Event hat ein Bild und testet alle Schema.org-Felder
+  await page.goto('http://127.0.0.1:4321/events/2023-11-19-volkstrauertag')
 
   const jsonData = await getSchemaOrgData(page)
 
@@ -23,8 +24,8 @@ test('Google Event Data', async ({ page }) => {
   expect(jsonData).toHaveProperty('@context', 'https://schema.org')
   expect(jsonData).toHaveProperty('@type', 'Event')
   expect(typeof jsonData.name).toBe('string')
-  expect(jsonData.location.name).toBe('Dorfgemeinschaftshaus Rössing')
-  expect(jsonData.organizer.name).toBe('Dorfpflege Rössing e.V.')
+  expect(jsonData.location.name).toBe('Ehrenmal')
+  expect(jsonData.organizer.name).toBe('Ortsrat Rössing')
   expect(typeof jsonData.image).toBe('string')
 })
 

@@ -23,7 +23,7 @@ export default {
   daisyui: {
     themes: [
       {
-        // Sanftes, freundliches Theme mit warmen Pastellfarben
+        // Sanftes, freundliches Theme mit warmen Pastellfarben (Hell)
         sanft: {
           // Hauptfarbe: Warmes Salbeigrün
           primary: '#7c9a92',
@@ -73,6 +73,59 @@ export default {
           '--btn-focus-scale': '0.98',
         },
       },
+      {
+        // Dunkles Theme passend zu "sanft" - basiert auf prefers-color-scheme: dark
+        'sanft-dark': {
+          // Hauptfarbe: Etwas helleres Salbeigrün für bessere Sichtbarkeit
+          primary: '#8fb5ab',
+          'primary-content': '#1a2320',
+
+          // Sekundärfarbe: Helleres Lavendel
+          secondary: '#c9bdd8',
+          'secondary-content': '#1f1c24',
+
+          // Akzentfarbe: Helleres Pfirsich
+          accent: '#f5cec2',
+          'accent-content': '#2d201c',
+
+          // Neutraltöne: Warmes dunkles Grau
+          neutral: '#4a4a4a',
+          'neutral-content': '#e8e6e3',
+
+          // Hintergrund: Warmes Dunkelgrau
+          'base-100': '#2a2825',
+          'base-200': '#232120',
+          'base-300': '#1c1a19',
+          'base-content': '#e8e6e3',
+
+          // Statusfarben (leicht angepasst für dunklen Hintergrund)
+          info: '#9dc4d6',
+          'info-content': '#1a2c35',
+
+          success: '#a8d4b3',
+          'success-content': '#1a2d1f',
+
+          warning: '#f0d08c',
+          'warning-content': '#3d3220',
+
+          error: '#e8a0a0',
+          'error-content': '#3d1f1f',
+
+          // Gleiche abgerundete Ecken wie helles Theme
+          '--rounded-box': '1rem',
+          '--rounded-btn': '0.75rem',
+          '--rounded-badge': '1rem',
+
+          // Gleiche Animationen
+          '--animation-btn': '0.3s',
+          '--animation-input': '0.2s',
+
+          // Gleicher Button-Fokus
+          '--btn-focus-scale': '0.98',
+        },
+      },
     ],
+    // Automatisches Theme-Switching basierend auf Browser-Einstellungen
+    darkTheme: 'sanft-dark',
   },
 } satisfies Config

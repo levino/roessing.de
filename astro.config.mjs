@@ -13,7 +13,7 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   site:
     process.env.CF_PAGES_BRANCH === 'main'
-      ? 'https://roessing.de'
+      ? 'https://www.xn--rssing-wxa.de/'
       : process.env.CF_PAGES_URL ?? 'http://localhost:4321',
   integrations: [
     tailwind(),

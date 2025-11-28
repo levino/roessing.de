@@ -13,7 +13,7 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   site:
     process.env.VERCEL_ENV === 'production'
-      ? 'https://xn--rssing-wxa.de'
+      ? `https://${process.env.VERCEL_URL}`
       : process.env.VERCEL_ENV === 'preview'
         ? `https://${process.env.VERCEL_BRANCH_URL}`
         : 'http://localhost:4321',

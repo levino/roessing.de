@@ -12,11 +12,9 @@ import { defineConfig } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
   site:
-    process.env.VERCEL_ENV === 'production'
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : process.env.VERCEL_ENV === 'preview'
-        ? `https://${process.env.VERCEL_BRANCH_URL}`
-        : 'http://localhost:4321',
+    process.env.CF_PAGES_BRANCH === 'main'
+      ? 'https://roessing.de'
+      : process.env.CF_PAGES_URL ?? 'http://localhost:4321',
   integrations: [
     tailwind(),
     mdx(),

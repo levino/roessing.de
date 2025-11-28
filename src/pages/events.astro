@@ -68,11 +68,11 @@ const totalEvents = futureEvents.length
     <div class="container mx-auto px-4 py-12 max-w-7xl">
       <header class="text-center mb-12">
         <h1
-          class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-slate-100"
+          class="text-4xl md:text-5xl font-bold mb-4 text-base-content"
         >
           Veranstaltungen in Rössing
         </h1>
-        <p class="text-gray-600 dark:text-slate-400 text-lg">
+        <p class="text-base-content/70 text-lg">
           {totalEvents} kommende {totalEvents === 1 ? 'Veranstaltung' : 'Veranstaltungen'}
         </p>
       </header>
@@ -120,7 +120,7 @@ const totalEvents = futureEvents.length
         totalEvents === 0 && (
           <div class="text-center py-16">
             <svg
-              class="w-24 h-24 mx-auto text-gray-300 dark:text-slate-600 mb-4"
+              class="w-24 h-24 mx-auto text-base-content/30 mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ const totalEvents = futureEvents.length
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
-            <p class="text-xl text-gray-500 dark:text-slate-400">
+            <p class="text-xl text-base-content/60">
               Aktuell sind keine Veranstaltungen geplant.
             </p>
           </div>

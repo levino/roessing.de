@@ -19,11 +19,48 @@ Dies ist die persönliche Website von Levin Keller (roessing.de), aufgebaut mit 
 
 ### Tech-Stack:
 - **Framework**: Astro (Static Site Generator)
-- **Dokumentation**: @levino/shipyard-docs (ähnlich wie Docusaurus)
+- **Page Builder**: Shipyard (entwickelt von Levin Keller) - basiert auf Astro
 - **Sprachen**: TypeScript, JavaScript
 - **Styling**: Tailwind CSS, DaisyUI
 - **Testing**: Vitest (Unit-Tests), Playwright (E2E-Tests), Cypress
 - **Paketmanager**: npm
+
+## 🚢 Shipyard Framework
+
+Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Levin Keller, das auf Astro basiert.
+
+**Dokumentation**: https://shipyard.levinkeller.de
+
+### Shipyard Pakete:
+- **@levino/shipyard-base**: Basis-Komponenten, Layouts und Styling (Navigation, Footer, etc.)
+- **@levino/shipyard-docs**: Dokumentations-Features (ähnlich wie Docusaurus)
+- **@levino/shipyard-blog**: Blog-Funktionalität mit Layouts und Collections
+
+### Docs-Frontmatter-Optionen:
+Für Markdown-Dateien in `src/content/docs/` stehen folgende Frontmatter-Felder zur Verfügung:
+
+```yaml
+---
+title: Seitentitel              # Titel der Seite
+description: Beschreibung       # Meta-Beschreibung
+sidebar_position: 0             # Reihenfolge in der Sidebar (0 = erster Eintrag)
+sidebar_label: Kurzname         # Alternativer Name in der Sidebar
+sidebar_class_name: css-class   # CSS-Klasse für den Sidebar-Eintrag
+sidebar:
+  render: true                  # Ob in Sidebar angezeigt werden soll
+  label: Label                  # Sidebar-Label
+pagination_next: pfad           # Nächste Seite für Navigation (null = deaktivieren)
+pagination_prev: pfad           # Vorherige Seite für Navigation (null = deaktivieren)
+custom_edit_url: url            # Benutzerdefinierter "Seite bearbeiten"-Link
+last_update_author: Name        # Autor der letzten Änderung überschreiben
+last_update_time: 2024-01-01    # Zeitstempel der letzten Änderung überschreiben
+---
+```
+
+### Sidebar-Sortierung:
+- Einträge werden nach `sidebar_position` sortiert (kleinere Zahl = weiter oben)
+- Bei gleicher Position: alphabetisch nach Label
+- Ohne `sidebar_position`: Standard ist `POSITIVE_INFINITY` (ganz unten)
 
 ## 🛠️ Entwicklungsrichtlinien
 

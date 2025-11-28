@@ -19,10 +19,22 @@ Dies ist die persönliche Website von Levin Keller (roessing.de), aufgebaut mit 
 
 ### Tech-Stack:
 - **Framework**: Astro (Static Site Generator)
+- **Page Builder**: Shipyard (entwickelt von Levin Keller) - basiert auf Astro
 - **Sprachen**: TypeScript, JavaScript
 - **Styling**: Tailwind CSS, DaisyUI
 - **Testing**: Vitest (Unit-Tests), Playwright (E2E-Tests), Cypress
 - **Paketmanager**: npm
+
+## 🚢 Shipyard Framework
+
+Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Levin Keller, das auf Astro basiert. Es ist von der API und dem Funktionsumfang her Docusaurus nachempfunden.
+
+**Dokumentation**: https://shipyard.levinkeller.de
+
+### Shipyard Pakete:
+- **@levino/shipyard-base**: Basis-Komponenten, Layouts und Styling (Navigation, Footer, etc.)
+- **@levino/shipyard-docs**: Dokumentations-Features
+- **@levino/shipyard-blog**: Blog-Funktionalität mit Layouts und Collections
 
 ## 🛠️ Entwicklungsrichtlinien
 

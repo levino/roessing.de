@@ -1,12 +1,12 @@
 # roessing.de
 
-Die offizielle Website für das Dorf **Rössing** in Niedersachsen.
+Ein digitales schwarzes Brett für das Dorf **Rössing** in Niedersachsen – ein Hobbyprojekt von [Levin Keller](https://www.levinkeller.de).
 
 ## Über Rössing
 
 Rössing ist ein Dorf in Niedersachsen und gehört zur Gemeinde Nordstemmen im Landkreis Hildesheim. Mit etwa 1600 Einwohner:innen und zahlreichen aktiven Vereinen bietet das Dorf ein lebendiges Gemeinschaftsleben.
 
-Diese Website dient als zentrale Informationsplattform für:
+Diese Website ist eine sogenannte [Mitmach-Seite](https://www.levinkeller.de/de/docs/software/collaborative-homepage) und dient als Informationsplattform für:
 
 - **Veranstaltungen** – Alle kommenden Events der Rössinger Vereine und Organisationen
 - **Wissensdatenbank** – Interessante Informationen über Rössing (Natur, Politik, Wirtschaft)

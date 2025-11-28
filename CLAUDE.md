@@ -51,7 +51,7 @@ Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Lev
 
 ### Verfügbare Befehle:
 ```bash
-npm install        # Abhängigkeiten installieren
+npm run setup      # Abhängigkeiten installieren (NICHT npm install verwenden!)
 npm run dev        # Entwicklungsserver starten (localhost:4321)
 npm run build      # Produktions-Build erstellen
 npm run preview    # Build lokal testen
@@ -120,3 +120,9 @@ npm run prettier   # Code-Formatierung prüfen
 - Input-Validierung bei allen Benutzereingaben
 - Abhängigkeiten regelmäßig aktualisieren
 - CORS-Einstellungen sorgfältig prüfen
+
+### npm-Sicherheit mit allow-scripts
+Dieses Projekt verwendet `@lavamoat/allow-scripts` zum Schutz vor bösartigen npm-Lifecycle-Skripten:
+- **Immer `npm run setup` statt `npm install` verwenden!**
+- Die `.npmrc` blockiert alle Lifecycle-Skripte standardmäßig
+- Nur explizit erlaubte Pakete in `package.json` unter `lavamoat.allowScripts` können Skripte ausführen

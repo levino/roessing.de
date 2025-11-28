@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "setup": "npm install && npx allow-scripts",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
     "build": "astro build",
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@anthropic-ai/claude-code": "^1.0.120",
     "@biomejs/biome": "2.2.4",
+    "@lavamoat/allow-scripts": "^3.4.1",
     "@playwright/test": "^1.48.2",
     "@types/ramda": "^0.29.9",
     "@unlighthouse/cli": "^0.14",
@@ -55,9 +57,15 @@
     "start-server-and-test": "^2.0.3",
     "vitest": "^2"
   },
-  "trustedDependencies": [
-    "puppeteer",
-    "sharp",
-    "cypress"
-  ]
+  "lavamoat": {
+    "allowScripts": {
+      "@unlighthouse/cli>@unlighthouse/server>listhen>@parcel/watcher": true,
+      "astro>esbuild": true,
+      "astro>sharp": true,
+      "cypress": true,
+      "puppeteer": true,
+      "vitest>vite-node>vite>esbuild": true,
+      "vitest>vite>esbuild": true
+    }
+  }
 }

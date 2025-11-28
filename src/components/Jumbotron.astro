@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import heroImage from './hero.jpeg'
 ---
 
-<section class="relative min-h-[50vh] lg:min-h-0 lg:aspect-video flex items-center justify-center">
+<section class="relative min-h-[50vh] flex items-center justify-center">
   {/* Hintergrundbild-Container */}
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <Image
@@ -14,7 +14,7 @@ import heroImage from './hero.jpeg'
       quality={75}
       loading="eager"
       fetchpriority="high"
-      class="w-full h-full object-cover lg:object-contain brightness-50"
+      class="w-full h-full object-cover object-top brightness-50"
     />
   </div>
   {/* Inhalt zentriert und mit Padding für mobile Geräte */}

@@ -23,7 +23,7 @@ resource "cloudflare_pages_project" "roessing_de" {
   }
 
   build_config {
-    build_command   = "pnpm build"
+    build_command   = "npm run setup && npm run build"
     destination_dir = "dist"
     root_dir        = ""
   }

@@ -19,7 +19,7 @@ const ogImage = `${Astro.site?.origin}${Astro.props.ogImage}`
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="sanft">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -32,7 +32,7 @@ const ogImage = `${Astro.site?.origin}${Astro.props.ogImage}`
     {ogImage ? <meta property="og:image" content={ogImage} /> : null}
     <title>{title}</title>
   </head>
-  <body class="dark:bg-slate-900">
+  <body class="bg-base-100">
     <div class="min-h-screen flex flex-col">
       <NavBar client:idle />
       <div class="flex flex-col flex-grow">

@@ -28,9 +28,9 @@ const time = startDate.toLocaleTimeString('de-DE', {
   href={event.data.url ?? `events/${event.id}`}
   target={target}
 >
-  <figure class="relative">
-    {
-      image ? (
+  {
+    image && (
+      <figure class="relative">
         <div class="aspect-[16/9] w-full overflow-hidden">
           <Image
             class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
@@ -38,25 +38,44 @@ const time = startDate.toLocaleTimeString('de-DE', {
             alt={image.alt}
           />
         </div>
-      ) : (
-        <div class="aspect-[16/9] w-full bg-gradient-to-br from-primary/20 to-secondary/20" />
-      )
-    }
-    <div class="badge badge-lg badge-primary absolute top-3 left-3 gap-1 font-bold">
-      <span class="text-xs uppercase opacity-80">{weekday}</span>
-      <span class="text-lg">{day}</span>
-    </div>
-  </figure>
+        <div class="badge badge-lg badge-primary absolute top-3 left-3 gap-1 font-bold">
+          <span class="text-xs uppercase opacity-80">{weekday}</span>
+          <span class="text-lg">{day}</span>
+        </div>
+      </figure>
+    )
+  }
 
   <div class="card-body">
-    <h3 class="card-title text-base line-clamp-2 group-hover:text-primary transition-colors">
-      {event.data.name}
-    </h3>
+    <div class="flex items-start gap-3">
+      {
+        !image && (
+          <div class="badge badge-lg badge-primary gap-1 font-bold flex-shrink-0">
+            <span class="text-xs uppercase opacity-80">{weekday}</span>
+            <span class="text-lg">{day}</span>
+          </div>
+        )
+      }
+      <h3
+        class="card-title text-base line-clamp-2 group-hover:text-primary transition-colors"
+      >
+        {event.data.name}
+      </h3>
+    </div>
 
     <div class="flex flex-col gap-1 text-sm">
       <div class="flex items-center gap-2 text-base-content/70">
-        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          class="w-4 h-4 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <span>{time} Uhr</span>
       </div>
@@ -64,9 +83,24 @@ const time = startDate.toLocaleTimeString('de-DE', {
       {
         location && (
           <div class="flex items-center gap-2 text-base-content/70">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
             </svg>
             <span class="truncate">{location.data.name}</span>
           </div>
@@ -76,8 +110,18 @@ const time = startDate.toLocaleTimeString('de-DE', {
       {
         organizer && (
           <div class="flex items-center gap-2 text-base-content/60">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+              />
             </svg>
             <span class="truncate">{organizer.data.name}</span>
           </div>

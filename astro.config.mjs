@@ -41,6 +41,8 @@ export default defineConfig({
       tagline: 'Über den Ort Rössing',
       brand: 'Rössing',
       scripts: [
+        // Theme-Script muss zuerst und ohne defer laden für sofortige Theme-Erkennung
+        '/theme.js',
         {
           src: 'https://analytics.levinkeller.de/js/script.js',
           defer: true,

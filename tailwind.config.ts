@@ -21,9 +21,10 @@ export default {
   },
   plugins: [require('@tailwindcss/typography'), daisyui],
   daisyui: {
+    darkTheme: 'sanft-dark',
     themes: [
       {
-        // Sanftes, freundliches Theme mit warmen Pastellfarben
+        // Sanftes, freundliches Light-Theme mit warmen Pastellfarben
         sanft: {
           // Hauptfarbe: Warmes Salbeigrün
           primary: '#7c9a92',
@@ -59,6 +60,57 @@ export default {
 
           error: '#d99090',
           'error-content': '#3d1f1f',
+
+          // Abgerundete Ecken für freundliches Erscheinungsbild
+          '--rounded-box': '1rem',
+          '--rounded-btn': '0.75rem',
+          '--rounded-badge': '1rem',
+
+          // Sanfte Animationen
+          '--animation-btn': '0.3s',
+          '--animation-input': '0.2s',
+
+          // Weicher Button-Fokus
+          '--btn-focus-scale': '0.98',
+        },
+      },
+      {
+        // Sanftes Dark-Theme - passend zum Light-Theme
+        'sanft-dark': {
+          // Hauptfarbe: Warmes Salbeigrün (etwas heller für Dark-Mode)
+          primary: '#8fb3aa',
+          'primary-content': '#1a2320',
+
+          // Sekundärfarbe: Sanftes Lavendel
+          secondary: '#c4b5d4',
+          'secondary-content': '#1e1b22',
+
+          // Akzentfarbe: Warmes Pfirsich
+          accent: '#e8a090',
+          'accent-content': '#2a1f1c',
+
+          // Neutraltöne: Warmes Dunkelgrau
+          neutral: '#3d3833',
+          'neutral-content': '#e5ded4',
+
+          // Hintergrund: Warmes Dunkel
+          'base-100': '#1e1c1a',
+          'base-200': '#28251f',
+          'base-300': '#332f28',
+          'base-content': '#e5ded4',
+
+          // Statusfarben (angepasst für Dark-Mode)
+          info: '#6ca3bc',
+          'info-content': '#e8f4f9',
+
+          success: '#7ab38a',
+          'success-content': '#e8f5eb',
+
+          warning: '#d4ad5a',
+          'warning-content': '#faf5e8',
+
+          error: '#c77a7a',
+          'error-content': '#fce8e8',
 
           // Abgerundete Ecken für freundliches Erscheinungsbild
           '--rounded-box': '1rem',

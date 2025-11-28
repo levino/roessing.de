@@ -24,7 +24,7 @@ test('Google Event Data', async ({ page }) => {
   expect(jsonData).toHaveProperty('@context', 'https://schema.org')
   expect(jsonData).toHaveProperty('@type', 'Event')
   expect(typeof jsonData.name).toBe('string')
-  expect(jsonData.location.name).toBe('Ehrenmal')
+  expect(jsonData.location.name).toBe('Rössinger Ehrenmal')
   expect(jsonData.organizer.name).toBe('Ortsrat Rössing')
   expect(typeof jsonData.image).toBe('string')
 })

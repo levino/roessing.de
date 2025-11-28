@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { render } from 'astro:content'
-import { getDay, getWeekday, timeAndDate } from '@/tools/events'
+import { timeAndDate } from '@/tools/events'
 import type { FullEvent } from '@/types'
 import AddressLink from './AddressLink.astro'
 
@@ -16,15 +16,12 @@ const {
 } = Astro.props
 
 const { Content } = await render(event)
-
-const day = getDay(startDate)
-const weekday = getWeekday(startDate)
 ---
 
 <div class="container mx-auto px-4 py-8 max-w-4xl">
   {
     image && (
-      <figure class="relative mb-6">
+      <figure class="mb-6">
         <div class="aspect-[16/9] w-full overflow-hidden rounded-lg">
           <Image
             class="object-cover w-full h-full"
@@ -32,27 +29,13 @@ const weekday = getWeekday(startDate)
             alt={image.alt}
           />
         </div>
-        <div class="badge badge-lg badge-primary absolute top-4 left-4 gap-1 font-bold">
-          <span class="text-xs uppercase opacity-80">{weekday}</span>
-          <span class="text-lg">{day}</span>
-        </div>
       </figure>
     )
   }
 
-  <div class="flex items-start gap-4 mb-4">
-    {
-      !image && (
-        <div class="badge badge-lg badge-primary gap-1 font-bold flex-shrink-0">
-          <span class="text-xs uppercase opacity-80">{weekday}</span>
-          <span class="text-lg">{day}</span>
-        </div>
-      )
-    }
-    <h1 class="text-3xl md:text-4xl font-bold break-words min-w-0">
-      {name}
-    </h1>
-  </div>
+  <h1 class="text-3xl md:text-4xl font-bold break-words min-w-0 mb-4">
+    {name}
+  </h1>
 
   <div class="flex flex-col gap-3 mb-6">
     <div class="flex items-center gap-3 text-base-content/70">

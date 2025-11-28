@@ -19,6 +19,7 @@ Dies ist die persönliche Website von Levin Keller (roessing.de), aufgebaut mit 
 
 ### Tech-Stack:
 - **Framework**: Astro (Static Site Generator)
+- **Dokumentation**: @levino/shipyard-docs (ähnlich wie Docusaurus)
 - **Sprachen**: TypeScript, JavaScript
 - **Styling**: Tailwind CSS, DaisyUI
 - **Testing**: Vitest (Unit-Tests), Playwright (E2E-Tests), Cypress

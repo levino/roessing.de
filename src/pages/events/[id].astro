@@ -45,7 +45,9 @@ const ogImage = entry.data.image
 
 // Prüfen, ob das Event in der Vergangenheit liegt
 const eventEndDate = event.data.endDate || event.data.startDate
-const isPastEvent = new Date(eventEndDate) < new Date()
+const endOfEventDay = new Date(eventEndDate)
+endOfEventDay.setHours(23, 59, 59, 999)
+const isPastEvent = endOfEventDay < new Date()
 const eventStatus = isPastEvent
   ? 'https://schema.org/EventCompleted'
   : 'https://schema.org/EventScheduled'

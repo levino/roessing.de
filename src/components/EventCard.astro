@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { getDay, getTime, getWeekday } from '@/tools/events'
 import type { FullEvent } from '@/types'
 
 interface Props {
@@ -15,12 +16,9 @@ const {
 
 const target = event.data.url ? '_blank' : '_self'
 
-const day = startDate.getDate()
-const weekday = startDate.toLocaleDateString('de-DE', { weekday: 'short' })
-const time = startDate.toLocaleTimeString('de-DE', {
-  hour: '2-digit',
-  minute: '2-digit',
-})
+const day = getDay(startDate)
+const weekday = getWeekday(startDate)
+const time = getTime(startDate)
 ---
 
 <a

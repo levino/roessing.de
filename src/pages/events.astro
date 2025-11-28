@@ -5,6 +5,7 @@ import { nonEmptyArray } from 'fp-ts'
 import * as A from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
 import * as R from 'fp-ts/Record'
+import { getMonth, getYear } from '@/tools/events'
 import type { FullEvent } from '@/types'
 import EventCard from '../components/EventCard.astro'
 import StickyButton from '../components/StickyButton.astro'
@@ -51,17 +52,9 @@ const futureEvents = await getCollection(
 
 const events = pipe(
   futureEvents,
-  nonEmptyArray.groupBy((event: FullEvent) =>
-    event.data.startDate.toLocaleString('de-DE', {
-      year: 'numeric',
-    }),
-  ),
+  nonEmptyArray.groupBy((event: FullEvent) => getYear(event.data.startDate)),
   R.map(
-    nonEmptyArray.groupBy((event: FullEvent) =>
-      event.data.startDate.toLocaleString('de-DE', {
-        month: 'long',
-      }),
-    ),
+    nonEmptyArray.groupBy((event: FullEvent) => getMonth(event.data.startDate)),
   ),
 )
 

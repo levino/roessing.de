@@ -3,18 +3,22 @@ import { Image } from 'astro:assets'
 import heroImage from './hero.jpeg'
 ---
 
-<section class="flex relative h-[50vh] align-middle">
-  <div class="absolute overflow-hidden h-[50vh] h-full w-full -z-10">
+<section class="relative min-h-[50vh] flex items-center justify-center">
+  {/* Hintergrundbild-Container */}
+  <div class="absolute inset-0 -z-10 overflow-hidden">
     <Image
-      alt="Blumenwiese"
+      alt="Blumenwiese in Rössing"
       src={heroImage}
-      quality={100}
-      sizes="100vw"
-      style={{
-        objectFit: 'cover',
-      }}
-      class="brightness-50"
+      width={1920}
+      height={1080}
+      quality={75}
+      loading="eager"
+      fetchpriority="high"
+      class="w-full h-full object-cover object-top brightness-50"
     />
   </div>
-  <slot />
+  {/* Inhalt zentriert und mit Padding für mobile Geräte */}
+  <div class="relative z-10 w-full px-4 py-8 sm:py-12">
+    <slot />
+  </div>
 </section>

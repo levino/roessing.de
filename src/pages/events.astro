@@ -8,7 +8,6 @@ import * as R from 'fp-ts/Record'
 import { getMonth, getYear } from '@/tools/events'
 import type { FullEvent } from '@/types'
 import EventCard from '../components/EventCard.astro'
-import StickyButton from '../components/StickyButton.astro'
 
 const MONTHS = [
   'Januar',
@@ -141,5 +140,4 @@ const totalEvents = futureEvents.length
       }
     </div>
   </div>
-  <StickyButton />
 </Layout>

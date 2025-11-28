@@ -14,6 +14,9 @@ Die Dorfpflege Rössing lädt zum 34. traditionellen Weihnachtsmarkt ein.
 
 - **15:00 Uhr** – Eröffnung des Weihnachtsmarkts
 - **16:00 Uhr** – Der Weihnachtsmann kommt für alle Kinder mit Geschenken
+- **16:15 Uhr** – Auftritt des Posaunenchors
+- **17:15 Uhr** – Musikorchester der Freiwilligen Feuerwehr
+- **18:00 Uhr** – Präsentation des Jahreskalenders Rössing 2026 (Bürgerstiftung)
 
 ## Speisen & Getränke
 

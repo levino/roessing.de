@@ -43,9 +43,17 @@ const ogImage = entry.data.image
   ? await getImage({ src: event.data.image?.src || '', width: 1200 })
   : undefined
 
+// Prüfen, ob das Event in der Vergangenheit liegt
+const eventEndDate = event.data.endDate || event.data.startDate
+const isPastEvent = new Date(eventEndDate) < new Date()
+const eventStatus = isPastEvent
+  ? 'https://schema.org/EventCompleted'
+  : 'https://schema.org/EventScheduled'
+
 const googleStructuredEventData = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Event',
+  eventStatus,
   ...event.data,
   ...(event.data.organizer ? { organizer: event.data.organizer.data } : {}),
   ...(event.data.location ? { location: event.data.location.data } : {}),

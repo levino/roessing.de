@@ -64,41 +64,93 @@ const events = pipe(
     ),
   ),
 )
+
+const hasEvents = Object.keys(events).length > 0
 ---
 
 <Layout
   title="Veranstaltungen in Rössing"
   description="Hier finden Sie alle Veranstaltungen in Rössing."
 >
-  <div class="container flex flex-col mx-auto p-8">
-    <h1 class="text-4xl font-bold mb-8 dark:text-slate-100">
-      Veranstaltungen in Rössing
-    </h1>
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold mb-3">Veranstaltungen in Rössing</h1>
+      <p class="text-base-content/60">
+        Entdecken Sie kommende Events in unserer Gemeinde
+      </p>
+    </div>
+
     {
-      pipe(
-        events,
-        R.toEntries,
-        A.map(([year, eventsInThisYearByMonth]) => (
-          <>
-            <div>{year}</div>
-            {MONTHS.map((month) => {
-              const eventsInThisMonth = eventsInThisYearByMonth[month]
-              if (!eventsInThisMonth) return null
-              return (
-                <div class="mb-8 flex flex-col">
-                  <h2 class="text-2xl font-bold mb-4 dark:text-slate-200">
-                    {month}
-                  </h2>
-                  <div class="flex flex-col mx-auto">
-                    {eventsInThisMonth.map((event) => (
-                      <EventCard event={event} />
-                    ))}
-                  </div>
+      hasEvents ? (
+        <div class="space-y-10">
+          {pipe(
+            events,
+            R.toEntries,
+            A.map(([year, eventsInThisYearByMonth]) => (
+              <div>
+                {/* Jahres-Trenner */}
+                <div class="divider divider-start text-lg font-semibold text-base-content/80 mb-6">
+                  <span class="badge badge-lg badge-neutral">{year}</span>
                 </div>
-              )
-            })}
-          </>
-        )),
+
+                {MONTHS.map((month) => {
+                  const eventsInThisMonth = eventsInThisYearByMonth[month]
+                  if (!eventsInThisMonth) return null
+                  return (
+                    <div class="mb-8">
+                      {/* Monats-Header */}
+                      <div class="flex items-center gap-3 mb-4">
+                        <div class="w-1 h-8 bg-primary rounded-full" />
+                        <h2 class="text-xl font-semibold">{month}</h2>
+                        <span class="badge badge-ghost badge-sm">
+                          {eventsInThisMonth.length}{' '}
+                          {eventsInThisMonth.length === 1
+                            ? 'Event'
+                            : 'Events'}
+                        </span>
+                      </div>
+
+                      {/* Event-Grid */}
+                      <div class="grid gap-4">
+                        {eventsInThisMonth.map((event) => (
+                          <EventCard event={event} />
+                        ))}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )),
+          )}
+        </div>
+      ) : (
+        /* Leerer Zustand */
+        <div class="card bg-base-200 p-8 text-center">
+          <div class="flex flex-col items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-16 w-16 text-base-content/30"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <h2 class="text-xl font-semibold">
+              Keine kommenden Veranstaltungen
+            </h2>
+            <p class="text-base-content/60">
+              Aktuell sind keine Veranstaltungen geplant. Schauen Sie bald
+              wieder vorbei!
+            </p>
+          </div>
+        </div>
       )
     }
   </div>

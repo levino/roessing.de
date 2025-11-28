@@ -15,46 +15,128 @@ const {
 } = Astro.props
 
 const target = event.data.url ? '_blank' : '_self'
+
+// Datum formatieren für Badge
+const startDate = event.data.startDate
+const day = startDate.getDate()
+const weekday = startDate.toLocaleString('de-DE', { weekday: 'short' })
 ---
 
 <a
-  class="my-4 flex md:h-48 flex-col items-center md:justify-end bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  class="card card-side bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300 border border-base-300 h-full"
   href={event.data.url ?? `events/${event.id}`}
   target={target}
 >
+  <!-- Datum-Badge links -->
+  <div
+    class="flex flex-col items-center justify-center bg-primary text-primary-content px-4 py-3 rounded-l-2xl min-w-[70px]"
+  >
+    <span class="text-xs uppercase font-medium opacity-80">{weekday}</span>
+    <span class="text-3xl font-bold leading-none">{day}</span>
+  </div>
+
+  <!-- Bild (optional) -->
   {
-    image ? (
-      <div class="w-full rounded-t-lg md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg overflow-hidden">
+    image && (
+      <figure class="w-24 md:w-32 shrink-0 hidden sm:block">
         <Image
-          class="object-cover h-32 md:h-48 "
           src={image.src}
           alt={image.alt}
+          class="object-cover h-full w-full"
         />
-      </div>
-    ) : null
+      </figure>
+    )
   }
-  <div class="flex flex-col justify-between p-4 leading-normal w-full md:w-2/3">
-    <p class="font-bold dark:text-slate-200">{event.data.name}</p>
-    {
-      organizer && (
-        <p class="text-gray-500">Veranstalter:in: {organizer.data.name}</p>
-      )
-    }
+
+  <!-- Inhalt -->
+  <div class="card-body p-4 gap-1">
+    <h3 class="card-title text-base leading-tight line-clamp-2">
+      {event.data.name}
+    </h3>
+
+    <!-- Zeit -->
+    <div class="flex items-center gap-2 text-sm text-base-content/70">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>
+        {
+          startDate.toLocaleString('de-DE', {
+            hour: '2-digit',
+            minute: '2-digit',
+          })
+        } Uhr
+      </span>
+    </div>
+
+    <!-- Ort -->
     {
       location && (
-        <p class="text-gray-800 dark:text-slate-400">
-          Ort: {location.data.name}
-        </p>
+        <div class="flex items-center gap-2 text-sm text-base-content/70">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          <span class="truncate">{location.data.name}</span>
+        </div>
       )
     }
-    <p class="text-gray-600 dark:text-slate-100">
-      {timeAndDate(event.data.startDate)}
-    </p>
+
+    <!-- Veranstalter -->
+    {
+      organizer && (
+        <div class="flex items-center gap-2 text-sm text-base-content/60">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+          <span class="truncate">{organizer.data.name}</span>
+        </div>
+      )
+    }
+
+    <!-- Beschreibung -->
     {
       event.data.description && (
-        <div class="text-gray-800 dark:text-slate-100 line-clamp-2">
+        <p class="text-sm text-base-content/60 line-clamp-2 mt-1">
           {event.data.description}
-        </div>
+        </p>
       )
     }
   </div>

@@ -1,0 +1,6 @@
+# Cloudflare Pages Redirects
+# Format: [source] [destination] [status_code]
+
+/events/2023/12/02/weihnachtsmarkt /events/2023-12-02-weihnachtsmarkt 301
+/events/2023/11/23/ideensuche/sommertheater /events/2023-11-23-ideensuche-sommertheater 301
+/events/2023/12/09/kinderweihnachtsfeier /events/2023-12-09-kinderweihnachtsfeier 301

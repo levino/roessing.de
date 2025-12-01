@@ -1,7 +1,0 @@
-name: Karlstraße 1+3
-address:
-  '@type': PostalAddress
-  streetAddress: Karlstr. 1+3
-  addressLocality: Nordstemmen
-  postalCode: '31171'
-'@type': Place

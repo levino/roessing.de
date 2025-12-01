@@ -1,7 +1,0 @@
-name: Lange Straße 9
-address:
-  '@type': PostalAddress
-  streetAddress: Lange Str. 9
-  addressLocality: Nordstemmen
-  postalCode: '31171'
-'@type': Place

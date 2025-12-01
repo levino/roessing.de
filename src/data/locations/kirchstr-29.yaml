@@ -1,7 +1,0 @@
-name: Kirchstraße 29
-address:
-  '@type': PostalAddress
-  streetAddress: Kirchstraße 29
-  addressLocality: Nordstemmen
-  postalCode: '31171'
-'@type': Place

@@ -70,7 +70,8 @@
       "cypress": true,
       "puppeteer": true,
       "vitest>vite-node>vite>esbuild": true,
-      "vitest>vite>esbuild": true
+      "vitest>vite>esbuild": true,
+      "lefthook": true
     }
   }
 }

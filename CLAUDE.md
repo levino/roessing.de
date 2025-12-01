@@ -58,8 +58,11 @@ npm run preview    # Build lokal testen
 npm run check      # Astro-Type-Checking
 npm run test       # Vitest-Tests ausführen
 npm run e2e        # Playwright-Tests ausführen
-npm run prettier   # Code-Formatierung prüfen
+npm run format     # Code formatieren mit Biome (Linting + Formatting + Import-Sortierung)
 ```
+
+### ⚠️ Vor jedem Commit
+**WICHTIG:** Vor jedem Commit MUSS `npm run format` ausgeführt werden, um sicherzustellen, dass der Code korrekt formatiert ist. Dies wird auch automatisch durch lefthook beim Commit geprüft.
 
 ### Testing-Strategie:
 - Unit-Tests mit Vitest für Komponenten-Logik

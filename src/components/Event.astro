@@ -111,12 +111,6 @@ const { Content } = await render(event)
     }
   </div>
 
-  {
-    event.data.description && (
-      <p class="text-base-content/60 text-lg mb-6">{event.data.description}</p>
-    )
-  }
-
   <div class="prose prose-lg max-w-none">
     <Content />
   </div>

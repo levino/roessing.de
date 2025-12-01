@@ -1,8 +1,8 @@
 ---
 import { getCollection, getEntry } from 'astro:content'
+import EventCard from '@/components/EventCard.astro'
 import Layout from '@/layouts/Layout.astro'
 import type { FullEvent } from '@/types'
-import EventCard from '@/components/EventCard.astro'
 
 const adventskalenderEvents = await getCollection('adventskalender-events')
   .then(

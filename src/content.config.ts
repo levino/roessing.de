@@ -55,7 +55,7 @@ const createEventSchema = ({ image }: SchemaContext) =>
         alt: z.string(),
       })
       .optional(),
-    excludeFromSitemap: z.boolean().optional().default(false),
+    noindex: z.boolean().optional().default(false),
   })
 const eventCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/events' }),

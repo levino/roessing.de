@@ -25,7 +25,7 @@ sitemap(async ({ setSitemap }) => {
   setSitemap(
     events.map((event) => ({
       params: { id: event.id },
-      sitemap: !event.data.excludeFromSitemap,
+      sitemap: !event.data.noindex,
     }))
   )
 })
@@ -76,7 +76,7 @@ const googleStructuredEventData = JSON.stringify({
 })
 ---
 
-<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.excludeFromSitemap}>
+<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.noindex}>
   <Event event={event} />
 </Layout>
 

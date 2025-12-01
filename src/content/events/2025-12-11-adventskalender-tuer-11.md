@@ -4,7 +4,7 @@ startDate: 2025-12-11T18:00:00+01:00
 location: lange-str-9
 organizer: danuta-andreas
 description: Besinnliches Hofgezwitscher mit Gitarre und Gesang, Glühwein, Schmalzbrot und Feuerschale.
-excludeFromSitemap: true
+noindex: true
 ---
 
 Danuta und Andreas laden zum besinnlichen Hofgezwitscher ein.

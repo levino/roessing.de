@@ -5,7 +5,7 @@ endDate: 2025-12-02T18:30:00+01:00
 location: dgh
 organizer: julia-kantak-peter-winkler
 description: Öffnung des Dorfarchivs mit Bildern früherer Weihnachtsmärkte.
-excludeFromSitemap: true
+noindex: true
 ---
 
 Julia Kantak und Peter Winkler öffnen das Dorfarchiv im Dorfgemeinschaftshaus.

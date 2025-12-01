@@ -5,7 +5,7 @@ endDate: 2025-12-06T12:00:00+01:00
 location: rnah
 organizer: buergerstiftung
 description: Der Nikolaus kommt zu RNah! Veranstaltet von der Bürgerstiftung Rössing.
-excludeFromSitemap: true
+noindex: true
 ---
 
 Die Bürgerstiftung Rössing bringt den Nikolaus zum RNah Supermarkt!

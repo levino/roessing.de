@@ -5,7 +5,7 @@ endDate: 2025-12-15T20:00:00+01:00
 location: lange-str-5
 organizer: familie-schwoerer-kroepp
 description: Lagerfeuer, Stockbrot, Glühwein, Kinderpunsch, Leckereien und Weihnachtssterne basteln. Becher mitbringen!
-noindex: true
+excludeFromSitemap: true
 ---
 
 Familie Schwörer-Kröpp lädt in die Lange Str. 5 ein.

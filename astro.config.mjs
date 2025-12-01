@@ -3,24 +3,8 @@
 import process from 'node:process'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
-import sitemap from '@astrojs/sitemap'
+import sitemapExt from '@inox-tools/sitemap-ext'
 import tailwind from '@astrojs/tailwind'
-import { getNoindexEventIds } from './src/tools/sitemap/getNoindexEvents.ts'
-
-// Liste der Event-IDs, die nicht indexiert werden sollen
-const noindexEventIds = getNoindexEventIds()
-
-// Filter für Sitemap: Nur Events mit noindex: true ausschließen
-const sitemapFilter = (page) => {
-  // Prüfen ob es eine Event-Seite ist
-  const eventMatch = page.match(/\/events\/([^/]+)\/?$/)
-  if (eventMatch) {
-    const eventId = eventMatch[1]
-    // Event ausschließen, wenn es in der noindex-Liste ist
-    return !noindexEventIds.includes(eventId)
-  }
-  return true
-}
 import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
@@ -34,7 +18,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx(),
-    sitemap({ filter: sitemapFilter }),
+    sitemapExt({ includeByDefault: true }),
     react(),
     shipyard({
       navigation: {

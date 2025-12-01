@@ -5,6 +5,8 @@ import Layout from '@/layouts/Layout.astro'
 import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
 import type { Event as EventType, FullEvent } from '@/types'
+import sitemap from 'sitemap-ext:config'
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getCollection('events')
   return events.map((entry) => ({
@@ -16,6 +18,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }))
 }
+
+// Sitemap-Konfiguration für dynamische Routen
+sitemap(async ({ setSitemap }) => {
+  const events = await getCollection('events')
+  setSitemap(
+    events.map((event) => ({
+      params: { id: event.id },
+      sitemap: !event.data.excludeFromSitemap,
+    }))
+  )
+})
 
 const { entry } = Astro.props as { entry: EventType }
 const event = {
@@ -63,7 +76,7 @@ const googleStructuredEventData = JSON.stringify({
 })
 ---
 
-<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.noindex}>
+<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.excludeFromSitemap}>
   <Event event={event} />
 </Layout>
 

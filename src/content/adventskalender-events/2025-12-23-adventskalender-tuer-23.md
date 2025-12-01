@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 23: Weihnachtliches Einstimmen'
+name: 'Türchen 23: Weihnachtliches Einstimmen'
 startDate: 2025-12-23T18:00:00+01:00
 location: gartenkolonie
 organizer: volker-hennies

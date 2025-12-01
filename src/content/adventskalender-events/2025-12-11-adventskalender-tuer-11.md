@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 11: Besinnliches Hofgezwitscher'
+name: 'Türchen 11: Besinnliches Hofgezwitscher'
 startDate: 2025-12-11T18:00:00+01:00
 location: lange-str-9
 organizer: danuta-andreas

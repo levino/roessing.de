@@ -3,8 +3,8 @@
 import process from 'node:process'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
-import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
+import sitemapExt from '@inox-tools/sitemap-ext'
 import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
@@ -18,7 +18,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx(),
-    sitemap(),
+    sitemapExt({ includeByDefault: true }),
     react(),
     shipyard({
       navigation: {

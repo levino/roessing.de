@@ -3,7 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "setup": "npm install && npx allow-scripts",
+    "setup": "npm install && npx allow-scripts && node scripts/decrypt.js",
+    "encrypt": "node scripts/encrypt.js",
+    "decrypt": "node scripts/decrypt.js",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
     "build": "astro build",

@@ -1,8 +1,9 @@
 // Liste der sensiblen Dateien (relativ zum Projektroot)
 // Diese Dateien werden verschlüsselt und die Originale in .gitignore aufgenommen
+// Nur Privatpersonen - Vereine/Organisationen sind öffentlich bekannt
 
 export const sensitiveFiles = [
-  // Adventskalender-Events
+  // Adventskalender-Events (enthalten Namen von Privatpersonen)
   'src/content/adventskalender-events/2025-12-01-adventskalender-tuer-1.md',
   'src/content/adventskalender-events/2025-12-02-adventskalender-tuer-2.md',
   'src/content/adventskalender-events/2025-12-03-adventskalender-tuer-3.md',
@@ -19,20 +20,16 @@ export const sensitiveFiles = [
   'src/content/adventskalender-events/2025-12-19-adventskalender-tuer-19.md',
   'src/content/adventskalender-events/2025-12-23-adventskalender-tuer-23.md',
 
-  // Adventskalender-Organizer
+  // Adventskalender-Organizer (nur Privatpersonen)
   'src/data/organizers/birgit-engelke-busse.yaml',
-  'src/data/organizers/buergerstiftung.yaml',
   'src/data/organizers/danuta-andreas.yaml',
   'src/data/organizers/danuta-ruediger.yaml',
-  'src/data/organizers/dorfpflege.yaml',
   'src/data/organizers/familie-ahrens-vogt-nowothnig.yaml',
   'src/data/organizers/familie-schwoerer-kroepp.yaml',
   'src/data/organizers/heike-thilo.yaml',
   'src/data/organizers/julia-kantack-peter-winkler.yaml',
   'src/data/organizers/katja-klaus-berg.yaml',
-  'src/data/organizers/kirchenstiftung.yaml',
-  'src/data/organizers/kulturkreis.yaml',
   'src/data/organizers/sebastian-franz.yaml',
+  'src/data/organizers/tita-von-roessing.yaml',
   'src/data/organizers/volker-hennies.yaml',
-  'src/data/organizers/vsv.yaml',
 ];

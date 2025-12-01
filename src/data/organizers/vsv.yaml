@@ -1,0 +1,8 @@
+name: Volkssportvereinigung von 1897 Rössing e.V.
+address:
+  '@type': PostalAddress
+  postalCode: '31171'
+  streetAddress: Pfarrstraße 6
+  addressLocality: Nordstemmen
+telephone: '+4950697415'
+'@type': Organization

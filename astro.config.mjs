@@ -4,6 +4,9 @@ import process from 'node:process'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
+
+// Filter für Sitemap: Events ausschließen
+const sitemapFilter = (page) => !page.includes('/events/')
 import tailwind from '@astrojs/tailwind'
 import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
@@ -18,7 +21,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx(),
-    sitemap(),
+    sitemap({ filter: sitemapFilter }),
     react(),
     shipyard({
       navigation: {

@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets'
 import { getCollection, getEntry } from 'astro:content'
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import Layout from '@/layouts/Layout.astro'
 import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
 import type { Event as EventType, FullEvent } from '@/types'
@@ -63,7 +63,7 @@ const googleStructuredEventData = JSON.stringify({
 })
 ---
 
-<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src}>
+<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={true}>
   <Event event={event} />
 </Layout>
 

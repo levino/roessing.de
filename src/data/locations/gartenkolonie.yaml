@@ -1,0 +1,7 @@
+name: Gartenkolonie Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Am Rössingbach
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

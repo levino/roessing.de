@@ -1,0 +1,7 @@
+name: Am Denkmal 3
+address:
+  '@type': PostalAddress
+  streetAddress: Am Denkmal 3
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

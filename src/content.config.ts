@@ -62,6 +62,14 @@ const eventCollection = defineCollection({
   schema: createEventSchema,
 })
 
+const adventskalenderEventsCollection = defineCollection({
+  loader: glob({
+    pattern: '**/[^_]*.{md,mdx}',
+    base: './src/content/adventskalender-events',
+  }),
+  schema: createEventSchema,
+})
+
 const locationCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/data/locations' }),
   schema: locationSchema,
@@ -77,6 +85,7 @@ const docs = defineCollection({
 
 export const collections = {
   events: eventCollection,
+  'adventskalender-events': adventskalenderEventsCollection,
   locations: locationCollection,
   organizers: organizersCollection,
   docs,

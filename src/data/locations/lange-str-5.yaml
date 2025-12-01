@@ -1,0 +1,7 @@
+name: Lange Straße 5
+address:
+  '@type': PostalAddress
+  streetAddress: Lange Str. 5
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

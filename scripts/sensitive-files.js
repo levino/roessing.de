@@ -26,4 +26,4 @@ export const sensitiveFiles = [
   'src/data/organizers/adventskalender-gastgeber-17.yaml',
   'src/data/organizers/adventskalender-gastgeber-19.yaml',
   'src/data/organizers/adventskalender-gastgeber-23.yaml',
-];
+]

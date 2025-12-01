@@ -1,0 +1,7 @@
+name: Parkweg 2A
+address:
+  '@type': PostalAddress
+  streetAddress: Parkweg 2A
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

@@ -63,7 +63,7 @@ const googleStructuredEventData = JSON.stringify({
 })
 ---
 
-<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={true}>
+<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.noindex}>
   <Event event={event} />
 </Layout>
 

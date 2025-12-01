@@ -5,6 +5,7 @@ endDate: 2025-12-17T19:00:00+01:00
 location: scheune-hof-koenneke
 organizer: sebastian-franz
 description: Gemeinschaftliches Singen mit Gitarrenbegleitung in der Scheune Hof Könnecke.
+noindex: true
 ---
 
 Sebastian und Franz laden zum gemeinschaftlichen Singen in die Scheune Hof Könnecke ein.

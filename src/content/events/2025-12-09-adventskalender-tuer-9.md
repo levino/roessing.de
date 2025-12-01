@@ -4,6 +4,7 @@ startDate: 2025-12-09T18:00:00+01:00
 location: dgh
 organizer: kulturkreis
 description: Basteln, Brezeln und Lesegeschichten im Dorfgemeinschaftshaus.
+noindex: true
 ---
 
 Der Kulturkreis Rössing lädt ins Dorfgemeinschaftshaus ein.

@@ -4,11 +4,11 @@ startDate: 2025-12-07T16:00:00+01:00
 endDate: 2025-12-07T18:00:00+01:00
 location: hof-bremecke
 organizer: kirchenstiftung
-description: Erzähltheater, Musikzug FFW Rössing, Glühwein, Kinderpunsch und Kekse. Spende und Becher mitbringen!
+description: Erzähltheater, Musikzug FFW Rössing, Glühwein, Kinderpunsch und Kekse.
 noindex: true
 ---
 
-Die Kirchenstiftung Rössing lädt auf den Hof Bremecke (Lange Str. 17) ein.
+Die Kirchenstiftung Rössing lädt auf den Hof Bremecke ein.
 
 **Programm:**
 - Erzähltheater

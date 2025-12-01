@@ -1,11 +1,11 @@
 ---
 import { getImage } from 'astro:assets'
 import { getCollection, getEntry } from 'astro:content'
-import Layout from '@/layouts/Layout.astro'
+import sitemap from 'sitemap-ext:config'
 import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
+import Layout from '@/layouts/Layout.astro'
 import type { Event as EventType, FullEvent } from '@/types'
-import sitemap from 'sitemap-ext:config'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getCollection('events')
@@ -26,7 +26,7 @@ sitemap(async ({ setSitemap }) => {
     events.map((event) => ({
       params: { id: event.id },
       sitemap: !event.data.noindex,
-    }))
+    })),
   )
 })
 

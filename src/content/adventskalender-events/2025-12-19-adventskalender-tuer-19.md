@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 19: Schwarzlichtzauber'
+name: 'Türchen 19: Schwarzlichtzauber'
 startDate: 2025-12-19T18:00:00+01:00
 location: karlstr-1-3
 organizer: familie-ahrens-vogt-nowothnig

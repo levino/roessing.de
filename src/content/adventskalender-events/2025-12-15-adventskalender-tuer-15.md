@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 15: Lagerfeuer und Stockbrot'
+name: 'Türchen 15: Lagerfeuer und Stockbrot'
 startDate: 2025-12-15T18:00:00+01:00
 endDate: 2025-12-15T20:00:00+01:00
 location: lange-str-5

@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 9: Basteln und Lesegeschichten'
+name: 'Türchen 9: Basteln und Lesegeschichten'
 startDate: 2025-12-09T18:00:00+01:00
 location: dgh
 organizer: kulturkreis

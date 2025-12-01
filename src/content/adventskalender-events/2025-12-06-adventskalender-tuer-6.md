@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 6: Kinder-Nikolausfeier'
+name: 'Türchen 6: Kinder-Nikolausfeier'
 startDate: 2025-12-06T15:00:00+01:00
 location: sporthalle
 organizer: vsv

@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 1: Eröffnung'
+name: 'Türchen 1: Eröffnung'
 startDate: 2025-12-01T18:00:00+01:00
 location: parkweg-2a
 organizer: danuta-ruediger

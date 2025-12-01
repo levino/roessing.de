@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 8: Weihnachtsrätsel'
+name: 'Türchen 8: Weihnachtsrätsel'
 startDate: 2025-12-08T18:00:00+01:00
 endDate: 2025-12-08T19:00:00+01:00
 location: kirchstr-29

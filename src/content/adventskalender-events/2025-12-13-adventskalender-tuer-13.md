@@ -1,5 +1,5 @@
 ---
-name: 'Lebendiger Adventskalender Türchen 13: Weihnachtszauber im Weihnachtshäuschen'
+name: 'Türchen 13: Weihnachtszauber im Weihnachtshäuschen'
 startDate: 2025-12-13T18:00:00+01:00
 location: am-denkmal-3
 organizer: heike-thilo

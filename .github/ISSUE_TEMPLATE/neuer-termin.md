@@ -63,7 +63,7 @@ assignees: ''
    - Wenn mehrere Events im Text sind (z.B. Bürgergespräch + Ortsratssitzung), erstelle separate Dateien
    - Sei smart beim Mapping: "Dorfgemeinschaftshaus Rössing, Sitzungszimmer" → `dgh`
    - Wenn Location/Organizer nicht in den Daten existiert, wähle die passendste oder frage nach
-   - **WICHTIG - Zeitzone**: Deutschland (Nortstemmen) verwendet Europe/Berlin Zeitzone
+   - **WICHTIG - Zeitzone**: Deutschland (Nordstemmen) verwendet Europe/Berlin Zeitzone
      - `+01:00` für Winterzeit (CET): letzter Sonntag im Oktober bis letzter Sonntag im März
      - `+02:00` für Sommerzeit (CEST): letzter Sonntag im März bis letzter Sonntag im Oktober
      - **Prüfe das Datum des Events!**

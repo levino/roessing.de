@@ -1,0 +1,7 @@
+name: Restaurant Alt Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Hauptstraße 7
+  addressLocality: Rössing
+  postalCode: '31171'
+'@type': Place

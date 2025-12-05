@@ -1,7 +1,7 @@
 ---
 name: Neuer Termin
 about: Termin-Infos einfach reinkopieren
-title: '[TERMIN] '
+title: 'Termin eintragen'
 labels: 'termin, content'
 assignees: ''
 ---
@@ -16,9 +16,10 @@ assignees: ''
 
 ---
 
-## 🤖 Aufgabe für Claude
+@claude Bitte analysiere den Termin-Text oben und erstelle automatisch die passende Event-Datei(en).
 
-**Bitte analysiere den eingegebenen Text und erstelle automatisch Event-Datei(en):**
+<details>
+<summary>📋 Anweisungen für Claude (Klick zum Aufklappen)</summary>
 
 ### Deine Aufgaben:
 
@@ -62,10 +63,15 @@ assignees: ''
    - Wenn mehrere Events im Text sind (z.B. Bürgergespräch + Ortsratssitzung), erstelle separate Dateien
    - Sei smart beim Mapping: "Dorfgemeinschaftshaus Rössing, Sitzungszimmer" → `dgh`
    - Wenn Location/Organizer nicht in den Daten existiert, wähle die passendste oder frage nach
-   - Deutsche Zeitzone verwenden: `+01:00` (Winterzeit) oder `+02:00` (Sommerzeit)
+   - **WICHTIG - Zeitzone**: Deutschland (Nortstemmen) verwendet Europe/Berlin Zeitzone
+     - `+01:00` für Winterzeit (CET): letzter Sonntag im Oktober bis letzter Sonntag im März
+     - `+02:00` für Sommerzeit (CEST): letzter Sonntag im März bis letzter Sonntag im Oktober
+     - **Prüfe das Datum des Events!**
    - Kurzbeschreibung sollte prägnant sein (1-2 Sätze)
    - Längere Infos gehören in den Markdown-Body
 
 5. **Committe** die Änderung(en) und **pushe** zum Branch
 
 **Wichtig**: Schau dir zur Orientierung existierende Event-Dateien in `src/content/events/` an!
+
+</details>

@@ -1,6 +1,6 @@
 name: Neuer Termin
 description: Termin-Infos einfach reinkopieren
-title: "[TERMIN] "
+title: "Termin eintragen"
 labels: ["termin", "content"]
 body:
   - type: markdown
@@ -37,9 +37,10 @@ body:
       value: |
         ---
 
-        ## 🤖 Aufgabe für Claude
+        @claude Bitte analysiere den Termin-Text oben und erstelle automatisch die passende Event-Datei(en).
 
-        **Bitte analysiere den eingegebenen Text und erstelle automatisch Event-Datei(en):**
+        <details>
+        <summary>📋 Anweisungen für Claude (Klick zum Aufklappen)</summary>
 
         ### Deine Aufgaben:
         1. **Extrahiere** alle relevanten Informationen aus dem Text:
@@ -94,3 +95,5 @@ body:
         5. **Committe** die Änderung(en) und **pushe** zum Branch
 
         **Wichtig**: Schau dir zur Orientierung existierende Event-Dateien in `src/content/events/` an!
+
+        </details>

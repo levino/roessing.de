@@ -1,7 +1,7 @@
-name: Restaurant Alt Rössing
+name: Gasthaus "Alt-Rössing am Schlosspark"
 address:
   '@type': PostalAddress
-  streetAddress: Hauptstraße 7
-  addressLocality: Rössing
+  streetAddress: Unter den Eichen 1A
+  addressLocality: Nordstemmen
   postalCode: '31171'
 '@type': Place

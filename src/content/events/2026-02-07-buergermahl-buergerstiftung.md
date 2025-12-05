@@ -7,7 +7,7 @@ description:
 name: Bürgermahl
 ---
 
-Das Bürgermahl der Bürgerstiftung Rössing findet im Restaurant „Alt Rössing" statt.
+Das Bürgermahl der Bürgerstiftung Rössing findet im Gasthaus „Alt-Rössing am Schlosspark" statt.
 
 ## Programm
 

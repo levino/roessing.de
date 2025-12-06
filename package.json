@@ -3,7 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "setup": "npm install && npx allow-scripts",
+    "setup": "npm install && npx allow-scripts && npx lefthook install && node scripts/decrypt.js",
+    "encrypt": "node scripts/encrypt.js",
+    "decrypt": "node scripts/decrypt.js",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
     "build": "astro build",
@@ -19,6 +21,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "e2e": "playwright test",
+    "format": "biome check --write .",
     "claude": "claude --dangerously-skip-permissions"
   },
   "dependencies": {
@@ -27,6 +30,7 @@
     "@astrojs/react": "^4.1.2",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
+    "@inox-tools/sitemap-ext": "^0.7.1",
     "@levino/shipyard-base": "^0.5.8",
     "@levino/shipyard-docs": "^0.5.0",
     "@tailwindcss/typography": "^0.5.10",
@@ -53,6 +57,7 @@
     "@types/ramda": "^0.29.9",
     "@unlighthouse/cli": "^0.14",
     "cypress": "^13.15.2",
+    "lefthook": "^2.0.4",
     "puppeteer": "^23",
     "start-server-and-test": "^2.0.3",
     "vitest": "^2"
@@ -65,7 +70,8 @@
       "cypress": true,
       "puppeteer": true,
       "vitest>vite-node>vite>esbuild": true,
-      "vitest>vite>esbuild": true
+      "vitest>vite>esbuild": true,
+      "lefthook": true
     }
   }
 }

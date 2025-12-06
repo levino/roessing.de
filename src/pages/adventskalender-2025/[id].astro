@@ -1,0 +1,88 @@
+---
+import { getImage } from 'astro:assets'
+import { getCollection, getEntry } from 'astro:content'
+import sitemap from 'sitemap-ext:config'
+import type { GetStaticPaths } from 'astro'
+import Event from '@/components/Event.astro'
+import Layout from '@/layouts/Layout.astro'
+import type { Event as EventType, FullEvent } from '@/types'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const events = await getCollection('adventskalender-events')
+  return events.map((entry) => ({
+    params: {
+      id: entry.id,
+    },
+    props: {
+      entry,
+    },
+  }))
+}
+
+// Sitemap-Konfiguration: Alle Adventskalender-Events von Sitemap ausschließen
+sitemap(async ({ setSitemap }) => {
+  const events = await getCollection('adventskalender-events')
+  setSitemap(
+    events.map((event) => ({
+      params: { id: event.id },
+      sitemap: false,
+    })),
+  )
+})
+
+const { entry } = Astro.props as { entry: EventType }
+const event = {
+  ...entry,
+  data: {
+    ...entry.data,
+    ...(entry.data.location
+      ? {
+          location: await getEntry(entry.data.location),
+        }
+      : {}),
+    ...(entry.data.organizer
+      ? {
+          organizer: await getEntry(entry.data.organizer),
+        }
+      : {}),
+  },
+} as FullEvent
+
+const imageUrl = entry.data.image
+  ? (await getImage({ src: event.data.image?.src || '' })).src
+  : undefined
+
+const ogImage = entry.data.image
+  ? await getImage({ src: event.data.image?.src || '', width: 1200 })
+  : undefined
+
+// Prüfen, ob das Event in der Vergangenheit liegt
+const eventEndDate = event.data.endDate || event.data.startDate
+const endOfEventDay = new Date(eventEndDate)
+endOfEventDay.setHours(23, 59, 59, 999)
+const isPastEvent = endOfEventDay < new Date()
+const eventStatus = isPastEvent
+  ? 'https://schema.org/EventCompleted'
+  : 'https://schema.org/EventScheduled'
+
+const googleStructuredEventData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  eventStatus,
+  ...event.data,
+  ...(event.data.organizer ? { organizer: event.data.organizer.data } : {}),
+  ...(event.data.location ? { location: event.data.location.data } : {}),
+  ...(imageUrl ? { image: imageUrl } : {}),
+})
+---
+
+<Layout
+  title={event?.data.name}
+  description={event?.data.description}
+  ogImage={ogImage?.src}
+  noindex={true}
+>
+  <Event event={event} />
+</Layout>
+
+<script is:inline type="application/ld+json" set:html={googleStructuredEventData} />

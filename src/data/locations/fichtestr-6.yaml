@@ -1,0 +1,7 @@
+name: Fichtestraße 6
+address:
+  '@type': PostalAddress
+  streetAddress: Fichtestr. 6
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

@@ -1,0 +1,7 @@
+name: RNah Supermarkt Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Hauptstraße
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

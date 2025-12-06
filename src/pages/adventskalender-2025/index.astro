@@ -1,0 +1,74 @@
+---
+import { getCollection, getEntry } from 'astro:content'
+import EventCard from '@/components/EventCard.astro'
+import Layout from '@/layouts/Layout.astro'
+import type { FullEvent } from '@/types'
+
+const adventskalenderEvents = await getCollection('adventskalender-events')
+  .then(
+    (events) =>
+      events.map(async (event) => ({
+        ...event,
+        data: {
+          ...event.data,
+          ...(event.data.location
+            ? {
+                location: await getEntry(event.data.location),
+              }
+            : {}),
+          ...(event.data.organizer
+            ? {
+                organizer: await getEntry(event.data.organizer),
+              }
+            : {}),
+        },
+      })) as unknown as Promise<FullEvent[]>,
+  )
+  .then((events) => Promise.all(events))
+  .then((events) =>
+    events.sort(
+      (a, b) => a.data.startDate.getTime() - b.data.startDate.getTime(),
+    ),
+  )
+
+const totalEvents = adventskalenderEvents.length
+---
+
+<Layout
+  title="Lebendiger Adventskalender Rössing 2025"
+  description="Alle Termine des lebendigen Adventskalenders in Rössing 2025"
+  noindex={true}
+>
+  <div class="min-h-screen bg-gradient-to-b from-base-100 to-base-200">
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-base-content">
+          Lebendiger Adventskalender Rössing 2025
+        </h1>
+        <p class="text-base-content/70 text-lg">
+          {totalEvents} Türchen warten auf euch!
+        </p>
+      </header>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      >
+        {
+          adventskalenderEvents.map((event) => (
+            <EventCard event={event} basePath="/adventskalender-2025" />
+          ))
+        }
+      </div>
+
+      {
+        totalEvents === 0 && (
+          <div class="text-center py-16">
+            <p class="text-xl text-base-content/60">
+              Aktuell sind keine Adventskalender-Events geplant.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>

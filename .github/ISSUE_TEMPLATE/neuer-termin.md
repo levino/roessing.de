@@ -1,27 +1,17 @@
 ---
 name: Neuer Termin
 about: Termin-Infos einfach reinkopieren
-title: '[TERMIN] '
-labels: 'termin, content'
-assignees: ''
+title: "Termin eintragen"
+labels: termin, content
 ---
 
-## Termin-Information
-
-<!-- Kopiere hier einfach den kompletten Text mit allen Termin-Infos rein (z.B. aus E-Mail, Flyer, Einladung) -->
-
-## Zusätzliche Hinweise (optional)
-
-<!-- Falls Claude weitere Infos braucht oder du Besonderheiten angeben willst -->
+[Hier Termin-Text einfügen]
 
 ---
 
-## 🤖 Aufgabe für Claude
-
-**Bitte analysiere den eingegebenen Text und erstelle automatisch Event-Datei(en):**
+@claude Bitte analysiere den Termin-Text oben und erstelle automatisch die passende Event-Datei(en).
 
 ### Deine Aufgaben:
-
 1. **Extrahiere** alle relevanten Informationen aus dem Text:
    - Datum(e) und Uhrzeit(en)
    - Event-Name(n)
@@ -59,10 +49,13 @@ assignees: ''
    - **Body**: Alle weiteren Details als Markdown (Tagesordnung, Programm, etc.)
 
 4. **Hinweise**:
-   - Wenn mehrere Events im Text sind (z.B. Bürgergespräch + Ortsratssitzung), erstelle separate Dateien
+   - Wenn mehrere Events im Text sind, erstelle separate Dateien
    - Sei smart beim Mapping: "Dorfgemeinschaftshaus Rössing, Sitzungszimmer" → `dgh`
    - Wenn Location/Organizer nicht in den Daten existiert, wähle die passendste oder frage nach
-   - Deutsche Zeitzone verwenden: `+01:00` (Winterzeit) oder `+02:00` (Sommerzeit)
+   - **WICHTIG - Zeitzone**: Deutschland verwendet Europe/Berlin Zeitzone
+     - `+01:00` für Winterzeit (CET): letzter Sonntag im Oktober bis letzter Sonntag im März
+     - `+02:00` für Sommerzeit (CEST): letzter Sonntag im März bis letzter Sonntag im Oktober
+   - Die `startDate` ist die **tatsächliche Startzeit** der ersten Aktivität
    - Kurzbeschreibung sollte prägnant sein (1-2 Sätze)
    - Längere Infos gehören in den Markdown-Body
 

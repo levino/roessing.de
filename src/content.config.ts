@@ -55,9 +55,18 @@ const createEventSchema = ({ image }: SchemaContext) =>
         alt: z.string(),
       })
       .optional(),
+    noindex: z.boolean().optional().default(false),
   })
 const eventCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/events' }),
+  schema: createEventSchema,
+})
+
+const adventskalenderEventsCollection = defineCollection({
+  loader: glob({
+    pattern: '**/[^_]*.{md,mdx}',
+    base: './src/content/adventskalender-events',
+  }),
   schema: createEventSchema,
 })
 
@@ -76,6 +85,7 @@ const docs = defineCollection({
 
 export const collections = {
   events: eventCollection,
+  'adventskalender-events': adventskalenderEventsCollection,
   locations: locationCollection,
   organizers: organizersCollection,
   docs,

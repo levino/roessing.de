@@ -1,0 +1,7 @@
+name: Hof Bremecke
+address:
+  '@type': PostalAddress
+  streetAddress: Lange Str. 17
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

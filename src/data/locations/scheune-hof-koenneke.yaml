@@ -1,0 +1,7 @@
+name: Scheune Hof Könnecke
+address:
+  '@type': PostalAddress
+  streetAddress: Loderwinkel 1
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

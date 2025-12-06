@@ -5,6 +5,7 @@ import type { FullEvent } from '@/types'
 
 interface Props {
   event: FullEvent
+  basePath?: string
 }
 
 const {
@@ -12,6 +13,7 @@ const {
     data: { organizer, location, image, startDate },
   },
   event,
+  basePath = '/events',
 } = Astro.props
 
 const target = event.data.url ? '_blank' : '_self'
@@ -23,7 +25,7 @@ const time = getTime(startDate)
 
 <a
   class="card card-compact bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 h-full group"
-  href={event.data.url ?? `/events/${event.id}`}
+  href={event.data.url ?? `${basePath}/${event.id}`}
   target={target}
 >
   {

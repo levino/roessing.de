@@ -10,23 +10,32 @@ interface Props {
     description: string
   }
   ogImage?: string | undefined
+  noindex?: boolean
 }
 const title = Astro.props.title || Astro.props.frontmatter?.title
 const description =
   Astro.props.description || Astro.props.frontmatter?.description
 
 const ogImage = `${Astro.site?.origin}${Astro.props.ogImage}`
+const noindex = Astro.props.noindex ?? false
 ---
 
 <!doctype html>
 <html lang="de" data-theme="sanft">
   <head>
     <meta charset="UTF-8" />
+    <!-- Automatisches Theme-Switching basierend auf Browser-Einstellungen -->
+    <script is:inline>
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'sanft-dark')
+      }
+    </script>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {ogImage ? <meta property="og:image" content={ogImage} /> : null}

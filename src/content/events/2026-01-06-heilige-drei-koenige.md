@@ -10,4 +10,4 @@ name: Heilige Drei Könige
 
 Gottesdienst zum Dreikönigstag in der St. Peter und Paul Kirche.
 
-Im Anschluss an den Gottesdienst besteht die Möglichkeit zum Gespräch bei Kaffee oder Bier.
+Im Anschluss an den Gottesdienst besteht die Möglichkeit zum Gespräch bei Kaffee, Bier oder Wein.

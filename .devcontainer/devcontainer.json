@@ -1,14 +1,7 @@
 {
   "name": "Node.js & TypeScript",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
-  "workspaceFolder": "/workspace",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/common-utils:2": {}
-  },
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"updateContentCommand": "npm install",
   "customizations": {
     "vscode": {
       "settings": {

@@ -1,0 +1,13 @@
+# Cloudflare Workers Konfiguration für roessing.de
+
+name = "roessing-de"
+
+# Aktuelles Kompatibilitätsdatum
+compatibility_date = "2025-12-16"
+
+# Assets-Konfiguration für statische Seiten
+[assets]
+directory = "./dist"
+
+# Preview-Deployments sind standardmäßig aktiviert bei Cloudflare Pages/Workers
+# Die Konfiguration erfolgt über das Cloudflare Dashboard oder via wrangler CLI

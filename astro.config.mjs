@@ -30,6 +30,10 @@ export default defineConfig({
           label: 'Wissen',
           href: '/docs/intro',
         },
+        projekte: {
+          label: 'Projekte',
+          href: '/projekte',
+        },
         about: {
           label: 'Mitmachen',
           href: '/about',

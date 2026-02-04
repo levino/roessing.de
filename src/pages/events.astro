@@ -48,6 +48,11 @@ const futureEvents = await getCollection(
       })) as unknown as Promise<FullEvent[]>,
   )
   .then((events) => Promise.all(events))
+  .then((events) =>
+    events.sort(
+      (a, b) => a.data.startDate.getTime() - b.data.startDate.getTime(),
+    ),
+  )
 
 const events = pipe(
   futureEvents,

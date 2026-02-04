@@ -1,0 +1,8 @@
+---
+startDate: 2026-03-03T17:00:00+01:00
+endDate: 2026-03-03T18:30:00+01:00
+location: dgh
+description: Das Dorfarchiv Rössing ist für alle Interessierten geöffnet.
+name: Offenes Dorfarchiv
+---
+

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { render } from 'astro:content'
-import { timeAndDate } from '@/tools/events'
+import { dateOnly, timeAndDate } from '@/tools/events'
 import type { FullEvent } from '@/types'
 import AddressLink from './AddressLink.astro'
 
@@ -10,7 +10,7 @@ interface Props {
 }
 const {
   event: {
-    data: { name, startDate, endDate, image, location, organizer },
+    data: { name, startDate, endDate, allDay, image, location, organizer },
   },
   event,
 } = Astro.props
@@ -39,20 +39,40 @@ const { Content } = await render(event)
 
   <div class="flex flex-col gap-3 mb-6">
     <div class="flex items-center gap-3 text-base-content/70">
-      <svg
-        class="w-5 h-5 flex-shrink-0"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-      </svg>
+      {allDay ? (
+        <svg
+          class="w-5 h-5 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
+        </svg>
+      ) : (
+        <svg
+          class="w-5 h-5 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      )}
       <div>
-        <span class="font-medium">Beginn:</span> {timeAndDate(startDate)}
+        {allDay
+          ? <><span class="font-medium">Datum:</span> {dateOnly(startDate)}</>
+          : <><span class="font-medium">Beginn:</span> {timeAndDate(startDate)}</>
+        }
       </div>
     </div>
 
@@ -73,7 +93,10 @@ const { Content } = await render(event)
             />
           </svg>
           <div>
-            <span class="font-medium">Ende:</span> {timeAndDate(endDate)}
+            {allDay
+              ? <><span class="font-medium">Bis:</span> {dateOnly(endDate)}</>
+              : <><span class="font-medium">Ende:</span> {timeAndDate(endDate)}</>
+            }
           </div>
         </div>
       )

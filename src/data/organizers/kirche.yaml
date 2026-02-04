@@ -1,0 +1,8 @@
+name: Ev.-Luth. Kirchengemeinde Rössing
+telephone: '+4950697355'
+address:
+  '@type': PostalAddress
+  streetAddress: Pfarrstr. 1
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Organization

@@ -46,6 +46,7 @@ const createEventSchema = ({ image }: SchemaContext) =>
     description: z.string(),
     startDate: z.date(),
     endDate: z.date().optional(),
+    allDay: z.boolean().optional().default(false),
     location: reference('locations').optional(),
     organizer: reference('organizers').optional(),
     url: z.string().url().optional(),

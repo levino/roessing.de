@@ -34,6 +34,12 @@ export const getTime: (date: Date) => string = (date) =>
     timeZone: TIMEZONE,
   })
 
+export const dateOnly = (date: Date) =>
+  date.toLocaleString('de-DE', {
+    dateStyle: 'long',
+    timeZone: TIMEZONE,
+  })
+
 export const timeAndDate = (date: Date) =>
   `${date.toLocaleString('de-DE', {
     dateStyle: 'long',

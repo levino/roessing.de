@@ -107,6 +107,28 @@ npm run format     # Code formatieren mit Biome (Linting + Formatting + Import-S
 - Bugfix: `fix/beschreibung`
 - Claude-generiert: `claude/issue-{nummer}-{datum}-{zeit}`
 
+## 📅 Veranstaltungen (Events)
+
+### Event-Schema:
+Events werden als Markdown-Dateien in `src/content/events/` gespeichert. Dateiname-Konvention: `YYYY-MM-DD-beschreibung.md`.
+
+#### Frontmatter-Felder:
+- `name` (Pflicht): Name der Veranstaltung
+- `description` (Pflicht): Kurzbeschreibung
+- `startDate` (Pflicht): Startdatum/-zeit (z.B. `2026-03-14T09:30:00+01:00` oder `2026-03-14` für ganztägige Events)
+- `endDate` (Optional): Enddatum/-zeit
+- `allDay` (Optional, Standard: `false`): Wenn `true`, wird nur das Datum ohne Uhrzeit angezeigt. Für Events ohne bekannte Uhrzeit verwenden.
+- `location` (Optional): Referenz zu einer Location in `src/data/locations/` (z.B. `dgh`, `kirche`)
+- `organizer` (Optional): Referenz zu einem Organizer in `src/data/organizers/` (z.B. `spd`, `kulturkreis`)
+- `url` (Optional): Externe URL
+- `image` (Optional): Bild mit `src` und `alt`
+- `noindex` (Optional): SEO-Flag
+
+### Organizer und Locations:
+- Organizer werden als YAML in `src/data/organizers/` definiert
+- Locations werden als YAML in `src/data/locations/` definiert
+- Neue Organizer/Locations als YAML-Datei anlegen und im Event per Dateiname (ohne `.yaml`) referenzieren
+
 ## ⚡ Wichtige Hinweise
 
 1. **Immer auf Deutsch antworten** - keine Ausnahmen!

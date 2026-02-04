@@ -5,6 +5,7 @@ import sitemap from 'sitemap-ext:config'
 import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
 import Layout from '@/layouts/Layout.astro'
+import { dateOnly } from '@/tools/events'
 import type { Event as EventType, FullEvent } from '@/types'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -72,11 +73,22 @@ const formatDateForSchema = (date: Date, allDay: boolean) => {
   return date.toISOString()
 }
 
+// Nur Schema.org-konforme Felder in JSON-LD aufnehmen
+const {
+  noindex,
+  allDay,
+  location,
+  organizer,
+  image,
+  startDate,
+  endDate,
+  ...schemaData
+} = event.data
 const googleStructuredEventData = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Event',
   eventStatus,
-  ...event.data,
+  ...schemaData,
   startDate: formatDateForSchema(event.data.startDate, event.data.allDay),
   ...(event.data.endDate
     ? { endDate: formatDateForSchema(event.data.endDate, event.data.allDay) }
@@ -85,10 +97,17 @@ const googleStructuredEventData = JSON.stringify({
   ...(event.data.location ? { location: event.data.location.data } : {}),
   ...(imageUrl ? { image: imageUrl } : {}),
 })
+
+// Spezifischerer Titel mit Datum und Ort
+const locationName = event.data.location?.data.name
+const titleParts = [event.data.name, dateOnly(event.data.startDate)]
+if (locationName) {
+  titleParts.push(locationName)
+}
+const pageTitle = titleParts.join(' – ')
 ---
 
-<Layout title={event?.data.name} description={event?.data.description} ogImage={ogImage?.src} noindex={entry.data.noindex}>
+<Layout title={pageTitle} description={event?.data.description} ogImage={ogImage?.src} ogType="event" noindex={entry.data.noindex}>
   <Event event={event} />
+  <script is:inline type="application/ld+json" set:html={googleStructuredEventData} />
 </Layout>
-
-<script is:inline type="application/ld+json" set:html={googleStructuredEventData} />

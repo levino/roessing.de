@@ -1,0 +1,7 @@
+name: Pfarrgarten Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Pfarrstr. 1
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

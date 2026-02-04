@@ -65,11 +65,22 @@ const eventStatus = isPastEvent
   ? 'https://schema.org/EventCompleted'
   : 'https://schema.org/EventScheduled'
 
+const formatDateForSchema = (date: Date, allDay: boolean) => {
+  if (allDay) {
+    return date.toISOString().split('T')[0]
+  }
+  return date.toISOString()
+}
+
 const googleStructuredEventData = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Event',
   eventStatus,
   ...event.data,
+  startDate: formatDateForSchema(event.data.startDate, event.data.allDay),
+  ...(event.data.endDate
+    ? { endDate: formatDateForSchema(event.data.endDate, event.data.allDay) }
+    : {}),
   ...(event.data.organizer ? { organizer: event.data.organizer.data } : {}),
   ...(event.data.location ? { location: event.data.location.data } : {}),
   ...(imageUrl ? { image: imageUrl } : {}),

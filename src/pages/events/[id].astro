@@ -73,7 +73,7 @@ const formatDateForSchema = (date: Date, allDay: boolean) => {
   return date.toISOString()
 }
 
-// Nur Schema.org-konforme Felder in JSON-LD aufnehmen
+// Felder ausfiltern, die vor der Aufnahme in JSON-LD speziell formatiert oder nicht übernommen werden sollen
 const {
   noindex,
   allDay,

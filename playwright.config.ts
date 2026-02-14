@@ -2,10 +2,8 @@ import process from 'node:process'
 import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
-  globalSetup: './tests/global-setup.ts',
-  globalTeardown: './tests/global-teardown.ts',
   webServer: {
-    command: 'npm run build && npm run preview',
+    command: 'npm run preview',
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: !process.env.CI,
   },

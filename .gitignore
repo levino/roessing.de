@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# E2E-Test-Event (wird dynamisch erzeugt)
+src/content/events/2099-12-31-e2e-test-event.md
+
 # generated types
 .astro/
 

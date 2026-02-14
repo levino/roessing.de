@@ -46,8 +46,10 @@ test('eventStatus ist EventCompleted für vergangene Events', async ({
 test('eventStatus ist EventScheduled für zukünftige Events', async ({
   page,
 }) => {
-  // Event aus 2026 ist definitiv in der Zukunft
-  await page.goto('http://127.0.0.1:4321/events/2026-02-04-dorfschnack')
+  // Weihnachten 2026 liegt weit genug in der Zukunft
+  await page.goto(
+    'http://127.0.0.1:4321/events/2026-12-25-erster-weihnachtstag',
+  )
 
   const jsonData = await getSchemaOrgData(page)
 

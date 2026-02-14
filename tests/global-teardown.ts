@@ -4,8 +4,7 @@ import { join } from 'node:path'
 // Räumt das Test-Event nach dem Testlauf wieder auf.
 export default function globalTeardown() {
   const eventPath = join(
-    import.meta.dirname,
-    '..',
+    process.cwd(),
     'src',
     'content',
     'events',

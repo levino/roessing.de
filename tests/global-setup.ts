@@ -12,8 +12,7 @@ name: Test-Event (Zukunft)
 ---
 `
   const eventPath = join(
-    import.meta.dirname,
-    '..',
+    process.cwd(),
     'src',
     'content',
     'events',

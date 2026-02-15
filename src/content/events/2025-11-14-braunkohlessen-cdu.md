@@ -2,7 +2,7 @@
 startDate: 2025-11-14T18:30:00+01:00
 endDate: 2025-11-14T22:00:00+01:00
 location: gasthaus-volkening
-organizer: cdu
+organizer: cdu-alt
 description:
   Braunkohlessen der CDU.
 name: Braunkohlessen CDU

@@ -2,7 +2,7 @@
 startDate: 2025-01-14T19:00:00+01:00
 endDate: 2025-01-14T21:00:00+01:00
 location: dgh
-organizer: cdu
+organizer: cdu-alt
 description:
   Jahreshauptversammlung der CDU.
 name: Jahreshauptversammlung CDU

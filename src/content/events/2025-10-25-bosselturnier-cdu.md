@@ -2,7 +2,7 @@
 startDate: 2025-10-25T14:00:00+02:00
 endDate: 2025-10-25T18:00:00+02:00
 location: roessing
-organizer: cdu
+organizer: cdu-alt
 description:
   Boßelturnier der CDU.
 name: Boßelturnier CDU

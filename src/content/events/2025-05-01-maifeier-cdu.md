@@ -2,7 +2,7 @@
 startDate: 2025-05-01T11:00:00+02:00
 endDate: 2025-05-01T16:00:00+02:00
 location: roessing
-organizer: cdu
+organizer: cdu-alt
 description:
   Die CDU lädt zur traditionellen Maifeier ein.
 name: Maifeier

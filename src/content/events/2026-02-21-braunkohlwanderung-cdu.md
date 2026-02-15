@@ -14,6 +14,6 @@ Der CDU Ortsverband Barnten lädt ein zur Grünkohlwanderung rund um Barnten. Di
 
 **Voranmeldung bis zum 15.02.2026 bei:**
 
-- Rolf Dietrich – 0177 4229035
-- Sören Wandmacher – 0173 6076032
-- Lili Wandmacher – 0179 4418973
+- Rolf Dietrich – [0177 4229035](tel:+491774229035)
+- Sören Wandmacher – [0173 6076032](tel:+491736076032)
+- Lili Wandmacher – [0179 4418973](tel:+491794418973)

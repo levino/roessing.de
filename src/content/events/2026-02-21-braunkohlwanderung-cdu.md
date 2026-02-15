@@ -6,6 +6,8 @@ description: Der CDU Ortsverband Barnten lädt zur Grünkohlwanderung rund um Ba
 name: Grünkohlwanderung rund um Barnten
 ---
 
+**⚠️ Anmeldeschluss heute (15. Februar)! Bitte meldet euch noch heute bei den unten genannten Kontaktpersonen an.**
+
 Der CDU Ortsverband Barnten lädt ein zur Grünkohlwanderung rund um Barnten. Die Wanderung ist ein gemütlicher Spaziergang rund um den Ort. Anschließend finden sich die Teilnehmer zu einer ordentlichen Portion Grünkohl mit Bregenwurst im Dorfgemeinschaftshaus ein. Selbstverständlich ist auch nur die Teilnahme am Essen möglich.
 
 **Treffpunkt:** 15:00 Uhr am DGH Barnten – Essen ab 17:00 Uhr

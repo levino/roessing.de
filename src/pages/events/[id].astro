@@ -53,9 +53,8 @@ const imageUrl = entry.data.image
   ? (await getImage({ src: event.data.image?.src || '' })).src
   : undefined
 
-const ogImage = entry.data.image
-  ? await getImage({ src: event.data.image?.src || '', width: 1200 })
-  : undefined
+// OG-Bild: Immer das generierte Bild verwenden (enthält Event-Details)
+const ogImagePath = `/og/events/${entry.id}.png`
 
 // Prüfen, ob das Event in der Vergangenheit liegt
 const eventEndDate = event.data.endDate || event.data.startDate
@@ -107,7 +106,7 @@ if (locationName) {
 const pageTitle = titleParts.join(' – ')
 ---
 
-<Layout title={pageTitle} description={event?.data.description} ogImage={ogImage?.src} ogType="event" noindex={entry.data.noindex}>
+<Layout title={pageTitle} description={event?.data.description} ogImage={ogImagePath} ogType="event" noindex={entry.data.noindex}>
   <Event event={event} />
   <script is:inline type="application/ld+json" set:html={googleStructuredEventData} />
 </Layout>

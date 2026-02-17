@@ -14,7 +14,7 @@ export default defineConfig({
   site:
     process.env.CF_PAGES_BRANCH === 'main'
       ? 'https://www.xn--rssing-wxa.de/'
-      : (process.env.CF_PAGES_URL ?? 'http://localhost:4321'),
+      : (process.env.CF_PAGES_URL ?? 'https://www.xn--rssing-wxa.de/'),
   integrations: [
     tailwind(),
     mdx(),

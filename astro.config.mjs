@@ -11,11 +11,14 @@ import { defineConfig } from 'astro/config'
 
 const branch = process.env.WORKERS_CI_BRANCH
 
-const site = !branch
+// localhost nur bei `astro dev`, bei Build immer auf Produktion defaulten
+const isDevServer = process.argv.includes('dev')
+
+const site = isDevServer
   ? 'http://localhost:4321'
-  : branch === 'main'
-    ? 'https://www.xn--rssing-wxa.de/'
-    : `https://${branch.replace(/\//g, '-').toLowerCase()}-roessing-de.post-505.workers.dev`
+  : branch && branch !== 'main'
+    ? `https://${branch.replace(/\//g, '-').toLowerCase()}-roessing-de.post-505.workers.dev`
+    : 'https://www.xn--rssing-wxa.de/'
 
 // https://astro.build/config
 export default defineConfig({

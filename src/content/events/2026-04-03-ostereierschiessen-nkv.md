@@ -5,3 +5,4 @@ description: Traditionelles Ostereierschießen der NKV.
 name: Ostereierschießen
 ---
 
+Die NKV lädt zum traditionellen Ostereierschießen ein. Eine beliebte Veranstaltung für Jung und Alt rund um die Ostertage.

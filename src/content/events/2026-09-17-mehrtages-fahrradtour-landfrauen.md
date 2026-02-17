@@ -7,3 +7,4 @@ description: Mehrtages-Fahrradtour der Landfrauen.
 name: Mehrtages-Fahrradtour
 ---
 
+Die Landfrauen Rössing-Barnten veranstalten eine Mehrtages-Fahrradtour. Gemeinsam wird über mehrere Tage eine schöne Strecke erradelt. Weitere Details bei den Landfrauen.

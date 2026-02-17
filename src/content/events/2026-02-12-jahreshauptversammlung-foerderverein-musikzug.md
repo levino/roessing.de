@@ -6,3 +6,4 @@ description: Jahreshauptversammlung des Fördervereins des Musikzuges der FFW R�
 name: Jahreshauptversammlung Förderverein Musikzug
 ---
 
+Der Förderverein des Musikzuges der FFW Rössing lädt zur Jahreshauptversammlung ein. Es wird über die Aktivitäten des vergangenen Jahres berichtet und das weitere Vorgehen besprochen.

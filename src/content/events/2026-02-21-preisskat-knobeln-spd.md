@@ -7,3 +7,4 @@ description: Preisskat und Knobeln der SPD im Gasthaus Volkening.
 name: Preisskat-/Knobeln
 ---
 
+Die SPD Rössing-Barnten lädt zum Preisskat und Knobeln im Gasthaus Volkening ein. Ein geselliger Abend für alle Skat- und Knobelfreunde.

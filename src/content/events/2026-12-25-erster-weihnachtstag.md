@@ -7,3 +7,4 @@ description: Gottesdienst am 1. Weihnachtstag in der St. Peter und Paul Kirche R
 name: 1. Weihnachtstag
 ---
 
+Die Kirchengemeinde lädt zum Gottesdienst am 1. Weihnachtstag in die St. Peter und Paul Kirche Rössing ein. Ein festlicher Gottesdienst zum Weihnachtsfest.

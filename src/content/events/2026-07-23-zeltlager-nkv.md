@@ -7,3 +7,4 @@ description: Zeltlager der NKV für Kinder.
 name: NKV Zeltlager für Kinder
 ---
 
+Die NKV veranstaltet ein Zeltlager für Kinder. Ein Abenteuer im Freien mit Zelten, Lagerfeuer und vielen spannenden Aktivitäten für die jungen Teilnehmer.

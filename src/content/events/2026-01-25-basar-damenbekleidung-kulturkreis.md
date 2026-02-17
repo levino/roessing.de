@@ -7,3 +7,4 @@ description: Der Kulturkreis Rössing veranstaltet einen Basar für Damenbekleid
 name: Basar für Damenbekleidung
 ---
 
+Der Kulturkreis Rössing veranstaltet einen Basar für gut erhaltene Damenbekleidung im Dorfgemeinschaftshaus. Eine gute Gelegenheit, Kleiderschätze zu entdecken oder eigene Stücke weiterzugeben.

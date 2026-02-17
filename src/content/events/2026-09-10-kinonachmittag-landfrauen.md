@@ -6,3 +6,4 @@ description: Kinonachmittag der Landfrauen in Gronau.
 name: Kinonachmittag in Gronau
 ---
 
+Die Landfrauen Rössing-Barnten laden zum gemeinsamen Kinonachmittag in Gronau ein. Ein unterhaltsamer Ausflug ins Kino für alle Filmbegeisterten.

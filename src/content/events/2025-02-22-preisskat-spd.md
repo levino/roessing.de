@@ -5,3 +5,5 @@ organizer: spd
 description: Die SPD veranstaltet ein Preisskat-Turnier.
 name: Preisskat SPD
 ---
+
+Die SPD Rössing-Barnten veranstaltet ein Preisskat-Turnier im Dorfgemeinschaftshaus. Skatfreunde sind herzlich eingeladen, ihr Können unter Beweis zu stellen.

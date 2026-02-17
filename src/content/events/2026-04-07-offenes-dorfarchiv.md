@@ -7,3 +7,4 @@ description: Das Dorfarchiv Rössing ist für alle Interessierten geöffnet.
 name: Offenes Dorfarchiv
 ---
 
+Die Dorfpflege Rössing öffnet das Dorfarchiv im Dorfgemeinschaftshaus für alle Interessierten. Stöbern Sie in der Geschichte Rössings und entdecken Sie historische Dokumente, Fotos und Geschichten aus dem Dorfleben. Der Eintritt ist frei.

@@ -6,3 +6,4 @@ description: Gedenkfeier zum Volkstrauertag am Denkmal in Rössing.
 name: Volkstrauertag
 ---
 
+Zum Volkstrauertag findet eine Gedenkfeier am Denkmal in Rössing statt. Gemeinsam gedenken wir der Opfer von Krieg und Gewaltherrschaft. Alle Bürgerinnen und Bürger sind zur Teilnahme eingeladen.

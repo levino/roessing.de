@@ -6,3 +6,4 @@ description: Braunkohlwanderung mit Schießen in Rössing.
 name: Braunkohlwanderung mit Schießen
 ---
 
+Die NKV lädt zur traditionellen Braunkohlwanderung mit Schießen in Rössing ein. Nach der Wanderung durch die winterliche Landschaft wird gemeinsam das Schießen ausgetragen.

@@ -124,6 +124,13 @@ Events werden als Markdown-Dateien in `src/content/events/` gespeichert. Dateina
 - `image` (Optional): Bild mit `src` und `alt`
 - `noindex` (Optional): SEO-Flag
 
+### Content (Markdown-Body):
+**⚠️ WICHTIG: Jede Event-Datei MUSS Content nach dem Frontmatter enthalten!**
+- Die `description` im Frontmatter ist nur eine Kurzbeschreibung für SEO/Vorschau und wird NICHT auf der Event-Seite angezeigt.
+- Der eigentliche Seiteninhalt kommt aus dem Markdown-Body (nach dem schließenden `---`).
+- Ohne Content ist die Event-Detailseite leer!
+- Der Content sollte mindestens die `description` als Fließtext enthalten, idealerweise mit weiteren Details zur Veranstaltung.
+
 ### Organizer und Locations:
 - Organizer werden als YAML in `src/data/organizers/` definiert
 - Locations werden als YAML in `src/data/locations/` definiert

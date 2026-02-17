@@ -6,3 +6,4 @@ description: Boßelturnier der CDU Rössing mit anschließendem Feuerkorb.
 name: Boßelturnier mit Feuerkorb
 ---
 
+Die CDU Rössing lädt zum Boßelturnier mit anschließendem Feuerkorb ein. Nach dem sportlichen Wettbewerb wird es bei Feuerkorb und warmen Getränken gemütlich.

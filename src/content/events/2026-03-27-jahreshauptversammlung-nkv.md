@@ -5,3 +5,4 @@ description: Jahreshauptversammlung der Niedersächsischen Kameradschaftsvereini
 name: Jahreshauptversammlung NKV
 ---
 
+Die Niedersächsische Kameradschaftsvereinigung e.V. lädt zur Jahreshauptversammlung ein. Auf der Tagesordnung stehen der Jahresbericht und Wahlen.

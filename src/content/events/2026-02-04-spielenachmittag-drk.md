@@ -7,3 +7,4 @@ description: Der DRK-Ortsverein Rössing lädt zum Spielenachmittag im Dorfgemei
 name: Spielenachmittag
 ---
 
+Der DRK-Ortsverein Rössing lädt zum Spielenachmittag im Dorfgemeinschaftshaus ein. Bei Gesellschaftsspielen und netter Unterhaltung ist für einen unterhaltsamen Nachmittag gesorgt. Alle sind herzlich willkommen.

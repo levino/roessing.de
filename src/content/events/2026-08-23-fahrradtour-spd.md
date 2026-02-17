@@ -6,3 +6,4 @@ description: Fahrradtour der SPD Rössing-Barnten.
 name: Fahrradtour
 ---
 
+Die SPD Rössing-Barnten lädt zur gemeinsamen Fahrradtour ein. Erkunden Sie die schöne Umgebung auf zwei Rädern. Alle sind herzlich willkommen, mitzuradeln.

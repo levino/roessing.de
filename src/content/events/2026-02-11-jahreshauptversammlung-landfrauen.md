@@ -6,3 +6,4 @@ description: Jahreshauptversammlung der Landfrauen Rössing-Barnten.
 name: Jahreshauptversammlung Landfrauen
 ---
 
+Die Landfrauen Rössing-Barnten laden ihre Mitglieder zur Jahreshauptversammlung ein. Neben dem Jahresrückblick wird das Programm für das kommende Jahr vorgestellt.

@@ -7,3 +7,4 @@ description: Sommerfest zum 75-jährigen Bestehen des Kleingärtnervereins Röss
 name: Sommerfest zum 75-jährigen Bestehen
 ---
 
+Der Kleingärtnerverein Rössing feiert sein 75-jähriges Bestehen mit einem großen Sommerfest! Ein besonderer Anlass zum Feiern mit Rückblick auf 75 Jahre Vereinsgeschichte. Alle Mitglieder, ehemalige Mitglieder und Gäste sind herzlich eingeladen.

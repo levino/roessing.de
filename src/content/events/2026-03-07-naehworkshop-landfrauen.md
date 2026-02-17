@@ -7,3 +7,4 @@ description: Nähworkshop der Landfrauen im Dorfgemeinschaftshaus.
 name: Nähworkshop
 ---
 
+Die Landfrauen Rössing-Barnten veranstalten einen Nähworkshop im Dorfgemeinschaftshaus. Ob Anfängerin oder Fortgeschrittene – alle Nähbegeisterten sind herzlich willkommen.

@@ -11,3 +11,5 @@ image:
 name: Blutspende
 url: https://www.drk-blutspende.de/blutspendetermine/termine/297983
 ---
+
+Der DRK-Blutspendedienst lädt zum Blutspendetermin ins Dorfgemeinschaftshaus Rössing ein. Jede Spende zählt und kann Leben retten. Bitte bringen Sie Ihren Personalausweis mit.

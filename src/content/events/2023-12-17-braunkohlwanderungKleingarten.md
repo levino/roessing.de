@@ -6,3 +6,5 @@ location: kleingartenverein
 description: Die diesjährige Braunkohlwanderung des Kleingartenvereins.
 url: https://www.kgv-roessing.de/termine/
 ---
+
+Der Kleingartenverein Rössing lädt zur diesjährigen Braunkohlwanderung ein. Gemeinsam geht es durch die winterliche Landschaft rund um Rössing. Alle Mitglieder und Gäste sind herzlich willkommen.

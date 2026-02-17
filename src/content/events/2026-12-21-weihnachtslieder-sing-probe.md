@@ -5,3 +5,5 @@ organizer: kirche
 description: Weihnachtslieder-Sing-Probe des Kirchenchors im Rahmen des offenen Adventskalenders im Pfarrhaus Rössing.
 name: Weihnachtslieder-Sing-Probe (Offener Adventskalender)
 ---
+
+Die Kirchengemeinde lädt zur Weihnachtslieder-Sing-Probe im Pfarrhaus ein. Gemeinsam werden die schönsten Weihnachtslieder geübt, um an Heiligabend kräftig mitsingen zu können.

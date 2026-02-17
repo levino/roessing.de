@@ -7,3 +7,4 @@ description: Dämmerschoppen des Fördervereins des FFW-Musikzuges auf Hof Rodew
 name: Dämmerschoppen
 ---
 
+Der Förderverein des Musikzuges der FFW Rössing lädt zum gemütlichen Dämmerschoppen auf Hof Rodewald ein. Ein geselliger Sommerabend bei Getränken und guten Gesprächen.

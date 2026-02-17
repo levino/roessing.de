@@ -7,3 +7,4 @@ description: Stifterversammlung der Bürgerstiftung Rössing im Dorfgemeinschaft
 name: Stifterversammlung
 ---
 
+Die Bürgerstiftung Rössing lädt zur Stifterversammlung im Dorfgemeinschaftshaus ein. Stifterinnen und Stifter erhalten einen Überblick über die Projekte und Finanzen der Stiftung.

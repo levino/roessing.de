@@ -9,12 +9,17 @@ import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
 
+const branch = process.env.WORKERS_CI_BRANCH
+
+const site = !branch
+  ? 'http://localhost:4321'
+  : branch === 'main'
+    ? 'https://www.xn--rssing-wxa.de/'
+    : `https://${branch.replace(/\//g, '-').toLowerCase()}-roessing-de.post-505.workers.dev`
+
 // https://astro.build/config
 export default defineConfig({
-  site:
-    process.env.CF_PAGES_BRANCH === 'main'
-      ? 'https://www.xn--rssing-wxa.de/'
-      : (process.env.CF_PAGES_URL ?? 'http://localhost:4321'),
+  site,
   integrations: [
     tailwind(),
     mdx(),

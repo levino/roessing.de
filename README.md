@@ -48,6 +48,14 @@ Diese Website wurde mit modernen Web-Technologien entwickelt:
 - **[Tailwind CSS](https://tailwindcss.com)** & **[DaisyUI](https://daisyui.com)** – Styling
 - **TypeScript** – Typsichere Entwicklung
 
+## Deployment
+
+Die Website wird als **Cloudflare Worker** mit Static Assets deployed (kein Cloudflare Pages).
+
+- **Konfiguration**: `wrangler.toml`
+- **Production**: [www.rössing.de](https://www.xn--rssing-wxa.de/)
+- **Preview**: Jeder Branch bekommt automatisch eine Preview-URL auf `*.workers.dev`
+
 ## Entwicklung
 
 ### Voraussetzungen

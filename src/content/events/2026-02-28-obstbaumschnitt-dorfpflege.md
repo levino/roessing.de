@@ -11,11 +11,16 @@ Die Dorfpflege Rössing e.V. lädt am **Samstag, den 28. Februar 2026 ab 9:00 Uh
 
 ## Jede helfende Hand zählt!
 
-Ob erfahrener Hobbygärtner oder kompletter Neuling – bei uns ist **jeder herzlich willkommen**! Der Obstbaumschnitt ist eine tolle Gelegenheit, gemeinsam draußen anzupacken, etwas für die Natur zu tun und dabei nette Leute kennenzulernen. Auch **Kinder sind gerne gesehen** und können spielerisch die Streuobstwiese und ihre Bewohner entdecken.
+Es gibt **jede Menge zu tun** – und für jeden ist etwas dabei! Neben dem eigentlichen Baumschnitt fallen viele Aufgaben an, für die man keinerlei Vorkenntnisse braucht:
 
-Werkzeug und Anleitung sind vor Ort vorhanden. Wer eine eigene Astschere oder Baumsäge hat, darf diese gerne mitbringen.
+- Abgeschnittene Äste zusammentragen und wegschleppen
+- Schnittgut kleinschneiden und zum Häcksler bringen
+- Die Wiese aufräumen und für Ordnung sorgen
+- Und natürlich: gemeinsam eine gute Zeit haben
 
-## Wer mitschneidet, darf im Herbst miternten!
+Auch **Kinder können prima mithelfen** – beim Äste sammeln, beim Entdecken der Streuobstwiese oder einfach beim Draußensein. Wer eine eigene Astschere oder Baumsäge hat, darf diese gerne mitbringen – aber auch ohne Werkzeug gibt es mehr als genug zu tun!
+
+## Wer mithilft, darf im Herbst miternten!
 
 Der Lohn für die gemeinsame Arbeit kommt im wahrsten Sinne des Wortes im Herbst: Wenn die Äpfel, Birnen und Pflaumen reif sind, wird gemeinsam geerntet. So schließt sich der Kreislauf vom Schnitt bis zum frischen Obst.
 

@@ -9,12 +9,29 @@ import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
 
+function getSiteUrl() {
+  const branch =
+    process.env.CF_PAGES_BRANCH ||
+    process.env.GITHUB_HEAD_REF ||
+    process.env.GITHUB_REF_NAME
+
+  if (!branch) {
+    // Lokale Entwicklung (keine CI-Umgebung erkannt)
+    return 'http://localhost:4321'
+  }
+
+  if (branch === 'main') {
+    return 'https://www.xn--rssing-wxa.de/'
+  }
+
+  // Preview: Branch-Name für deterministische Workers-URL sanitizen
+  const sanitized = branch.replace(/\//g, '-').toLowerCase()
+  return `https://${sanitized}-roessing-de.post-505.workers.dev`
+}
+
 // https://astro.build/config
 export default defineConfig({
-  site:
-    process.env.CF_PAGES_BRANCH === 'main'
-      ? 'https://www.xn--rssing-wxa.de/'
-      : (process.env.CF_PAGES_URL ?? 'https://www.xn--rssing-wxa.de/'),
+  site: getSiteUrl(),
   integrations: [
     tailwind(),
     mdx(),

@@ -54,7 +54,6 @@ Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Lev
 - `CI` – Ist `true` im CI
 
 ### Infrastruktur:
-- Terraform-Konfiguration in `terraform/` (Cloudflare-Provider)
 - Git-Integration: Automatische Builds bei Push auf beliebigen Branch
 - Preview-Deployments für alle Branches aktiviert
 

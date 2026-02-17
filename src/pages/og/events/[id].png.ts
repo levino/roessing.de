@@ -38,6 +38,11 @@ export async function GET({ props }: { props: { entry: Event } }) {
   const locationName = locationEntry?.data.name
   const organizerName = organizerEntry?.data.name
 
+  // Dynamische Schriftgröße: Platz maximal ausnutzen, auch auf kleinen Mobile-Vorschauen lesbar
+  const titleFontSize =
+    eventName.length > 60 ? '52px' : eventName.length > 35 ? '64px' : '76px'
+  const titleMaxHeight = eventName.length > 60 ? '240px' : '280px'
+
   const svg = await satori(
     {
       type: 'div',
@@ -48,7 +53,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '60px 70px',
+          padding: '48px 56px',
           background: 'linear-gradient(135deg, #5a7f77 0%, #3d3833 100%)',
           fontFamily: 'Inter',
           color: '#ffffff',
@@ -61,7 +66,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
               style: {
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '16px',
+                gap: '14px',
               },
               children: [
                 {
@@ -70,17 +75,17 @@ export async function GET({ props }: { props: { entry: Event } }) {
                     style: {
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '12px',
+                      gap: '14px',
                     },
                     children: [
                       {
                         type: 'div',
                         props: {
                           style: {
-                            width: '8px',
-                            height: '32px',
+                            width: '10px',
+                            height: '38px',
                             backgroundColor: '#f0b8a8',
-                            borderRadius: '4px',
+                            borderRadius: '5px',
                           },
                         },
                       },
@@ -88,9 +93,9 @@ export async function GET({ props }: { props: { entry: Event } }) {
                         type: 'div',
                         props: {
                           style: {
-                            fontSize: '28px',
-                            fontWeight: 400,
-                            letterSpacing: '2px',
+                            fontSize: '32px',
+                            fontWeight: 700,
+                            letterSpacing: '3px',
                             opacity: 0.9,
                           },
                           children: 'RÖSSING',
@@ -105,7 +110,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
                   props: {
                     style: {
                       width: '100%',
-                      height: '1px',
+                      height: '2px',
                       backgroundColor: 'rgba(255,255,255,0.15)',
                     },
                   },
@@ -128,10 +133,10 @@ export async function GET({ props }: { props: { entry: Event } }) {
                   type: 'div',
                   props: {
                     style: {
-                      fontSize: eventName.length > 40 ? '42px' : '52px',
+                      fontSize: titleFontSize,
                       fontWeight: 700,
-                      lineHeight: 1.2,
-                      maxHeight: '200px',
+                      lineHeight: 1.15,
+                      maxHeight: titleMaxHeight,
                       overflow: 'hidden',
                     },
                     children: eventName,
@@ -147,7 +152,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
               style: {
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '12px',
+                gap: '10px',
               },
               children: [
                 // Trennlinie
@@ -156,7 +161,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
                   props: {
                     style: {
                       width: '100%',
-                      height: '1px',
+                      height: '2px',
                       backgroundColor: 'rgba(255,255,255,0.15)',
                       marginBottom: '4px',
                     },
@@ -170,7 +175,7 @@ export async function GET({ props }: { props: { entry: Event } }) {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      fontSize: '26px',
+                      fontSize: '36px',
                       color: '#f0b8a8',
                       fontWeight: 700,
                     },
@@ -187,8 +192,8 @@ export async function GET({ props }: { props: { entry: Event } }) {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '8px',
-                            fontSize: '22px',
-                            color: 'rgba(255,255,255,0.7)',
+                            fontSize: '28px',
+                            color: 'rgba(255,255,255,0.75)',
                           },
                           children: [
                             locationName,
@@ -198,12 +203,12 @@ export async function GET({ props }: { props: { entry: Event } }) {
                                     type: 'div',
                                     props: {
                                       style: {
-                                        width: '4px',
-                                        height: '4px',
+                                        width: '6px',
+                                        height: '6px',
                                         borderRadius: '50%',
                                         backgroundColor:
                                           'rgba(255,255,255,0.4)',
-                                        margin: '0 8px',
+                                        margin: '0 10px',
                                       },
                                     },
                                   },

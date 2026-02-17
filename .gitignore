@@ -27,12 +27,6 @@ cypress/screenshots
 /blob-report/
 /playwright/.cache/
 
-# Terraform
-terraform/.terraform/
-terraform/*.tfstate
-terraform/*.tfstate.*
-terraform/*.tfvars
-
 # Sensible Daten (entschlüsselte Dateien - verschlüsselte .enc-Dateien werden committet)
 # Adventskalender-Events (nur die mit Privatpersonen als Gastgeber)
 src/content/adventskalender-events/2025-12-01-adventskalender-tuer-1.md

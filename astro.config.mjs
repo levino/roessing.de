@@ -9,30 +9,17 @@ import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
 
-function getSiteUrl() {
-  // Cloudflare Worker Build-Variable (WORKERS_CI_BRANCH) hat Vorrang
-  const branch =
-    process.env.WORKERS_CI_BRANCH ||
-    process.env.GITHUB_HEAD_REF ||
-    process.env.GITHUB_REF_NAME
+const branch = process.env.WORKERS_CI_BRANCH
 
-  if (!branch) {
-    // Lokale Entwicklung (keine CI-Umgebung erkannt)
-    return 'http://localhost:4321'
-  }
-
-  if (branch === 'main') {
-    return 'https://www.xn--rssing-wxa.de/'
-  }
-
-  // Preview: Branch-Name für deterministische Worker-URL sanitizen
-  const sanitized = branch.replace(/\//g, '-').toLowerCase()
-  return `https://${sanitized}-roessing-de.post-505.workers.dev`
-}
+const site = !branch
+  ? 'http://localhost:4321'
+  : branch === 'main'
+    ? 'https://www.xn--rssing-wxa.de/'
+    : `https://${branch.replace(/\//g, '-').toLowerCase()}-roessing-de.post-505.workers.dev`
 
 // https://astro.build/config
 export default defineConfig({
-  site: getSiteUrl(),
+  site,
   integrations: [
     tailwind(),
     mdx(),

@@ -5,3 +5,6 @@ description: Figurentheater zum Kinderbuch von Julia Donaldson und Axel Scheffle
 name: Das Grüffelokind - Figurentheater
 ---
 
+Das Figurentheater bringt die beliebte Geschichte vom Grüffelokind nach dem Kinderbuch von Julia Donaldson und Axel Scheffler auf die Bühne.
+
+Für ängstliche Monster und mutige Mäuse ab 2 Jahren. Die Spieldauer beträgt ca. 45 Minuten. Die Kasse öffnet 30 Minuten vor Beginn.

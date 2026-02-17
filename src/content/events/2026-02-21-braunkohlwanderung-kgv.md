@@ -6,3 +6,4 @@ description: Braunkohlwanderung mit anschließendem Essen des Kleingärtnerverei
 name: Braunkohlwanderung mit Essen
 ---
 
+Der Kleingärtnerverein Rössing lädt zur Braunkohlwanderung mit anschließendem Essen ein. Eine gesellige Winterwanderung für Mitglieder und Gäste.

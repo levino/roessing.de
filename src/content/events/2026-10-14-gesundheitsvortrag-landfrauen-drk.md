@@ -7,3 +7,4 @@ description: Gesundheitsvortrag der Landfrauen und des DRK im Dorfgemeinschaftsh
 name: Gesundheitsvortrag
 ---
 
+Die Landfrauen und das DRK laden gemeinsam zum Gesundheitsvortrag im Dorfgemeinschaftshaus ein. Informieren Sie sich über aktuelle Gesundheitsthemen. Der Eintritt ist frei.

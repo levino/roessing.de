@@ -7,3 +7,4 @@ description: Gottesdienst am Heiligen Abend in der St. Peter und Paul Kirche Rö
 name: Heilig Abend
 ---
 
+Die Kirchengemeinde lädt zum Gottesdienst am Heiligen Abend in die St. Peter und Paul Kirche Rössing ein. Feiern Sie gemeinsam Weihnachten mit festlicher Musik und der Weihnachtsgeschichte.

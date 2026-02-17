@@ -7,3 +7,4 @@ description: Die SPD Rössing-Barnten lädt zur Grünkohlwanderung mit Einkehr i
 name: Grünkohlwanderung
 ---
 
+Die SPD Rössing-Barnten lädt zur Grünkohlwanderung ein. Nach einer gemeinsamen Wanderung kehren alle im Clubhaus Rössing ein, wo ein zünftiges Grünkohlessen wartet.

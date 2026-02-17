@@ -6,3 +6,4 @@ description: Gemeinsamer Knobelabend von KGV und NKV.
 name: Knobeln KGV + NKV
 ---
 
+Der Kleingärtnerverein und die NKV laden zum gemeinsamen Knobelabend ein. Ein geselliger Abend mit Würfelspaß für alle Knobelfreunde.

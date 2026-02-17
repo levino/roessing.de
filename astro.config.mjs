@@ -10,8 +10,9 @@ import shipyardDocs from '@levino/shipyard-docs'
 import { defineConfig } from 'astro/config'
 
 function getSiteUrl() {
+  // Cloudflare Worker Build-Variable (WORKERS_CI_BRANCH) hat Vorrang
   const branch =
-    process.env.CF_PAGES_BRANCH ||
+    process.env.WORKERS_CI_BRANCH ||
     process.env.GITHUB_HEAD_REF ||
     process.env.GITHUB_REF_NAME
 
@@ -24,7 +25,7 @@ function getSiteUrl() {
     return 'https://www.xn--rssing-wxa.de/'
   }
 
-  // Preview: Branch-Name für deterministische Workers-URL sanitizen
+  // Preview: Branch-Name für deterministische Worker-URL sanitizen
   const sanitized = branch.replace(/\//g, '-').toLowerCase()
   return `https://${sanitized}-roessing-de.post-505.workers.dev`
 }

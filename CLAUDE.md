@@ -36,6 +36,28 @@ Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Lev
 - **@levino/shipyard-docs**: Dokumentations-Features
 - **@levino/shipyard-blog**: Blog-Funktionalität mit Layouts und Collections
 
+## 🚀 Deployment
+
+**⚠️ WICHTIG: Diese Seite wird als Cloudflare WORKER deployed – NICHT als Cloudflare Pages!**
+
+### Architektur:
+- **Deployment-Typ**: Cloudflare Worker mit Static Assets
+- **Konfiguration**: `wrangler.toml` (Worker-Name: `roessing-de`)
+- **Build-Output**: `dist/` (Astro Static Build)
+- **Production-URL**: `https://www.xn--rssing-wxa.de/` (IDN für rössing.de)
+- **Preview-URLs**: `https://{branch}-roessing-de.post-505.workers.dev`
+
+### Build-Umgebungsvariablen (Cloudflare Workers Builds):
+- `WORKERS_CI_BRANCH` – Aktueller Git-Branch (wird in `astro.config.mjs` für die Site-URL verwendet)
+- `WORKERS_CI_COMMIT_SHA` – Commit-Hash
+- `WORKERS_CI` – Ist `1` wenn im Worker-CI gebaut wird
+- `CI` – Ist `true` im CI
+
+### Infrastruktur:
+- Terraform-Konfiguration in `terraform/` (Cloudflare-Provider)
+- Git-Integration: Automatische Builds bei Push auf beliebigen Branch
+- Preview-Deployments für alle Branches aktiviert
+
 ## 🛠️ Entwicklungsrichtlinien
 
 ### Code-Standards:

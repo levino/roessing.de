@@ -2,6 +2,9 @@ provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
 
+# HINWEIS: Das Deployment läuft als Cloudflare Worker (nicht Pages).
+# Die Terraform-Ressource heißt noch "cloudflare_pages_project" weil der
+# Cloudflare Terraform Provider diese Ressource für Workers mit Git-Integration nutzt.
 resource "cloudflare_pages_project" "roessing_de" {
   account_id        = var.cloudflare_account_id
   name              = "roessing-de"

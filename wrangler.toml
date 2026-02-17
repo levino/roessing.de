@@ -1,4 +1,5 @@
-# Cloudflare Workers Konfiguration für roessing.de
+# Cloudflare Worker Konfiguration für roessing.de
+# Deployment als Cloudflare Worker mit Static Assets (KEIN Cloudflare Pages!)
 
 name = "roessing-de"
 
@@ -9,5 +10,5 @@ compatibility_date = "2025-12-16"
 [assets]
 directory = "./dist"
 
-# Preview-Deployments sind standardmäßig aktiviert bei Cloudflare Pages/Workers
-# Die Konfiguration erfolgt über das Cloudflare Dashboard oder via wrangler CLI
+# Preview-Deployments werden über Cloudflare Workers Git-Integration gesteuert
+# Build-Umgebungsvariable WORKERS_CI_BRANCH wird für die Site-URL verwendet

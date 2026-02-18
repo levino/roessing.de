@@ -2,9 +2,9 @@
 import { getImage } from 'astro:assets'
 import { getCollection, getEntry } from 'astro:content'
 import sitemap from 'sitemap-ext:config'
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
 import type { GetStaticPaths } from 'astro'
 import Event from '@/components/Event.astro'
-import Layout from '@/layouts/Layout.astro'
 import { dateOnly } from '@/tools/events'
 import type { Event as EventType, FullEvent } from '@/types'
 
@@ -54,7 +54,7 @@ const imageUrl = entry.data.image
   : undefined
 
 // OG-Bild: Immer das generierte Bild verwenden (enthält Event-Details)
-const ogImagePath = `/og/events/${entry.id}.png`
+const ogImageUrl = `${Astro.site?.origin}/og/events/${entry.id}.png`
 
 // Prüfen, ob das Event in der Vergangenheit liegt
 const eventEndDate = event.data.endDate || event.data.startDate
@@ -106,7 +106,17 @@ if (locationName) {
 const pageTitle = titleParts.join(' – ')
 ---
 
-<Layout title={pageTitle} description={event?.data.description} ogImage={ogImagePath} ogType="event" noindex={entry.data.noindex}>
+<Layout
+  title={pageTitle}
+  description={event?.data.description}
+  image={ogImageUrl}
+  canonicalUrl={Astro.url.href}
+  customMetaTags={[
+    { property: 'og:type', content: 'event' },
+    { property: 'og:url', content: Astro.url.href },
+    ...(entry.data.noindex ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
+  ]}
+>
+  <script slot="head" is:inline type="application/ld+json" set:html={googleStructuredEventData} />
   <Event event={event} />
-  <script is:inline type="application/ld+json" set:html={googleStructuredEventData} />
 </Layout>

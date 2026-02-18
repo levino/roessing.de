@@ -1,12 +1,13 @@
 //@ts-check
 
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
 import sitemapExt from '@inox-tools/sitemap-ext'
 import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
 const branch = process.env.WORKERS_CI_BRANCH
@@ -24,7 +25,6 @@ const site = isDevServer
 export default defineConfig({
   site,
   integrations: [
-    tailwind(),
     mdx(),
     sitemapExt({ includeByDefault: true }),
     react(),
@@ -50,6 +50,7 @@ export default defineConfig({
       title: 'Rössing',
       tagline: 'Über den Ort Rössing',
       brand: 'Rössing',
+      css: fileURLToPath(new URL('./src/styles/app.css', import.meta.url)),
       scripts: [
         {
           src: 'https://analytics.levinkeller.de/js/script.js',
@@ -61,8 +62,9 @@ export default defineConfig({
     shipyardDocs(),
   ],
   vite: {
+    plugins: [tailwindcss()],
     ssr: {
-      noExternal: ['fp-ts', 'usehooks-ts'],
+      noExternal: ['fp-ts'],
     },
   },
 })

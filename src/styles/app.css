@@ -1,0 +1,64 @@
+/* biome-ignore-all lint/suspicious/noUnknownAtRules: Tailwind CSS v4 Direktiven */
+/* biome-ignore-all lint/correctness/noInvalidPositionAtImportRule: Tailwind v4 erfordert diese Reihenfolge */
+/* biome-ignore-all lint/correctness/noUnknownProperty: DaisyUI v5 Theme-Properties */
+
+@import "tailwindcss";
+@import "@levino/shipyard-base/globals.css";
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+@source "../../node_modules/@levino/shipyard-base";
+@source "../../node_modules/@levino/shipyard-docs";
+
+/* Helles Theme: Überschreibt DaisyUI "light" mit warmen Pastellfarben */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: oklch(66.10% 0.0356 177.23);
+  --color-primary-content: oklch(100.00% 0.0001 263.28);
+  --color-secondary: oklch(75.79% 0.0481 306.38);
+  --color-secondary-content: oklch(29.19% 0.0167 300.52);
+  --color-accent: oklch(82.93% 0.069 36.49);
+  --color-accent-content: oklch(31.16% 0.0264 33.54);
+  --color-neutral: oklch(52.78% 0 263.28);
+  --color-neutral-content: oklch(97.02% 0.0001 263.28);
+  --color-base-100: oklch(97.98% 0.0044 78.21);
+  --color-base-200: oklch(94.20% 0.0107 76.55);
+  --color-base-300: oklch(90.34% 0.0154 77.04);
+  --color-base-content: oklch(34.41% 0.011 67.41);
+  --color-info: oklch(74.59% 0.0543 228.21);
+  --color-info-content: oklch(28.17% 0.0289 230.84);
+  --color-success: oklch(77.96% 0.066 152.39);
+  --color-success-content: oklch(27.59% 0.0359 151.84);
+  --color-warning: oklch(83.58% 0.0993 83.82);
+  --color-warning-content: oklch(32.40% 0.0333 79.45);
+  --color-error: oklch(72.66% 0.089 19.42);
+  --color-error-content: oklch(28.02% 0.0467 20.43);
+}
+
+/* Dunkles Theme: Überschreibt DaisyUI "dark" mit warmen dunklen Farben */
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+
+  --color-primary: oklch(74.23% 0.0435 177.29);
+  --color-primary-content: oklch(24.62% 0.0141 172.89);
+  --color-secondary: oklch(81.67% 0.0396 305.51);
+  --color-secondary-content: oklch(23.34% 0.0158 302.22);
+  --color-accent: oklch(88.15% 0.0472 37.73);
+  --color-accent-content: oklch(25.80% 0.0216 37.75);
+  --color-neutral: oklch(40.91% 0 263.28);
+  --color-neutral-content: oklch(92.56% 0.0045 78.21);
+  --color-base-100: oklch(27.79% 0.0061 78.21);
+  --color-base-200: oklch(24.96% 0.0036 48.38);
+  --color-base-300: oklch(21.97% 0.0037 48.38);
+  --color-base-content: oklch(92.56% 0.0045 78.21);
+  --color-info: oklch(79.81% 0.0488 227.77);
+  --color-info-content: oklch(28.17% 0.0289 230.84);
+  --color-success: oklch(82.96% 0.0651 152.52);
+  --color-success-content: oklch(27.59% 0.0359 151.84);
+  --color-warning: oklch(86.95% 0.0932 85.35);
+  --color-warning-content: oklch(32.40% 0.0333 79.45);
+  --color-error: oklch(77.56% 0.0861 19.17);
+  --color-error-content: oklch(28.02% 0.0467 20.43);
+}

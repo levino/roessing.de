@@ -21,7 +21,7 @@ Dies ist die persönliche Website von Levin Keller (roessing.de), aufgebaut mit 
 - **Framework**: Astro (Static Site Generator)
 - **Page Builder**: Shipyard (entwickelt von Levin Keller) - basiert auf Astro
 - **Sprachen**: TypeScript, JavaScript
-- **Styling**: Tailwind CSS, DaisyUI
+- **Styling**: Tailwind CSS v4 (CSS-basierte Konfiguration in `src/styles/app.css`), DaisyUI v5
 - **Testing**: Vitest (Unit-Tests), Playwright (E2E-Tests), Cypress
 - **Paketmanager**: npm
 
@@ -35,6 +35,24 @@ Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Lev
 - **@levino/shipyard-base**: Basis-Komponenten, Layouts und Styling (Navigation, Footer, etc.)
 - **@levino/shipyard-docs**: Dokumentations-Features
 - **@levino/shipyard-blog**: Blog-Funktionalität mit Layouts und Collections
+
+### ⚠️ KEINE eigenen Layouts, Navigation oder Footer!
+**VERBOTEN: Eigene Layout-Dateien, NavBar-Komponenten oder Footer-Komponenten erstellen!**
+
+Shipyard liefert alles was für Layouts benötigt wird:
+- **`@levino/shipyard-base/layouts/Page.astro`** – Standard-Seiten-Layout (Navigation, Footer, Sidebar)
+- **`@levino/shipyard-base/layouts/Splash.astro`** – Layout mit Prosa-Styling für MDX-Content
+
+Für zusätzliche Head-Elemente (OG-Tags, JSON-LD, noindex etc.) bietet `Page.astro` einen `<slot name="head" />` sowie Props für `image`, `canonicalUrl` und `customMetaTags`. Beispiel:
+
+```astro
+<Page title="Titel" description="Beschreibung" image={ogImageUrl} customMetaTags={[...]}>
+  <script slot="head" type="application/ld+json" set:html={jsonLd} />
+  <MeinContent />
+</Page>
+```
+
+Falls Shipyard ein benötigtes Feature nicht unterstützt: **Issue im Shipyard-Repo erstellen** statt Workarounds zu bauen. Levin Keller kontrolliert Shipyard und kann Patches implementieren lassen.
 
 ## 🚀 Deployment
 
@@ -63,12 +81,13 @@ Diese Website wird mit **Shipyard** gebaut, einem Page-Builder-Framework von Lev
 1. **TypeScript bevorzugen**: Neue Dateien sollten in TypeScript geschrieben werden
 2. **Komponenten-Struktur**:
    - Astro-Komponenten in `src/components/`
-   - Layouts in `src/layouts/`
+   - Layouts: **Immer Shipyard-Layouts verwenden** (`@levino/shipyard-base/layouts/Page.astro` oder `Splash.astro`)
    - Seiten in `src/pages/`
 3. **Styling**:
-   - Tailwind CSS für Utility-First Styling nutzen
-   - DaisyUI-Komponenten wo passend einsetzen
+   - Tailwind CSS v4 für Utility-First Styling nutzen (Konfiguration in `src/styles/app.css`)
+   - DaisyUI v5 Komponenten wo passend einsetzen
    - Keine Inline-Styles außer in Ausnahmefällen
+   - Theme-Konfiguration erfolgt in `src/styles/app.css` via `@plugin "daisyui/theme"`
 
 ### Verfügbare Befehle:
 ```bash

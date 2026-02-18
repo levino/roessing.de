@@ -19,7 +19,7 @@ const site = isDevServer
   ? 'http://localhost:4321'
   : branch && branch !== 'main'
     ? `https://${branch.replace(/\//g, '-').toLowerCase()}-roessing-de.post-505.workers.dev`
-    : 'https://www.xn--rssing-wxa.de/'
+    : 'https://xn--rssing-wxa.de/'
 
 // https://astro.build/config
 export default defineConfig({

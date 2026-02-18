@@ -53,7 +53,7 @@ Diese Website wurde mit modernen Web-Technologien entwickelt:
 Die Website wird als **Cloudflare Worker** mit Static Assets deployed (kein Cloudflare Pages).
 
 - **Konfiguration**: `wrangler.toml`
-- **Production**: [www.rössing.de](https://www.xn--rssing-wxa.de/)
+- **Production**: [rössing.de](https://xn--rssing-wxa.de/)
 - **Preview**: Jeder Branch bekommt automatisch eine Preview-URL auf `*.workers.dev`
 
 ## Entwicklung

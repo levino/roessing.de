@@ -62,7 +62,7 @@ Falls Shipyard ein benötigtes Feature nicht unterstützt: **Issue im Shipyard-R
 - **Deployment-Typ**: Cloudflare Worker mit Static Assets
 - **Konfiguration**: `wrangler.toml` (Worker-Name: `roessing-de`)
 - **Build-Output**: `dist/` (Astro Static Build)
-- **Production-URL**: `https://www.xn--rssing-wxa.de/` (IDN für rössing.de)
+- **Production-URL**: `https://xn--rssing-wxa.de/` (IDN für rössing.de)
 - **Preview-URLs**: `https://{branch}-roessing-de.post-505.workers.dev`
 
 ### Build-Umgebungsvariablen (Cloudflare Workers Builds):

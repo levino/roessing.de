@@ -9,11 +9,10 @@
 @source "../../node_modules/@levino/shipyard-base";
 @source "../../node_modules/@levino/shipyard-docs";
 
-/* Sanft-Theme (Hell) */
+/* Helles Theme: Überschreibt DaisyUI "light" mit warmen Pastellfarben */
 @plugin "daisyui/theme" {
-  name: "sanft";
+  name: "light";
   default: true;
-  color-scheme: light;
 
   --color-primary: oklch(66.10% 0.0356 177.23);
   --color-primary-content: oklch(100.00% 0.0001 263.28);
@@ -35,20 +34,12 @@
   --color-warning-content: oklch(32.40% 0.0333 79.45);
   --color-error: oklch(72.66% 0.089 19.42);
   --color-error-content: oklch(28.02% 0.0467 20.43);
-
-  --rounded-box: 1rem;
-  --rounded-btn: 0.75rem;
-  --rounded-badge: 1rem;
-  --animation-btn: 0.3s;
-  --animation-input: 0.2s;
-  --btn-focus-scale: 0.98;
 }
 
-/* Sanft-Dark-Theme (Dunkel) */
+/* Dunkles Theme: Überschreibt DaisyUI "dark" mit warmen dunklen Farben */
 @plugin "daisyui/theme" {
-  name: "sanft-dark";
+  name: "dark";
   prefersdark: true;
-  color-scheme: dark;
 
   --color-primary: oklch(74.23% 0.0435 177.29);
   --color-primary-content: oklch(24.62% 0.0141 172.89);
@@ -70,11 +61,4 @@
   --color-warning-content: oklch(32.40% 0.0333 79.45);
   --color-error: oklch(77.56% 0.0861 19.17);
   --color-error-content: oklch(28.02% 0.0467 20.43);
-
-  --rounded-box: 1rem;
-  --rounded-btn: 0.75rem;
-  --rounded-badge: 1rem;
-  --animation-btn: 0.3s;
-  --animation-input: 0.2s;
-  --btn-focus-scale: 0.98;
 }

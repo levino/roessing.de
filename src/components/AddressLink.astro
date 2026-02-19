@@ -5,21 +5,32 @@ const addressToString = (address: Address) =>
   `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
 
 interface Props {
-  address: Address
+  address?: Address
   className?: string
   name?: string
+  url?: string
 }
 
-const { address, className, name } = Astro.props
+const { address, className, name, url } = Astro.props
+
+const href = url
+  ? url
+  : address
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressToString(address))}`
+    : undefined
+
+const label = address
+  ? `${name ? `${name}, ` : ''}${addressToString(address)}`
+  : (name ?? '')
 ---
 
-<a
-  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    addressToString(address),
-  )}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  class={className}
->
-  {name ? `${name}, ` : ''}{addressToString(address)}
-</a>
+{
+  href ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" class={className}>
+      {label}
+    </a>
+  ) : (
+    <span class={className}>{label}</span>
+  )
+}
+

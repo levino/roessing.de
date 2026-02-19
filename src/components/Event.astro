@@ -103,7 +103,7 @@ const { Content } = await render(event)
     }
 
     {
-      location?.data.address && (
+      location && (location.data.address || location.data.url) && (
         <div class="flex items-center gap-3 text-base-content/70">
           <svg
             class="w-5 h-5 flex-shrink-0"
@@ -127,6 +127,7 @@ const { Content } = await render(event)
           <AddressLink
             name={location.data.name}
             address={location.data.address}
+            url={location.data.url}
             className="link link-primary"
           />
         </div>

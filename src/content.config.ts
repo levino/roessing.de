@@ -19,6 +19,7 @@ export const locationSchema = z.object({
   '@type': z.enum(['Place']),
   address: addressSchema.optional(),
   telephone: z.string().optional(),
+  url: z.string().url().optional(),
 })
 
 export const contactPointSchema = z.object({

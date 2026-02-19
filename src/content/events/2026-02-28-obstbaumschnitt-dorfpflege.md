@@ -7,7 +7,7 @@ description:
 name: Obstbaumschnitt auf der Streuobstwiese
 ---
 
-Die Dorfpflege Rössing e.V. lädt am **Samstag, den 28. Februar 2026 ab 9:00 Uhr** zum gemeinsamen Obstbaumschnitt auf der [Streuobstwiese am Rössingbach](https://www.google.com/maps/search/Streuobstwiese+Am+Rössingbach+31171+Nordstemmen) ein.
+Die Dorfpflege Rössing e.V. lädt am **Samstag, den 28. Februar 2026 ab 9:00 Uhr** zum gemeinsamen Obstbaumschnitt auf der [Streuobstwiese am Rössingbach](https://w3w.co/magd.artenschutz.getrennten) ein.
 
 ## Jede helfende Hand zählt!
 

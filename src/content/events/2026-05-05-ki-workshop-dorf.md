@@ -2,7 +2,7 @@
 name: KI im Alltag – Workshop fürs Dorf
 description: Offener Workshop mit Levin Keller rund um den praktischen Einsatz von KI im Alltag – mit Demos, Mitmach-Stationen und Einblicken in Rössinger Digitalprojekte.
 startDate: 2026-05-05T19:00:00+02:00
-endDate: 2026-05-05T21:30:00+02:00
+endDate: 2026-05-05T20:30:00+02:00
 location: dgh
 organizer: levin-keller
 ---

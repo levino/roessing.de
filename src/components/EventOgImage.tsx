@@ -1,9 +1,9 @@
 interface Props {
   eventName: string
   dateStr: string
-  timeStr?: string
-  locationName?: string
-  organizerName?: string
+  timeStr?: string | undefined
+  locationName?: string | undefined
+  organizerName?: string | undefined
 }
 
 export function EventOgImage({

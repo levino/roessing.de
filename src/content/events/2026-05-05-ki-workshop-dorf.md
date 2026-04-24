@@ -5,7 +5,6 @@ startDate: 2026-05-05T19:00:00+02:00
 endDate: 2026-05-05T21:30:00+02:00
 location: dgh
 organizer: levin-keller
-url: https://levinkeller.de
 ---
 
 Künstliche Intelligenz ist längst nicht mehr nur etwas für Technik-Begeisterte – aber die wenigsten von uns haben wirklich ein Gefühl dafür, was damit heute im Alltag schon möglich ist. Genau hier setzt der Abend an: **KI zum Anfassen, Ausprobieren und Mitmachen – direkt hier im Dorf.**

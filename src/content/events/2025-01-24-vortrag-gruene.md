@@ -2,7 +2,6 @@
 name: Vortrag „Solarenergie und Elektromobilität im Alltag“
 startDate: 2025-01-24T17:00:00+01:00
 location: dgh
-url: https://gruene-nordstemmen.de/2024/12/22/vortrag-solarenergie-und-elektromobilitaet-im-alltag/
 organizer: gruene-nordstemmen
 description:
   24. Januar, 17 Uhr, Dorfgemeinschaftshaus - Vortrag „Solarenergie und Elektromobilität im Alltag“

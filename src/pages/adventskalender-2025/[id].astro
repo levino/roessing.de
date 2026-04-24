@@ -110,7 +110,7 @@ const pageTitle = titleParts.join(' – ')
 <Layout
   title={pageTitle}
   description={event?.data.description}
-  image={ogImageUrl}
+  {...(ogImageUrl ? { image: ogImageUrl } : {})}
   canonicalUrl={Astro.url.href}
   customMetaTags={[
     { property: 'og:type', content: 'event' },

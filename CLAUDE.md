@@ -160,16 +160,17 @@ Events werden als Markdown-Dateien in `src/content/events/` gespeichert. Dateina
 - `allDay` (Optional, Standard: `false`): Wenn `true`, wird nur das Datum ohne Uhrzeit angezeigt. Für Events ohne bekannte Uhrzeit verwenden.
 - `location` (Optional): Referenz zu einer Location in `src/data/locations/` (z.B. `dgh`, `kirche`)
 - `organizer` (Optional): Referenz zu einem Organizer in `src/data/organizers/` (z.B. `spd`, `kulturkreis`)
-- `url` (Optional): Externe URL
+- `url` (Optional): Externe URL. **⚠️ Achtung: Wenn gesetzt, ersetzt diese URL den Link der Event-Kachel in Listen und Kalendern – die interne Detailseite (`/events/{id}`) ist dann nicht mehr verlinkt und der Markdown-Body wird für Besucher unsichtbar.** `url` nur verwenden, wenn die Veranstaltung komplett auf einer externen Seite dargestellt werden soll. In diesem Fall darf **kein Markdown-Body** vorhanden sein (wird per Test in `src/tools/events/content-rules.test.ts` erzwungen). Wenn du eine externe Seite nur verlinken, aber trotzdem eigenen Text im Dorf-Kalender anbieten möchtest, schreibe den Link stattdessen in den Markdown-Body.
 - `image` (Optional): Bild mit `src` und `alt`
 - `noindex` (Optional): SEO-Flag
 
 ### Content (Markdown-Body):
-**⚠️ WICHTIG: Jede Event-Datei MUSS Content nach dem Frontmatter enthalten!**
+**⚠️ WICHTIG: Jede Event-Datei MUSS Content nach dem Frontmatter enthalten – ES SEI DENN, `url` ist gesetzt (siehe oben).**
 - Die `description` im Frontmatter ist nur eine Kurzbeschreibung für SEO/Vorschau und wird NICHT auf der Event-Seite angezeigt.
 - Der eigentliche Seiteninhalt kommt aus dem Markdown-Body (nach dem schließenden `---`).
 - Ohne Content ist die Event-Detailseite leer!
 - Der Content sollte mindestens die `description` als Fließtext enthalten, idealerweise mit weiteren Details zur Veranstaltung.
+- Bei externen Events (`url` gesetzt) muss der Body leer sein, damit niemand Inhalt schreibt, der auf der Website nie erreichbar ist.
 
 ### Organizer und Locations:
 - Organizer werden als YAML in `src/data/organizers/` definiert

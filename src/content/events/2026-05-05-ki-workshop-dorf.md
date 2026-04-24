@@ -1,60 +1,40 @@
 ---
 name: KI im Alltag – Workshop fürs Dorf
-description: Offener Abend mit Levin Keller über Künstliche Intelligenz – was sie ist, welche Anbieter es gibt, was sie kostet und wie man sie selbst ausprobieren kann. Für Rössing und die Gemeinde Nordstemmen.
+description: Offener Abend mit Levin Keller über Künstliche Intelligenz – mit kurzer Einführung und Zeit zum Selbstausprobieren. Für Rössing und die Gemeinde Nordstemmen.
 startDate: 2026-05-05T19:00:00+02:00
 endDate: 2026-05-05T20:30:00+02:00
 location: dgh
 organizer: levin-keller
 ---
 
-Künstliche Intelligenz verändert gerade rasant, wie wir arbeiten, kommunizieren und Informationen finden. Viele beobachten das mit einer Mischung aus Neugier und Unsicherheit – und trauen sich nicht, es selbst einmal auszuprobieren. Genau dort setzt dieser Abend an.
+Am Dienstag, den 5. Mai, lädt Levin Keller ins Dorfgemeinschaftshaus zu einem Abend über Künstliche Intelligenz ein. Viele haben davon gehört, nutzen sie aber noch nicht selbst. An dem Abend gibt es eine kurze Einführung und danach Zeit, KI auf dem eigenen Smartphone oder Laptop auszuprobieren.
 
-## Worum es geht
+## Digitale Projekte aus Rössing und Nordstemmen
 
-Levin Keller hat in den letzten Jahren eine Reihe digitaler Werkzeuge für Rössing und Nordstemmen entwickelt – vom [Dorf-Kalender](/events) und [Digitalen Dorfarchiv](https://dorfarchiv.roessing.de) über [mieten.rössing.de](https://mieten.xn--rssing-wxa.de) bis hin zum Nordstemmen-KI-Connector zum Ratsinformationssystem. Viele dieser Projekte sind mit Hilfe von KI entstanden und zeigen, welches Potenzial die Technologie gerade im ländlichen Raum hat: Wege sind weit, Verwaltungsdinge aufwendig, Vereinsarbeit ehrenamtlich – digitale Lösungen können hier spürbar entlasten und Teilhabe stärken.
+Levin hat in den letzten Jahren mehrere digitale Werkzeuge für die Region gebaut: den Dorfkalender auf roessing.de, das Digitale Dorfarchiv, die Mietplattform [mieten.rössing.de](https://mieten.xn--rssing-wxa.de) (gemeinsam mit Luca Elbeshausen und Manuel Fischer), einen KI-Connector zum Ratsinformationssystem der Gemeinde Nordstemmen und anderes. Viele dieser Projekte sind mit Unterstützung von KI entstanden, und sie zeigen, was im ländlichen Raum mit digitalen Werkzeugen möglich ist: weite Wege werden kürzer, Verwaltungsdinge einfacher, Vereinsarbeit leichter.
 
-Der Eindruck aus vielen Gesprächen: Die allermeisten haben gar keine inhaltlichen Einwände gegen KI – es fehlt schlicht der erste einfache Zugang. Den wollen wir an diesem Abend gemeinsam schaffen.
+## Was ist KI, welche Anbieter, welche Kosten
 
-## Der Abend im Überblick
+Der Abend beginnt mit einer knapp 20-minütigen Einführung. Es geht um die Fragen, die am Anfang am häufigsten auftauchen: Was ist eigentlich eine KI? Welche Anbieter gibt es – also ChatGPT, Claude, Le Chat von Mistral, Gemini? Welche Kosten stecken dahinter, und warum ist es oft sinnvoll, für einen Zugang zu bezahlen?
 
-Geplant ist ein lockerer Abend von **ca. 1,5 Stunden**, ohne Vortragsmarathon. Zwei Teile:
+## Selbst ausprobieren
 
-**1. Intro (ca. 20 Minuten)**
+Danach läuft der Abend offen. Wer mag, holt sein Smartphone, Tablet oder Laptop heraus, und wir helfen beim ersten Einstieg – ein Konto einrichten, eine erste Frage stellen, Ergebnisse einordnen. Wer nur zuhören und zuschauen möchte, ist genauso willkommen.
 
-- Was ist eigentlich eine KI?
-- Welche Anbieter gibt es (ChatGPT, Claude, Le Chat von Mistral, Gemini …)?
-- Welche Kosten stecken dahinter, und warum ist es oft sinnvoll, für einen Zugang zu bezahlen?
+Zwischendurch nehmen wir uns Zeit für das Thema Daten: Was passiert eigentlich mit dem, was ich in einen Chat tippe, und was sollte ich lieber nicht reinschreiben.
 
-**2. Offener Teil**
+Für Interessierte zeigt Levin außerdem, wie man die Familien-Aufgaben-App *Family Todo* über einen MCP-Server mit einem KI-Chat verbindet – aber nur, wenn Zeit und Interesse da sind.
 
-Danach läuft der Abend frei. Wer mag, holt sein eigenes Gerät heraus, und wir helfen beim ersten Einstieg: ein Konto einrichten, eine erste sinnvolle Frage stellen, Ergebnisse einordnen. Für Interessierte zeigen wir auch, wie man die Familien-Aufgaben-App *Family Todo* über einen MCP-Server an einen KI-Chat anbindet – aber nur, wenn Zeit und Interesse da sind.
+Alle Fragen, auch vermeintlich „dumme", sind herzlich willkommen. Genau dafür ist der Abend da.
 
-Dazwischen gibt es Raum für das Thema **Daten und Datenschutz**: Wohin gehen meine Eingaben, was passiert damit, und was sollte man lieber nicht in einen Chat tippen.
+## Eigenes Gerät mitbringen
 
-Unterstützt wird Levin an dem Abend voraussichtlich von **Luca Elbeshausen** und **Manuel Fischer** aus dem Dorf, mit denen er unter anderem [mieten.rössing.de](https://mieten.xn--rssing-wxa.de) gebaut hat.
+Wer aktiv mitmachen möchte, bringt bitte ein eigenes Smartphone, Tablet oder Laptop mit. Geräte werden vor Ort nicht gestellt, damit alle auf dem Gerät weiterarbeiten können, das sie ohnehin im Alltag nutzen.
 
-## Für wen ist der Abend gedacht?
+Unterstützt wird Levin an dem Abend voraussichtlich von Luca Elbeshausen und Manuel Fischer aus dem Dorf.
 
-Für alle aus Rössing und der Gemeinde Nordstemmen, die neugierig sind, wie KI im Alltag wirklich funktioniert. Vorkenntnisse sind ausdrücklich nicht nötig. Alle Fragen, auch vermeintlich „dumme", sind herzlich willkommen – genau dafür ist der Abend da.
+## Anmeldung mit Angabe des Ortsteils
 
-Wer kein Gerät mitbringen möchte oder einfach nur zuhören und zuschauen will, ist genauso willkommen wie diejenigen, die selbst ausprobieren wollen.
+Der Abend ist ein Experiment, und die Plätze sind begrenzt, damit der offene Teil persönlich bleibt. Deshalb bitte vorher anmelden unter [post@levinkeller.de](mailto:post@levinkeller.de) mit Name, Ortsteil (Rössing, Barnten, Nordstemmen, Burgstemmen, Mahlerten, Adensen, Heyersum …) und – optional – einem konkreten Thema oder einer Frage, die du gern beantwortet hättest.
 
-## Mitbringen
-
-Wer aktiv mitmachen möchte: **ein eigenes Smartphone, Tablet oder Laptop** mitbringen. Geräte werden vor Ort nicht gestellt – das ist bewusst so, denn das Ziel ist, dass jede*r die Technik auf dem Gerät nutzen kann, das sie oder er sowieso dabei hat.
-
-## Anmeldung
-
-Der Abend ist ein Experiment, und die Zahl der Plätze ist begrenzt – damit der offene Teil persönlich bleibt und wir beim Einrichten wirklich helfen können. Deshalb bitte **vorher anmelden** unter [post@levinkeller.de](mailto:post@levinkeller.de) mit:
-
-- Name
-- Ortsteil (Rössing, Barnten, Nordstemmen, Burgstemmen, Mahlerten, Adensen, Heyersum …)
-- optional: ein konkretes Thema oder eine Frage, die du gerne an dem Abend beantwortet hättest
-
-Bei großer Nachfrage wird der Abend in den anderen Ortsteilen wiederholt – angemeldete Personen bekommen dann Bescheid.
-
-## Warum dieser Abend?
-
-Weil KI eine Technologie ist, die gerade von Grund auf verändert, wie wir arbeiten und am öffentlichen Leben teilhaben. Und weil sich eine solche Entwicklung aus Levins Sicht nicht von selbst im Dorf verankert – sondern nur, wenn viele Menschen früh anfangen, damit umzugehen. Wer sich heute traut, hat morgen einen Vorsprung – und hilft dabei, dass auch Deutschland und unsere Region mitspielen.
-
-Kommt vorbei, stellt Fragen, probiert aus. Wir freuen uns auf euch.
+Bei großer Nachfrage findet der Abend später in den anderen Ortsteilen noch einmal statt. Angemeldete Personen bekommen dann Bescheid.

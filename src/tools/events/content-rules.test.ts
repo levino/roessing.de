@@ -31,7 +31,7 @@ describe('Event-Content-Regeln', () => {
       if (hasFrontmatterKey(frontmatter, 'url')) {
         expect(
           body,
-          `Event "${file}" hat eine externe url und darf deshalb keinen Markdown-Body haben (der Body wäre für Besucher unsichtbar, weil die Event-Kachel direkt auf die externe URL verlinkt). Entweder url entfernen oder Body löschen.`,
+          `Event "${file}" hat eine externe url und darf deshalb keinen Markdown-Body haben. Das url-Feld ist für Events gedacht, deren Primärquelle eine schema.org-taugliche Event-Seite beim externen Veranstalter ist (kein zweiter kanonischer Link hier). Der Body wäre für Besucher unsichtbar, weil die Event-Kachel direkt dorthin verlinkt. Entweder url entfernen (dann sind wir Primärquelle und der externe Link gehört in den Body) oder Body löschen.`,
         ).toBe('')
       }
     },

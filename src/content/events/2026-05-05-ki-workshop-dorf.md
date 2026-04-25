@@ -33,6 +33,10 @@ Wer aktiv mitmachen möchte, bringt bitte ein eigenes Smartphone, Tablet oder La
 
 Unterstützt wird Levin an dem Abend voraussichtlich von Luca Elbeshausen und Manuel Fischer aus dem Dorf.
 
+## Kostenlos – Spenden vor Ort willkommen
+
+Die Teilnahme am Abend ist kostenlos. Vor Ort wird um eine Spende für die Raummiete gebeten. Alkoholfreie Getränke stehen ebenfalls bereit und werden gegen Spende ausgegeben.
+
 ## Anmeldung mit Angabe des Ortsteils
 
 Der Abend ist ein Experiment, und die Plätze sind begrenzt, damit der offene Teil persönlich bleibt. Deshalb bitte vorher anmelden unter [post@levinkeller.de](mailto:post@levinkeller.de) mit Name, Ortsteil (Rössing, Barnten, Nordstemmen, Burgstemmen, Mahlerten, Adensen, Heyersum …) und – optional – einem konkreten Thema oder einer Frage, die du gern beantwortet hättest.

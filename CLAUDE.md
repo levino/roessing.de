@@ -160,16 +160,19 @@ Events werden als Markdown-Dateien in `src/content/events/` gespeichert. Dateina
 - `allDay` (Optional, Standard: `false`): Wenn `true`, wird nur das Datum ohne Uhrzeit angezeigt. Für Events ohne bekannte Uhrzeit verwenden.
 - `location` (Optional): Referenz zu einer Location in `src/data/locations/` (z.B. `dgh`, `kirche`)
 - `organizer` (Optional): Referenz zu einem Organizer in `src/data/organizers/` (z.B. `spd`, `kulturkreis`)
-- `url` (Optional): Externe URL
+- `url` (Optional): Externe kanonische Event-URL. **Zweck: SEO-Duplikate vermeiden.** Wenn der externe Veranstalter (Verein, Institution …) bereits eine vollwertige, schema.org-taugliche Event-Seite auf seiner eigenen Homepage betreibt, **muss** diese URL hier eingetragen werden, statt den Inhalt hier nochmal als zweiten kanonischen Link nachzubauen. Die Event-Kachel in Listen/Kalendern verlinkt dann direkt dorthin; die interne Detailseite (`/events/{id}`) wird weder verlinkt noch indexiert. **In diesem Fall darf kein Markdown-Body vorhanden sein** (wird per Test in `src/tools/events/content-rules.test.ts` erzwungen), sonst entstünde Inhalt, der für Besucher unerreichbar ist.
+  - Faustregel: `url` setzen = „die externe Seite ist die Primärquelle, wir verlinken nur". Kein `url` setzen = „wir sind die Primärquelle, externer Link gehört (falls nötig) in den Markdown-Body".
+  - Die meisten Vereinsseiten sind KEINE geeigneten Primärquellen (nur PDFs, reine Blog-Posts ohne Event-Schema, oder gar nichts im Netz). Dann lieber hier kanonisch abbilden und externe Links im Body ergänzen.
 - `image` (Optional): Bild mit `src` und `alt`
 - `noindex` (Optional): SEO-Flag
 
 ### Content (Markdown-Body):
-**⚠️ WICHTIG: Jede Event-Datei MUSS Content nach dem Frontmatter enthalten!**
+**⚠️ WICHTIG: Jede Event-Datei MUSS Content nach dem Frontmatter enthalten – ES SEI DENN, `url` ist gesetzt (siehe oben).**
 - Die `description` im Frontmatter ist nur eine Kurzbeschreibung für SEO/Vorschau und wird NICHT auf der Event-Seite angezeigt.
 - Der eigentliche Seiteninhalt kommt aus dem Markdown-Body (nach dem schließenden `---`).
 - Ohne Content ist die Event-Detailseite leer!
 - Der Content sollte mindestens die `description` als Fließtext enthalten, idealerweise mit weiteren Details zur Veranstaltung.
+- Bei externen Events (`url` gesetzt) muss der Body leer sein, damit kein Inhalt entsteht, der auf der Website nie erreichbar ist.
 
 ### Organizer und Locations:
 - Organizer werden als YAML in `src/data/organizers/` definiert

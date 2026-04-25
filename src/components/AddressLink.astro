@@ -1,14 +1,14 @@
 ---
-import type { Address } from '@/content/config'
+import type { Address } from '@/content.config'
 
 const addressToString = (address: Address) =>
   `${address.streetAddress}, ${address.postalCode} ${address.addressLocality}`
 
 interface Props {
-  address?: Address
-  className?: string
-  name?: string
-  url?: string
+  address?: Address | undefined
+  className?: string | undefined
+  name?: string | undefined
+  url?: string | undefined
 }
 
 const { address, className, name, url } = Astro.props

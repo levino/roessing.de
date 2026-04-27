@@ -9,45 +9,46 @@
 #let muted = rgb("#5a5a5a")
 
 #align(center)[
-  #text(size: 14pt, fill: muted, weight: "medium")[
-    Offener Abend im Dorfgemeinschaftshaus Rössing
+  #text(size: 13pt, fill: muted, weight: "medium")[
+    Offener Abend für Stadt Elze und Gemeinde Nordstemmen
   ]
-  #v(0.4cm)
-  #text(size: 56pt, weight: "black", fill: accent)[
-    KI im Alltag
+  #v(0.35cm)
+  #text(size: 60pt, weight: "black", fill: accent)[
+    KI richtig nutzen
   ]
   #v(-0.2cm)
-  #text(size: 28pt, weight: "semibold")[
-    Workshop fürs Dorf
+  #text(size: 22pt, weight: "semibold")[
+    Ein neues Zeitalter – gemeinsam gestalten
   ]
 ]
 
-#v(0.6cm)
+#v(0.5cm)
 #line(length: 100%, stroke: 1.5pt + accent)
 #v(0.4cm)
+
+#text(size: 13pt)[
+  Alle warnen vor KI: sie vernichte Arbeitsplätze, fresse Daten. Die Panikmache
+  ist übertrieben. Wie so oft in der Vergangenheit beginnt mit einer neuen
+  Technologie ein rasanter Sprung in Lebensqualität und Wohlstand. Lasst uns
+  gemeinsam Erfahrungen sammeln – und entdecken, wie KI für uns selbst und
+  unsere Gemeinschaft nutzbar wird.
+]
+
+#v(0.5cm)
 
 #grid(
   columns: (auto, 1fr),
   column-gutter: 0.6cm,
   row-gutter: 0.4cm,
-  text(size: 14pt, weight: "bold")[Wann],
-  text(size: 14pt)[Dienstag, 5. Mai 2026 · 19:00 – 20:30 Uhr],
-  text(size: 14pt, weight: "bold")[Wo],
-  text(size: 14pt)[Dorfgemeinschaftshaus Rössing],
-  text(size: 14pt, weight: "bold")[Eintritt],
-  text(size: 14pt)[kostenlos · Spende für Raummiete erwünscht],
-  text(size: 14pt, weight: "bold")[Anmeldung],
-  text(size: 14pt)[post\@levinkeller.de · mit Name und Ortsteil],
+  text(size: 13pt, weight: "bold")[Wann],
+  text(size: 13pt)[Dienstag, 5. Mai 2026 · 19:00 – 20:30 Uhr],
+  text(size: 13pt, weight: "bold")[Wo],
+  text(size: 13pt)[Dorfgemeinschaftshaus Rössing],
+  text(size: 13pt, weight: "bold")[Eintritt],
+  text(size: 13pt)[kostenlos · Spende für Raummiete erwünscht],
+  text(size: 13pt, weight: "bold")[Anmeldung],
+  text(size: 13pt)[post\@levinkeller.de · mit Name und Ortsteil],
 )
-
-#v(0.7cm)
-
-#text(size: 14pt)[
-  Viele haben von Künstlicher Intelligenz gehört, nutzen sie aber noch nicht
-  selbst. An dem Abend gibt Levin Keller eine kurze Einführung – und dann ist
-  Zeit, KI auf dem eigenen Smartphone, Tablet oder Laptop auszuprobieren.
-  Alle Fragen sind willkommen, auch die vermeintlich „dummen".
-]
 
 #v(0.6cm)
 
@@ -58,7 +59,7 @@
   [
     #text(size: 18pt, weight: "bold", fill: accent)[Mehr Infos]
     #v(0.2cm)
-    #text(size: 14pt)[
+    #text(size: 13pt)[
       QR-Code scannen oder eintippen:
     ]
     #v(0.3cm)

@@ -3,6 +3,7 @@ import { mkdirSync, readdirSync, statSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import type { AstroIntegration } from 'astro'
 import type { Plugin } from 'vite'
+import { ensureFonts } from '../../scripts/ensure-fonts.js'
 import { resolveTypst } from '../../scripts/ensure-typst.js'
 
 const POSTER_URL_PREFIX = '/posters'
@@ -46,6 +47,7 @@ const compilePosters = async (logger: {
   mkdirSync(outDir, { recursive: true })
 
   const typstBin = await resolveTypst()
+  const fontPath = await ensureFonts()
 
   for (const file of typFiles) {
     const slug = slugFromTypFile(file)
@@ -55,9 +57,11 @@ const compilePosters = async (logger: {
       logger.info(`Plakat aktuell: ${slug}.pdf`)
       continue
     }
-    const result = spawnSync(typstBin, ['compile', inputPath, outputPath], {
-      encoding: 'utf-8',
-    })
+    const result = spawnSync(
+      typstBin,
+      ['compile', '--font-path', fontPath, inputPath, outputPath],
+      { encoding: 'utf-8' },
+    )
     if (result.status !== 0) {
       logger.error(`Typst-Kompilierung von ${file} fehlgeschlagen:`)
       logger.error(result.stderr)

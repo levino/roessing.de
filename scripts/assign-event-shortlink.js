@@ -8,6 +8,34 @@ const EVENTS_DIR = join(process.cwd(), 'src/content/events')
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz0123456789'
 const SHORTLINK_REGEX = /^shortlink:\s*([a-z0-9]{3})\s*$/m
 
+// 3-Zeichen-Codes, die wegen NS-/extremistischer/vulgaerer Lesart nicht
+// zufaellig vergeben werden sollen. Manuell setzen ist weiterhin moeglich.
+const BLOCKED_CODES = new Set([
+  'nzs',
+  'naz',
+  'nzi',
+  'nsd',
+  'kkk',
+  'afd',
+  'npd',
+  'raf',
+  'sex',
+  'fck',
+  'fuk',
+  'fuc',
+  'ass',
+  'tit',
+  'cum',
+  'pus',
+  'fag',
+  'nig',
+  'jew',
+])
+
+// Zusaetzlich werden Codes blockiert, die "ss" enthalten – im deutschen
+// Kontext zu naheliegend an die NS-Schutzstaffel.
+const containsBlockedSubstring = (code) => code.includes('ss')
+
 const target = process.argv[2]
 if (!target) {
   console.error(
@@ -53,9 +81,14 @@ const generate = () => {
   return code
 }
 
+const isAcceptable = (code) =>
+  !taken.has(code) &&
+  !BLOCKED_CODES.has(code) &&
+  !containsBlockedSubstring(code)
+
 let code = generate()
 let attempts = 0
-while (taken.has(code)) {
+while (!isAcceptable(code)) {
   code = generate()
   attempts += 1
   if (attempts > 1000) {

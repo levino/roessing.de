@@ -10,14 +10,14 @@
 
 #align(center)[
   #text(size: 11pt, fill: muted, weight: "medium")[
-    Offener Abend für Stadt Elze und Gemeinde Nordstemmen
+    Offener Abend im Dorfgemeinschaftshaus Rössing
   ]
   #v(0.25cm)
-  #text(size: 46pt, weight: "black", fill: accent)[
+  #text(size: 56pt, weight: "black", fill: accent)[
     KI richtig nutzen
   ]
   #v(-0.15cm)
-  #text(size: 17pt, weight: "semibold")[
+  #text(size: 19pt, weight: "semibold")[
     Ein neues Zeitalter – gemeinsam gestalten
   ]
 ]

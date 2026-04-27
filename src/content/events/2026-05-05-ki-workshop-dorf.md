@@ -1,5 +1,5 @@
 ---
-name: KI richtig nutzen – Workshop für Stadt Elze und Gemeinde Nordstemmen
+name: KI richtig nutzen
 description: Während alle vor KI warnen, beginnt im Stillen ein neues Zeitalter. An diesem Abend in Rössing sammeln wir gemeinsam erste Erfahrungen und probieren KI auf eigenen Geräten aus.
 startDate: 2026-05-05T19:00:00+02:00
 endDate: 2026-05-05T20:30:00+02:00

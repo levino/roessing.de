@@ -58,6 +58,13 @@ const createEventSchema = ({ image }: SchemaContext) =>
       })
       .optional(),
     noindex: z.boolean().optional().default(false),
+    shortlink: z
+      .string()
+      .regex(
+        /^[a-z0-9]{3}$/,
+        'shortlink muss aus genau 3 Zeichen bestehen ([a-z0-9]).',
+      )
+      .optional(),
   })
 const eventCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/events' }),

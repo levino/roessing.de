@@ -49,4 +49,24 @@ describe('Event-Content-Regeln', () => {
       }
     },
   )
+
+  test('shortlinks sind eindeutig und korrekt formatiert', () => {
+    const seen = new Map<string, string>()
+    for (const file of eventFiles) {
+      const { frontmatter } = parseEvent(join(EVENTS_DIR, file))
+      const match = frontmatter.match(/^shortlink:\s*(\S+)\s*$/m)
+      if (!match) continue
+      const value = match[1] ?? ''
+      expect(
+        value,
+        `Event "${file}" hat einen ungültigen shortlink "${value}". Erwartet werden genau 3 Zeichen aus [a-z0-9].`,
+      ).toMatch(/^[a-z0-9]{3}$/)
+      const previous = seen.get(value)
+      expect(
+        previous,
+        `Doppelter shortlink "${value}" in "${file}" und "${previous}". Shortlinks müssen eindeutig sein.`,
+      ).toBeUndefined()
+      seen.set(value, file)
+    }
+  })
 })

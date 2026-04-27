@@ -5,6 +5,7 @@ startDate: 2026-05-05T19:00:00+02:00
 endDate: 2026-05-05T20:30:00+02:00
 location: dgh
 organizer: levin-keller
+shortlink: nzs
 ---
 
 Am Dienstag, den 5. Mai, lädt Levin Keller ins Dorfgemeinschaftshaus zu einem Abend über Künstliche Intelligenz ein. Viele haben davon gehört, nutzen sie aber noch nicht selbst. An dem Abend gibt es eine kurze Einführung und danach Zeit, KI auf dem eigenen Smartphone oder Laptop auszuprobieren.

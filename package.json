@@ -25,6 +25,7 @@
     "shortlink": "node scripts/assign-event-shortlink.js",
     "event-qr": "node scripts/generate-event-qr.js",
     "typst:ensure": "node scripts/ensure-typst.js",
+    "fonts:ensure": "node scripts/ensure-fonts.js",
     "claude": "claude --dangerously-skip-permissions"
   },
   "dependencies": {

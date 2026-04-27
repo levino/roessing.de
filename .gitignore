@@ -4,6 +4,9 @@ dist/
 # typst-Binary, wird per scripts/ensure-typst.js bei Bedarf geladen
 .bin/
 
+# Schriftarten fuer Plakat-Kompilierung, werden per scripts/ensure-fonts.js geladen
+.fonts/
+
 # Generierte Event-Plakate (werden bei jedem Build aus .typ kompiliert)
 public/posters/
 

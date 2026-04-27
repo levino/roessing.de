@@ -49,6 +49,12 @@ const event = {
   },
 } as FullEvent
 
+const posterModules = import.meta.glob<{ default: string }>(
+  '../../content/events/*.typ',
+  { eager: true },
+)
+const posterUrl = posterModules[`../../content/events/${entry.id}.typ`]?.default
+
 const imageUrl = entry.data.image
   ? (await getImage({ src: event.data.image?.src || '' })).src
   : undefined
@@ -118,5 +124,5 @@ const pageTitle = titleParts.join(' – ')
   ]}
 >
   <script slot="head" is:inline type="application/ld+json" set:html={googleStructuredEventData} />
-  <Event event={event} />
+  <Event event={event} posterUrl={posterUrl} />
 </Layout>

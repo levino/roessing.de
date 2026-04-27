@@ -9,6 +9,7 @@ import shipyard from '@levino/shipyard-base'
 import shipyardDocs from '@levino/shipyard-docs'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
+import eventShortlinks from './src/integrations/event-shortlinks.ts'
 
 const branch = process.env.WORKERS_CI_BRANCH
 
@@ -60,6 +61,7 @@ export default defineConfig({
       ],
     }),
     shipyardDocs(),
+    eventShortlinks(),
   ],
   vite: {
     plugins: [tailwindcss()],

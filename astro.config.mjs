@@ -36,6 +36,10 @@ export default defineConfig({
           label: 'Events',
           href: '/events',
         },
+        jobs: {
+          label: 'Jobs',
+          href: '/jobs',
+        },
         docs: {
           label: 'Wissen',
           href: '/docs/intro',

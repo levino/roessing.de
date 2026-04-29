@@ -9,3 +9,11 @@ export type FullEvent = Event & {
     location: Location
   }
 }
+
+export type Job = CollectionEntry<'jobs'>
+export type FullJob = Job & {
+  data: Omit<Job['data'], 'hiringOrganization' | 'location'> & {
+    hiringOrganization: Organizer
+    location?: Location
+  }
+}

@@ -1,0 +1,79 @@
+---
+import { getCollection, getEntry } from 'astro:content'
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import type { FullJob } from '@/types'
+import JobCard from '../components/JobCard.astro'
+
+const allJobs = await getCollection('jobs', ({ data }) => {
+  if (!data.validThrough) return true
+  return data.validThrough >= new Date()
+})
+
+const jobs = (await Promise.all(
+  allJobs.map(async (job) => ({
+    ...job,
+    data: {
+      ...job.data,
+      hiringOrganization: await getEntry(job.data.hiringOrganization),
+      ...(job.data.location
+        ? { location: await getEntry(job.data.location) }
+        : {}),
+    },
+  })),
+)) as unknown as FullJob[]
+
+jobs.sort((a, b) => b.data.datePosted.getTime() - a.data.datePosted.getTime())
+
+const totalJobs = jobs.length
+---
+
+<Layout
+  title="Jobs in Rössing"
+  description="Aktuelle Stellenangebote und Minijobs aus Rössing."
+>
+  <div class="min-h-screen bg-gradient-to-b from-base-100 to-base-200">
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-base-content">
+          Jobs in Rössing
+        </h1>
+        <p class="text-base-content/70 text-lg">
+          {totalJobs} {totalJobs === 1 ? 'offene Stelle' : 'offene Stellen'}
+        </p>
+      </header>
+
+      {
+        totalJobs > 0 && (
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {jobs.map((job) => (
+              <JobCard job={job} />
+            ))}
+          </div>
+        )
+      }
+
+      {
+        totalJobs === 0 && (
+          <div class="text-center py-16">
+            <svg
+              class="w-24 h-24 mx-auto text-base-content/30 mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            <p class="text-xl text-base-content/60">
+              Aktuell sind keine Stellen ausgeschrieben.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>

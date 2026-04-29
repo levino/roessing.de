@@ -1,0 +1,167 @@
+---
+import { Image } from 'astro:assets'
+import type { FullJob } from '@/types'
+
+interface Props {
+  job: FullJob
+  basePath?: string
+}
+
+const EMPLOYMENT_TYPE_LABELS: Record<string, string> = {
+  FULL_TIME: 'Vollzeit',
+  PART_TIME: 'Teilzeit',
+  CONTRACTOR: 'Auftrag',
+  TEMPORARY: 'Befristet',
+  INTERN: 'Praktikum',
+  VOLUNTEER: 'Ehrenamt',
+  PER_DIEM: 'Tageweise',
+  OTHER: 'Sonstige',
+}
+
+const SALARY_UNIT_LABELS: Record<string, string> = {
+  HOUR: 'Stunde',
+  DAY: 'Tag',
+  WEEK: 'Woche',
+  MONTH: 'Monat',
+  YEAR: 'Jahr',
+}
+
+const {
+  job,
+  job: {
+    data: {
+      title,
+      description,
+      image,
+      employmentType,
+      hoursPerWeek,
+      baseSalary,
+      location,
+    },
+  },
+  basePath = '/jobs',
+} = Astro.props
+
+const formatSalary = (value: number, currency: string) =>
+  new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency,
+    minimumFractionDigits: 2,
+  }).format(value)
+---
+
+<a
+  class="card card-compact bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 h-full group"
+  href={`${basePath}/${job.id}`}
+>
+  {
+    image && (
+      <figure class="relative">
+        <div class="aspect-[16/9] w-full overflow-hidden">
+          <Image
+            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            src={image.src}
+            alt={image.alt}
+          />
+        </div>
+      </figure>
+    )
+  }
+
+  <div class="card-body">
+    <h3 class="card-title text-base line-clamp-2 group-hover:text-primary transition-colors">
+      {title}
+    </h3>
+
+    <div class="flex flex-wrap gap-1 mt-1">
+      {
+        employmentType.map((type) => (
+          <span class="badge badge-primary badge-sm">
+            {EMPLOYMENT_TYPE_LABELS[type] ?? type}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col gap-1 text-sm mt-2">
+      {
+        hoursPerWeek && (
+          <div class="flex items-center gap-2 text-base-content/70">
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{hoursPerWeek} h / Woche</span>
+          </div>
+        )
+      }
+
+      {
+        baseSalary && (
+          <div class="flex items-center gap-2 text-base-content/70">
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2m0-8a3 3 0 013 3"
+              />
+            </svg>
+            <span>
+              {formatSalary(baseSalary.value, baseSalary.currency)} / {SALARY_UNIT_LABELS[baseSalary.unitText] ?? baseSalary.unitText}
+            </span>
+          </div>
+        )
+      }
+
+      {
+        location && (
+          <div class="flex items-center gap-2 text-base-content/70">
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <span class="truncate">{location.data.name}</span>
+          </div>
+        )
+      }
+    </div>
+
+    {
+      description && (
+        <p class="text-base-content/60 text-sm mt-2 line-clamp-3">
+          {description}
+        </p>
+      )
+    }
+  </div>
+</a>

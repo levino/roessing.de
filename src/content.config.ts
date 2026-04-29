@@ -71,6 +71,50 @@ const eventCollection = defineCollection({
   schema: createEventSchema,
 })
 
+const employmentTypes = [
+  'FULL_TIME',
+  'PART_TIME',
+  'CONTRACTOR',
+  'TEMPORARY',
+  'INTERN',
+  'VOLUNTEER',
+  'PER_DIEM',
+  'OTHER',
+] as const
+
+const createJobSchema = ({ image }: SchemaContext) =>
+  z.object({
+    title: z.string(),
+    description: z.string(),
+    employmentType: z.array(z.enum(employmentTypes)).nonempty(),
+    hoursPerWeek: z.number().positive().optional(),
+    baseSalary: z
+      .object({
+        value: z.number().positive(),
+        currency: z.string().default('EUR'),
+        unitText: z
+          .enum(['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'])
+          .default('HOUR'),
+      })
+      .optional(),
+    datePosted: z.date(),
+    validThrough: z.date().optional(),
+    location: reference('locations').optional(),
+    hiringOrganization: reference('organizers'),
+    image: z
+      .object({
+        src: image(),
+        alt: z.string(),
+      })
+      .optional(),
+    noindex: z.boolean().optional().default(false),
+  })
+
+const jobsCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/jobs' }),
+  schema: createJobSchema,
+})
+
 const adventskalenderEventsCollection = defineCollection({
   loader: glob({
     pattern: '**/[^_]*.{md,mdx}',
@@ -95,6 +139,7 @@ const docs = defineCollection({
 export const collections = {
   events: eventCollection,
   'adventskalender-events': adventskalenderEventsCollection,
+  jobs: jobsCollection,
   locations: locationCollection,
   organizers: organizersCollection,
   docs,

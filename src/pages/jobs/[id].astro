@@ -1,0 +1,118 @@
+---
+import { getImage } from 'astro:assets'
+import { getCollection, getEntry } from 'astro:content'
+import sitemap from 'sitemap-ext:config'
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import type { GetStaticPaths } from 'astro'
+import Job from '@/components/Job.astro'
+import type { FullJob, Job as JobType } from '@/types'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const jobs = await getCollection('jobs')
+  return jobs.map((entry) => ({
+    params: {
+      id: entry.id,
+    },
+    props: {
+      entry,
+    },
+  }))
+}
+
+sitemap(async ({ setSitemap }) => {
+  const jobs = await getCollection('jobs')
+  setSitemap(
+    jobs.map((job) => ({
+      params: { id: job.id },
+      sitemap: !job.data.noindex,
+    })),
+  )
+})
+
+const { entry } = Astro.props as { entry: JobType }
+const job = {
+  ...entry,
+  data: {
+    ...entry.data,
+    hiringOrganization: await getEntry(entry.data.hiringOrganization),
+    ...(entry.data.location
+      ? { location: await getEntry(entry.data.location) }
+      : {}),
+  },
+} as FullJob
+
+const imageUrl = entry.data.image
+  ? (await getImage({ src: job.data.image?.src || '' })).src
+  : undefined
+
+const formatDateForSchema = (date: Date) => date.toISOString().split('T')[0]
+
+const googleStructuredJobData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'JobPosting',
+  title: job.data.title,
+  description: job.data.description,
+  datePosted: formatDateForSchema(job.data.datePosted),
+  ...(job.data.validThrough
+    ? { validThrough: formatDateForSchema(job.data.validThrough) }
+    : {}),
+  employmentType: job.data.employmentType,
+  hiringOrganization: {
+    '@type': job.data.hiringOrganization.data['@type'],
+    name: job.data.hiringOrganization.data.name,
+    ...(job.data.hiringOrganization.data.email
+      ? { email: job.data.hiringOrganization.data.email }
+      : {}),
+    ...(job.data.hiringOrganization.data.telephone
+      ? { telephone: job.data.hiringOrganization.data.telephone }
+      : {}),
+  },
+  jobLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Rössing',
+      addressRegion: 'Niedersachsen',
+      postalCode: '31171',
+      addressCountry: 'DE',
+    },
+    ...(job.data.location?.data.name
+      ? { name: job.data.location.data.name }
+      : {}),
+  },
+  ...(job.data.baseSalary
+    ? {
+        baseSalary: {
+          '@type': 'MonetaryAmount',
+          currency: job.data.baseSalary.currency,
+          value: {
+            '@type': 'QuantitativeValue',
+            value: job.data.baseSalary.value,
+            unitText: job.data.baseSalary.unitText,
+          },
+        },
+      }
+    : {}),
+  ...(job.data.hoursPerWeek
+    ? {
+        workHours: `${job.data.hoursPerWeek} Stunden pro Woche`,
+      }
+    : {}),
+  ...(imageUrl ? { image: imageUrl } : {}),
+})
+---
+
+<Layout
+  title={job.data.title}
+  description={job.data.description}
+  canonicalUrl={Astro.url.href}
+  {...(imageUrl ? { image: imageUrl } : {})}
+  customMetaTags={[
+    { property: 'og:type', content: 'article' },
+    { property: 'og:url', content: Astro.url.href },
+    ...(entry.data.noindex ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
+  ]}
+>
+  <script slot="head" is:inline type="application/ld+json" set:html={googleStructuredJobData} />
+  <Job job={job} />
+</Layout>

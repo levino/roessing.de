@@ -1,2 +1,7 @@
 name: Hof Rodewald
 '@type': Place
+address:
+  '@type': PostalAddress
+  streetAddress: Leinkamp 2
+  addressLocality: Nordstemmen
+  postalCode: '31171'

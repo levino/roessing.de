@@ -3,7 +3,11 @@ import { Image } from 'astro:assets'
 import heroImage from './hero.jpeg'
 ---
 
-<section class="relative min-h-[50vh] flex items-center justify-center">
+{/* Full-Bleed: bricht aus dem max-w-7xl-Container des Page-Layouts aus,
+    damit der Hero über die volle Viewport-Breite läuft. */}
+<section
+  class="relative w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] min-h-[50vh] flex items-center justify-center"
+>
   {/* Hintergrundbild-Container */}
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <Image

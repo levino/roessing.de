@@ -32,6 +32,10 @@ export default defineConfig({
     react(),
     shipyard({
       navigation: {
+        'digitales-dorf': {
+          label: 'Digitales Dorf',
+          href: '/digitales-dorf',
+        },
         events: {
           label: 'Events',
           href: '/events',

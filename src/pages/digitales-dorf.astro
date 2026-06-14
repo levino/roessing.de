@@ -1,0 +1,222 @@
+---
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import Card from '../components/Card.astro'
+import Jumbotron from '../components/Jumbotron.astro'
+
+const metadata = {
+  title: 'Das digitale Dorf Rössing',
+  description:
+    'Rössing baut sich Schritt für Schritt ein digitales Dorf: eine zentrale Dorf-ID, selbst gehostete Dienste, mit KI gebaut und gepflegt – nachhaltig, unabhängig und zum Nachmachen gedacht.',
+}
+
+// Die Bausteine des digitalen Dorfs. Status: 'live' = in Betrieb,
+// 'aufbau' = in Arbeit / in Vorbereitung.
+const bausteine = [
+  {
+    title: 'Dorf-ID',
+    subtitle: 'Ein Login für alle Dorf-Dienste',
+    href: 'https://id.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Ein einziges Konto für alle digitalen Angebote im Dorf – Vereine, Apps und Werkzeuge. Einmal anmelden, überall dabei.',
+  },
+  {
+    title: 'Geräte-Mietplattform',
+    subtitle: 'Werkzeug & Geräte im Dorf teilen',
+    href: 'https://mieten.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Vom Häcksler bis zur Bierzeltgarnitur: Geräte unkompliziert im Dorf ausleihen und verleihen, statt alles selbst anzuschaffen.',
+  },
+  {
+    title: 'Dorfpflege-Doku',
+    subtitle: 'Wissen rund um Pflege & Grünflächen',
+    href: 'https://docs.dorfpflege.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Die Dokumentation der Dorfpflege: Abläufe, Pflegemaßnahmen und gesammeltes Wissen rund um Rössings Natur und Grünflächen.',
+  },
+  {
+    title: 'Freitagsturner (VSV)',
+    subtitle: 'Digitale Tools für den Sportverein',
+    href: 'https://freitagsturner.vsv.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Ein erster eigener Baustein für die Volkssportvereinigung Rössing – ein Beispiel dafür, wie auch Vereine eigene Apps im Dorfnetz bekommen.',
+  },
+  {
+    title: 'Digitales Dorfarchiv',
+    subtitle: 'Rössings Geschichte bewahren',
+    href: 'https://archiv.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Historische Dokumente, Fotos und Berichte digital gesammelt und für kommende Generationen bewahrt. Jede und jeder kann mitmachen.',
+  },
+  {
+    title: 'Dorfentwicklung & Ideenwerkstatt',
+    subtitle: 'Wohin wir uns entwickeln wollen',
+    href: 'https://dorfentwicklung.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Die Seite der Dorfentwicklungsgesellschaft (DEG): Vision, Aufgaben und Pläne für Rössing. Auch das digitale Dorf wird hier mitgedacht.',
+  },
+  {
+    title: 'Unser Dorf hat Zukunft',
+    subtitle: 'Rössings Wettbewerbsbewerbung',
+    href: 'https://udhz.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Die digitale Bewerbung Rössings für den Wettbewerb „Unser Dorf hat Zukunft“ – Steckbrief, Karte und Materialien an einem Ort.',
+  },
+  {
+    title: 'Bürgerstiftung',
+    subtitle: 'Eigener digitaler Auftritt geplant',
+    href: 'https://dorfentwicklung.xn--rssing-wxa.de',
+    status: 'aufbau',
+    text: 'Auch die Bürgerstiftung soll einen eigenen Platz im Dorfnetz bekommen. Dieser Baustein ist noch in Vorbereitung.',
+  },
+  {
+    title: 'Weitere Vereine',
+    subtitle: 'Schritt für Schritt mehr',
+    href: '/projekte',
+    status: 'aufbau',
+    text: 'Nach und nach sollen weitere Vereine und Gruppen eigene digitale Angebote im Dorfnetz erhalten. Wer Lust hat: meldet euch!',
+  },
+]
+
+const statusLabel: Record<string, string> = {
+  live: 'In Betrieb',
+  aufbau: 'In Arbeit',
+}
+const statusBadge: Record<string, string> = {
+  live: 'badge-success',
+  aufbau: 'badge-warning',
+}
+---
+
+<Layout {...metadata}>
+  <Jumbotron>
+    <div class="m-auto max-w-3xl text-center">
+      <span class="badge badge-accent badge-lg mb-4">Im Aufbau</span>
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Rössing baut sich ein digitales Dorf
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-white/80">
+        Wir bauen gemeinsam eine moderne, selbst gehostete digitale
+        Infrastruktur für unser Dorf – mit KI gebaut und gepflegt. Der Anspruch:
+        auf dem Weg zu einem der digitalsten Dörfer Deutschlands. Dies ist der
+        Eingang zu allem, was dabei entsteht.
+      </p>
+    </div>
+  </Jumbotron>
+
+  <div class="container max-w-4xl mx-auto px-4 py-16">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <h2>Was hier entsteht</h2>
+      <p>
+        Rössing ist ein Dorf mit vielen aktiven Vereinen und Menschen, die
+        anpacken. Genau dieses Miteinander wollen wir ins Digitale übertragen.
+        Stück für Stück entsteht hier ein <strong>digitales Dorf</strong>: eine
+        gemeinschaftliche, selbst gehostete Plattform, die alle Dorf-Dienste,
+        Vereine und Apps unter einem Dach verbindet. Vieles läuft bereits,
+        anderes ist in Arbeit – wir sind ehrlich auf dem Weg, nicht am Ziel.
+      </p>
+
+      <h2>Eine zentrale „Dorf-ID“</h2>
+      <p>
+        Im Mittelpunkt steht eine zentrale <strong>Dorf-ID</strong>: ein
+        einziges Login für alle Dienste, Vereine und Apps im Dorf. Wer sich
+        einmal anmeldet, kommt überall hin – ohne für jede Anwendung ein neues
+        Konto anlegen zu müssen.
+      </p>
+      <p>
+        👉 <a href="https://id.xn--rssing-wxa.de">id.rössing.de</a>
+      </p>
+
+      <h2>Selbst gehostet & als Code</h2>
+      <p>
+        Das digitale Dorf läuft auf einem eigenen Server. Alles ist als Code
+        beschrieben (GitOps) und weitgehend automatisiert –
+        <strong>mit KI gebaut und gepflegt</strong>. Dadurch kostet der Betrieb
+        praktisch nichts. Das macht das Ganze nachhaltig und unabhängig: keine
+        teuren Abos, keine Abhängigkeit von einzelnen Anbietern, und das Wissen
+        bleibt im Dorf. Es ist ein Gemeinschaftsprojekt – getragen von vielen
+        Händen, unterstützt durch künstliche Intelligenz.
+      </p>
+
+      <h2>Für Bewohner:innen</h2>
+      <p>
+        Für die Menschen in Rössing ist das digitale Dorf vor allem ein
+        <strong>Tor zu allen Dorf-Apps</strong>: von der Dokumentation der
+        Dorfpflege über die Angebote der Vereine bis zur Geräte-Mietplattform.
+        Von hier aus kommt man bequem überall hin.
+      </p>
+
+      <h2>Für Neugierige & zum Nachmachen</h2>
+      <p>
+        Wir machen aber auch transparent, <strong>wie</strong> wir das bauen und
+        pflegen, <strong>was</strong> es kostet (nahezu 0 €) und
+        <strong>was</strong> es ermöglicht. Wir verstehen das digitale Dorf als
+        Blaupause: andere Dörfer und Vereine sollen sich davon inspirieren
+        lassen und es nachbauen können.
+      </p>
+
+      <h2>Getragen von der Dorfentwicklung</h2>
+      <p>
+        Das digitale Dorf ist Teil der Arbeit des
+        <strong>Dorfentwicklungskreises</strong> bzw. der
+        Dorfentwicklungsgesellschaft (DEG) Rössing. Dort findet ihr die Vision,
+        die laufenden Themen und die
+        <a href="https://dorfentwicklung.xn--rssing-wxa.de/blog/2025/03/24/ideenwerkstatt"
+          >Ideenwerkstatt</a
+        >, in der Ideen für Rössing zusammenkommen. Die Geschichte unseres Dorfes
+        wird im <a href="https://archiv.xn--rssing-wxa.de">digitalen Dorfarchiv</a>
+        bewahrt.
+      </p>
+      <ul>
+        <li>
+          <a href="https://dorfentwicklung.xn--rssing-wxa.de"
+            >Dorfentwicklung Rössing (DEG)</a
+          >
+        </li>
+        <li>
+          <a href="https://dorfentwicklung.xn--rssing-wxa.de/blog/2025/03/24/ideenwerkstatt"
+            >Ideenwerkstatt</a
+          >
+        </li>
+        <li>
+          <a href="https://archiv.xn--rssing-wxa.de">Digitales Dorfarchiv</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-base-200 py-16">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-base-content">
+          Das Dorfnetz im Überblick
+        </h2>
+        <p class="mt-4 text-base-content/70">
+          Alle Bausteine des digitalen Dorfs auf einen Blick. Von hier aus
+          kommt ihr in alle Tiefen. Was schon läuft, ist mit „In Betrieb“
+          markiert – woran wir noch arbeiten, mit „In Arbeit“.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+      >
+        {
+          bausteine.map((baustein) => (
+            <Card href={baustein.href} imgSrc={undefined} imgAlt={baustein.title}>
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-xl font-bold tracking-tight text-base-content">
+                  {baustein.title}
+                </h3>
+                <span class={`badge ${statusBadge[baustein.status]} badge-sm whitespace-nowrap`}>
+                  {statusLabel[baustein.status]}
+                </span>
+              </div>
+              <p class="font-normal text-base-content/70">{baustein.subtitle}</p>
+              <p class="text-base-content/80">{baustein.text}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

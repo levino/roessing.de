@@ -9,15 +9,23 @@ const metadata = {
     'Rössing baut sich Schritt für Schritt ein digitales Dorf: eine zentrale Dorf-ID, selbst gehostete Dienste, mit KI gebaut und gepflegt – nachhaltig, unabhängig und zum Nachmachen gedacht.',
 }
 
-// Die Bausteine des digitalen Dorfs. Status: 'live' = in Betrieb,
-// 'aufbau' = in Arbeit / in Vorbereitung.
+// Öffentlich verlinkbare Bausteine des digitalen Dorfs. Status: 'live' = in
+// Betrieb, 'aufbau' = in Arbeit / in Vorbereitung. Interne, zugangsgeschützte
+// Vereins-Tools werden hier bewusst NICHT verlinkt.
 const bausteine = [
   {
     title: 'Dorf-ID',
     subtitle: 'Ein Login für alle Dorf-Dienste',
     href: 'https://id.xn--rssing-wxa.de',
     status: 'live',
-    text: 'Ein einziges Konto für alle digitalen Angebote im Dorf – Vereine, Apps und Werkzeuge. Einmal anmelden, überall dabei.',
+    text: 'Ein einziges Konto für alle digitalen Angebote im Dorf – Vereine, Apps und Werkzeuge. Einmal anmelden, überall dabei. Betrieben von der Dorfentwicklungsgesellschaft (DEG).',
+  },
+  {
+    title: 'Digitales Dorfarchiv',
+    subtitle: 'Rössings Geschichte bewahren',
+    href: 'https://archiv.xn--rssing-wxa.de',
+    status: 'live',
+    text: 'Historische Dokumente, Fotos und Berichte digital gesammelt und für kommende Generationen bewahrt. Jede und jeder kann mitmachen. Betrieben von der Dorfentwicklungsgesellschaft (DEG).',
   },
   {
     title: 'Geräte-Mietplattform',
@@ -27,34 +35,6 @@ const bausteine = [
     text: 'Vom Häcksler bis zur Bierzeltgarnitur: Geräte unkompliziert im Dorf ausleihen und verleihen, statt alles selbst anzuschaffen.',
   },
   {
-    title: 'Dorfpflege-Doku',
-    subtitle: 'Wissen rund um Pflege & Grünflächen',
-    href: 'https://docs.dorfpflege.xn--rssing-wxa.de',
-    status: 'live',
-    text: 'Die Dokumentation der Dorfpflege: Abläufe, Pflegemaßnahmen und gesammeltes Wissen rund um Rössings Natur und Grünflächen.',
-  },
-  {
-    title: 'Freitagsturner (VSV)',
-    subtitle: 'Digitale Tools für den Sportverein',
-    href: 'https://freitagsturner.vsv.xn--rssing-wxa.de',
-    status: 'live',
-    text: 'Ein erster eigener Baustein für die Volkssportvereinigung Rössing – ein Beispiel dafür, wie auch Vereine eigene Apps im Dorfnetz bekommen.',
-  },
-  {
-    title: 'Digitales Dorfarchiv',
-    subtitle: 'Rössings Geschichte bewahren',
-    href: 'https://archiv.xn--rssing-wxa.de',
-    status: 'live',
-    text: 'Historische Dokumente, Fotos und Berichte digital gesammelt und für kommende Generationen bewahrt. Jede und jeder kann mitmachen.',
-  },
-  {
-    title: 'Dorfentwicklung & Ideenwerkstatt',
-    subtitle: 'Wohin wir uns entwickeln wollen',
-    href: 'https://dorfentwicklung.xn--rssing-wxa.de',
-    status: 'live',
-    text: 'Die Seite der Dorfentwicklungsgesellschaft (DEG): Vision, Aufgaben und Pläne für Rössing. Auch das digitale Dorf wird hier mitgedacht.',
-  },
-  {
     title: 'Unser Dorf hat Zukunft',
     subtitle: 'Rössings Wettbewerbsbewerbung',
     href: 'https://udhz.xn--rssing-wxa.de',
@@ -62,18 +42,18 @@ const bausteine = [
     text: 'Die digitale Bewerbung Rössings für den Wettbewerb „Unser Dorf hat Zukunft“ – Steckbrief, Karte und Materialien an einem Ort.',
   },
   {
-    title: 'Bürgerstiftung',
-    subtitle: 'Eigener digitaler Auftritt geplant',
+    title: 'Dorfentwicklung',
+    subtitle: 'Wohin wir uns entwickeln wollen',
     href: 'https://dorfentwicklung.xn--rssing-wxa.de',
-    status: 'aufbau',
-    text: 'Auch die Bürgerstiftung soll einen eigenen Platz im Dorfnetz bekommen. Dieser Baustein ist noch in Vorbereitung.',
+    status: 'live',
+    text: 'Vision, Aufgaben und Pläne für Rössing rund um das Thema „Unser Dorf hat Zukunft“ – auch das digitale Dorf wird hier mitgedacht.',
   },
   {
-    title: 'Weitere Vereine',
+    title: 'Eigene Vereins-Tools',
     subtitle: 'Schritt für Schritt mehr',
     href: '/projekte',
     status: 'aufbau',
-    text: 'Nach und nach sollen weitere Vereine und Gruppen eigene digitale Angebote im Dorfnetz erhalten. Wer Lust hat: meldet euch!',
+    text: 'Mehrere Vereine betreiben im Dorfnetz bereits eigene, interne Werkzeuge – zugangsgeschützt und nur für ihre Mitglieder. Nach und nach sollen weitere dazukommen. Wer Lust hat: meldet euch!',
   },
 ]
 
@@ -96,9 +76,9 @@ const statusBadge: Record<string, string> = {
       </h1>
       <p class="mt-6 text-lg leading-8 text-white/80">
         Wir bauen gemeinsam eine moderne, selbst gehostete digitale
-        Infrastruktur für unser Dorf – mit KI gebaut und gepflegt. Der Anspruch:
-        auf dem Weg zu einem der digitalsten Dörfer Deutschlands. Dies ist der
-        Eingang zu allem, was dabei entsteht.
+        Infrastruktur für unser Dorf – mit KI gebaut und gepflegt, zu nahezu
+        keinen laufenden Kosten. Vieles läuft schon, anderes ist in Arbeit.
+        Dies ist der Eingang zu allem, was dabei öffentlich entsteht.
       </p>
     </div>
   </Jumbotron>
@@ -109,8 +89,8 @@ const statusBadge: Record<string, string> = {
       <p>
         Rössing ist ein Dorf mit vielen aktiven Vereinen und Menschen, die
         anpacken. Genau dieses Miteinander wollen wir ins Digitale übertragen.
-        Stück für Stück entsteht hier ein <strong>digitales Dorf</strong>: eine
-        gemeinschaftliche, selbst gehostete Plattform, die alle Dorf-Dienste,
+        Stück für Stück entsteht ein <strong>digitales Dorf</strong>: eine
+        gemeinschaftliche, selbst gehostete Plattform, die Dorf-Dienste,
         Vereine und Apps unter einem Dach verbindet. Vieles läuft bereits,
         anderes ist in Arbeit – wir sind ehrlich auf dem Weg, nicht am Ziel.
       </p>
@@ -137,50 +117,46 @@ const statusBadge: Record<string, string> = {
         Händen, unterstützt durch künstliche Intelligenz.
       </p>
 
+      <h2>Wer betreibt was?</h2>
+      <p>
+        Das digitale Dorf wird nicht von einer einzigen Stelle gemacht, sondern
+        von mehreren unabhängigen Akteuren:
+      </p>
+      <ul>
+        <li>
+          Die <strong>Dorfentwicklungsgesellschaft (DEG)</strong> betreibt
+          diese Website <a href="https://xn--rssing-wxa.de">rössing.de</a>, das
+          <a href="https://archiv.xn--rssing-wxa.de">digitale Dorfarchiv</a> und
+          die <a href="https://id.xn--rssing-wxa.de">Dorf-ID</a>.
+        </li>
+        <li>
+          Die <strong>Ideenwerkstatt</strong> ist ein Angebot der
+          <strong>KulTürÖffner Rössing</strong>, in dem Ideen für die Zukunft
+          des Dorfes zusammenkommen – nicht der DEG.
+        </li>
+        <li>
+          Alle weiteren Dienste werden eigenständig von den jeweiligen
+          <strong>Vereinen</strong> betrieben. Manche davon sind bewusst nur für
+          die eigenen Mitglieder zugänglich.
+        </li>
+      </ul>
+
       <h2>Für Bewohner:innen</h2>
       <p>
         Für die Menschen in Rössing ist das digitale Dorf vor allem ein
-        <strong>Tor zu allen Dorf-Apps</strong>: von der Dokumentation der
-        Dorfpflege über die Angebote der Vereine bis zur Geräte-Mietplattform.
-        Von hier aus kommt man bequem überall hin.
+        <strong>Tor zu den öffentlichen Dorf-Apps</strong>: vom digitalen
+        Dorfarchiv über die Geräte-Mietplattform bis zu den Angeboten der
+        Vereine. Von hier aus kommt man bequem überall hin.
       </p>
 
       <h2>Für Neugierige & zum Nachmachen</h2>
       <p>
-        Wir machen aber auch transparent, <strong>wie</strong> wir das bauen und
+        Wir machen auch transparent, <strong>wie</strong> wir das bauen und
         pflegen, <strong>was</strong> es kostet (nahezu 0 €) und
         <strong>was</strong> es ermöglicht. Wir verstehen das digitale Dorf als
         Blaupause: andere Dörfer und Vereine sollen sich davon inspirieren
         lassen und es nachbauen können.
       </p>
-
-      <h2>Getragen von der Dorfentwicklung</h2>
-      <p>
-        Das digitale Dorf ist Teil der Arbeit des
-        <strong>Dorfentwicklungskreises</strong> bzw. der
-        Dorfentwicklungsgesellschaft (DEG) Rössing. Dort findet ihr die Vision,
-        die laufenden Themen und die
-        <a href="https://dorfentwicklung.xn--rssing-wxa.de/blog/2025/03/24/ideenwerkstatt"
-          >Ideenwerkstatt</a
-        >, in der Ideen für Rössing zusammenkommen. Die Geschichte unseres Dorfes
-        wird im <a href="https://archiv.xn--rssing-wxa.de">digitalen Dorfarchiv</a>
-        bewahrt.
-      </p>
-      <ul>
-        <li>
-          <a href="https://dorfentwicklung.xn--rssing-wxa.de"
-            >Dorfentwicklung Rössing (DEG)</a
-          >
-        </li>
-        <li>
-          <a href="https://dorfentwicklung.xn--rssing-wxa.de/blog/2025/03/24/ideenwerkstatt"
-            >Ideenwerkstatt</a
-          >
-        </li>
-        <li>
-          <a href="https://archiv.xn--rssing-wxa.de">Digitales Dorfarchiv</a>
-        </li>
-      </ul>
     </div>
   </div>
 
@@ -191,9 +167,10 @@ const statusBadge: Record<string, string> = {
           Das Dorfnetz im Überblick
         </h2>
         <p class="mt-4 text-base-content/70">
-          Alle Bausteine des digitalen Dorfs auf einen Blick. Von hier aus
-          kommt ihr in alle Tiefen. Was schon läuft, ist mit „In Betrieb“
-          markiert – woran wir noch arbeiten, mit „In Arbeit“.
+          Die öffentlichen Bausteine des digitalen Dorfs auf einen Blick. Was
+          schon läuft, ist mit „In Betrieb“ markiert – woran wir noch arbeiten,
+          mit „In Arbeit“. Interne Vereins-Tools sind hier bewusst nicht
+          verlinkt.
         </p>
       </div>
 

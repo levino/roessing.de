@@ -32,25 +32,25 @@ export default defineConfig({
     react(),
     shipyard({
       navigation: {
-        'digitales-dorf': {
-          label: 'Digitales Dorf',
-          href: '/digitales-dorf',
-        },
-        events: {
-          label: 'Events',
-          href: '/events',
-        },
         docs: {
           label: 'Wissen',
           href: '/docs/intro',
+        },
+        events: {
+          label: 'Veranstaltungen',
+          href: '/events',
+        },
+        about: {
+          label: 'Mitmachen',
+          href: '/about',
         },
         projekte: {
           label: 'Projekte',
           href: '/projekte',
         },
-        about: {
-          label: 'Mitmachen',
-          href: '/about',
+        'digitales-dorf': {
+          label: 'Digitales Dorf',
+          href: '/digitales-dorf',
         },
       },
       title: 'Rössing',

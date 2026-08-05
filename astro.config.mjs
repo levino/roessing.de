@@ -26,6 +26,10 @@ const site = isDevServer
 // https://astro.build/config
 export default defineConfig({
   site,
+  redirects: {
+    // Alter englischer Pfad des Impressums bleibt erreichbar
+    '/imprint': '/impressum',
+  },
   integrations: [
     mdx(),
     sitemapExt({ includeByDefault: true }),
@@ -52,6 +56,13 @@ export default defineConfig({
           label: 'Digitales Dorf',
           href: '/digitales-dorf',
         },
+      },
+      footer: {
+        links: [
+          { label: 'Impressum', to: '/impressum' },
+          { label: 'Datenschutz', to: '/datenschutz' },
+          { label: 'Mitmachen', to: '/about' },
+        ],
       },
       title: 'Rössing',
       tagline: 'Über den Ort Rössing',

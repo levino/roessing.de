@@ -1,0 +1,101 @@
+---
+/**
+ * Bezugsweg für die Rössing-App.
+ *
+ * ⚠️ HIER wird umgeschaltet, sobald die App im Google Play Store ist:
+ * Einfach `playStoreUrl` auf die Store-Adresse setzen (z.B.
+ * 'https://play.google.com/store/apps/details?id=de.roessing.app').
+ * Dann verschwindet der Beta-Aufruf und der Store-Knopf erscheint – der
+ * Rest der Seite muss nicht angefasst werden.
+ *
+ * Solange die App nicht veröffentlicht ist, bleibt `null` stehen: Die
+ * Verteilung läuft in der Testphase über Firebase App Distribution an die
+ * Tester-Gruppe, ein öffentlicher Download-Link existiert also nicht.
+ */
+const playStoreUrl: string | null = null
+
+// Kontaktweg wie im Impressum und in der Datenschutzerklärung der Website.
+const kontaktMail = 'post@levinkeller.de'
+---
+
+<section id="beta" class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
+  <div
+    class="rounded-box border border-base-300 bg-base-100 p-8 sm:p-12 shadow-sm"
+  >
+    {
+      playStoreUrl ? (
+        <div class="text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+            So bekommst du die App
+          </h2>
+          <p class="mt-4 text-base-content/70">
+            Die Rössing-App gibt es für Android im Google Play Store. Zum
+            Anmelden brauchst du deine Rössing-ID.
+          </p>
+          <div class="mt-6">
+            <a
+              href={playStoreUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="btn btn-primary btn-lg"
+            >
+              Im Google Play Store öffnen
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div class="text-center">
+            <span class="badge badge-accent mb-4">Testphase</span>
+            <h2 class="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+              So bekommst du die App: Beta-Tester werden
+            </h2>
+            <p class="mt-4 text-base-content/70">
+              Die Rössing-App steckt noch in der Testphase und ist deshalb
+              nicht öffentlich zum Herunterladen zu finden. Wir verteilen sie
+              in dieser Phase direkt an eine kleine Gruppe von Testerinnen und
+              Testern aus dem Dorf.
+            </p>
+          </div>
+
+          <ul class="steps steps-vertical mt-8 w-full">
+            <li class="step step-primary">
+              <span class="text-left text-base-content/80">
+                Schreib eine kurze Mail mit dem Betreff „Beta-Tester
+                Rössing-App“ – am besten von der Google-Adresse, mit der du
+                auf deinem Android-Handy angemeldet bist.
+              </span>
+            </li>
+            <li class="step step-primary">
+              <span class="text-left text-base-content/80">
+                Du bekommst eine Einladung zur Testgruppe und darüber die App
+                zum Installieren.
+              </span>
+            </li>
+            <li class="step step-primary">
+              <span class="text-left text-base-content/80">
+                Anmelden mit deiner Rössing-ID – fertig. Rückmeldungen zu
+                Fehlern und Wünschen sind ausdrücklich erwünscht.
+              </span>
+            </li>
+          </ul>
+
+          <div class="mt-8 text-center">
+            <a
+              href={`mailto:${kontaktMail}?subject=Beta-Tester%20R%C3%B6ssing-App`}
+              class="btn btn-primary btn-lg"
+            >
+              Beta-Tester werden
+            </a>
+            <p class="mt-4 text-sm text-base-content/60">
+              Oder direkt an <a class="link" href={`mailto:${kontaktMail}`}>
+                {kontaktMail}
+              </a> schreiben. Sobald die App öffentlich verfügbar ist, findest
+              du den Link hier an dieser Stelle.
+            </p>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

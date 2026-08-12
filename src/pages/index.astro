@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import { getCollection, getEntry } from 'astro:content'
 import Layout from '@levino/shipyard-base/layouts/Page.astro'
 import type { FullEvent } from '@/types'
+import appKarte from '../assets/app/app-karte.png'
 import EventCard from '../components/EventCard.astro'
 import Jumbotron from '../components/Jumbotron.astro'
 
@@ -168,6 +170,51 @@ const vereine = [
         <a href="/events" class="link link-primary font-medium">
           Alle Vereine als Veranstalter im Kalender entdecken →
         </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Die Rössing-App – Teaser mit Blick in die App */}
+  <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+          Neu im Dorf
+        </p>
+        <h2
+          class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+        >
+          Die Rössing-App
+        </h2>
+        <p class="mt-4 text-base-content/70">
+          Anmelden mit der Rössing-ID und auf der Dorfkarte sehen, welche
+          Blumenkästen und Beete Wasser oder Pflege brauchen – und melden, wenn
+          du gegossen oder gejätet hast. Grün heißt: alles gut. Gelb: bitte
+          gießen. Rot: dringend.
+        </p>
+        <p class="mt-3 text-base-content/70">
+          Die App steckt noch in der Testphase und läuft zunächst auf
+          Android-Geräten.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/app" class="btn btn-primary">
+            Die App entdecken
+          </a>
+          <a href="/app#beta" class="btn btn-outline btn-primary">
+            Beta-Tester werden
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <Image
+          src={appKarte}
+          alt="Die Rössing-App zeigt eine Karte von Rössing mit farbigen Markern: grün für erledigte, gelb und rot für zu gießende Blumenkästen."
+          widths={[260, 390, 520]}
+          sizes="(min-width: 1024px) 260px, 60vw"
+          class="w-56 sm:w-64 rounded-box border border-base-300 shadow-md"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>

@@ -1,0 +1,341 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import appDetail from '../assets/app/app-detail.png'
+import appKarte from '../assets/app/app-karte.png'
+import appListe from '../assets/app/app-liste.png'
+import appLogin from '../assets/app/app-login.png'
+import AppDownload from '../components/AppDownload.astro'
+import Jumbotron from '../components/Jumbotron.astro'
+
+const metadata = {
+  title: 'Die Rössing-App',
+  description:
+    'Die Dorf-App für Rössing: mit der Rössing-ID anmelden, auf der Dorfkarte sehen, welche Blumenkästen und Beete Wasser oder Pflege brauchen, und melden, wenn gegossen oder gejätet ist. Derzeit in der Testphase für Android.',
+}
+
+// Ampel-Logik der App – dieselben drei Zustände wie in der App selbst.
+const ampel = [
+  {
+    farbe: 'bg-success',
+    badge: 'badge-success',
+    label: 'Grün',
+    titel: 'Alles gut',
+    text: 'Hier ist alles erledigt. Du kannst beruhigt weitergehen.',
+  },
+  {
+    farbe: 'bg-warning',
+    badge: 'badge-warning',
+    label: 'Gelb',
+    titel: 'Bitte gießen',
+    text: 'Der übliche Abstand ist überschritten – wer vorbeikommt, darf gern gießen oder jäten.',
+  },
+  {
+    farbe: 'bg-error',
+    badge: 'badge-error',
+    label: 'Rot',
+    titel: 'Dringend',
+    text: 'Hier wartet die Pflanze schon länger. Jetzt wird es Zeit.',
+  },
+]
+
+// Screenshots aus der App (Android, Testphase).
+const screenshots = [
+  {
+    src: appLogin,
+    alt: 'Startbildschirm der Rössing-App mit Sonnenblume, der Überschrift „Willkommen in Rössing“ und dem Knopf „Mit Rössing-ID anmelden“.',
+    caption: 'Anmelden mit der Rössing-ID',
+  },
+  {
+    src: appKarte,
+    alt: 'Dorfkarte von Rössing in der App mit farbigen Punkten: grüne, gelbe und ein roter Marker an Straßen wie Eikenhof, Kirchstraße und Clausstraße.',
+    caption: 'Die Dorfkarte mit Ampel-Markern',
+  },
+  {
+    src: appListe,
+    alt: 'Listenansicht der Pflege-Orte in der App: „Eikenhof — Kasten“ mit rotem Punkt und „Dringend gießen!“, darunter gelbe und grüne Einträge.',
+    caption: 'Alle Orte als Liste',
+  },
+  {
+    src: appDetail,
+    alt: 'Detailansicht eines Blumenkastens in der App mit Angabe „10 Liter, alle 7 Tage“, dem Knopf „Ich habe gegossen“ und der Historie der letzten Erledigungen.',
+    caption: 'Melden, dass du gegossen hast',
+  },
+]
+---
+
+<Layout {...metadata}>
+  <Jumbotron>
+    <div class="m-auto max-w-3xl text-center">
+      <span class="badge badge-accent badge-lg mb-4">Testphase</span>
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Die Rössing-App
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-white/90">
+        Anmelden mit der Rössing-ID, auf der Dorfkarte sehen, welche
+        Blumenkästen und Beete Wasser oder Pflege brauchen – und melden, wenn
+        du gegossen oder gejätet hast. Damit sich niemand mehr fragen muss:
+        „Hat den Kasten heute schon jemand gegossen?“
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#beta" class="btn btn-primary btn-lg">
+          App bekommen
+        </a>
+        <a href="#so-gehts" class="btn btn-lg glass text-white">
+          So funktioniert's
+        </a>
+      </div>
+    </div>
+  </Jumbotron>
+
+  {/* So funktioniert's */}
+  <section
+    id="so-gehts"
+    class="container max-w-5xl mx-auto px-4 py-16 sm:py-20"
+  >
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+        In vier Schritten
+      </p>
+      <h2
+        class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+      >
+        So funktioniert's
+      </h2>
+      <p class="mt-3 text-base-content/70">
+        Die App ist bewusst schlicht gehalten: aufmachen, schauen, gießen,
+        melden. Mehr braucht es nicht.
+      </p>
+    </div>
+
+    <ul class="steps steps-vertical lg:steps-horizontal w-full mt-10">
+      <li class="step step-primary">
+        <div class="mt-2 lg:mt-4 lg:px-2">
+          <p class="font-semibold text-base-content">Anmelden</p>
+          <p class="text-sm text-base-content/70">
+            Einmalig mit der <a
+              class="link"
+              href="https://id.xn--rssing-wxa.de">Rössing-ID</a
+            > anmelden – dem Dorf-Login, den es auch für die anderen Dorf-Dienste
+            gibt.
+          </p>
+        </div>
+      </li>
+      <li class="step step-primary">
+        <div class="mt-2 lg:mt-4 lg:px-2">
+          <p class="font-semibold text-base-content">Karte anschauen</p>
+          <p class="text-sm text-base-content/70">
+            Auf der Dorfkarte zeigt eine Ampel, wo etwas ansteht – oder du
+            gehst die Liste durch.
+          </p>
+        </div>
+      </li>
+      <li class="step step-primary">
+        <div class="mt-2 lg:mt-4 lg:px-2">
+          <p class="font-semibold text-base-content">Gießen oder jäten</p>
+          <p class="text-sm text-base-content/70">
+            Bei jedem Ort steht, was zu tun ist – zum Beispiel „10 Liter, alle
+            7 Tage“.
+          </p>
+        </div>
+      </li>
+      <li class="step step-primary">
+        <div class="mt-2 lg:mt-4 lg:px-2">
+          <p class="font-semibold text-base-content">Melden</p>
+          <p class="text-sm text-base-content/70">
+            Ein Tipp auf „Ich habe gegossen“ – die Ampel springt auf Grün und
+            alle anderen sehen es sofort.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  {/* Die Ampel – Full-Bleed-Band */}
+  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+    <div class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
+      <div class="max-w-2xl mb-10">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+          Auf einen Blick
+        </p>
+        <h2
+          class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+        >
+          Grün, gelb, rot
+        </h2>
+        <p class="mt-3 text-base-content/70">
+          Jeder Blumenkasten und jedes Beet hat einen Zustand. Wie lange etwas
+          ohne Wasser auskommt, ist hinterlegt – bei Hitze wird der Abstand
+          automatisch kürzer.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {
+          ampel.map((zustand) => (
+            <div class="card bg-base-100 border border-base-300 shadow-sm">
+              <div class="card-body">
+                <div class="flex items-center gap-3">
+                  <span class={`inline-block size-5 rounded-full ${zustand.farbe}`} />
+                  <h3 class="card-title text-base-content">{zustand.titel}</h3>
+                </div>
+                <span class={`badge ${zustand.badge} badge-sm w-fit`}>
+                  {zustand.label}
+                </span>
+                <p class="text-base-content/70">{zustand.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Screenshots */}
+  <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
+    <div class="max-w-2xl mb-10">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+        Blick in die App
+      </p>
+      <h2
+        class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+      >
+        So sieht das aus
+      </h2>
+      <p class="mt-3 text-base-content/70">
+        Aufnahmen aus der aktuellen Testversion für Android. Die Orte auf den
+        Bildern sind Beispiele aus der Testumgebung.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      {
+        screenshots.map((shot) => (
+          <figure class="flex flex-col gap-3">
+            <Image
+              src={shot.src}
+              alt={shot.alt}
+              widths={[240, 360, 480]}
+              sizes="(min-width: 1024px) 240px, (min-width: 640px) 40vw, 45vw"
+              class="w-full rounded-box border border-base-300 shadow-sm"
+              loading="lazy"
+            />
+            <figcaption class="text-sm text-base-content/70">
+              {shot.caption}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* Eine App fürs ganze Dorf + Status */}
+  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+    <div class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="card bg-base-100 border border-base-300 shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title text-2xl text-base-content">
+              Eine App fürs ganze Dorf
+            </h2>
+            <p class="text-base-content/80">
+              Die Rössing-App ist nicht als reine „Gieß-App“ gedacht, sondern
+              als <strong>Dorf-App für Rössing</strong>. Die
+              <strong>Dorfpflege</strong> – Blumenkästen und Beete – ist der
+              erste Bereich, der fertig geworden ist. Weitere Bereiche sollen
+              nach und nach dazukommen.
+            </p>
+            <p class="text-base-content/80">
+              Was genau als Nächstes kommt, versprechen wir bewusst noch nicht:
+              Erst soll das, was es gibt, im Alltag funktionieren. Ideen und
+              Wünsche aus dem Dorf sind aber sehr willkommen.
+            </p>
+            <p class="text-base-content/80">
+              Die App gehört zum <a class="link link-primary" href="/digitales-dorf"
+                >digitalen Dorf</a
+              > und nutzt dieselbe Rössing-ID wie die anderen Dorf-Dienste.
+            </p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 border border-base-300 shadow-sm">
+          <div class="card-body">
+            <div class="flex items-center gap-3">
+              <h2 class="card-title text-2xl text-base-content">
+                Ehrlich gesagt: noch Beta
+              </h2>
+              <span class="badge badge-accent">Testphase</span>
+            </div>
+            <ul class="mt-2 space-y-3 text-base-content/80">
+              <li>
+                <strong>Die App ist in der Testphase.</strong> Sie funktioniert,
+                ist aber noch nicht fertig – Fehler und Ecken sind möglich.
+              </li>
+              <li>
+                <strong>Android zuerst.</strong> Die App läuft auf
+                Android-Geräten.
+              </li>
+              <li>
+                <strong>iOS ist später geplant.</strong> Eine Version für
+                iPhones gibt es noch nicht; wann sie kommt, steht noch nicht
+                fest.
+              </li>
+              <li>
+                <strong>Rückmeldungen helfen.</strong> Was hakt, was fehlt, was
+                ist unverständlich? Immer her damit.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AppDownload />
+
+  {/* Datenschutz kurz */}
+  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+    <div class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
+      <h2
+        class="text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+      >
+        Datenschutz – kurz gesagt
+      </h2>
+      <ul class="mt-6 space-y-4 text-base-content/80">
+        <li>
+          <strong>Anmeldung über die Rössing-ID.</strong> Die läuft über unsere
+          eigene Anmeldestelle unter <a
+            class="link"
+            href="https://id.xn--rssing-wxa.de">id.rössing.de</a
+          > (Software: Zitadel), betrieben im Dorf und nicht bei einem großen Anbieter.
+        </li>
+        <li>
+          <strong>Der Standort bleibt auf dem Gerät.</strong> Falls die App
+          nach deinem Standort fragt, nutzt sie ihn nur, um Entfernungen
+          anzuzeigen – an den Server wird er nicht übertragen.
+        </li>
+        <li>
+          <strong>Karte von OpenFreeMap.</strong> Das Kartenmaterial kommt von
+          OpenFreeMap auf Basis von OpenStreetMap-Daten – ohne Konto und ohne
+          Werbe-Tracking.
+        </li>
+        <li>
+          <strong>Gespeichert wird wenig.</strong> Im Wesentlichen: welcher Ort
+          wann von wem erledigt wurde. Das muss sichtbar sein, sonst würde die
+          Ampel nicht funktionieren.
+        </li>
+      </ul>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/app/datenschutz" class="btn btn-primary">
+          Datenschutz der App
+        </a>
+        <a href="/app/daten-loeschen" class="btn btn-outline btn-primary">
+          Konto und Daten löschen
+        </a>
+        <a href="/datenschutz" class="btn btn-outline">
+          Datenschutz dieser Website
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

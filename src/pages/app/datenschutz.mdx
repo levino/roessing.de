@@ -1,0 +1,178 @@
+---
+layout: '@levino/shipyard-base/layouts/Markdown.astro'
+title: 'Datenschutzerklärung der Rössing-App'
+description:
+  'Informationen zur Verarbeitung personenbezogener Daten in der Rössing-App
+  (Android)'
+---
+
+# Datenschutzerklärung der Rössing-App
+
+Diese Erklärung gilt für die **Rössing-App** für Android (Paketname
+`de.roessing.app`). Für die Internetseite rössing.de gilt die
+[Datenschutzerklärung der Website](/datenschutz).
+
+Die App ist ein ehrenamtliches Dorfprojekt: kostenlos, ohne Werbung und ohne
+Gewinnabsicht. Sie ist bewusst datensparsam gebaut – keine Analyse- oder
+Tracking-Bausteine, kein Verkauf und keine Weitergabe von Daten an Dritte zu
+Werbezwecken. Trotzdem werden für den Betrieb einige Daten verarbeitet. Was
+das ist, steht hier.
+
+## Verantwortlich für die Datenverarbeitung
+
+Levin Keller
+Hohenzollerndamm 152
+14199 Berlin
+
+Telefon: [+4915156041082](tel:+4915156041082)
+E-Mail: [post@levinkeller.de](mailto:post@levinkeller.de)
+
+Die App und der dazugehörige Server werden derzeit privat von Levin Keller
+betrieben – so wie die übrigen Dienste des
+[digitalen Dorfs](/digitales-dorf). Geplant ist, den Betrieb an eine noch zu
+gründende Dorfentwicklungsgesellschaft (DEG) zu übergeben; diese Erklärung
+wird dann angepasst.
+
+Ein Datenschutzbeauftragter ist gesetzlich nicht vorgeschrieben und daher
+nicht bestellt.
+
+## Anmeldung mit der Rössing-ID
+
+Die App lässt sich nur mit einem Konto der **Rössing-ID** nutzen. Das ist die
+gemeinsame Anmeldung für die Dorf-Dienste unter
+[id.rössing.de](https://id.xn--rssing-wxa.de). Sie läuft auf der
+selbst betriebenen Software Zitadel auf einem eigenen Server – nicht bei
+einem großen Anmelde-Anbieter.
+
+Der Anmeldevorgang findet im Browser des Geräts statt (OAuth 2.0 mit PKCE).
+Dabei werden die Zugangsdaten ausschließlich bei der Rössing-ID eingegeben,
+nicht in der App. Verarbeitet werden dabei die Kontodaten der Rössing-ID
+(insbesondere Benutzername, Anzeigename und E-Mail-Adresse) sowie technische
+Verbindungsdaten.
+
+Nach erfolgreicher Anmeldung speichert die App die Anmelde-Nachweise (Tokens)
+**nur lokal auf dem Gerät**. Beim Abmelden in der App werden sie gelöscht.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Nutzung der von der
+betroffenen Person angefragten Funktion) bzw. Art. 6 Abs. 1 lit. f DSGVO
+(berechtigtes Interesse an einem funktionierenden, missbrauchssicheren
+Zugang).
+
+## Welche Daten der Server speichert
+
+Der Server der App ist unter `app.rössing.de` erreichbar und läuft auf
+demselben selbst betriebenen Server wie die übrigen Dienste des digitalen
+Dorfs. Gespeichert werden:
+
+- **Orte und Pflegeaufgaben**: Name, Beschreibung, Art (Blumenkasten, Beet
+  …), Standort des Kastens bzw. Beets sowie Angaben wie „10 Liter, alle
+  7 Tage“. Das sind keine personenbezogenen Daten.
+- **Erledigungsmeldungen**: Wenn jemand meldet, gegossen oder gejätet zu
+  haben, werden gespeichert: die Kennung des Kontos, der **Anzeigename** aus
+  der Rössing-ID, der **Zeitpunkt** der Meldung sowie – falls angegeben – die
+  Wassermenge und eine kurze Notiz.
+
+Die Erledigungsmeldungen sind für alle angemeldeten Nutzerinnen und Nutzer der
+App als Historie sichtbar („zuletzt gegossen am … von …“). Genau dafür sind
+sie da: Ohne diese Information wüsste niemand, ob ein Kasten schon versorgt
+ist. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+einer nachvollziehbaren gemeinschaftlichen Dorfpflege).
+
+Beim Abruf können zusätzlich technisch bedingte Verbindungsdaten anfallen –
+etwa IP-Adresse, Zeitpunkt und aufgerufene Adresse. Solche Daten entstehen bei
+jeder Verbindung im Internet und werden, soweit sie protokolliert werden,
+ausschließlich zum Betrieb und zur Abwehr von Missbrauch verwendet. Die
+Anwendung selbst legt darüber keine Protokolle an.
+
+Die Erledigungsmeldungen bleiben gespeichert, solange sie für die Historie
+eines Ortes gebraucht werden; auf Wunsch werden sie vorher gelöscht oder
+anonymisiert (siehe [Konto und Daten löschen](/app/daten-loeschen)). Eine
+feste Löschfrist ist bisher nicht festgelegt – sobald es eine gibt, steht sie
+hier.
+
+## Dein Standort bleibt auf dem Gerät
+
+Die App kann dich um Zugriff auf deinen **Standort** bitten. Er wird
+ausschließlich auf dem Gerät verwendet: um anzuzeigen, wie weit ein
+Blumenkasten entfernt ist, und um die Liste nach Entfernung zu sortieren.
+
+Der Standort wird **nicht an den Server übertragen** und dort auch nicht
+gespeichert – die Schnittstelle der App kennt dafür überhaupt kein Feld. Die
+Berechtigung ist freiwillig: Wird sie verweigert oder in den
+Android-Einstellungen wieder entzogen, funktioniert die App weiter, nur ohne
+Entfernungsangaben.
+
+Darüber hinaus fordert die App lediglich die Berechtigungen für
+**Internetzugriff** und zum **Abfragen des Netzwerkstatus** an.
+
+## Übertragung
+
+Die Verbindung zwischen App und Server läuft ausschließlich verschlüsselt über
+HTTPS.
+
+## Kartenmaterial (OpenFreeMap / OpenStreetMap)
+
+Die Dorfkarte in der App wird mit Kartenkacheln von
+[OpenFreeMap](https://openfreemap.org/) dargestellt; die zugrunde liegenden
+Daten stammen aus [OpenStreetMap](https://www.openstreetmap.org/copyright).
+Beim Anzeigen der Karte ruft das Gerät diese Kacheln direkt von den Servern
+von OpenFreeMap ab. Dabei wird – wie bei jedem Abruf im Internet – die
+IP-Adresse des Geräts an diesen Dienst übertragen. Ein Konto oder ein
+Zugangsschlüssel ist dafür nicht nötig; Werbe-Tracking findet nicht statt.
+
+## Verteilung der App über den Play Store
+
+Die App wird über den **internen Test im Google Play Store** verteilt (Google
+Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland bzw. Google
+LLC, USA). Wer mittesten möchte, teilt uns dafür die Google-Adresse mit, mit
+der das Android-Gerät angemeldet ist; diese wird im Testerkreis der Play
+Console hinterlegt, damit die Einladung zugestellt und die App installiert
+werden kann.
+
+Beim Herunterladen, Installieren und Aktualisieren verarbeitet Google eigene
+Nutzungsdaten – wie bei jeder App aus dem Play Store – nach seinen eigenen
+Bestimmungen ([Google-Datenschutzerklärung](https://policies.google.com/privacy)).
+Darauf haben wir keinen Einfluss.
+
+Wer nicht am Test teilnehmen möchte, gibt uns einfach keine Adresse; die
+Teilnahme lässt sich jederzeit formlos beenden.
+
+Die App selbst enthält **keine** Analyse-, Absturz- oder Werbe-Bibliotheken:
+In der installierten App läuft nichts mit, das Nutzungsverhalten auswertet.
+
+## Rechte der betroffenen Personen
+
+Gegenüber dem Verantwortlichen bestehen folgende Rechte:
+
+- Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)
+- Berichtigung unrichtiger Daten (Art. 16 DSGVO)
+- Löschung (Art. 17 DSGVO)
+- Einschränkung der Verarbeitung (Art. 18 DSGVO)
+- Datenübertragbarkeit (Art. 20 DSGVO)
+- Widerspruch gegen Verarbeitungen, die auf berechtigtem Interesse beruhen
+  (Art. 21 DSGVO)
+
+Für alle Anliegen genügt eine formlose Nachricht an
+[post@levinkeller.de](mailto:post@levinkeller.de). Wie die Löschung des Kontos
+und der eigenen Daten abläuft, steht auf einer eigenen Seite:
+[Konto und Daten löschen](/app/daten-loeschen).
+
+Unabhängig davon besteht ein Beschwerderecht bei einer
+Datenschutz-Aufsichtsbehörde, zuständig ist die Berliner Beauftragte für
+Datenschutz und Informationsfreiheit, Alt-Moabit 59–61, 10555 Berlin.
+
+## Keine automatisierte Entscheidungsfindung
+
+Es findet keine automatisierte Entscheidungsfindung einschließlich Profiling
+im Sinne von Art. 22 DSGVO statt.
+
+## Änderungen dieser Erklärung
+
+Die App wird laufend weiterentwickelt. Diese Erklärung wird angepasst, sobald
+sich die Verarbeitung ändert – etwa wenn neue Bereiche in der App dazukommen
+oder die App öffentlich veröffentlicht wird. Es gilt jeweils die hier
+veröffentlichte Fassung.
+
+---
+
+Mehr zur App: [Die Rössing-App](/app)

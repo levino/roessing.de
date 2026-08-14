@@ -1,0 +1,141 @@
+---
+/**
+ * Bezugsweg für die Rössing-App.
+ *
+ * ⚠️ HIER wird umgeschaltet, sobald die App im Google Play Store ist:
+ * Einfach `playStoreUrl` auf die Store-Adresse setzen (z.B.
+ * 'https://play.google.com/store/apps/details?id=de.roessing.app').
+ * Dann verschwindet der Beta-Aufruf und der Store-Knopf erscheint – der
+ * Rest der Seite muss nicht angefasst werden.
+ *
+ * Solange die App nicht öffentlich veröffentlicht ist, bleibt `null` stehen:
+ * Die Verteilung läuft über den internen Test im Play Store, zu dem man
+ * eingeladen werden muss – ein öffentlicher Store-Link existiert also nicht.
+ */
+const playStoreUrl: string | null = null
+
+// Kontaktweg wie im Impressum und in der Datenschutzerklärung der Website.
+const kontaktMail = 'post@levinkeller.de'
+const kontaktTelefon = '+4915156041082'
+---
+
+<section id="mitmachen" class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
+  <div
+    class="rounded-box border border-base-300 bg-base-100 p-8 sm:p-12 shadow-sm"
+  >
+    {
+      playStoreUrl ? (
+        <div class="text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+            So bekommst du die App
+          </h2>
+          <p class="mt-4 text-base-content/70">
+            Die Rössing-App gibt es für Android im Google Play Store. Zum
+            Anmelden brauchst du deine Rössing-ID.
+          </p>
+          <div class="mt-6">
+            <a
+              href={playStoreUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="btn btn-primary btn-lg"
+            >
+              Im Google Play Store öffnen
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div class="text-center">
+            <span class="badge badge-accent mb-4">Im Test</span>
+            <h2 class="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+              Mach mit beim Test
+            </h2>
+            <p class="mt-4 text-base-content/70">
+              Die Rössing-App wird gerade im Dorf ausprobiert und ist deshalb
+              noch nicht öffentlich zum Herunterladen zu finden. Zwei Wege
+              führen zu uns – such dir einen aus, beide sind uns gleich recht:
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="rounded-box border border-base-300 bg-base-200 p-6">
+              <h3 class="font-semibold text-base-content">
+                Du willst die App ausprobieren
+              </h3>
+              <p class="mt-2 text-base-content/70">
+                Melde dich kurz – am besten mit der Google-Adresse, mit der du
+                auf deinem Android-Handy angemeldet bist. Du bekommst dann eine
+                Einladung zum Test. Wie es weitergeht, steht unten.
+              </p>
+            </div>
+            <div class="rounded-box border border-base-300 bg-base-200 p-6">
+              <h3 class="font-semibold text-base-content">
+                Du hast eine Idee für eine Funktion
+              </h3>
+              <p class="mt-2 text-base-content/70">
+                Was sollte die Dorf-App noch können? Schreib es uns, auch wenn
+                du selbst gar nicht testen magst. Genauso willkommen: was
+                hakt, was unverständlich ist, was fehlt.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-lg font-semibold text-base-content">
+              So kommst du zur App
+            </h3>
+            <ul class="steps steps-vertical mt-4 w-full">
+              <li class="step step-primary">
+                <span class="text-left text-base-content/80">
+                  Du meldest dich bei uns, dass du testen möchtest.
+                </span>
+              </li>
+              <li class="step step-primary">
+                <span class="text-left text-base-content/80">
+                  Du bekommst einen Einladungslink für den internen Test.
+                </span>
+              </li>
+              <li class="step step-primary">
+                <span class="text-left text-base-content/80">
+                  Den Link einmal öffnen und den Test annehmen –{' '}
+                  <strong>
+                    wichtig: mit demselben Google-Konto, das auf deinem Telefon
+                    eingerichtet ist
+                  </strong>
+                  .
+                </span>
+              </li>
+              <li class="step step-primary">
+                <span class="text-left text-base-content/80">
+                  Danach lässt sich die App ganz normal aus dem Play Store
+                  installieren. Aktualisierungen kommen automatisch.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a
+              href={`mailto:${kontaktMail}?subject=R%C3%B6ssing-App%3A%20Ich%20mache%20mit`}
+              class="btn btn-primary btn-lg"
+            >
+              Schreib uns
+            </a>
+            <p class="mt-4 text-sm text-base-content/60">
+              Per E-Mail an <a class="link" href={`mailto:${kontaktMail}`}>
+                {kontaktMail}
+              </a> oder telefonisch unter <a
+                class="link"
+                href={`tel:${kontaktTelefon}`}
+              >
+                {kontaktTelefon}
+              </a>. Sobald die App öffentlich verfügbar ist, findest du den
+              Link hier an dieser Stelle.
+            </p>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

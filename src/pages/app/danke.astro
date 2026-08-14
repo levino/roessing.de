@@ -1,0 +1,74 @@
+---
+/**
+ * Landeseite nach dem Absenden des Ideen-Formulars. Das Backend der Dorf-App
+ * leitet hierher weiter — und zwar nur hierher: Erlaubte Weiterleitungsziele
+ * sind dort fest hinterlegt.
+ *
+ * Bewusst eine eigene Seite und keine Meldung per JavaScript: Das Formular
+ * funktioniert ohne JavaScript, also muss auch die Bestätigung ohne
+ * auskommen.
+ */
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import { kontaktMail } from '@/data/kontakt'
+
+const metadata = {
+  title: 'Danke für deine Idee',
+  description:
+    'Deine Idee für die Rössing-App ist angekommen. Was als Nächstes damit passiert.',
+}
+---
+
+<Layout
+  {...metadata}
+  customMetaTags={[{ name: 'robots', content: 'noindex, follow' }]}
+>
+  <section class="container max-w-3xl mx-auto px-4 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+      Angekommen
+    </p>
+    <h1
+      class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+    >
+      Danke – deine Idee ist da!
+    </h1>
+
+    <p class="mt-6 text-lg text-base-content/80">
+      Wir lesen jede Idee. Was hier ankommt, landet auf einer Liste, die wir im
+      Dorfentwicklungskreis durchgehen – und was dem Dorf wirklich hilft, wird
+      auch gebaut. Was wir nicht bauen können, sagen wir ehrlich.
+    </p>
+
+    <div
+      class="mt-8 rounded-box border border-base-300 bg-base-100 p-6 sm:p-8 shadow-sm"
+    >
+      <h2 class="text-lg font-semibold text-base-content">
+        Wie es weitergeht
+      </h2>
+      <ul class="mt-3 space-y-2 text-base-content/70">
+        <li>
+          Hast du eine E-Mail-Adresse angegeben, melden wir uns, falls wir
+          etwas nicht verstanden haben. Sonst hörst du nichts weiter – deine
+          Idee zählt trotzdem.
+        </li>
+        <li>
+          Du kannst so viele Ideen schicken, wie du magst. Jede einzelne ist
+          uns lieber als eine, die niemand aufschreibt.
+        </li>
+        <li>
+          Du möchtest deine Idee zurückziehen oder gelöscht haben? Eine
+          formlose Nachricht an
+          <a class="link" href={`mailto:${kontaktMail}`}>{kontaktMail}</a>
+          genügt.
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="/app#ideen" class="btn btn-primary">Noch eine Idee schicken</a>
+      <a href="/app" class="btn btn-ghost">Zurück zur App-Seite</a>
+      <a href="/app/datenschutz" class="btn btn-ghost">
+        Was mit deinen Angaben passiert
+      </a>
+    </div>
+  </section>
+</Layout>

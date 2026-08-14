@@ -18,6 +18,11 @@ Tracking-Bausteine, kein Verkauf und keine Weitergabe von Daten an Dritte zu
 Werbezwecken. Trotzdem werden für den Betrieb einige Daten verarbeitet. Was
 das ist, steht hier.
 
+Eine Ausnahme von „alles bleibt im Dorf“ gibt es seit der Version 0.1.7:
+Wer **Benachrichtigungen aufs Handy** erlaubt, dessen Meldungen laufen über
+Google. Das ist freiwillig und steht ausführlich im Abschnitt
+[Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
+
 ## Verantwortlich für die Datenverarbeitung
 
 Levin Keller
@@ -73,6 +78,11 @@ Dorfs. Gespeichert werden:
   Meldung sowie – falls angegeben – die Wassermenge und eine kurze Notiz.
 - **Profilangaben**, soweit du sie freiwillig ausfüllst – dazu der eigene
   Abschnitt [Profil und freiwillige Kontaktdaten](#profil-und-freiwillige-kontaktdaten).
+- **Einträge als Helfer:in und die daraus entstehenden Anfragen** – dazu der
+  Abschnitt [Mithelfen: Eintrag als Helfer:in und Anfragen](#mithelfen-eintrag-als-helfer-und-anfragen).
+- **Die Kennung deines Geräts**, aber nur, wenn du Benachrichtigungen erlaubt
+  hast – dazu der Abschnitt
+  [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
 Die Erledigungsmeldungen sind für alle angemeldeten Nutzerinnen und Nutzer der
 App als Historie sichtbar („zuletzt gegossen am … von …“). Genau dafür sind
@@ -145,6 +155,81 @@ widersprochen werden.
 Die **Liste der Dorfbewohner** zeigt, wer in der App mitmacht, und dazu
 ausschließlich die Angaben, die im Profil freigegeben wurden (siehe oben).
 
+## Mithelfen: Eintrag als Helfer:in und Anfragen
+
+Bei jedem Ort kann man sich in der App als **Helfer:in eintragen** („Hier als
+Helfer:in eintragen“). Das ist **freiwillig** – die App funktioniert auch
+ohne. Gespeichert werden dabei:
+
+- die **Kennung des Kontos**,
+- der **Ort**, für den der Eintrag gilt,
+- gegebenenfalls die **Aufgabenart** (nur Gießen, nur Jäten oder alles, was
+  dort ansteht),
+- der **Zeitpunkt** des Eintrags.
+
+Steht an diesem Ort etwas an, entsteht daraus eine **Anfrage** an eine
+eingetragene Person. Zu jeder Anfrage werden die **Kennung** der gefragten
+Person, der **Anlass** (welcher Ort, welche Aufgabe), der **Zeitpunkt** und
+der Vermerk gespeichert, **ob sie gelesen** bzw. beantwortet wurde. Gefragt
+wird nacheinander, damit nicht alle gleichzeitig losziehen.
+
+Wer eine Anfrage annimmt, **hält die Aufgabe für 24 Stunden**. Diese
+**Zusage ist mit Namen und Frist für die übrigen Eingetragenen sichtbar** –
+sonst gießen zwei Leute denselben Kasten. Angezeigt wird dabei derselbe Name
+wie sonst in der App: der Anzeigename oder, falls hinterlegt, der Nickname.
+
+Der Eintrag lässt sich **jederzeit wieder zurücknehmen**, indem man den
+Schalter am Ort umlegt; danach wird man dort nicht mehr gefragt.
+Rechtsgrundlage ist die **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO), die mit
+dem Eintragen erteilt und mit dem Austragen widerrufen wird. Anfragen und
+Vorgänge hängen an der jeweiligen Pflegeaufgabe und werden mit ihr gelöscht.
+
+## Benachrichtigungen aufs Handy (freiwillig)
+
+Anfragen stehen immer in der App selbst, unter „Benachrichtigungen“. Wer
+möchte, kann sie zusätzlich **als Mitteilung aufs Handy** bekommen. Dafür
+fragt Android einmalig um Erlaubnis. **Wer nicht zustimmt, für den ändert sich
+nichts**: Es wird keine Kennung erzeugt und nichts verschickt, die Anfragen
+stehen dann beim nächsten Öffnen der App.
+
+Wer zustimmt, für den läuft die Zustellung über **Firebase Cloud Messaging**,
+einen Dienst von **Google Ireland Limited**, Gordon House, Barrow Street,
+Dublin 4, Irland (bzw. Google LLC, USA). Das lässt sich nicht vermeiden: Auf
+Android führt der einzige zuverlässige Weg zu einer Mitteilung auf dem
+Sperrbildschirm über diesen Dienst.
+
+Im Einzelnen:
+
+- Google vergibt eine **Kennung dieser App-Installation** (ein sogenanntes
+  Token). Sie ist kein Werbe-Identifikator und keine Gerätenummer. Die App
+  meldet sie dem Dorfserver, der sie zusammen mit dem Betriebssystem
+  („android“) und dem Zeitpunkt speichert, damit er Nachrichten an genau
+  dieses Gerät schicken kann. Die Kennung wird in keiner Antwort des Servers
+  an andere ausgeliefert.
+- **An Google gehen** dabei: diese Kennung sowie **Titel und Text der
+  Meldung** – also der Name des Ortes und die Aufgabe, zum Beispiel „Gießen
+  an ‚Unter den Eichen — Kasten 1‘ ist dran“ – dazu die internen Nummern von
+  Ort, Aufgabe und Vorgang, damit der Fingertipp auf die Mitteilung an der
+  richtigen Stelle in der App landet. **Namen anderer Personen stehen nie in
+  einer solchen Mitteilung.**
+- **Rechtsgrundlage** ist die **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO),
+  erteilt über die Abfrage von Android. Sie lässt sich jederzeit widerrufen –
+  in den **Android-Einstellungen** unter „Benachrichtigungen“ für die
+  Dorf-App. Der Widerruf berührt die Rechtmäßigkeit der bis dahin erfolgten
+  Verarbeitung nicht.
+- **Übermittlung in die USA:** Google verarbeitet dabei Daten auch außerhalb
+  der EU. Grundlage sind die **Standardvertragsklauseln** der EU-Kommission
+  bzw. die Zertifizierung nach dem **EU-US Data Privacy Framework**. Näheres
+  regelt Google in seiner
+  [Datenschutzerklärung](https://policies.google.com/privacy).
+- **Löschung:** Beim Abmelden aus der App wird die Kennung vom Dorfserver
+  gelöscht. Dasselbe geschieht, sobald Google sie als ungültig meldet – etwa
+  weil die App deinstalliert wurde.
+- **Nachtruhe:** Zwischen **21 und 7 Uhr** wird nichts zugestellt.
+
+Das Firebase-SDK steckt **ausschließlich** für diesen Zweck in der App. Eine
+Analyse- oder Absturz-Bibliothek von Google ist bewusst nicht eingebunden.
+
 ## Ideen für die App („Sag uns, was die App können soll")
 
 Auf der Seite [rössing.de/app](/app#ideen) und in der App selbst lässt sich ein
@@ -198,8 +283,10 @@ Berechtigung ist freiwillig: Wird sie verweigert oder in den
 Android-Einstellungen wieder entzogen, funktioniert die App weiter, nur ohne
 Entfernungsangaben.
 
-Darüber hinaus fordert die App lediglich die Berechtigungen für
-**Internetzugriff** und zum **Abfragen des Netzwerkstatus** an.
+Darüber hinaus fordert die App die Berechtigungen für **Internetzugriff**, zum
+**Abfragen des Netzwerkstatus** und – nur, wenn du
+[Benachrichtigungen](#benachrichtigungen-aufs-handy-freiwillig) erlaubst – zum
+**Anzeigen von Mitteilungen** an. Mehr nicht.
 
 ## Übertragung
 
@@ -235,6 +322,9 @@ Teilnahme lässt sich jederzeit formlos beenden.
 
 Die App selbst enthält **keine** Analyse-, Absturz- oder Werbe-Bibliotheken:
 In der installierten App läuft nichts mit, das Nutzungsverhalten auswertet.
+Der einzige Baustein von Google in der App ist Firebase Cloud Messaging, und
+der ist ausschließlich für die
+[Benachrichtigungen](#benachrichtigungen-aufs-handy-freiwillig) da.
 
 ## Rechte der betroffenen Personen
 
@@ -249,7 +339,8 @@ Gegenüber dem Verantwortlichen bestehen folgende Rechte:
   (Art. 21 DSGVO)
 - Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO) – bei den
   Profilangaben genügt dafür das Zurückstellen des jeweiligen Schalters in der
-  App
+  App, beim Mithelfen das Austragen am jeweiligen Ort und bei den
+  Benachrichtigungen das Abschalten in den Android-Einstellungen
 
 Für alle Anliegen genügt eine formlose Nachricht an
 [post@levinkeller.de](mailto:post@levinkeller.de). Wie die Löschung des Kontos

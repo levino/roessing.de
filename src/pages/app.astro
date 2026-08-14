@@ -16,7 +16,7 @@ import Jumbotron from '../components/Jumbotron.astro'
 const metadata = {
   title: 'Die Rössing-App',
   description:
-    'Was soll die Dorf-App für Rössing können? Wir sammeln Ideen aus dem Dorf – ein Satz reicht. Die App gibt es schon: Den Anfang macht „Mithelfen“ als erste Funktion – auf der Dorfkarte sehen, was gerade im Dorf ansteht, etwa welche Blumenkästen und Beete Wasser brauchen. Wer beim Test mitmachen möchte, meldet sich ebenfalls.',
+    'Was soll die Dorf-App für Rössing können? Wir sammeln Ideen aus dem Dorf – ein Satz reicht. Die App gibt es schon: Den Anfang macht „Mithelfen“ als erste Funktion – auf der Dorfkarte sehen, was gerade im Dorf ansteht, etwa welche Blumenkästen und Beete Wasser brauchen. Wer mag, trägt sich an einem Ort als Helfer:in ein und wird gefragt, sobald dort etwas fällig wird. Wer beim Test mitmachen möchte, meldet sich ebenfalls.',
 }
 
 // Anregungen, was eine Dorf-App leisten könnte. Ausdrücklich Beispiele –
@@ -84,7 +84,7 @@ const haltung = [
   },
   {
     titel: 'Keine Werbung',
-    text: 'In der App läuft keine Werbung und kein Werbe-Tracking. Deine Daten werden nicht verkauft und nicht weitergegeben.',
+    text: 'In der App läuft keine Werbung und kein Werbe-Tracking. Deine Daten werden nicht verkauft. Weitergegeben wird nur das, was für Benachrichtigungen aufs Handy nötig ist – und auch nur, wenn du sie erlaubst.',
   },
   {
     titel: 'Keine Gewinnabsicht',
@@ -92,7 +92,7 @@ const haltung = [
   },
   {
     titel: 'Datenschutz wird eingehalten',
-    text: 'Die Daten liegen auf einem selbst betriebenen Server, die Anmeldung läuft über die eigene Rössing-ID, und der Standort bleibt auf dem Gerät.',
+    text: 'Die Daten liegen auf einem selbst betriebenen Server, die Anmeldung läuft über die eigene Rössing-ID, und der Standort bleibt auf dem Gerät. Nur die Benachrichtigungen aufs Handy laufen über Google – freiwillig und abschaltbar.',
   },
   {
     titel: 'Der Quellcode soll offen werden',
@@ -133,6 +133,14 @@ const bereiche = [
     text: 'Was gerade im Dorf ansteht: Blumenkästen und Beete auf der Dorfkarte und als Liste, jeweils mit Ampel. Erledigt wird mit einem Tipp gemeldet.',
   },
   {
+    titel: 'Als Helfer:in eintragen',
+    text: 'Bei jedem Ort kannst du dich eintragen – für alles, was dort ansteht, oder nur fürs Gießen bzw. nur fürs Jäten. Dann fragt dich die App, wenn dort etwas fällig wird.',
+  },
+  {
+    titel: 'Benachrichtigungen',
+    text: 'Hier stehen die Anfragen: zusagen mit „Ich mache das“, zurückgeben mit „Zurückgeben“. Auf Wunsch kommen sie zusätzlich aufs Handy – nachts ist Ruhe.',
+  },
+  {
     titel: 'Rangliste',
     text: 'Wer wie oft gegossen oder gejätet hat – wahlweise für die Woche, den Monat, die Saison, das Jahr oder insgesamt. Dazu, was das ganze Dorf zusammen geschafft hat, und ein paar Abzeichen.',
   },
@@ -143,6 +151,10 @@ const bereiche = [
   {
     titel: 'Dorfbewohner',
     text: 'Wer in der App mitmacht – mit genau den Angaben, die derjenige freigegeben hat. So findet man jemanden, ohne erst herumzufragen.',
+  },
+  {
+    titel: 'Idee vorschlagen',
+    text: 'Eine Kachel auf der Startseite der App: Sag uns, was die App sonst noch können soll. Geht auch anonym und dauert einen Satz.',
   },
   {
     titel: 'Dein Standort, wenn du magst',
@@ -349,8 +361,9 @@ const screenshots = [
       </p>
       <p class="mt-3 text-base-content/70">
         Beim Öffnen landest du inzwischen auf einer Startseite mit den
-        Bereichen der App. „Mithelfen“ steht dort oben – daneben gibt es das
-        eigene Profil und die Liste der Dorfbewohner.
+        Bereichen der App. „Mithelfen“ steht dort oben – daneben gibt es die
+        Benachrichtigungen, das eigene Profil, die Liste der Dorfbewohner und
+        die Kachel „Idee vorschlagen“.
       </p>
     </div>
 
@@ -403,6 +416,52 @@ const screenshots = [
       entsprechend kürzer. Wer die Kästen betreut, kann Erledigungen trotzdem
       nachtragen, wenn jemand das Melden vergessen hat.
     </p>
+
+    <div class="mt-14">
+      <h3 class="text-xl font-semibold text-base-content">
+        Neu: Du kannst dich eintragen – und wirst dann gefragt
+      </h3>
+      <div class="mt-3 max-w-3xl space-y-3 text-base-content/70">
+        <p>
+          Bisher musste man selbst nachschauen, ob etwas ansteht. Seit der
+          neuesten Version geht es auch andersherum: Bei jedem Ort gibt es
+          „Hier als Helfer:in eintragen“. Wer das tut, sagt damit: Um diesen
+          Kasten kümmere ich mich mit. Dabei kannst du angeben, ob du nur
+          gießen, nur jäten oder alles übernehmen möchtest. Danach steht dort
+          „Du hilfst hier mit“ – und du kannst dich jederzeit wieder
+          austragen.
+        </p>
+        <p>
+          Wird an diesem Ort etwas fällig, fragt die App nicht alle auf
+          einmal, sondern <strong>der Reihe nach</strong>: eine Person, eine
+          Stunde später die nächste, und so weiter. Wer zuerst dran ist,
+          richtet sich danach, wer am längsten nichts gemacht hat
+          beziehungsweise am längsten nicht gefragt wurde. So kommt jeder mal
+          an die Reihe und niemand ständig.
+        </p>
+        <p>
+          Sagst du zu – „Ich mache das“ –, <strong>gehört die Aufgabe für 24
+          Stunden dir</strong>. Die anderen sehen, dass sie vergeben ist, und
+          niemand läuft umsonst los. Wenn du es doch nicht schaffst, gibst du
+          sie mit „Zurückgeben“ wieder frei; passiert gar nichts, wird sie
+          nach den 24 Stunden von selbst frei und der Nächste wird gefragt.
+          Und sobald irgendjemand meldet, dass gegossen ist, ist die Sache für
+          alle erledigt.
+        </p>
+        <p>
+          Hat am Ende niemand zugesagt, geht eine letzte Frage an alle
+          Eingetragenen gleichzeitig. Meldet sich auch dann niemand, bleibt
+          der Ort einfach rot stehen – so wie vorher auch.
+        </p>
+        <p>
+          Die Anfragen stehen in der App unter „Benachrichtigungen“. Wer
+          möchte, bekommt sie zusätzlich <strong>aufs Handy</strong>; die App
+          fragt dafür einmal um Erlaubnis. Wer sie nicht gibt, verpasst
+          nichts – die Anfragen stehen dann beim nächsten Öffnen da. Zwischen
+          21 und 7 Uhr wird ohnehin nichts zugestellt.
+        </p>
+      </div>
+    </div>
 
     <div class="mt-14">
       <h3 class="text-xl font-semibold text-base-content">
@@ -483,9 +542,11 @@ const screenshots = [
         So sieht das aus
       </h2>
       <p class="mt-3 text-base-content/70">
-        Aufnahmen aus der aktuellen Testversion für Android. Die Orte, Namen
-        und Zahlen auf den Bildern sind Beispiele aus der Testumgebung – nicht
-        die echten Kästen im Dorf.
+        Aufnahmen aus der Testversion für Android. Die Orte, Namen und Zahlen
+        auf den Bildern sind Beispiele aus der Testumgebung – nicht die echten
+        Kästen im Dorf. Die Bilder sind ein paar Wochen alt: Der Eintrag als
+        Helfer:in, die Benachrichtigungen und die Kachel „Idee vorschlagen“
+        sind darauf noch nicht zu sehen.
       </p>
     </div>
 
@@ -697,6 +758,22 @@ const screenshots = [
           steht dein Name – oder dein Nickname, wenn du einen einträgst –
           zusammen mit der Zahl deiner Erledigungen. Wer nicht mit Klarnamen
           auftauchen möchte, trägt einfach einen anderen Nickname ein.
+        </li>
+        <li>
+          <strong>Wer sich einträgt, ist für die anderen Eingetragenen
+          sichtbar.</strong> Sagst du eine Aufgabe zu, sehen die übrigen
+          Helferinnen und Helfer an diesem Ort deinen Namen und bis wann du
+          Zeit hast – sonst gießen zwei denselben Kasten. Eintragen ist
+          freiwillig und jederzeit wieder rückgängig zu machen.
+        </li>
+        <li>
+          <strong>Benachrichtigungen laufen über Google.</strong> Nur wenn du
+          sie erlaubst: Für die Zustellung aufs Handy führt auf Android kein
+          Weg an Firebase Cloud Messaging vorbei. Google erfährt dabei eine
+          Kennung deiner App-Installation sowie Titel und Text der Meldung –
+          also Ortsname und Aufgabe. <strong>Namen anderer Personen stehen
+          nie darin.</strong> Erlaubst du sie nicht, wird nichts an Google
+          geschickt; die Anfragen stehen dann in der App.
         </li>
         <li>
           <strong>Kontaktdaten nur, wenn du willst.</strong> Im Profil kannst du

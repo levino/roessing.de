@@ -1,4 +1,7 @@
 ---
+// Kontaktweg wie im Impressum und in der Datenschutzerklärung der Website.
+import { kontaktMail, kontaktTelefon, mailtoMitBetreff } from '@/data/kontakt'
+
 /**
  * Bezugsweg für die Rössing-App.
  *
@@ -13,10 +16,6 @@
  * eingeladen werden muss – ein öffentlicher Store-Link existiert also nicht.
  */
 const playStoreUrl: string | null = null
-
-// Kontaktweg wie im Impressum und in der Datenschutzerklärung der Website.
-const kontaktMail = 'post@levinkeller.de'
-const kontaktTelefon = '+4915156041082'
 ---
 
 <section id="mitmachen" class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
@@ -53,8 +52,8 @@ const kontaktTelefon = '+4915156041082'
             </h2>
             <p class="mt-4 text-base-content/70">
               Die Rössing-App wird gerade im Dorf ausprobiert und ist deshalb
-              noch nicht öffentlich zum Herunterladen zu finden. Zwei Wege
-              führen zu uns – such dir einen aus, beide sind uns gleich recht:
+              noch nicht öffentlich zum Herunterladen zu finden. Wer mitmachen
+              möchte, meldet sich einfach kurz.
             </p>
           </div>
 
@@ -71,12 +70,16 @@ const kontaktTelefon = '+4915156041082'
             </div>
             <div class="rounded-box border border-base-300 bg-base-200 p-6">
               <h3 class="font-semibold text-base-content">
-                Du hast eine Idee für eine Funktion
+                Testen musst du nicht
               </h3>
               <p class="mt-2 text-base-content/70">
-                Was sollte die Dorf-App noch können? Schreib es uns, auch wenn
-                du selbst gar nicht testen magst. Genauso willkommen: was
-                hakt, was unverständlich ist, was fehlt.
+                Wenn du kein Android-Handy hast oder schlicht keine Lust aufs
+                Testen: Deine{' '}
+                <a class="link link-primary" href="#ideen">
+                  Idee für eine Funktion
+                </a>{' '}
+                ist trotzdem willkommen. Genauso: was hakt, was unverständlich
+                ist, was fehlt.
               </p>
             </div>
           </div>
@@ -117,21 +120,16 @@ const kontaktTelefon = '+4915156041082'
 
           <div class="mt-8 text-center">
             <a
-              href={`mailto:${kontaktMail}?subject=R%C3%B6ssing-App%3A%20Ich%20mache%20mit`}
+              href={mailtoMitBetreff('Rössing-App: Ich mache mit')}
               class="btn btn-primary btn-lg"
             >
               Schreib uns
             </a>
             <p class="mt-4 text-sm text-base-content/60">
-              Per E-Mail an <a class="link" href={`mailto:${kontaktMail}`}>
-                {kontaktMail}
-              </a> oder telefonisch unter <a
-                class="link"
-                href={`tel:${kontaktTelefon}`}
-              >
-                {kontaktTelefon}
-              </a>. Sobald die App öffentlich verfügbar ist, findest du den
-              Link hier an dieser Stelle.
+              Per E-Mail an <a class="link" href={`mailto:${kontaktMail}`}>{kontaktMail}</a> oder
+              telefonisch unter <a class="link" href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a>.
+              Sobald die App öffentlich verfügbar ist, findest du den Link hier
+              an dieser Stelle.
             </p>
           </div>
         </div>

@@ -87,6 +87,56 @@ const vereine = [
     </div>
   </Jumbotron>
 
+  {/* Die Rössing-App – ganz oben, weil wir gerade Ideen sammeln */}
+  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+    <div class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Ideen gesucht
+          </p>
+          <h2
+            class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+          >
+            Was soll die Rössing-App können?
+          </h2>
+          <p class="mt-4 text-base-content/70">
+            Rössing hat seit Kurzem eine eigene Dorf-App. Bisher zeigt sie auf
+            einer Karte, welche Blumenkästen und Beete Wasser brauchen – und
+            wer gegossen hat. Das war der Anfang.
+          </p>
+          <p class="mt-3 text-base-content/70">
+            Jetzt suchen wir Ideen: Termine, Mitfahrgelegenheiten, Werkzeug
+            verleihen, Nachbarschaftshilfe – oder etwas ganz anderes. Denk
+            ruhig groß, technisch ist viel möglich, und gute Ideen werden auch
+            gebaut. Ein Satz reicht.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a href="/app#ideen" class="btn btn-primary">
+              Idee vorschlagen
+            </a>
+            <a href="/app" class="btn btn-outline btn-primary">
+              Die App entdecken
+            </a>
+          </div>
+        </div>
+
+        <div class="flex justify-center lg:justify-end">
+          <Image
+            src={appKarte}
+            alt="Die Rössing-App zeigt eine Karte von Rössing mit farbigen Markern: grün für erledigte, gelb und rot für zu gießende Blumenkästen."
+            widths={[260, 390, 520]}
+            sizes="(min-width: 1024px) 260px, 60vw"
+            class="w-56 sm:w-64 rounded-box border border-base-300 shadow-md"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
   {/* Veranstaltungen – das Wichtigste zuerst */}
   <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
     <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
@@ -170,52 +220,6 @@ const vereine = [
         <a href="/events" class="link link-primary font-medium">
           Alle Vereine als Veranstalter im Kalender entdecken →
         </a>
-      </div>
-    </div>
-  </section>
-
-  {/* Die Rössing-App – Teaser mit Blick in die App */}
-  <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-          Neu im Dorf
-        </p>
-        <h2
-          class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
-        >
-          Die Rössing-App
-        </h2>
-        <p class="mt-4 text-base-content/70">
-          Anmelden mit der Rössing-ID und auf der Dorfkarte sehen, welche
-          Blumenkästen und Beete Wasser oder Pflege brauchen – und melden, wenn
-          du gegossen oder gejätet hast. Grün heißt: alles gut. Gelb: bitte
-          gießen. Rot: dringend.
-        </p>
-        <p class="mt-3 text-base-content/70">
-          Die App wird gerade getestet und läuft zunächst auf Android-Geräten.
-          Wer mitmachen möchte oder eine Idee hat, was die App noch können
-          sollte, meldet sich einfach. Kostenlos, ehrenamtlich, ohne Werbung.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-4">
-          <a href="/app" class="btn btn-primary">
-            Die App entdecken
-          </a>
-          <a href="/app#mitmachen" class="btn btn-outline btn-primary">
-            Beim Test mitmachen
-          </a>
-        </div>
-      </div>
-
-      <div class="flex justify-center lg:justify-end">
-        <Image
-          src={appKarte}
-          alt="Die Rössing-App zeigt eine Karte von Rössing mit farbigen Markern: grün für erledigte, gelb und rot für zu gießende Blumenkästen."
-          widths={[260, 390, 520]}
-          sizes="(min-width: 1024px) 260px, 60vw"
-          class="w-56 sm:w-64 rounded-box border border-base-300 shadow-md"
-          loading="lazy"
-        />
       </div>
     </div>
   </section>

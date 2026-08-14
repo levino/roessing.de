@@ -24,6 +24,7 @@
     "format": "biome check --write .",
     "shortlink": "node scripts/assign-event-shortlink.js",
     "event-qr": "node scripts/generate-event-qr.js",
+    "print-qr": "node scripts/generate-print-qr.js",
     "typst:ensure": "node scripts/ensure-typst.js",
     "fonts:ensure": "node scripts/ensure-fonts.js",
     "claude": "claude --dangerously-skip-permissions"

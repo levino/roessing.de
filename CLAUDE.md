@@ -178,6 +178,23 @@ Events werden als Markdown-Dateien in `src/content/events/` gespeichert. Dateina
 - Organizer werden als YAML in `src/data/organizers/` definiert
 - Locations werden als YAML in `src/data/locations/` definiert
 - Neue Organizer/Locations als YAML-Datei anlegen und im Event per Dateiname (ohne `.yaml`) referenzieren
+- Locations dürfen optional Koordinaten tragen (schema.org `GeoCoordinates`). Sie landen in `/events.json` und in den JSON-LD-Daten der Detailseite:
+  ```yaml
+  name: Dorfgemeinschaftshaus Rössing
+  '@type': Place
+  geo:
+    '@type': GeoCoordinates
+    latitude: 52.1843
+    longitude: 9.8162
+  ```
+
+### `/events.json` – die Termine für andere Anwendungen:
+Beim Build entsteht zusätzlich `/events.json` (`src/pages/events.json.ts`). Die Dorf-App holt sich die Veranstaltungen von dort, damit sie **nicht ein zweites Mal gepflegt** werden müssen. Die Regeln des Formats stehen in `src/tools/events/feed.ts` und sind in `src/tools/events/feed.test.ts` (Vitest) sowie `tests/eventsJson.test.ts` (Playwright) festgehalten:
+- Nur kommende Termine; vorbei ist ein Termin erst am Ende seines letzten Tages.
+- `noindex`-Termine bleiben draußen – das Flag heißt „nicht öffentlich auffindbar machen".
+- `allDay: true` → `start` ist nur ein Datum (`2026-03-14`), sonst Ortszeit mit Offset (`2026-03-14T09:30:00+01:00`).
+- `url` gesetzt → `url` zeigt auf die externe Primärquelle und `external: true`; die interne Detailseite taucht dann nirgends auf (gleiche Regel wie auf der Website).
+- Die Datei entsteht beim Build und altert zwischen zwei Builds: Wer sie anzeigt, filtert die Vergangenheit noch einmal selbst.
 
 ## ⚡ Wichtige Hinweise
 

@@ -14,10 +14,22 @@ export const addressSchema = z.object({
   postalCode: z.string(),
 })
 
+/**
+ * Koordinaten eines Ortes (schema.org GeoCoordinates). Freiwillig — wo sie
+ * stehen, landen sie auch in `/events.json` und die Dorf-App kann den Termin
+ * auf der Karte zeigen.
+ */
+export const geoSchema = z.object({
+  '@type': z.enum(['GeoCoordinates']),
+  latitude: z.number(),
+  longitude: z.number(),
+})
+
 export const locationSchema = z.object({
   name: z.string(),
   '@type': z.enum(['Place']),
   address: addressSchema.optional(),
+  geo: geoSchema.optional(),
   telephone: z.string().optional(),
   url: z.string().url().optional(),
 })

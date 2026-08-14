@@ -24,6 +24,12 @@ der App eine Kennung dieser App-Installation – auch dann, wenn du Mitteilungen
 nicht erlaubt hast. Was das genau bedeutet, steht im Abschnitt
 [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
+Daneben gibt es auf dem Anmeldebildschirm den Knopf „Mit Google anmelden“. Wer
+ihn nutzt, geht dabei über Google – das ist aber **freiwillig**: Mit einem
+selbst angelegten Konto und Passwort funktioniert alles genauso, ganz ohne
+Google. Näheres steht im Abschnitt
+[Anmeldung mit der Rössing-ID](#anmeldung-mit-der-rössing-id).
+
 ## Verantwortlich für die Datenverarbeitung
 
 Levin Keller
@@ -63,6 +69,69 @@ Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Nutzung der von der
 betroffenen Person angefragten Funktion) bzw. Art. 6 Abs. 1 lit. f DSGVO
 (berechtigtes Interesse an einem funktionierenden, missbrauchssicheren
 Zugang).
+
+### Konto selbst anlegen
+
+Ein Konto für die Rössing-ID legt man sich **selbst an** – früher musste das
+jemand für einen tun, inzwischen geht es direkt auf dem Anmeldebildschirm.
+Angegeben werden dabei:
+
+- **Vorname** und **Nachname**,
+- die **E-Mail-Adresse**,
+- ein selbst gewähltes **Passwort**.
+
+Die E-Mail-Adresse wird anschließend mit einem **Bestätigungslink** geprüft;
+das Passwort wird nicht im Klartext gespeichert. Diese Daten liegen auf dem
+**selbst betriebenen Server** (Zitadel) – nicht bei einem Dienstleister und
+nicht bei einem großen Anmelde-Anbieter. Die E-Mail-Adresse dient der
+Anmeldung, der Bestätigung des Kontos und Nachrichten zum Konto, etwa wenn ein
+Passwort zurückgesetzt werden soll.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO – ohne Konto lässt sich die App
+nicht nutzen.
+
+### Alternativ: Anmeldung über Google (freiwillig)
+
+Auf dem Anmeldebildschirm steht zusätzlich der Knopf **„Mit Google
+anmelden“**. Wer ihn benutzt, wird zu Google weitergeleitet und meldet sich
+dort an. **Google erfährt dabei, dass du dich bei der Rössing-ID anmeldest**,
+und verarbeitet den Vorgang nach seinen eigenen Bestimmungen; dabei können
+Daten auch außerhalb der EU verarbeitet werden.
+
+An die Rössing-ID übermittelt Google anschließend:
+
+- den **Namen**,
+- die **E-Mail-Adresse**,
+- die **Adresse des Profilbilds**.
+
+**Ehrlich dazugesagt:** Bei diesem Weg wird das Konto in der Rössing-ID
+**automatisch angelegt**. Gibt es dort bereits ein Konto mit derselben
+E-Mail-Adresse, wird die Google-Anmeldung **mit diesem vorhandenen Konto
+verknüpft** – es entsteht also kein zweites Konto.
+
+Dieser Weg ist **vollständig freiwillig**: Mit einem selbst angelegten Konto
+und Passwort funktioniert die App genauso, ganz ohne Google.
+**Rechtsgrundlage** ist deine **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO),
+die du mit dem Drücken des Knopfes erteilst; sie lässt sich für die Zukunft
+widerrufen, indem du dich künftig mit Passwort anmeldest bzw. das Konto
+löschen lässt (siehe [Konto und Daten löschen](/app/daten-loeschen)). Was
+Google mit den Daten macht, steht in dessen
+[Datenschutzerklärung](https://policies.google.com/privacy).
+
+### Versand der E-Mails (Amazon SES)
+
+Bestätigungs- und Benachrichtigungsmails der Rössing-ID – etwa der
+Bestätigungslink für die E-Mail-Adresse oder das Zurücksetzen des Passworts –
+werden über **Amazon Simple Email Service (SES)** verschickt, einen Dienst der
+**Amazon Web Services EMEA SARL** (38 Avenue John F. Kennedy, 1855 Luxemburg;
+Mutterkonzern: Amazon Web Services, Inc., USA). Der Versand läuft über die
+**Region Frankfurt (eu-central-1)**, die Nachrichten werden also in Deutschland
+verarbeitet. Absender ist
+`noreply@rössing.de`. Amazon verarbeitet dabei die Empfängeradresse sowie
+Betreff und Inhalt der Nachricht – ausschließlich in unserem Auftrag als
+**Auftragsverarbeiter** (Art. 28 DSGVO) und nur zur Zustellung. Rechtsgrundlage
+ist Art. 6 Abs. 1 lit. b DSGVO (Zustellung der für den Betrieb des Kontos
+notwendigen Nachrichten).
 
 ## Welche Daten der Server speichert
 
@@ -358,8 +427,9 @@ Gegenüber dem Verantwortlichen bestehen folgende Rechte:
   (Art. 21 DSGVO)
 - Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO) – bei den
   Profilangaben genügt dafür das Zurückstellen des jeweiligen Schalters in der
-  App, beim Mithelfen das Austragen am jeweiligen Ort und bei den
-  Benachrichtigungen das Abschalten in den Android-Einstellungen
+  App, beim Mithelfen das Austragen am jeweiligen Ort, bei den
+  Benachrichtigungen das Abschalten in den Android-Einstellungen und bei der
+  Google-Anmeldung die künftige Anmeldung mit E-Mail-Adresse und Passwort
 
 Für alle Anliegen genügt eine formlose Nachricht an
 [post@levinkeller.de](mailto:post@levinkeller.de). Wie die Löschung des Kontos

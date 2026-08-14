@@ -10,6 +10,7 @@ import appProfil from '../assets/app/app-profil.png'
 import appRangliste from '../assets/app/app-rangliste.png'
 import appStartseite from '../assets/app/app-startseite.png'
 import AppDownload from '../components/AppDownload.astro'
+import IdeenFormular from '../components/IdeenFormular.astro'
 import Jumbotron from '../components/Jumbotron.astro'
 
 const metadata = {
@@ -281,16 +282,17 @@ const screenshots = [
         </p>
       </div>
 
+      <IdeenFormular />
+
       <div
-        class="mt-12 rounded-box border border-base-300 bg-base-100 p-8 sm:p-10 shadow-sm"
+        class="mt-8 rounded-box border border-base-300 bg-base-100 p-8 sm:p-10 shadow-sm"
       >
         <h3 class="text-xl font-semibold text-base-content">
-          So schickst du uns deine Idee
+          Wenn du magst, hilft uns das beim Verstehen
         </h3>
         <p class="mt-2 max-w-3xl text-base-content/70">
-          Am einfachsten per E-Mail. Wenn du magst, hilft uns Folgendes beim
-          Verstehen – aber niemand muss etwas ausfüllen: <strong>ein Satz
-          reicht.</strong>
+          Niemand muss etwas davon beantworten – <strong>ein Satz reicht.</strong>
+          Es sind nur Anhaltspunkte für den Fall, dass du mehr erzählen willst.
         </p>
 
         <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -305,15 +307,15 @@ const screenshots = [
         </div>
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a
-            href={mailtoMitBetreff('Rössing-App: Meine Idee')}
-            class="btn btn-primary btn-lg"
-          >
-            Idee per E-Mail schicken
-          </a>
           <p class="text-sm text-base-content/60">
-            Oder direkt an <a class="link" href={`mailto:${kontaktMail}`}>{kontaktMail}</a> – wer
-            lieber redet als schreibt, ruft unter <a class="link" href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a> an.
+            Lieber per E-Mail? Geht auch: <a
+              class="link"
+              href={mailtoMitBetreff('Rössing-App: Meine Idee')}
+              >{kontaktMail}</a
+            > – und wer lieber redet als schreibt, ruft unter <a
+              class="link"
+              href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a
+            > an.
           </p>
         </div>
       </div>

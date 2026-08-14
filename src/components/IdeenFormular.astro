@@ -1,0 +1,133 @@
+---
+/**
+ * Das Ideen-Formular: „Sag uns, was die App können soll."
+ *
+ * Bewusst ein klassisches HTML-Formular, das direkt an das Backend der
+ * Dorf-App geht. Es funktioniert vollständig ohne JavaScript — wer im Dorf
+ * mit einem alten Telefon oder einer Vorlesehilfe unterwegs ist, soll
+ * genauso mitreden können. Danach leitet das Backend auf /app/danke zurück.
+ *
+ * Gegen Skripte (kein Captcha, kein Fremddienst):
+ *   - ein verstecktes Feld „webseite", das kein Mensch sieht und ausfüllt,
+ *   - ein Zeitstempel „gestartet", den ein winziges Skript setzt, falls
+ *     JavaScript vorhanden ist. Ohne ihn prüft das Backend die Mindestzeit
+ *     schlicht nicht — das Formular bleibt also ohne JavaScript nutzbar.
+ * Die eigentliche Prüfung sitzt im Backend, nicht hier.
+ */
+import {
+  emailMaxLaenge,
+  ideenDankeseite,
+  ideenEingang,
+  nameMaxLaenge,
+  wunschMaxLaenge,
+  wunschMinLaenge,
+} from '@/data/ideen'
+---
+
+<div
+  class="mt-12 rounded-box border border-base-300 bg-base-100 p-8 sm:p-10 shadow-sm"
+>
+  <h3 class="text-xl font-semibold text-base-content">
+    Schreib uns deine Idee
+  </h3>
+  <p class="mt-2 max-w-3xl text-base-content/70">
+    Ein Satz genügt. Name und E-Mail sind freiwillig – ohne sie geht es
+    anonym, mit ihnen können wir nachfragen, wenn wir etwas nicht verstehen.
+  </p>
+
+  <form
+    id="ideen-formular"
+    method="post"
+    action={ideenEingang}
+    class="mt-6 max-w-2xl"
+  >
+    {/* Wohin es nach dem Absenden geht. Das Backend nimmt nur freigegebene
+        Ziele an – eine fremde Adresse hier wäre wirkungslos. */}
+    <input type="hidden" name="redirect" value={ideenDankeseite} />
+    {/* Zeitpunkt des Seitenaufrufs; wird unten per Skript gefüllt, falls
+        JavaScript da ist. Bleibt es leer, prüft das Backend nichts. */}
+    <input type="hidden" name="gestartet" id="idee-gestartet" value="" />
+
+    {/* Honigtopf: für Menschen unsichtbar, für Skripte ein offenes Feld.
+        Wird es gefüllt, verwirft das Backend die Einreichung stillschweigend. */}
+    <div class="hidden" aria-hidden="true">
+      <label for="idee-webseite">Bitte dieses Feld leer lassen</label>
+      <input
+        type="text"
+        name="webseite"
+        id="idee-webseite"
+        value=""
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="form-control">
+      <label class="label" for="idee-wunsch">
+        <span class="label-text font-semibold">Was soll die App können?</span>
+      </label>
+      <textarea
+        id="idee-wunsch"
+        name="wunsch"
+        required
+        rows="6"
+        minlength={wunschMinLaenge}
+        maxlength={wunschMaxLaenge}
+        class="textarea textarea-bordered w-full text-base"
+        placeholder="Zum Beispiel: Ich möchte sehen, wann der nächste Bus fährt."></textarea>
+    </div>
+
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="form-control">
+        <label class="label" for="idee-name">
+          <span class="label-text">Name (freiwillig)</span>
+        </label>
+        <input
+          type="text"
+          id="idee-name"
+          name="name"
+          maxlength={nameMaxLaenge}
+          autocomplete="name"
+          class="input input-bordered w-full"
+        />
+      </div>
+      <div class="form-control">
+        <label class="label" for="idee-email">
+          <span class="label-text">E-Mail (freiwillig)</span>
+        </label>
+        <input
+          type="email"
+          id="idee-email"
+          name="email"
+          maxlength={emailMaxLaenge}
+          autocomplete="email"
+          class="input input-bordered w-full"
+        />
+        <span class="mt-1 text-xs text-base-content/60">
+          Nur, falls wir bei deiner Idee nachfragen dürfen.
+        </span>
+      </div>
+    </div>
+
+    <p id="ideen-datenschutz" class="mt-6 text-sm text-base-content/70">
+      <strong>Kurz zum Datenschutz:</strong> Gespeichert werden dein Wunsch und –
+      wenn du sie angibst – Name und E-Mail. Sie sind nur für den
+      Dorfentwicklungskreis sichtbar, werden nicht veröffentlicht und nicht
+      weitergegeben. Löschung jederzeit formlos möglich. Mehr dazu in der
+      <a class="link" href="/app/datenschutz">Datenschutzerklärung der App</a>.
+    </p>
+
+    <button id="idee-absenden" type="submit" class="btn btn-primary btn-lg mt-6">
+      Idee abschicken
+    </button>
+  </form>
+</div>
+
+{/* Setzt den Zeitstempel, sobald das Formular geparst ist. Ohne JavaScript
+    bleibt das Feld leer und das Formular funktioniert unverändert. */}
+<script is:inline>
+  ;(function () {
+    var feld = document.getElementById('idee-gestartet')
+    if (feld) feld.value = String(Date.now())
+  })()
+</script>

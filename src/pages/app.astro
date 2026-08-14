@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 import Layout from '@levino/shipyard-base/layouts/Page.astro'
 import { kontaktMail, kontaktTelefon, mailtoMitBetreff } from '@/data/kontakt'
+import { aushangFormate } from '@/tools/print/aushang'
 import appDetail from '../assets/app/app-detail.png'
 import appKarte from '../assets/app/app-karte.png'
 import appListe from '../assets/app/app-liste.png'
@@ -619,6 +620,42 @@ const screenshots = [
         href="/app/datenschutz">Datenschutzerklärung der App</a
       >.
     </p>
+  </section>
+
+  {/* Zum Aushängen – druckfertige PDFs */}
+  <section id="aushang" class="container max-w-5xl mx-auto px-4 pb-16 sm:pb-20">
+    <div class="rounded-box border border-base-300 bg-base-200 p-6 sm:p-8">
+      <h2 class="text-xl font-semibold text-base-content">Zum Aushängen</h2>
+      <p class="mt-2 max-w-3xl text-base-content/70">
+        Wer den Aufruf im Dorf verbreiten möchte: Hier gibt es ihn druckfertig –
+        für den Dorfladen, den Schaukasten oder zum Auslegen beim Verein.
+        Einfach ausdrucken und aufhängen.
+      </p>
+
+      <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+          aushangFormate.map((aushang) => (
+            <li>
+              <a
+                href={aushang.url}
+                class="btn btn-outline btn-primary h-auto w-full flex-col items-start gap-1 px-4 py-3 text-left font-normal normal-case"
+              >
+                <span class="font-semibold">
+                  Aushang {aushang.format}
+                  {aushang.groesse && (
+                    <span class="font-normal opacity-70">
+                      {' '}
+                      (PDF, {aushang.groesse})
+                    </span>
+                  )}
+                </span>
+                <span class="text-xs opacity-70">{aushang.beschreibung}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 
   {/* Datenschutz kurz */}

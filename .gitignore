@@ -7,7 +7,8 @@ dist/
 # Schriftarten fuer Plakat-Kompilierung, werden per scripts/ensure-fonts.js geladen
 .fonts/
 
-# Generierte Event-Plakate (werden bei jedem Build aus .typ kompiliert)
+# Generierte PDFs (werden bei jedem Build aus den .typ-Quellen kompiliert:
+# Event-Plakate aus src/content/events/, Aushaenge aus print/)
 public/posters/
 
 # generated types

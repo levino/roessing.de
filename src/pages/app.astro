@@ -84,7 +84,7 @@ const haltung = [
   },
   {
     titel: 'Keine Werbung',
-    text: 'In der App läuft keine Werbung und kein Werbe-Tracking. Deine Daten werden nicht verkauft. Weitergegeben wird nur das, was für Benachrichtigungen aufs Handy nötig ist – und auch nur, wenn du sie erlaubst.',
+    text: 'In der App läuft keine Werbung und kein Werbe-Tracking. Deine Daten werden nicht verkauft. Weitergegeben wird nur das, was für Benachrichtigungen aufs Handy nötig ist.',
   },
   {
     titel: 'Keine Gewinnabsicht',
@@ -92,7 +92,7 @@ const haltung = [
   },
   {
     titel: 'Datenschutz wird eingehalten',
-    text: 'Die Daten liegen auf einem selbst betriebenen Server, die Anmeldung läuft über die eigene Rössing-ID, und der Standort bleibt auf dem Gerät. Nur die Benachrichtigungen aufs Handy laufen über Google – freiwillig und abschaltbar.',
+    text: 'Die Daten liegen auf einem selbst betriebenen Server, die Anmeldung läuft über die eigene Rössing-ID, und der Standort bleibt auf dem Gerät. Nur die Benachrichtigungen aufs Handy laufen über Google – abschaltbar in den Android-Einstellungen.',
   },
   {
     titel: 'Der Quellcode soll offen werden',
@@ -767,13 +767,20 @@ const screenshots = [
           freiwillig und jederzeit wieder rückgängig zu machen.
         </li>
         <li>
-          <strong>Benachrichtigungen laufen über Google.</strong> Nur wenn du
-          sie erlaubst: Für die Zustellung aufs Handy führt auf Android kein
-          Weg an Firebase Cloud Messaging vorbei. Google erfährt dabei eine
-          Kennung deiner App-Installation sowie Titel und Text der Meldung –
-          also Ortsname und Aufgabe. <strong>Namen anderer Personen stehen
-          nie darin.</strong> Erlaubst du sie nicht, wird nichts an Google
-          geschickt; die Anfragen stehen dann in der App.
+          <strong>Benachrichtigungen laufen über Google.</strong> Für die
+          Zustellung aufs Handy führt auf Android kein Weg an Firebase Cloud
+          Messaging vorbei. Google erfährt dabei eine Kennung deiner
+          App-Installation sowie Titel und Text der Meldung – also Ortsname und
+          Aufgabe. <strong>Namen anderer Personen stehen nie darin.</strong>
+          Ehrlich dazugesagt: <strong>Diese Kennung entsteht schon beim Start
+          der App</strong> und wird dem Dorfserver gemeldet – auch dann, wenn
+          du Mitteilungen nicht erlaubt hast. Die Erlaubnis entscheidet
+          darüber, ob Android die Mitteilung <em>anzeigt</em>, nicht darüber,
+          ob es die Kennung gibt. Wer keine Mitteilungen möchte, schaltet sie
+          in den Android-Einstellungen ab; wer auch die Kennung nicht möchte,
+          meldet sich in der App ab – dann wird sie gelöscht. Das soll besser
+          werden: Künftig soll die Kennung erst entstehen, wenn du Mitteilungen
+          erlaubt hast.
         </li>
         <li>
           <strong>Kontaktdaten nur, wenn du willst.</strong> Im Profil kannst du

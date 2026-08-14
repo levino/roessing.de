@@ -18,9 +18,10 @@ Tracking-Bausteine, kein Verkauf und keine Weitergabe von Daten an Dritte zu
 Werbezwecken. Trotzdem werden für den Betrieb einige Daten verarbeitet. Was
 das ist, steht hier.
 
-Eine Ausnahme von „alles bleibt im Dorf“ gibt es seit der Version 0.1.7:
-Wer **Benachrichtigungen aufs Handy** erlaubt, dessen Meldungen laufen über
-Google. Das ist freiwillig und steht ausführlich im Abschnitt
+Eine Ausnahme von „alles bleibt im Dorf“ gibt es seit der Version 0.1.7: Die
+**Benachrichtigungen aufs Handy** laufen über Google. Dafür entsteht beim Start
+der App eine Kennung dieser App-Installation – auch dann, wenn du Mitteilungen
+nicht erlaubt hast. Was das genau bedeutet, steht im Abschnitt
 [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
 ## Verantwortlich für die Datenverarbeitung
@@ -80,8 +81,9 @@ Dorfs. Gespeichert werden:
   Abschnitt [Profil und freiwillige Kontaktdaten](#profil-und-freiwillige-kontaktdaten).
 - **Einträge als Helfer:in und die daraus entstehenden Anfragen** – dazu der
   Abschnitt [Mithelfen: Eintrag als Helfer:in und Anfragen](#mithelfen-eintrag-als-helfer-und-anfragen).
-- **Die Kennung deines Geräts**, aber nur, wenn du Benachrichtigungen erlaubt
-  hast – dazu der Abschnitt
+- **Die Kennung deiner App-Installation** – sie entsteht beim Start der App und
+  wird dem Server gemeldet, unabhängig davon, ob du Mitteilungen erlaubt hast.
+  Dazu der Abschnitt
   [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
 Die Erledigungsmeldungen sind für alle angemeldeten Nutzerinnen und Nutzer der
@@ -188,43 +190,60 @@ Vorgänge hängen an der jeweiligen Pflegeaufgabe und werden mit ihr gelöscht.
 
 Anfragen stehen immer in der App selbst, unter „Benachrichtigungen“. Wer
 möchte, kann sie zusätzlich **als Mitteilung aufs Handy** bekommen. Dafür
-fragt Android einmalig um Erlaubnis. **Wer nicht zustimmt, für den ändert sich
-nichts**: Es wird keine Kennung erzeugt und nichts verschickt, die Anfragen
-stehen dann beim nächsten Öffnen der App.
+fragt Android um Erlaubnis – und zwar erst dann, wenn man sich irgendwo als
+Helfer:in eingetragen hat.
 
-Wer zustimmt, für den läuft die Zustellung über **Firebase Cloud Messaging**,
-einen Dienst von **Google Ireland Limited**, Gordon House, Barrow Street,
-Dublin 4, Irland (bzw. Google LLC, USA). Das lässt sich nicht vermeiden: Auf
-Android führt der einzige zuverlässige Weg zu einer Mitteilung auf dem
-Sperrbildschirm über diesen Dienst.
+Die Zustellung läuft über **Firebase Cloud Messaging**, einen Dienst von
+**Google Ireland Limited**, Gordon House, Barrow Street, Dublin 4, Irland
+(bzw. Google LLC, USA). Das lässt sich nicht vermeiden: Auf Android führt der
+einzige zuverlässige Weg zu einer Mitteilung auf dem Sperrbildschirm über
+diesen Dienst.
+
+**Wichtig und ehrlich gesagt:** Die **Kennung dieser App-Installation entsteht
+schon beim Start der App** und wird dem Dorfserver gemeldet – auch dann, wenn
+du die Erlaubnis für Mitteilungen nicht erteilt hast. Die Erlaubnis entscheidet
+darüber, ob Android eine Mitteilung **anzeigt**, nicht darüber, ob es die
+Kennung gibt. Nachrichten an dein Gerät laufen also auch ohne Erlaubnis über
+Google; Android zeigt sie dann nur nicht an. Wer gar keine Mitteilungen möchte,
+schaltet sie in den **Android-Einstellungen** ab. Wer auch die Kennung nicht
+möchte, **meldet sich in der App ab** – dabei wird sie gelöscht (siehe
+„Löschung“ unten).
 
 Im Einzelnen:
 
 - Google vergibt eine **Kennung dieser App-Installation** (ein sogenanntes
   Token). Sie ist kein Werbe-Identifikator und keine Gerätenummer. Die App
-  meldet sie dem Dorfserver, der sie zusammen mit dem Betriebssystem
-  („android“) und dem Zeitpunkt speichert, damit er Nachrichten an genau
-  dieses Gerät schicken kann. Die Kennung wird in keiner Antwort des Servers
-  an andere ausgeliefert.
+  meldet sie bei jedem Start dem Dorfserver, der sie zusammen mit dem
+  Betriebssystem („android“) und dem Zeitpunkt speichert, damit er Nachrichten
+  an genau dieses Gerät schicken kann. Die Kennung wird in keiner Antwort des
+  Servers an andere ausgeliefert.
 - **An Google gehen** dabei: diese Kennung sowie **Titel und Text der
   Meldung** – also der Name des Ortes und die Aufgabe, zum Beispiel „Gießen
   an ‚Unter den Eichen — Kasten 1‘ ist dran“ – dazu die internen Nummern von
   Ort, Aufgabe und Vorgang, damit der Fingertipp auf die Mitteilung an der
   richtigen Stelle in der App landet. **Namen anderer Personen stehen nie in
   einer solchen Mitteilung.**
-- **Rechtsgrundlage** ist die **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO),
-  erteilt über die Abfrage von Android. Sie lässt sich jederzeit widerrufen –
-  in den **Android-Einstellungen** unter „Benachrichtigungen“ für die
-  Dorf-App. Der Widerruf berührt die Rechtmäßigkeit der bis dahin erfolgten
-  Verarbeitung nicht.
+- **Rechtsgrundlage:** Für das **Anzeigen** der Mitteilungen ist es die
+  **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO), erteilt über die Abfrage von
+  Android. Sie lässt sich jederzeit widerrufen – in den
+  **Android-Einstellungen** unter „Benachrichtigungen“ für die Dorf-App. Der
+  Widerruf berührt die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung
+  nicht. Für das **Anlegen und Melden der Kennung beim Start** trägt diese
+  Einwilligung dagegen nicht, weil die Kennung schon vor der Abfrage entsteht.
+  Grundlage dafür ist derzeit das **berechtigte Interesse** am Betrieb der
+  Benachrichtigungsfunktion (Art. 6 Abs. 1 lit. f DSGVO); dem kann nach
+  Art. 21 DSGVO widersprochen werden – das Abmelden in der App genügt.
+  **Das wird geändert:** Künftig soll die Kennung erst entstehen, wenn die
+  Erlaubnis für Mitteilungen erteilt ist. Sobald das in der App umgesetzt ist,
+  wird dieser Abschnitt entsprechend angepasst.
 - **Übermittlung in die USA:** Google verarbeitet dabei Daten auch außerhalb
   der EU. Grundlage sind die **Standardvertragsklauseln** der EU-Kommission
   bzw. die Zertifizierung nach dem **EU-US Data Privacy Framework**. Näheres
   regelt Google in seiner
   [Datenschutzerklärung](https://policies.google.com/privacy).
 - **Löschung:** Beim Abmelden aus der App wird die Kennung vom Dorfserver
-  gelöscht. Dasselbe geschieht, sobald Google sie als ungültig meldet – etwa
-  weil die App deinstalliert wurde.
+  gelöscht und zusätzlich auf dem Gerät verworfen. Dasselbe geschieht, sobald
+  Google sie als ungültig meldet – etwa weil die App deinstalliert wurde.
 - **Nachtruhe:** Zwischen **21 und 7 Uhr** wird nichts zugestellt.
 
 Das Firebase-SDK steckt **ausschließlich** für diesen Zweck in der App. Eine

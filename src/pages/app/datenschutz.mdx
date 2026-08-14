@@ -19,9 +19,10 @@ Werbezwecken. Trotzdem werden für den Betrieb einige Daten verarbeitet. Was
 das ist, steht hier.
 
 Eine Ausnahme von „alles bleibt im Dorf“ gibt es seit der Version 0.1.7: Die
-**Benachrichtigungen aufs Handy** laufen über Google. Dafür entsteht beim Start
-der App eine Kennung dieser App-Installation – auch dann, wenn du Mitteilungen
-nicht erlaubt hast. Was das genau bedeutet, steht im Abschnitt
+**Benachrichtigungen aufs Handy** laufen über Google. Dafür entsteht eine
+Kennung dieser App-Installation – **seit Version 0.1.8 erst dann, wenn du
+Mitteilungen erlaubt hast**; in älteren Versionen entstand sie schon beim Start
+der App. Was das genau bedeutet, steht im Abschnitt
 [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
 Daneben gibt es auf dem Anmeldebildschirm den Knopf „Mit Google anmelden“. Wer
@@ -150,9 +151,9 @@ Dorfs. Gespeichert werden:
   Abschnitt [Profil und freiwillige Kontaktdaten](#profil-und-freiwillige-kontaktdaten).
 - **Einträge als Helfer:in und die daraus entstehenden Anfragen** – dazu der
   Abschnitt [Mithelfen: Eintrag als Helfer:in und Anfragen](#mithelfen-eintrag-als-helfer-und-anfragen).
-- **Die Kennung deiner App-Installation** – sie entsteht beim Start der App und
-  wird dem Server gemeldet, unabhängig davon, ob du Mitteilungen erlaubt hast.
-  Dazu der Abschnitt
+- **Die Kennung deiner App-Installation** – sie entsteht, sobald du
+  Mitteilungen erlaubt hast, und wird dem Server gemeldet (in Versionen vor
+  0.1.8 entstand sie schon beim Start der App). Dazu der Abschnitt
   [Benachrichtigungen aufs Handy](#benachrichtigungen-aufs-handy-freiwillig).
 
 Die Erledigungsmeldungen sind für alle angemeldeten Nutzerinnen und Nutzer der
@@ -268,55 +269,79 @@ Die Zustellung läuft über **Firebase Cloud Messaging**, einen Dienst von
 einzige zuverlässige Weg zu einer Mitteilung auf dem Sperrbildschirm über
 diesen Dienst.
 
-**Wichtig und ehrlich gesagt:** Die **Kennung dieser App-Installation entsteht
-schon beim Start der App** und wird dem Dorfserver gemeldet – auch dann, wenn
-du die Erlaubnis für Mitteilungen nicht erteilt hast. Die Erlaubnis entscheidet
-darüber, ob Android eine Mitteilung **anzeigt**, nicht darüber, ob es die
-Kennung gibt. Nachrichten an dein Gerät laufen also auch ohne Erlaubnis über
-Google; Android zeigt sie dann nur nicht an. Wer gar keine Mitteilungen möchte,
-schaltet sie in den **Android-Einstellungen** ab. Wer auch die Kennung nicht
-möchte, **meldet sich in der App ab** – dabei wird sie gelöscht (siehe
-„Löschung“ unten).
+**Seit Version 0.1.8 entsteht die Kennung erst, wenn du Mitteilungen erlaubt
+hast.** Vorher fragt die App Google gar nicht erst danach, und auch das
+Firebase-SDK selbst bleibt bis dahin **stumm**: Es meldet sich nicht von sich
+aus bei Google an (der sogenannte Auto-Init ist abgeschaltet). Erst mit der
+Erlaubnis wird es scharf gestellt, die Kennung angelegt und dem Dorfserver
+gemeldet. Nimmst du die Erlaubnis später in den **Android-Einstellungen**
+wieder zurück, wird die Kennung beim nächsten Öffnen der App vom Dorfserver
+gelöscht und auf dem Gerät verworfen; Firebase wird wieder stillgestellt.
+
+Zwei Dinge gehören ehrlich dazu:
+
+- **Auf Android-Versionen vor 13** gibt es die Abfrage „Mitteilungen
+  erlauben?“ nicht. Dort gelten Mitteilungen als erlaubt, solange sie in den
+  Einstellungen nicht abgeschaltet sind – entsprechend entsteht die Kennung
+  dort schon beim ersten Start. Wer das nicht möchte, schaltet die Mitteilungen
+  für die App in den Android-Einstellungen ab; beim nächsten Öffnen wird die
+  Kennung dann gelöscht.
+- **In älteren App-Versionen** (bis 0.1.7) entstand die Kennung beim Start der
+  App, unabhängig von der Erlaubnis – siehe
+  [Ältere App-Versionen](#ältere-app-versionen-bis-017).
 
 Im Einzelnen:
 
 - Google vergibt eine **Kennung dieser App-Installation** (ein sogenanntes
-  Token). Sie ist kein Werbe-Identifikator und keine Gerätenummer. Die App
-  meldet sie bei jedem Start dem Dorfserver, der sie zusammen mit dem
-  Betriebssystem („android“) und dem Zeitpunkt speichert, damit er Nachrichten
-  an genau dieses Gerät schicken kann. Die Kennung wird in keiner Antwort des
-  Servers an andere ausgeliefert.
+  Token). Sie ist kein Werbe-Identifikator und keine Gerätenummer. Solange
+  Mitteilungen erlaubt sind, meldet die App sie bei jedem Start dem Dorfserver,
+  der sie zusammen mit dem Betriebssystem („android“) und dem Zeitpunkt
+  speichert, damit er Nachrichten an genau dieses Gerät schicken kann. Die
+  Kennung wird in keiner Antwort des Servers an andere ausgeliefert.
 - **An Google gehen** dabei: diese Kennung sowie **Titel und Text der
   Meldung** – also der Name des Ortes und die Aufgabe, zum Beispiel „Gießen
   an ‚Unter den Eichen — Kasten 1‘ ist dran“ – dazu die internen Nummern von
   Ort, Aufgabe und Vorgang, damit der Fingertipp auf die Mitteilung an der
   richtigen Stelle in der App landet. **Namen anderer Personen stehen nie in
   einer solchen Mitteilung.**
-- **Rechtsgrundlage:** Für das **Anzeigen** der Mitteilungen ist es die
-  **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO), erteilt über die Abfrage von
-  Android. Sie lässt sich jederzeit widerrufen – in den
-  **Android-Einstellungen** unter „Benachrichtigungen“ für die Dorf-App. Der
-  Widerruf berührt die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung
-  nicht. Für das **Anlegen und Melden der Kennung beim Start** trägt diese
-  Einwilligung dagegen nicht, weil die Kennung schon vor der Abfrage entsteht.
-  Grundlage dafür ist derzeit das **berechtigte Interesse** am Betrieb der
-  Benachrichtigungsfunktion (Art. 6 Abs. 1 lit. f DSGVO); dem kann nach
-  Art. 21 DSGVO widersprochen werden – das Abmelden in der App genügt.
-  **Das wird geändert:** Künftig soll die Kennung erst entstehen, wenn die
-  Erlaubnis für Mitteilungen erteilt ist. Sobald das in der App umgesetzt ist,
-  wird dieser Abschnitt entsprechend angepasst.
+- **Rechtsgrundlage:** Die gesamte Verarbeitung – das Anlegen und Melden der
+  Kennung ebenso wie das Zustellen und Anzeigen der Mitteilungen – beruht auf
+  deiner **Einwilligung** (Art. 6 Abs. 1 lit. a DSGVO), erteilt über die
+  Abfrage von Android. Sie lässt sich jederzeit widerrufen – in den
+  **Android-Einstellungen** unter „Benachrichtigungen“ für die Dorf-App; die
+  Kennung wird dann beim nächsten Öffnen der App gelöscht. Der Widerruf berührt
+  die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung nicht.
 - **Übermittlung in die USA:** Google verarbeitet dabei Daten auch außerhalb
   der EU. Grundlage sind die **Standardvertragsklauseln** der EU-Kommission
   bzw. die Zertifizierung nach dem **EU-US Data Privacy Framework**. Näheres
   regelt Google in seiner
   [Datenschutzerklärung](https://policies.google.com/privacy).
-- **Löschung:** Beim Abmelden aus der App wird die Kennung vom Dorfserver
-  gelöscht und zusätzlich auf dem Gerät verworfen. Dasselbe geschieht, sobald
-  Google sie als ungültig meldet – etwa weil die App deinstalliert wurde.
+- **Löschung:** Die Kennung wird vom Dorfserver gelöscht und zusätzlich auf dem
+  Gerät verworfen, wenn du dich **in der App abmeldest** und ebenso, wenn du
+  die **Erlaubnis für Mitteilungen entziehst** – dann beim nächsten Öffnen der
+  App. Dasselbe geschieht, sobald Google sie als ungültig meldet – etwa weil
+  die App deinstalliert wurde.
 - **Nachtruhe:** Zwischen **21 und 7 Uhr** wird nichts zugestellt.
 
 Das Firebase-SDK steckt **ausschließlich** für diesen Zweck in der App. Eine
 Analyse- oder Absturz-Bibliothek von Google ist bewusst nicht eingebunden.
+
+### Ältere App-Versionen (bis 0.1.7)
+
+Bis einschließlich Version 0.1.7 entstand die Kennung **beim Start der App**
+und wurde dem Dorfserver gemeldet – auch dann, wenn die Erlaubnis für
+Mitteilungen nicht erteilt war; die Erlaubnis entschied dort nur darüber, ob
+Android eine Mitteilung **anzeigt**. Solange diese Versionen noch im Umlauf
+sind, gilt für sie: Grundlage für das Anlegen und Melden der Kennung ist das
+**berechtigte Interesse** am Betrieb der Benachrichtigungsfunktion
+(Art. 6 Abs. 1 lit. f DSGVO); dem kann nach Art. 21 DSGVO widersprochen werden
+– das Abmelden in der App genügt. Für das Anzeigen der Mitteilungen galt auch
+dort die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+
+Wer auf 0.1.8 aktualisiert, muss nichts weiter tun: Eine aus der alten Version
+stammende Kennung wird beim ersten Start der neuen Version gelöscht, sofern
+keine Erlaubnis für Mitteilungen vorliegt. Dieser Abschnitt entfällt, sobald
+die älteren Versionen nicht mehr im Umlauf sind.
 
 ## Ideen für die App („Sag uns, was die App können soll")
 

@@ -23,8 +23,8 @@ const metadata = {
 // weder Versprechen noch Roadmap. Sie sollen zeigen, wie weit der Rahmen ist.
 const ideenBeispiele = [
   {
-    titel: 'Termine aus dem Dorf',
-    text: 'Alle Veranstaltungen auf dem Telefon – mit einer Erinnerung am Tag davor, damit das Feuerwehrfest nicht wieder verpasst wird.',
+    titel: 'Erinnerung an Termine',
+    text: 'Die Termine aus dem Dorf stehen inzwischen in der App. Was noch fehlt: eine Erinnerung am Tag davor, damit das Feuerwehrfest nicht wieder verpasst wird.',
   },
   {
     titel: 'Mitfahrgelegenheiten',
@@ -141,6 +141,10 @@ const bereiche = [
     text: 'Hier stehen die Anfragen: zusagen mit „Ich mache das“, zurückgeben mit „Zurückgeben“. Auf Wunsch kommen sie zusätzlich aufs Handy – nachts ist Ruhe.',
   },
   {
+    titel: 'Veranstaltungen',
+    text: 'Was im Dorf ansteht: dieselben Termine, die auch hier auf rössing.de stehen – niemand pflegt sie zweimal. Ganztägige Termine ohne Uhrzeit, mehrtägige bleiben bis zum letzten Tag stehen.',
+  },
+  {
     titel: 'Rangliste',
     text: 'Wer wie oft gegossen oder gejätet hat – wahlweise für die Woche, den Monat, die Saison, das Jahr oder insgesamt. Dazu, was das ganze Dorf zusammen geschafft hat, und ein paar Abzeichen.',
   },
@@ -159,6 +163,10 @@ const bereiche = [
   {
     titel: 'Dein Standort, wenn du magst',
     text: 'Gibst du den Standort frei, startet die Karte bei dir und die Liste zeigt, wie weit jeder Ort entfernt ist. Der Standort bleibt dabei auf dem Gerät.',
+  },
+  {
+    titel: 'Impressum und Datenschutz',
+    text: 'Beides steht in der App selbst – auch schon auf dem Anmeldebildschirm, ohne dass man angemeldet sein muss.',
   },
   {
     titel: 'Weitere Bereiche kommen',
@@ -362,8 +370,8 @@ const screenshots = [
       <p class="mt-3 text-base-content/70">
         Beim Öffnen landest du inzwischen auf einer Startseite mit den
         Bereichen der App. „Mithelfen“ steht dort oben – daneben gibt es die
-        Benachrichtigungen, das eigene Profil, die Liste der Dorfbewohner und
-        die Kachel „Idee vorschlagen“.
+        Veranstaltungen, die Benachrichtigungen, das eigene Profil, die Liste
+        der Dorfbewohner und die Kachel „Idee vorschlagen“.
       </p>
     </div>
 
@@ -398,7 +406,7 @@ const screenshots = [
           <p class="font-semibold text-base-content">Gießen oder jäten</p>
           <p class="text-sm text-base-content/70">
             Bei jedem Ort steht, was zu tun ist – zum Beispiel „10 Liter, alle
-            7 Tage“.
+            7 Tage“. Manches steht auch nur einmal an, zu einem festen Termin.
           </p>
         </div>
       </li>
@@ -418,6 +426,14 @@ const screenshots = [
       eine Weile gesperrt – ungefähr das halbe Gießintervall, bei Hitze
       entsprechend kürzer. Wer die Kästen betreut, kann Erledigungen trotzdem
       nachtragen, wenn jemand das Melden vergessen hat.
+    </p>
+
+    <p class="mt-4 max-w-3xl text-base-content/70">
+      Nicht alles wiederholt sich. Neben Aufgaben, die in festen Abständen
+      anstehen – „alle 7 Tage“ –, gibt es jetzt auch <strong>Aufgaben mit
+      festem Termin</strong>: einmal, an einem bestimmten Tag, danach
+      erledigt. Das passt für alles, was nicht jede Woche wiederkommt – das
+      Beet im Frühjahr herrichten, die Hecke im Herbst schneiden.
     </p>
 
     <div class="mt-14">
@@ -473,7 +489,8 @@ const screenshots = [
       <p class="mt-2 max-w-3xl text-base-content/70">
         Das ist alles, was heute in der App steckt. „Mithelfen“ ist der erste
         Bereich; drumherum ist nach und nach das dazugekommen, was gemeinsames
-        Gießen im Dorf braucht.
+        Gießen im Dorf braucht – und mit den Veranstaltungen inzwischen auch
+        das Erste, was darüber hinausgeht.
       </p>
 
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -548,8 +565,8 @@ const screenshots = [
         Aufnahmen aus der Testversion für Android. Die Orte, Namen und Zahlen
         auf den Bildern sind Beispiele aus der Testumgebung – nicht die echten
         Kästen im Dorf. Die Bilder sind ein paar Wochen alt: Der Eintrag als
-        Helfer:in, die Benachrichtigungen und die Kachel „Idee vorschlagen“
-        sind darauf noch nicht zu sehen.
+        Helfer:in, die Benachrichtigungen, die Veranstaltungen und die Kachel
+        „Idee vorschlagen“ sind darauf noch nicht zu sehen.
       </p>
     </div>
 
@@ -588,7 +605,10 @@ const screenshots = [
               als <strong>Dorf-App für Rössing</strong>.
               <strong>„Mithelfen“</strong> – was gerade im Dorf ansteht, also
               Blumenkästen und Beete – ist die <strong>erste Funktion</strong>,
-              die fertig geworden ist. Weitere sollen nach und nach dazukommen.
+              die fertig geworden ist. Als Zweites sind die
+              <strong>Veranstaltungen</strong> dazugekommen – dieselben Termine,
+              die auch hier auf der Website stehen. Weiteres soll nach und nach
+              folgen.
             </p>
             <p class="text-base-content/80">
               Was genau als Nächstes kommt, versprechen wir bewusst noch nicht:

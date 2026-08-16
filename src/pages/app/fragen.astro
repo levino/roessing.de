@@ -1,0 +1,317 @@
+---
+/**
+ * Fragen und Antworten zur Rössing-App.
+ *
+ * Nach dem ersten Test kamen viele Wünsche aus dem Dorf. Einige davon wird
+ * die App bewusst nicht erfüllen – diese Entscheidungen sollen an einer
+ * Stelle nachlesbar sein, freundlich erklärt statt bloß abgelehnt. Aus der
+ * App und aus GitHub-Issues wird hierher verlinkt, deshalb hat jede Frage
+ * eine eigene Sprungmarke (`#id`), die möglichst stabil bleiben sollte.
+ *
+ * Bewusst eine schlichte, immer sichtbare Liste statt eines Akkordeons:
+ * So lässt sich die Seite überfliegen, ausdrucken und punktgenau verlinken.
+ */
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import { kontaktMail, kontaktTelefon, mailtoMitBetreff } from '@/data/kontakt'
+import Jumbotron from '../../components/Jumbotron.astro'
+
+const metadata = {
+  title: 'Fragen zur Rössing-App',
+  description:
+    'Nach dem ersten Test kamen viele Wünsche aus dem Dorf. Hier steht, was die Rössing-App leisten soll, was sie bewusst nicht macht – keine Jobbörse, keine Parallelstruktur zu den Vereinen – und wie Aufgaben von Vereinen und Gruppen in die App kommen.',
+}
+
+/**
+ * Eine Frage samt Antwort. Die Antwort besteht aus Absätzen, die Links
+ * enthalten dürfen (deshalb HTML). `hinweis` markiert, was es noch nicht
+ * gibt – damit auf der Seite nichts als fertig erscheint, was gerade erst
+ * entsteht.
+ */
+type Frage = {
+  id: string
+  frage: string
+  hinweis?: string
+  antwort: string[]
+}
+
+type Abschnitt = {
+  titel: string
+  fragen: Frage[]
+}
+
+const abschnitte: Abschnitt[] = [
+  {
+    titel: 'Wofür die App da ist',
+    fragen: [
+      {
+        id: 'wofuer',
+        frage: 'Wofür ist die App überhaupt da?',
+        antwort: [
+          'Sie zeigt, welche gemeinsamen Aufgaben im Dorf gerade anstehen, und man sieht auf einen Blick, was erledigt ist und was noch offen. Und sie macht das Mithelfen einfach: aufmachen, schauen, loslegen – ohne vorher jemanden anrufen zu müssen.',
+          'Was heute schon drinsteckt, steht ausführlich auf der <a class="link link-primary" href="/app">Seite zur App</a>.',
+        ],
+      },
+      {
+        id: 'kosten',
+        frage: 'Kostet das was?',
+        antwort: [
+          'Nein. Die App ist kostenlos, und alles, was darin passiert, bleibt es auch – kein Kaufpreis, kein Abo, keine Werbung.',
+          'Das ist keine Anschubregel für den Anfang, sondern gehört zur Sache dazu: Es soll niemand daran verdienen.',
+        ],
+      },
+    ],
+  },
+  {
+    titel: 'Bezahlte Arbeit, Verleihen und Verkaufen',
+    fragen: [
+      {
+        id: 'jobboerse',
+        frage:
+          'Kann ich da auch jemanden für Gartenarbeit suchen – gegen Bezahlung?',
+        antwort: [
+          'Das wird die App nicht können, und das ist eine bewusste Entscheidung. In ihr geht es um das, was dem Dorf gemeinsam gehört – die Allmende: Blumenkästen, Beete, Wege, alles, wofür sich sonst niemand allein zuständig fühlt.',
+          'Bezahlte Aufträge auszuschreiben – „20 € fürs Rasenmähen“ – gehört nicht dazu.',
+        ],
+      },
+      {
+        id: 'warum-keine-jobboerse',
+        frage: 'Warum eigentlich nicht? Praktisch wäre es doch.',
+        antwort: [
+          'Sobald Geld für Arbeitsleistung fließt, wird aus Nachbarschaftshilfe eine Vermittlung – mit Steuer-, Melde- und Haftungsfragen und mit der App als kommerzieller Plattform mittendrin. Das ist ausdrücklich nicht das Ziel, und einen Bedarf dafür sehen wir im Dorf auch nicht.',
+          'Wer jemanden zum Rasenmähen sucht, findet ihn in Rössing wie eh und je – über die Nachbarn, den Verein oder den Aushang im Dorfladen.',
+        ],
+      },
+      {
+        id: 'erkenntlich-zeigen',
+        frage: 'Und wenn ich mich für die Hilfe erkenntlich zeigen möchte?',
+        antwort: [
+          'Das ist eure Sache und bleibt es. Was am Gartenzaun ausgemacht wird – ein Kasten Bier, ein Kuchen, ein Schein –, geht die App schlicht nichts an.',
+          'Sie soll solche Absprachen nur nicht selbst ausschreiben und vermitteln.',
+        ],
+      },
+      {
+        id: 'verleihen-verkaufen',
+        frage: 'Was ist mit Verleihen, Verschenken oder Verkaufen?',
+        antwort: [
+          'Das ist etwas anderes als bezahlte Arbeitsleistung – und durchaus denkbar. Für Geräte gibt es das schon: die <a class="link link-primary" href="https://mieten.xn--rssing-wxa.de">Geräte-Mietplattform</a> aus demselben Haus, wo es ausdrücklich auch kommerziell zugehen darf.',
+          'Ob Dinge irgendwann auch in der App selbst den Besitzer wechseln, entscheidet sich an den Ideen aus dem Dorf.',
+        ],
+      },
+    ],
+  },
+  {
+    titel: 'Aufgaben, Vereine und Gruppen',
+    fragen: [
+      {
+        id: 'eigene-aufgabe',
+        frage: 'Warum kann ich selbst keine Aufgabe eintragen?',
+        antwort: [
+          'Weil Aufgaben von Vereinen und Gruppen kommen, die auf der Plattform zugelassen sind – nicht von einzelnen Personen. Sonst entstünde neben den Vereinen eine zweite Struktur, die dasselbe noch einmal organisiert.',
+          'Genau das soll die App nicht. In Rössing gibt es funktionierende Vereine und Gruppen; die App soll deren Arbeit sichtbarer machen, nicht ersetzen.',
+        ],
+      },
+      {
+        id: 'aufgabe-melden',
+        frage: 'Ich sehe etwas, das gemacht werden müsste. Wohin damit?',
+        antwort: [
+          'Am besten zu der Gruppe, die dafür zuständig ist – die trägt es ein, und danach sehen es alle in der App. Das ist derselbe Weg wie bisher, nur mit mehr Menschen, die davon erfahren.',
+          'Gibt es dafür noch keine Gruppe, ist das der beste Anlass, eine zu gründen. <a class="link link-primary" href="/about">Meldet euch</a>, dann schauen wir gemeinsam, wo es hingehört.',
+        ],
+      },
+      {
+        id: 'mein-verein',
+        frage: 'Was ist mit meinem Verein? Können wir mitmachen?',
+        antwort: [
+          'Ja, dafür ist das gedacht. Vereine und Gruppen werden zugelassen und stellen ihre Aufgaben selbst ein – ihr behaltet in der Hand, was dort über euch steht.',
+          'Wenn ihr Lust habt: <a class="link link-primary" href="/about">meldet euch</a>, dann richten wir das gemeinsam ein.',
+        ],
+      },
+      {
+        id: 'konkurrenz',
+        frage: 'Macht die App den Vereinen nicht Konkurrenz?',
+        antwort: [
+          'Das wäre das Letzte, was wir wollen. Die App lebt davon, dass es die Vereine und Gruppen gibt – ohne sie hätte sie nichts zu zeigen.',
+          'Sie soll sichtbar machen, was ohnehin geleistet wird, und es leichter machen, dabei mit anzupacken.',
+        ],
+      },
+    ],
+  },
+  {
+    titel: 'Woran gerade gearbeitet wird',
+    fragen: [
+      {
+        id: 'geschlossene-gruppen',
+        frage: 'Sieht dann jeder, was bei uns in der Gruppe ansteht?',
+        hinweis: 'In Arbeit',
+        antwort: [
+          'Nicht zwangsläufig. Gruppen werden geschlossen sein können – dann sehen nur die Mitglieder ihre Aufgaben – oder offen für alle im Dorf, wenn Hilfe willkommen ist.',
+          'Fertig ist das noch nicht; wir bauen es gerade.',
+        ],
+      },
+      {
+        id: 'einweisung',
+        frage: 'Darf dann jeder alles machen – auch mit der Motorsense?',
+        hinweis: 'In Arbeit',
+        antwort: [
+          'Nein. Manche Aufgaben setzen eine Einweisung voraus: Wer eine Motorsense führt, wird vorher eingewiesen.',
+          'Dafür wird es eine Freigabe durch die Gruppe geben – wer eingewiesen ist, bekommt solche Aufgaben angeboten, die anderen nicht. Auch das ist noch im Bau.',
+        ],
+      },
+    ],
+  },
+  {
+    titel: 'Deine Idee',
+    fragen: [
+      {
+        id: 'idee-passt-nicht',
+        frage:
+          'Meine Idee steht hier unter „machen wir nicht“. War sie schlecht?',
+        antwort: [
+          'Überhaupt nicht. Diese Seite gibt es nur, weil nach dem ersten Test so viele Wünsche kamen – und weil ein „passt nicht“ ohne Begründung niemandem hilft.',
+          'Manches passt nicht zu dem, wofür die App da ist. Über die Idee selbst sagt das nichts, und über die nächste schon gar nichts.',
+        ],
+      },
+      {
+        id: 'idee-einreichen',
+        frage: 'Wo bringe ich meine Idee unter?',
+        antwort: [
+          'In der App über die Kachel „Idee vorschlagen“ – ein Satz reicht, und anonym geht es auch. Oder hier auf der Website unter <a class="link link-primary" href="/app#ideen">Idee vorschlagen</a>.',
+          'Wir lesen jede einzelne. Und was wir nicht bauen können oder wollen, sagen wir ehrlich – so wie auf dieser Seite.',
+        ],
+      },
+    ],
+  },
+]
+---
+
+<Layout {...metadata}>
+  <Jumbotron>
+    <div class="m-auto max-w-3xl text-center">
+      <span class="badge badge-accent badge-lg mb-4">Fragen aus dem Dorf</span>
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Fragen zur Rössing-App
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-white/90">
+        Nach dem ersten Test kamen viele Wünsche zusammen – mehr, als wir
+        erwartet hatten. Manches davon wird die App machen, manches bewusst
+        nicht. Hier steht beides, mit Begründung.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/app#ideen" class="btn btn-primary btn-lg">Idee vorschlagen</a>
+        <a href="/app" class="btn btn-lg glass text-white">Zur App-Seite</a>
+      </div>
+    </div>
+  </Jumbotron>
+
+  <section class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
+    <div
+      class="rounded-box border border-base-300 bg-base-200 p-6 sm:p-8 shadow-sm"
+    >
+      <h2 class="text-xl font-semibold text-base-content">Kurz gesagt</h2>
+      <ul class="mt-3 space-y-2 text-base-content/80">
+        <li>
+          Die App kümmert sich um das, was dem Dorf <strong
+            >gemeinsam gehört</strong
+          > – und darum, dass Mithelfen leichtfällt.
+        </li>
+        <li>
+          <strong>Bezahlte Arbeit</strong> wird hier nicht ausgeschrieben. Alles
+          in der App ist und bleibt kostenlos.
+        </li>
+        <li>
+          Aufgaben kommen von <strong>Vereinen und Gruppen</strong> – die App
+          soll deren Arbeit sichtbarer machen, nicht ersetzen.
+        </li>
+      </ul>
+      <p class="mt-4 text-sm text-base-content/60">
+        Was die App heute kann, steht auf der <a class="link" href="/app"
+          >Seite zur App</a
+        >. Diese Seite hier wächst mit den Fragen, die im Dorf gestellt werden.
+      </p>
+    </div>
+
+    <nav aria-labelledby="uebersicht" class="mt-12">
+      <h2 id="uebersicht" class="text-xl font-semibold text-base-content">
+        Alle Fragen auf einen Blick
+      </h2>
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {
+          abschnitte.map((abschnitt) => (
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+                {abschnitt.titel}
+              </p>
+              <ul class="mt-2 space-y-1">
+                {abschnitt.fragen.map((frage) => (
+                  <li>
+                    <a class="link link-hover text-base-content/80" href={`#${frage.id}`}>
+                      {frage.frage}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </nav>
+
+    {
+      abschnitte.map((abschnitt) => (
+        <div class="mt-14">
+          <h2 class="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+            {abschnitt.titel}
+          </h2>
+          <div class="mt-6 space-y-4">
+            {abschnitt.fragen.map((frage) => (
+              <article
+                id={frage.id}
+                class="scroll-mt-24 rounded-box border border-base-300 bg-base-100 p-6 shadow-sm"
+              >
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <h3 class="text-lg font-semibold text-base-content">
+                    <a class="link link-hover" href={`#${frage.id}`}>
+                      {frage.frage}
+                    </a>
+                  </h3>
+                  {frage.hinweis && (
+                    <span class="badge badge-warning badge-sm">
+                      {frage.hinweis}
+                    </span>
+                  )}
+                </div>
+                {frage.antwort.map((absatz) => (
+                  <p class="mt-3 text-base-content/80" set:html={absatz} />
+                ))}
+              </article>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+
+    <div
+      class="mt-14 rounded-box border border-base-300 bg-base-200 p-6 sm:p-8 shadow-sm"
+    >
+      <h2 class="text-xl font-semibold text-base-content">
+        Deine Frage steht nicht dabei?
+      </h2>
+      <p class="mt-2 text-base-content/80">
+        Dann stell sie – am liebsten gleich mit der Idee dahinter. Ein Satz
+        reicht, und je mehr Fragen kommen, desto besser wird diese Seite.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a href="/app#ideen" class="btn btn-primary">Idee vorschlagen</a>
+        <a href="/app" class="btn btn-outline btn-primary">Zur App-Seite</a>
+      </div>
+      <p class="mt-6 text-sm text-base-content/60">
+        Lieber direkt? <a class="link" href={mailtoMitBetreff('Rössing-App: Meine Frage')}
+          >{kontaktMail}</a
+        > – und wer lieber redet als schreibt, ruft unter <a
+          class="link"
+          href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a
+        > an.
+      </p>
+    </div>
+  </section>
+</Layout>

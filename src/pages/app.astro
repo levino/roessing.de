@@ -16,59 +16,43 @@ import Jumbotron from '../components/Jumbotron.astro'
 const metadata = {
   title: 'Die Rössing-App',
   description:
-    'Was soll die Dorf-App für Rössing können? Wir sammeln Ideen aus dem Dorf – ein Satz reicht. Die App gibt es schon: Den Anfang macht „Mithelfen“ als erste Funktion – auf der Dorfkarte sehen, was gerade im Dorf ansteht, etwa welche Blumenkästen und Beete Wasser brauchen. Wer mag, trägt sich an einem Ort als Helfer:in ein und wird gefragt, sobald dort etwas fällig wird. Wer beim Test mitmachen möchte, meldet sich ebenfalls.',
+    'Was soll die Dorf-App für Rössing können? Wir sammeln Ideen aus dem Dorf – ein Satz reicht. Die App gibt es schon: Den Anfang macht „Mithelfen“ – auf der Dorfkarte sehen, was gerade im Dorf ansteht, etwa welche Blumenkästen Wasser brauchen. Wer beim Test mitmachen möchte, meldet sich ebenfalls.',
 }
 
 // Anregungen, was eine Dorf-App leisten könnte. Ausdrücklich Beispiele –
-// weder Versprechen noch Roadmap. Sie sollen zeigen, wie weit der Rahmen ist.
+// weder Versprechen noch Roadmap. Sie zeigen, wie weit der Rahmen ist.
 const ideenBeispiele = [
   {
     titel: 'Erinnerung an Termine',
-    text: 'Die Termine aus dem Dorf stehen inzwischen in der App. Was noch fehlt: eine Erinnerung am Tag davor, damit das Feuerwehrfest nicht wieder verpasst wird.',
+    text: 'Die Termine stehen schon in der App – es fehlt der Hinweis am Tag davor.',
   },
   {
     titel: 'Mitfahrgelegenheiten',
-    text: 'Wer fährt morgen früh nach Hildesheim oder Nordstemmen und hat einen Platz frei? Wer braucht eine Mitfahrt?',
+    text: 'Wer fährt nach Hildesheim oder Nordstemmen und hat einen Platz frei?',
   },
   {
-    titel: 'Werkzeug und Geräte verleihen',
-    text: 'Anhänger, Vertikutierer, Bohrhammer, Bierzeltgarnitur: Wer hat was und gibt es gern weiter?',
+    titel: 'Werkzeug verleihen',
+    text: 'Anhänger, Vertikutierer, Bierzeltgarnitur: Wer hat was und gibt es gern weiter?',
   },
   {
     titel: 'Schwarzes Brett',
-    text: 'Suche und Biete für Rössing – vom Kinderfahrrad über Brennholz bis zur freien Wohnung.',
+    text: 'Suche und Biete – vom Kinderfahrrad über Brennholz bis zur freien Wohnung.',
   },
   {
     titel: 'Nachbarschaftshilfe',
-    text: 'Einkauf mitbringen, Kinder von der Schule abholen, im Garten helfen: fragen, wenn man Hilfe braucht, und sehen, wo man helfen kann.',
+    text: 'Einkauf mitbringen, im Garten helfen: fragen und sehen, wo man helfen kann.',
   },
   {
     titel: 'Nachrichten der Vereine',
-    text: 'Kurze Mitteilungen an die, die es angeht – Trainingsausfall, Probentermin, Absage wegen Regen. Ohne dass alle in jeder WhatsApp-Gruppe sein müssen.',
+    text: 'Trainingsausfall, Probentermin, Absage – ohne WhatsApp-Gruppe für alles.',
   },
   {
     titel: 'Kaputtes melden',
-    text: 'Straßenlaterne aus, Bank wackelt, Spielgerät defekt: einmal fotografieren, melden, und alle sehen, dass es bekannt ist.',
+    text: 'Laterne aus, Bank wackelt: fotografieren, melden, alle sehen es.',
   },
   {
     titel: 'Dorfchronik und Bilder',
-    text: 'Alte Fotos und Geschichten aus Rössing zum Stöbern – und alle können ergänzen, was sie im Schrank haben.',
-  },
-]
-
-// Was eine gute Idee ausmacht – bewusst als Anhaltspunkt, nicht als Formular.
-const ideenHinweise = [
-  {
-    titel: 'Was soll die App tun?',
-    text: 'Ein Satz genügt: „Ich möchte sehen, wann der nächste Bus fährt.“',
-  },
-  {
-    titel: 'Für wen ist das?',
-    text: 'Für alle im Dorf, für einen Verein, für Familien mit kleinen Kindern, für dich selbst?',
-  },
-  {
-    titel: 'Was ist heute umständlich?',
-    text: 'Woran es gerade hakt, ist oft der beste Hinweis darauf, was die App besser machen könnte.',
+    text: 'Alte Fotos und Geschichten aus Rössing – und alle können ergänzen.',
   },
 ]
 
@@ -76,27 +60,23 @@ const ideenHinweise = [
 const haltung = [
   {
     titel: 'Aus dem Dorf, ehrenamtlich',
-    text: 'Die App entsteht in der Freizeit, als Teil des digitalen Dorfs. Kein Unternehmen dahinter, keine Agentur, kein Auftrag.',
+    text: 'Entsteht in der Freizeit als Teil des digitalen Dorfs. Kein Unternehmen, keine Agentur, kein Auftrag.',
   },
   {
-    titel: 'Kostenlos',
-    text: 'Die App kostet nichts – kein Kaufpreis, kein Abo, keine Zusatzkäufe. Auch später nicht.',
-  },
-  {
-    titel: 'Keine Werbung',
-    text: 'In der App läuft keine Werbung und kein Werbe-Tracking. Deine Daten werden nicht verkauft. Weitergegeben wird nur das, was für Benachrichtigungen aufs Handy nötig ist.',
+    titel: 'Kostenlos und werbefrei',
+    text: 'Kein Kaufpreis, kein Abo, keine Werbung, kein Werbe-Tracking – auch später nicht.',
   },
   {
     titel: 'Keine Gewinnabsicht',
-    text: 'Niemand verdient daran – weder an der App noch an den Daten. Es geht darum, dass die App dem Dorf nützt – angefangen damit, dass die Blumenkästen gegossen werden.',
+    text: 'Niemand verdient daran, weder an der App noch an den Daten. Sie soll dem Dorf nützen.',
   },
   {
-    titel: 'Datenschutz wird eingehalten',
-    text: 'Die Daten liegen auf einem selbst betriebenen Server, die Anmeldung läuft über die eigene Rössing-ID – das Konto legst du dir dort selbst an –, und der Standort bleibt auf dem Gerät. Über Google laufen nur die Benachrichtigungen aufs Handy (abschaltbar in den Android-Einstellungen) und, falls du diesen Weg wählst, die freiwillige Anmeldung mit dem Google-Konto.',
+    titel: 'Daten bleiben im Dorf',
+    text: 'Eigener Server, eigene Rössing-ID, Standort bleibt auf dem Gerät. Über Google laufen nur die Benachrichtigungen.',
   },
   {
-    titel: 'Der Quellcode soll offen werden',
-    text: 'Der Quellcode liegt derzeit noch in einem privaten Repository. Die Absicht ist, ihn offenzulegen, sobald die App über den ersten Test hinaus ist.',
+    titel: 'Quellcode soll offen werden',
+    text: 'Noch liegt er in einem privaten Repository – offengelegt werden soll er nach dem ersten Test.',
   },
 ]
 
@@ -104,24 +84,18 @@ const haltung = [
 const ampel = [
   {
     farbe: 'bg-success',
-    badge: 'badge-success',
     label: 'Grün',
-    titel: 'Alles gut',
-    text: 'Hier ist alles erledigt. Du kannst beruhigt weitergehen.',
+    text: 'Alles erledigt – du kannst beruhigt weitergehen.',
   },
   {
     farbe: 'bg-warning',
-    badge: 'badge-warning',
     label: 'Gelb',
-    titel: 'Bitte gießen',
-    text: 'Der übliche Abstand ist überschritten – wer vorbeikommt, darf gern gießen oder jäten.',
+    text: 'Der übliche Abstand ist überschritten – gern gießen oder jäten.',
   },
   {
     farbe: 'bg-error',
-    badge: 'badge-error',
     label: 'Rot',
-    titel: 'Dringend',
-    text: 'Hier wartet die Pflanze schon länger. Jetzt wird es Zeit.',
+    text: 'Wartet schon länger. Jetzt wird es Zeit.',
   },
 ]
 
@@ -130,47 +104,35 @@ const ampel = [
 const bereiche = [
   {
     titel: 'Mithelfen',
-    text: 'Was gerade im Dorf ansteht: Blumenkästen und Beete auf der Dorfkarte und als Liste, jeweils mit Ampel. Erledigt wird mit einem Tipp gemeldet.',
+    text: 'Blumenkästen und Beete auf der Karte und als Liste, jeweils mit Ampel. Erledigt wird mit einem Tipp gemeldet.',
   },
   {
     titel: 'Als Helfer:in eintragen',
-    text: 'Bei jedem Ort kannst du dich eintragen – für alles, was dort ansteht, oder nur fürs Gießen bzw. nur fürs Jäten. Dann fragt dich die App, wenn dort etwas fällig wird.',
+    text: 'An einem Ort eintragen – für alles oder nur fürs Gießen bzw. Jäten. Die App fragt dich, wenn dort etwas fällig wird.',
   },
   {
     titel: 'Benachrichtigungen',
-    text: 'Hier stehen die Anfragen: zusagen mit „Ich mache das“, zurückgeben mit „Zurückgeben“. Auf Wunsch kommen sie zusätzlich aufs Handy – nachts ist Ruhe.',
+    text: 'Anfragen zusagen oder zurückgeben. Auf Wunsch zusätzlich aufs Handy – nachts ist Ruhe.',
   },
   {
     titel: 'Veranstaltungen',
-    text: 'Was im Dorf ansteht: dieselben Termine, die auch hier auf rössing.de stehen – niemand pflegt sie zweimal. Ganztägige Termine ohne Uhrzeit, mehrtägige bleiben bis zum letzten Tag stehen.',
+    text: 'Dieselben Termine wie hier auf rössing.de – niemand pflegt sie zweimal.',
   },
   {
     titel: 'Rangliste',
-    text: 'Wer wie oft gegossen oder gejätet hat – wahlweise für die Woche, den Monat, die Saison, das Jahr oder insgesamt. Dazu, was das ganze Dorf zusammen geschafft hat, und ein paar Abzeichen.',
+    text: 'Wer wie oft gegossen oder gejätet hat, wahlweise pro Woche bis Gesamt – dazu die Dorfsumme und ein paar Abzeichen.',
   },
   {
-    titel: 'Mein Profil',
-    text: 'Anzeigename, Nickname für die Rangliste, Telefonnummer, E-Mail und eine kurze Notiz. Für jedes Feld stellst du selbst ein, ob die anderen es sehen dürfen. Telefon und E-Mail sind zunächst nicht sichtbar.',
-  },
-  {
-    titel: 'Dorfbewohner',
-    text: 'Wer in der App mitmacht – mit genau den Angaben, die derjenige freigegeben hat. So findet man jemanden, ohne erst herumzufragen.',
+    titel: 'Profil und Dorfbewohner',
+    text: 'Für jedes Feld stellst du selbst ein, wer es sehen darf. Telefon und E-Mail sind zunächst nicht sichtbar.',
   },
   {
     titel: 'Idee vorschlagen',
-    text: 'Eine Kachel auf der Startseite der App: Sag uns, was die App sonst noch können soll. Geht auch anonym und dauert einen Satz.',
-  },
-  {
-    titel: 'Dein Standort, wenn du magst',
-    text: 'Gibst du den Standort frei, startet die Karte bei dir und die Liste zeigt, wie weit jeder Ort entfernt ist. Der Standort bleibt dabei auf dem Gerät.',
-  },
-  {
-    titel: 'Impressum und Datenschutz',
-    text: 'Beides steht in der App selbst – auch schon auf dem Anmeldebildschirm, ohne dass man angemeldet sein muss.',
+    text: 'Auch direkt in der App – anonym möglich, ein Satz reicht.',
   },
   {
     titel: 'Weitere Bereiche kommen',
-    text: 'Auf der Startseite steht es so auch in der App: Was als Nächstes dazukommt, entscheiden die Ideen aus dem Dorf.',
+    text: 'Was als Nächstes dazukommt, entscheiden die Ideen aus dem Dorf.',
   },
 ]
 
@@ -217,21 +179,13 @@ const screenshots = [
         Was soll die Rössing-App können?
       </h1>
       <p class="mt-6 text-lg leading-8 text-white/90">
-        Es gibt sie schon. Den Anfang macht <strong>„Mithelfen“</strong> – die
-        <strong>erste Funktion</strong> zeigt, was gerade im Dorf ansteht:
-        welche Blumenkästen und Beete Wasser brauchen. Das ist der Anfang,
-        nicht der Zweck. Jetzt kommt die eigentliche Frage – <strong>wofür soll
-        die Dorf-App gut sein?</strong>
-      </p>
-      <p class="mt-4 text-lg leading-8 text-white/90">
-        Denk dabei ruhig groß: Technisch ist erstaunlich viel möglich, und
-        Ideen, die dem Dorf wirklich helfen, werden auch gebaut. Ein Satz
-        reicht uns.
+        Es gibt sie schon: <strong>„Mithelfen“</strong> zeigt, welche Blumenkästen
+        und Beete gerade Wasser brauchen. Das ist der Anfang, nicht der Zweck.
+        Denk ruhig groß – technisch ist viel möglich, und Ideen, die dem Dorf
+        helfen, werden auch gebaut. <strong>Ein Satz reicht.</strong>
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="#ideen" class="btn btn-primary btn-lg">
-          Idee vorschlagen
-        </a>
+        <a href="#ideen" class="btn btn-primary btn-lg">Idee vorschlagen</a>
         <a href="#mitmachen" class="btn btn-lg glass text-white">
           Beim Test mitmachen
         </a>
@@ -255,36 +209,24 @@ const screenshots = [
           Sag uns, was die App fürs Dorf können soll
         </h2>
         <p class="mt-3 text-base-content/70">
-          Die Rössing-App ist als App für das ganze Dorf gedacht, nicht als
-          reine Gieß-App. „Mithelfen“ ist <strong>nur die erste
-          Funktion</strong> – sie steht, und alles Weitere entsteht aus euren
-          Vorschlägen. Was als Nächstes hineinkommt, soll sich daran
-          entscheiden, was hier tatsächlich gebraucht wird. Deshalb die Frage
-          an alle im Dorf: <strong>Was würde dir den Alltag in Rössing
-          leichter machen?</strong>
-        </p>
-        <p class="mt-3 text-base-content/70">
-          Trau dich, groß zu denken. Vieles, was nach viel Aufwand klingt, ist
-          technisch gut machbar – und Ideen, die wirklich weiterhelfen, werden
-          auch umgesetzt. Was wir nicht bauen können, sagen wir ehrlich.
-        </p>
-        <p class="mt-3 text-base-content/70">
-          Ein paar Wünsche aus dem ersten Test haben wir schon beantwortet –
-          auch solche, die nicht zur App passen. Warum das so ist, steht bei
+          „Mithelfen“ ist <strong>nur die erste Funktion</strong> – was als
+          Nächstes hineinkommt, soll sich daran entscheiden, was hier
+          tatsächlich gebraucht wird. Also: <strong>Was würde dir den Alltag
+          in Rössing leichter machen?</strong> Was wir nicht bauen können,
+          sagen wir ehrlich; einige Wünsche aus dem ersten Test sind schon bei
           den <a class="link link-primary" href="/app/fragen">Fragen aus dem
-          Dorf</a>.
+          Dorf</a> beantwortet.
         </p>
       </div>
 
-      <div class="mt-12">
+      <div class="mt-10">
         <h3 class="text-xl font-semibold text-base-content">
           Denkbar wäre zum Beispiel …
         </h3>
         <p class="mt-2 max-w-3xl text-base-content/70">
-          Das hier sind Anregungen, damit klar wird, wie weit der Rahmen ist –
-          <strong>kein Versprechen und kein fertiger Plan.</strong> Nichts davon
-          ist beschlossen. Vor allem interessiert uns, was <em>euch</em>
-          einfällt.
+          Anregungen, damit der Rahmen klar wird – <strong>kein Versprechen
+          und kein fertiger Plan.</strong> Vor allem interessiert uns, was
+          <em>euch</em> einfällt.
         </p>
 
         <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -301,63 +243,30 @@ const screenshots = [
             ))
           }
         </div>
-
-        <p class="mt-6 text-base-content/70">
-          Und wenn deine Idee hier nicht dabei ist: umso besser. Genau die
-          suchen wir.
-        </p>
       </div>
 
       <IdeenFormular />
 
-      <div
-        class="mt-8 rounded-box border border-base-300 bg-base-100 p-8 sm:p-10 shadow-sm"
-      >
-        <h3 class="text-xl font-semibold text-base-content">
-          Wenn du magst, hilft uns das beim Verstehen
-        </h3>
-        <p class="mt-2 max-w-3xl text-base-content/70">
-          Niemand muss etwas davon beantworten – <strong>ein Satz reicht.</strong>
-          Es sind nur Anhaltspunkte für den Fall, dass du mehr erzählen willst.
-        </p>
-
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {
-            ideenHinweise.map((hinweis) => (
-              <div class="rounded-box border border-base-300 bg-base-200 p-6">
-                <h4 class="font-semibold text-base-content">{hinweis.titel}</h4>
-                <p class="mt-2 text-base-content/70">{hinweis.text}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <p class="text-sm text-base-content/60">
-            Lieber per E-Mail? Geht auch: <a
-              class="link"
-              href={mailtoMitBetreff('Rössing-App: Meine Idee')}
-              >{kontaktMail}</a
-            > – und wer lieber redet als schreibt, ruft unter <a
-              class="link"
-              href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a
-            > an.
-          </p>
-        </div>
-      </div>
+      <p class="mt-6 text-sm text-base-content/60">
+        Ein Satz genügt – wenn du magst, schreib dazu, für wen das gut wäre und
+        was heute umständlich ist. Lieber per E-Mail? <a
+          class="link"
+          href={mailtoMitBetreff('Rössing-App: Meine Idee')}>{kontaktMail}</a
+        >. Wer lieber redet als schreibt, ruft unter <a
+          class="link"
+          href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a
+        > an.
+      </p>
     </div>
   </section>
 
   <AppDownload />
 
   {/* So funktioniert's */}
-  <section
-    id="so-gehts"
-    class="container max-w-5xl mx-auto px-4 py-16 sm:py-20"
-  >
+  <section id="so-gehts" class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
     <div class="max-w-2xl">
       <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-        Was die App heute kann – den Anfang macht „Mithelfen“
+        Was die App heute kann
       </p>
       <h2
         class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
@@ -365,19 +274,8 @@ const screenshots = [
         Mithelfen: Was gerade im Dorf ansteht
       </h2>
       <p class="mt-3 text-base-content/70">
-        Du hast Zeit und willst etwas fürs Dorf tun – aber was steht gerade an?
-        Genau dafür ist „Mithelfen“ da, die erste Funktion der App. Sie ist
-        bewusst schlicht gehalten: aufmachen, schauen, gießen, melden. Mehr
-        braucht es nicht. Was danach dazukommt, hängt an den <a
-          class="link link-primary"
-          href="#ideen">Ideen aus dem Dorf</a
-        >.
-      </p>
-      <p class="mt-3 text-base-content/70">
-        Beim Öffnen landest du inzwischen auf einer Startseite mit den
-        Bereichen der App. „Mithelfen“ steht dort oben – daneben gibt es die
-        Veranstaltungen, die Benachrichtigungen, das eigene Profil, die Liste
-        der Dorfbewohner und die Kachel „Idee vorschlagen“.
+        Du hast Zeit und willst etwas fürs Dorf tun – aber was steht an? Genau
+        dafür ist „Mithelfen“ da: aufmachen, schauen, gießen, melden.
       </p>
     </div>
 
@@ -386,14 +284,10 @@ const screenshots = [
         <div class="mt-2 lg:mt-4 lg:px-2">
           <p class="font-semibold text-base-content">Anmelden</p>
           <p class="text-sm text-base-content/70">
-            Einmalig mit der <a
-              class="link"
-              href="https://id.xn--rssing-wxa.de">Rössing-ID</a
-            > anmelden – dem Dorf-Login, den es auch für die anderen Dorf-Dienste
-            gibt. <strong>Das Konto legst du dir selbst an</strong> – mit
-            Vorname, Nachname, E-Mail und Passwort, niemand muss es vorher für
-            dich einrichten. Wer mag, nutzt stattdessen den Knopf „Mit Google
-            anmelden“; nötig ist das nicht.
+            Einmalig mit der <a class="link" href="https://id.xn--rssing-wxa.de"
+              >Rössing-ID</a
+            >; das Konto legst du dir selbst an. Google-Anmeldung geht auch, ist
+            aber nicht nötig.
           </p>
         </div>
       </li>
@@ -401,9 +295,8 @@ const screenshots = [
         <div class="mt-2 lg:mt-4 lg:px-2">
           <p class="font-semibold text-base-content">Karte anschauen</p>
           <p class="text-sm text-base-content/70">
-            Auf der Dorfkarte zeigt eine Ampel, wo etwas ansteht – oder du
-            gehst die Liste durch, nach Dringlichkeit oder nach Entfernung
-            sortiert.
+            Eine Ampel zeigt, wo etwas ansteht – wahlweise als Liste, nach
+            Dringlichkeit oder Entfernung sortiert.
           </p>
         </div>
       </li>
@@ -411,8 +304,8 @@ const screenshots = [
         <div class="mt-2 lg:mt-4 lg:px-2">
           <p class="font-semibold text-base-content">Gießen oder jäten</p>
           <p class="text-sm text-base-content/70">
-            Bei jedem Ort steht, was zu tun ist – zum Beispiel „10 Liter, alle
-            7 Tage“. Manches steht auch nur einmal an, zu einem festen Termin.
+            Bei jedem Ort steht, was zu tun ist – „10 Liter, alle 7 Tage“ oder
+            einmalig zu einem festen Termin.
           </p>
         </div>
       </li>
@@ -420,26 +313,32 @@ const screenshots = [
         <div class="mt-2 lg:mt-4 lg:px-2">
           <p class="font-semibold text-base-content">Melden</p>
           <p class="text-sm text-base-content/70">
-            Ein Tipp auf „Ich habe gegossen“ – die Ampel springt auf Grün und
-            alle anderen sehen es sofort, samt Name und Uhrzeit.
+            Ein Tipp auf „Ich habe gegossen“ – die Ampel springt auf Grün, alle
+            sehen es sofort.
           </p>
         </div>
       </li>
     </ul>
 
-    <p class="mt-10 max-w-3xl text-base-content/70">
-      Damit nichts doppelt gegossen wird, ist ein Ort nach einer Erledigung
-      eine Weile gesperrt – ungefähr das halbe Gießintervall, bei Hitze
-      entsprechend kürzer. Wer die Kästen betreut, kann Erledigungen trotzdem
-      nachtragen, wenn jemand das Melden vergessen hat.
-    </p>
-
-    <p class="mt-4 max-w-3xl text-base-content/70">
-      Nicht alles wiederholt sich. Neben Aufgaben, die in festen Abständen
-      anstehen – „alle 7 Tage“ –, gibt es jetzt auch <strong>Aufgaben mit
-      festem Termin</strong>: einmal, an einem bestimmten Tag, danach
-      erledigt. Das passt für alles, was nicht jede Woche wiederkommt – das
-      Beet im Frühjahr herrichten, die Hecke im Herbst schneiden.
+    <ul class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {
+        ampel.map((zustand) => (
+          <li class="flex items-start gap-3 text-base-content/70">
+            <span
+              class={`mt-1.5 inline-block size-4 shrink-0 rounded-full ${zustand.farbe}`}
+            />
+            <span>
+              <strong class="text-base-content">{zustand.label}:</strong>{' '}
+              {zustand.text}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-4 max-w-3xl text-sm text-base-content/60">
+      Wie lange etwas ohne Wasser auskommt, ist hinterlegt – bei Hitze wird der
+      Abstand automatisch kürzer. Nach einer Erledigung ist ein Ort eine Weile
+      gesperrt, damit nichts doppelt gegossen wird.
     </p>
 
     <div class="mt-14">
@@ -448,42 +347,23 @@ const screenshots = [
       </h3>
       <div class="mt-3 max-w-3xl space-y-3 text-base-content/70">
         <p>
-          Bisher musste man selbst nachschauen, ob etwas ansteht. Seit der
-          neuesten Version geht es auch andersherum: Bei jedem Ort gibt es
-          „Hier als Helfer:in eintragen“. Wer das tut, sagt damit: Um diesen
-          Kasten kümmere ich mich mit. Dabei kannst du angeben, ob du nur
-          gießen, nur jäten oder alles übernehmen möchtest. Danach steht dort
-          „Du hilfst hier mit“ – und du kannst dich jederzeit wieder
-          austragen.
+          Bei jedem Ort gibt es „Hier als Helfer:in eintragen“ – für alles oder
+          nur fürs Gießen bzw. Jäten, jederzeit wieder rückgängig zu machen.
+          Wird dort etwas fällig, fragt die App nicht alle auf einmal, sondern
+          <strong>der Reihe nach</strong>: erst, wer am längsten nicht gefragt
+          wurde, eine Stunde später die nächste Person.
         </p>
         <p>
-          Wird an diesem Ort etwas fällig, fragt die App nicht alle auf
-          einmal, sondern <strong>der Reihe nach</strong>: eine Person, eine
-          Stunde später die nächste, und so weiter. Wer zuerst dran ist,
-          richtet sich danach, wer am längsten nichts gemacht hat
-          beziehungsweise am längsten nicht gefragt wurde. So kommt jeder mal
-          an die Reihe und niemand ständig.
+          Sagst du zu, <strong>gehört die Aufgabe für 24 Stunden dir</strong> –
+          die anderen sehen, dass sie vergeben ist. Mit „Zurückgeben“ gibst du
+          sie wieder frei, sonst wird sie nach 24 Stunden von selbst frei.
+          Sagt am Ende niemand zu, geht eine letzte Frage an alle; meldet sich
+          auch dann niemand, bleibt der Ort rot stehen.
         </p>
         <p>
-          Sagst du zu – „Ich mache das“ –, <strong>gehört die Aufgabe für 24
-          Stunden dir</strong>. Die anderen sehen, dass sie vergeben ist, und
-          niemand läuft umsonst los. Wenn du es doch nicht schaffst, gibst du
-          sie mit „Zurückgeben“ wieder frei; passiert gar nichts, wird sie
-          nach den 24 Stunden von selbst frei und der Nächste wird gefragt.
-          Und sobald irgendjemand meldet, dass gegossen ist, ist die Sache für
-          alle erledigt.
-        </p>
-        <p>
-          Hat am Ende niemand zugesagt, geht eine letzte Frage an alle
-          Eingetragenen gleichzeitig. Meldet sich auch dann niemand, bleibt
-          der Ort einfach rot stehen – so wie vorher auch.
-        </p>
-        <p>
-          Die Anfragen stehen in der App unter „Benachrichtigungen“. Wer
-          möchte, bekommt sie zusätzlich <strong>aufs Handy</strong>; die App
-          fragt dafür einmal um Erlaubnis. Wer sie nicht gibt, verpasst
-          nichts – die Anfragen stehen dann beim nächsten Öffnen da. Zwischen
-          21 und 7 Uhr wird ohnehin nichts zugestellt.
+          Die Anfragen stehen unter „Benachrichtigungen“, auf Wunsch zusätzlich
+          aufs Handy. Wer keine Erlaubnis gibt, verpasst nichts – zwischen 21
+          und 7 Uhr wird ohnehin nichts zugestellt.
         </p>
       </div>
     </div>
@@ -492,13 +372,6 @@ const screenshots = [
       <h3 class="text-xl font-semibold text-base-content">
         Die Bereiche der App
       </h3>
-      <p class="mt-2 max-w-3xl text-base-content/70">
-        Das ist alles, was heute in der App steckt. „Mithelfen“ ist der erste
-        Bereich; drumherum ist nach und nach das dazugekommen, was gemeinsames
-        Gießen im Dorf braucht – und mit den Veranstaltungen inzwischen auch
-        das Erste, was darüber hinausgeht.
-      </p>
-
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           bereiche.map((bereich) => (
@@ -516,38 +389,133 @@ const screenshots = [
     </div>
   </section>
 
-  {/* Die Ampel – Full-Bleed-Band */}
+  {/* Screenshots */}
   <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
-    <div class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
+    <div class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
       <div class="max-w-2xl mb-10">
         <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-          Auf einen Blick
+          Blick in die App
         </p>
         <h2
           class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
         >
-          Grün, gelb, rot
+          So sieht das aus
         </h2>
         <p class="mt-3 text-base-content/70">
-          Jeder Blumenkasten und jedes Beet hat einen Zustand. Wie lange etwas
-          ohne Wasser auskommt, ist hinterlegt – bei Hitze wird der Abstand
-          automatisch kürzer.
+          Aufnahmen aus der Testversion für Android. Orte, Namen und Zahlen sind
+          Beispiele aus der Testumgebung. Die Bilder sind ein paar Wochen alt –
+          Helfer-Eintrag, Benachrichtigungen und Veranstaltungen fehlen darauf
+          noch.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {
-          ampel.map((zustand) => (
+          screenshots.map((shot) => (
+            <figure class="flex flex-col gap-3">
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                widths={[320, 480, 640]}
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 40vw, 45vw"
+                class="w-full rounded-box border border-base-300 shadow-sm"
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-base-content/70">
+                {shot.caption}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Eine App fürs ganze Dorf + Status */}
+  <section class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="card bg-base-100 border border-base-300 shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-2xl text-base-content">
+            Eine App fürs ganze Dorf
+          </h2>
+          <p class="text-base-content/80">
+            Keine reine „Gieß-App“: Nach „Mithelfen“ sind als Zweites die
+            <strong>Veranstaltungen</strong> dazugekommen. Was danach kommt,
+            versprechen wir bewusst noch nicht – das entscheiden am besten die
+            <a class="link link-primary" href="#ideen">Ideen aus dem Dorf</a>.
+          </p>
+          <p class="text-base-content/80">
+            Die App gehört zum <a class="link link-primary" href="/digitales-dorf"
+              >digitalen Dorf</a
+            > und nutzt dieselbe Rössing-ID wie die anderen Dorf-Dienste. Was sie
+            bewusst <em>nicht</em> machen wird, steht bei den <a
+              class="link link-primary"
+              href="/app/fragen">Fragen aus dem Dorf</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 border border-base-300 shadow-sm">
+        <div class="card-body">
+          <div class="flex items-center gap-3">
+            <h2 class="card-title text-2xl text-base-content">
+              Ehrlich gesagt: noch Beta
+            </h2>
+            <span class="badge badge-accent">Im Test</span>
+          </div>
+          <ul class="mt-2 space-y-3 text-base-content/80">
+            <li>
+              <strong>Die App ist in der Testphase.</strong> Sie funktioniert, ist
+              aber noch nicht fertig – Fehler und Ecken sind möglich.
+            </li>
+            <li>
+              <strong>Android zuerst.</strong> Eine Version für iPhones ist geplant,
+              ein Termin steht nicht fest.
+            </li>
+            <li>
+              <strong>Rückmeldungen helfen.</strong> Was hakt, was fehlt, was ist
+              unverständlich? Immer her damit.
+            </li>
+          </ul>
+          <p class="mt-4 text-base-content/80">
+            Verteilt wird über den <strong>internen Test im Google Play
+            Store</strong>: ganz normal installieren, nur eben mit Einladung.
+            Aktualisierungen kommen automatisch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Haltung: nicht kommerziell, kostenlos, werbefrei */}
+  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+    <div class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
+      <div class="max-w-2xl mb-10">
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+          Worauf du dich verlassen kannst
+        </p>
+        <h2
+          class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+        >
+          Ein Dorfprojekt, kein Geschäft
+        </h2>
+        <p class="mt-3 text-base-content/70">
+          Damit das gleich klar ist: Hier wird kein Geld verdient und niemand
+          ausgewertet.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          haltung.map((punkt) => (
             <div class="card bg-base-100 border border-base-300 shadow-sm">
               <div class="card-body">
-                <div class="flex items-center gap-3">
-                  <span class={`inline-block size-5 rounded-full ${zustand.farbe}`} />
-                  <h3 class="card-title text-base-content">{zustand.titel}</h3>
-                </div>
-                <span class={`badge ${zustand.badge} badge-sm w-fit`}>
-                  {zustand.label}
-                </span>
-                <p class="text-base-content/70">{zustand.text}</p>
+                <h3 class="card-title text-lg text-base-content">
+                  {punkt.titel}
+                </h3>
+                <p class="text-base-content/70">{punkt.text}</p>
               </div>
             </div>
           ))
@@ -556,179 +524,62 @@ const screenshots = [
     </div>
   </section>
 
-  {/* Screenshots */}
-  <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
-    <div class="max-w-2xl mb-10">
-      <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-        Blick in die App
-      </p>
-      <h2
-        class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
-      >
-        So sieht das aus
-      </h2>
-      <p class="mt-3 text-base-content/70">
-        Aufnahmen aus der Testversion für Android. Die Orte, Namen und Zahlen
-        auf den Bildern sind Beispiele aus der Testumgebung – nicht die echten
-        Kästen im Dorf. Die Bilder sind ein paar Wochen alt: Der Eintrag als
-        Helfer:in, die Benachrichtigungen, die Veranstaltungen und die Kachel
-        „Idee vorschlagen“ sind darauf noch nicht zu sehen.
-      </p>
+  {/* Datenschutz kurz */}
+  <section class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
+    <h2 class="text-3xl font-bold tracking-tight text-base-content sm:text-4xl">
+      Datenschutz – kurz gesagt
+    </h2>
+    <ul class="mt-6 space-y-4 text-base-content/80">
+      <li>
+        <strong>Anmeldung über die Rössing-ID.</strong> Eigene Anmeldestelle unter
+        <a class="link" href="https://id.xn--rssing-wxa.de">id.rössing.de</a> (Zitadel),
+        betrieben im Dorf. Das Konto legst du dir selbst an; die Google-Anmeldung
+        ist freiwillig.
+      </li>
+      <li>
+        <strong>Standort und Karte.</strong> Der Standort bleibt auf dem Gerät und
+        wird nicht übertragen. Das Kartenmaterial kommt von OpenFreeMap – ohne Konto,
+        ohne Werbe-Tracking.
+      </li>
+      <li>
+        <strong>Sichtbar ist wenig, aber nicht nichts.</strong> Wer wann welchen
+        Ort erledigt hat, sehen alle – sonst funktioniert die Ampel nicht. In der
+        Rangliste steht dein Name oder ein selbst gewählter Nickname, und wer eine
+        Aufgabe zusagt, ist für die übrigen Helfenden am Ort sichtbar.
+      </li>
+      <li>
+        <strong>Benachrichtigungen laufen über Google.</strong> Auf Android führt
+        an Firebase kein Weg vorbei: Google erfährt eine Kennung deiner Installation
+        sowie Ortsname und Aufgabe – <strong>Namen anderer Personen nie</strong>.
+        Die Kennung entsteht erst, wenn du Mitteilungen erlaubst, und wird gelöscht,
+        sobald du die Erlaubnis zurücknimmst.
+      </li>
+      <li>
+        <strong>Kontaktdaten nur, wenn du willst.</strong> Telefon, E-Mail und Notiz
+        sind freiwillig; für jedes Feld stellst du die Sichtbarkeit selbst ein.
+      </li>
+    </ul>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/app/datenschutz" class="btn btn-primary">Datenschutz der App</a>
+      <a href="/app/daten-loeschen" class="btn btn-outline btn-primary">
+        Konto und Daten löschen
+      </a>
+      <a href="/datenschutz" class="btn btn-outline">
+        Datenschutz dieser Website
+      </a>
     </div>
-
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {
-        screenshots.map((shot) => (
-          <figure class="flex flex-col gap-3">
-            <Image
-              src={shot.src}
-              alt={shot.alt}
-              widths={[320, 480, 640]}
-              sizes="(min-width: 1024px) 320px, (min-width: 640px) 40vw, 45vw"
-              class="w-full rounded-box border border-base-300 shadow-sm"
-              loading="lazy"
-            />
-            <figcaption class="text-sm text-base-content/70">
-              {shot.caption}
-            </figcaption>
-          </figure>
-        ))
-      }
-    </div>
-  </section>
-
-  {/* Eine App fürs ganze Dorf + Status */}
-  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
-    <div class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="card bg-base-100 border border-base-300 shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title text-2xl text-base-content">
-              Eine App fürs ganze Dorf
-            </h2>
-            <p class="text-base-content/80">
-              Die Rössing-App ist nicht als reine „Gieß-App“ gedacht, sondern
-              als <strong>Dorf-App für Rössing</strong>.
-              <strong>„Mithelfen“</strong> – was gerade im Dorf ansteht, also
-              Blumenkästen und Beete – ist die <strong>erste Funktion</strong>,
-              die fertig geworden ist. Als Zweites sind die
-              <strong>Veranstaltungen</strong> dazugekommen – dieselben Termine,
-              die auch hier auf der Website stehen. Weiteres soll nach und nach
-              folgen.
-            </p>
-            <p class="text-base-content/80">
-              Was genau als Nächstes kommt, versprechen wir bewusst noch nicht:
-              Erst soll die erste Funktion im Alltag funktionieren. Womit es
-              weitergeht, entscheiden am besten die <a
-                class="link link-primary"
-                href="#ideen">Ideen aus dem Dorf</a
-              >.
-            </p>
-            <p class="text-base-content/80">
-              Die App gehört zum <a class="link link-primary" href="/digitales-dorf"
-                >digitalen Dorf</a
-              > und nutzt dieselbe Rössing-ID wie die anderen Dorf-Dienste.
-            </p>
-            <p class="text-base-content/80">
-              Was die App bewusst <em>nicht</em> machen wird – und warum
-              Aufgaben von Vereinen und Gruppen kommen –, steht bei den <a
-                class="link link-primary"
-                href="/app/fragen">Fragen aus dem Dorf</a
-              >.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 border border-base-300 shadow-sm">
-          <div class="card-body">
-            <div class="flex items-center gap-3">
-              <h2 class="card-title text-2xl text-base-content">
-                Ehrlich gesagt: noch Beta
-              </h2>
-              <span class="badge badge-accent">Im Test</span>
-            </div>
-            <ul class="mt-2 space-y-3 text-base-content/80">
-              <li>
-                <strong>Die App ist in der Testphase.</strong> Sie funktioniert,
-                ist aber noch nicht fertig – Fehler und Ecken sind möglich.
-              </li>
-              <li>
-                <strong>Android zuerst.</strong> Die App läuft auf
-                Android-Geräten.
-              </li>
-              <li>
-                <strong>iOS ist später geplant.</strong> Eine Version für
-                iPhones gibt es noch nicht; wann sie kommt, steht noch nicht
-                fest.
-              </li>
-              <li>
-                <strong>Rückmeldungen helfen.</strong> Was hakt, was fehlt, was
-                ist unverständlich? Immer her damit.
-              </li>
-            </ul>
-            <div class="mt-4 space-y-3 text-base-content/80">
-              <p>
-                Verteilt wird die App über den <strong
-                  >internen Test im Google Play Store</strong
-                >. Du installierst sie also ganz normal über den Play Store,
-                nur dass sie dort nicht öffentlich zu finden ist – man braucht
-                eine Einladung. Aktualisierungen kommen danach automatisch.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* Haltung: nicht kommerziell, kostenlos, werbefrei */}
-  <section class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
-    <div class="max-w-2xl mb-10">
-      <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-        Worauf du dich verlassen kannst
-      </p>
-      <h2
-        class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
-      >
-        Ein Dorfprojekt, kein Geschäft
-      </h2>
-      <p class="mt-3 text-base-content/70">
-        Damit das gleich klar ist, bevor jemand die App installiert: Hier wird
-        kein Geld verdient und niemand ausgewertet.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {
-        haltung.map((punkt) => (
-          <div class="card bg-base-100 border border-base-300 shadow-sm">
-            <div class="card-body">
-              <h3 class="card-title text-lg text-base-content">
-                {punkt.titel}
-              </h3>
-              <p class="text-base-content/70">{punkt.text}</p>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    <p class="mt-8 text-base-content/70">
-      Was die App im Einzelnen speichert und was nicht, steht in der <a
-        class="link link-primary"
-        href="/app/datenschutz">Datenschutzerklärung der App</a
-      >.
-    </p>
   </section>
 
   {/* Zum Aushängen – druckfertige PDFs */}
-  <section id="aushang" class="container max-w-5xl mx-auto px-4 pb-16 sm:pb-20">
-    <div class="rounded-box border border-base-300 bg-base-200 p-6 sm:p-8">
+  <section
+    id="aushang"
+    class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]"
+  >
+    <div class="container max-w-5xl mx-auto px-4 py-12 sm:py-16">
       <h2 class="text-xl font-semibold text-base-content">Zum Aushängen</h2>
       <p class="mt-2 max-w-3xl text-base-content/70">
-        Wer den Aufruf im Dorf verbreiten möchte: Hier gibt es ihn druckfertig –
-        für den Dorfladen, den Schaukasten oder zum Auslegen beim Verein.
-        Einfach ausdrucken und aufhängen.
+        Den Aufruf gibt es druckfertig – für den Dorfladen, den Schaukasten oder
+        zum Auslegen beim Verein.
       </p>
 
       <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -754,92 +605,6 @@ const screenshots = [
           ))
         }
       </ul>
-    </div>
-  </section>
-
-  {/* Datenschutz kurz */}
-  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
-    <div class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
-      <h2
-        class="text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
-      >
-        Datenschutz – kurz gesagt
-      </h2>
-      <ul class="mt-6 space-y-4 text-base-content/80">
-        <li>
-          <strong>Anmeldung über die Rössing-ID.</strong> Die läuft über unsere
-          eigene Anmeldestelle unter <a
-            class="link"
-            href="https://id.xn--rssing-wxa.de">id.rössing.de</a
-          > (Software: Zitadel), betrieben im Dorf und nicht bei einem großen Anbieter.
-          Das Konto legst du dir dort selbst an – Vorname, Nachname, E-Mail und
-          Passwort, mehr braucht es nicht. Wer lieber den Knopf <strong
-            >„Mit Google anmelden“</strong
-          > nutzt, kann das tun: Google erfährt dann, dass du dich bei der Rössing-ID
-          anmeldest, und gibt Name, E-Mail-Adresse und Profilbild an sie weiter.
-          Freiwillig ist das in jedem Fall – mit Konto und Passwort geht alles genauso.
-        </li>
-        <li>
-          <strong>Der Standort bleibt auf dem Gerät.</strong> Gibst du ihn
-          frei, nutzt die App ihn nur, um die Karte bei dir starten zu lassen
-          und Entfernungen anzuzeigen – an den Server wird er nicht
-          übertragen.
-        </li>
-        <li>
-          <strong>Karte von OpenFreeMap.</strong> Das Kartenmaterial kommt von
-          OpenFreeMap auf Basis von OpenStreetMap-Daten – ohne Konto und ohne
-          Werbe-Tracking.
-        </li>
-        <li>
-          <strong>Gespeichert wird wenig.</strong> Im Wesentlichen: welcher Ort
-          wann von wem erledigt wurde. Das muss sichtbar sein, sonst würde die
-          Ampel nicht funktionieren.
-        </li>
-        <li>
-          <strong>Die Rangliste ist für alle in der App sichtbar.</strong> Dort
-          steht dein Name – oder dein Nickname, wenn du einen einträgst –
-          zusammen mit der Zahl deiner Erledigungen. Wer nicht mit Klarnamen
-          auftauchen möchte, trägt einfach einen anderen Nickname ein.
-        </li>
-        <li>
-          <strong>Wer sich einträgt, ist für die anderen Eingetragenen
-          sichtbar.</strong> Sagst du eine Aufgabe zu, sehen die übrigen
-          Helferinnen und Helfer an diesem Ort deinen Namen und bis wann du
-          Zeit hast – sonst gießen zwei denselben Kasten. Eintragen ist
-          freiwillig und jederzeit wieder rückgängig zu machen.
-        </li>
-        <li>
-          <strong>Benachrichtigungen laufen über Google.</strong> Für die
-          Zustellung aufs Handy führt auf Android kein Weg an Firebase Cloud
-          Messaging vorbei. Google erfährt dabei eine Kennung deiner
-          App-Installation sowie Titel und Text der Meldung – also Ortsname und
-          Aufgabe. <strong>Namen anderer Personen stehen nie darin.</strong>
-          <strong>Seit Version 0.1.8 entsteht diese Kennung erst, wenn du
-          Mitteilungen erlaubt hast</strong> – vorher bleibt auch der
-          Google-Baustein in der App stumm. In älteren Versionen entstand sie
-          schon beim Start der App. Nimmst du die Erlaubnis in den
-          Android-Einstellungen wieder zurück, wird die Kennung beim nächsten
-          Öffnen der App gelöscht.
-        </li>
-        <li>
-          <strong>Kontaktdaten nur, wenn du willst.</strong> Im Profil kannst du
-          freiwillig Telefonnummer, E-Mail-Adresse oder eine kurze Notiz
-          hinterlegen. Für jedes Feld stellst du selbst ein, ob es alle
-          angemeldeten Dorfbewohner sehen dürfen oder nur die Verwaltenden –
-          Kontaktdaten sind zunächst nicht sichtbar.
-        </li>
-      </ul>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="/app/datenschutz" class="btn btn-primary">
-          Datenschutz der App
-        </a>
-        <a href="/app/daten-loeschen" class="btn btn-outline btn-primary">
-          Konto und Daten löschen
-        </a>
-        <a href="/datenschutz" class="btn btn-outline">
-          Datenschutz dieser Website
-        </a>
-      </div>
     </div>
   </section>
 </Layout>

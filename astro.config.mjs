@@ -44,6 +44,10 @@ export default defineConfig({
           label: 'Veranstaltungen',
           href: '/events',
         },
+        vereine: {
+          label: 'Vereine',
+          href: '/vereine',
+        },
         app: {
           label: 'App',
           href: '/app',

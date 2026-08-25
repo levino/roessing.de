@@ -6,6 +6,8 @@ import type { FullEvent } from '@/types'
 import appKarte from '../assets/app/app-karte.png'
 import EventCard from '../components/EventCard.astro'
 import Jumbotron from '../components/Jumbotron.astro'
+import VereinCard from '../components/VereinCard.astro'
+import { vereine } from '../data/vereine'
 
 const metadata = {
   title: 'Rössing',
@@ -41,101 +43,11 @@ const upcomingEvents = (await getCollection(
 
 const nextEvents = upcomingEvents.slice(0, 3)
 
-// Vereine & Gruppen mit öffentlicher Internetseite, die auch tatsächlich
-// eigenständigen Inhalt bietet (keine reinen Kontakt-Stubs). Interne,
-// zugangsgeschützte Tools werden hier bewusst nicht verlinkt.
-const vereine = [
-  {
-    name: 'Freiwillige Feuerwehr',
-    description: 'Retten, sichern und bergen in und um Rössing.',
-    href: 'https://www.ff-roessing.de',
-  },
-  {
-    name: 'Musikzug der Feuerwehr',
-    description:
-      'Blasorchester der Freiwilligen Feuerwehr Rössing – samt Förderverein.',
-    href: 'https://www.ff-roessing.de/musikzug/',
-  },
-  {
-    name: 'Dorfpflege Rössing',
-    description:
-      'Pflegt Grünflächen und Streuobstwiese, organisiert Osterfeuer & Weihnachtsmarkt.',
-    href: 'https://www.dorfpflege-roessing.de',
-  },
-  {
-    name: 'Bürgerstiftung Rössing',
-    description: 'Fördert bürgerschaftliches Engagement in Rössing.',
-    href: 'https://buergerstiftung-roessing.de',
-  },
-  {
-    name: 'Freizeitsee Rössing',
-    description:
-      'Renaturierung und Pflege der ehemaligen Kiesgrube als Naherholungsraum.',
-    href: 'https://freizeitsee-roessing.de',
-  },
-  {
-    name: 'VSV Rössing',
-    description:
-      'Volkssportvereinigung von 1897 – Fußball, Leichtathletik und mehr.',
-    href: 'https://vsv-roessing.de',
-  },
-  {
-    name: 'Kleingartenverein Rössing',
-    description: 'Gärten in der Kolonie Abendfrieden am Rössingbach.',
-    href: 'https://www.kgv-roessing.de',
-  },
-  {
-    name: 'Kirchengemeinde St. Peter und Paul',
-    description:
-      'Ev.-luth. Kirchengemeinde Rössing – mit Kirchenstiftung und Kindergarten.',
-    href: 'https://www.kirche-roessing.de',
-  },
-  {
-    name: 'Landfrauen Rössing-Barnten',
-    description: 'Vorträge, Ausflüge und Programm rund ums Landleben.',
-    href: 'https://kreis-landfrauen-hildesheim.de/ortsvereine/lf-roessing/',
-  },
-  {
-    name: 'CDU Rössing-Barnten-Adensen',
-    description: 'Ortsverband der CDU für Rössing, Barnten und Adensen.',
-    href: 'https://cdu-rba.de',
-  },
-  {
-    name: 'Grüne Nordstemmen',
-    description: 'Ortsverband für die ganze Gemeinde, aktiv auch in Rössing.',
-    href: 'https://gruene-nordstemmen.de',
-  },
-  {
-    name: 'SPD Barnten-Rössing',
-    description: 'Ortsverein der SPD, Teil des Gemeindeverbands Nordstemmen.',
-    href: 'https://spd-nordstemmen.de',
-  },
-  {
-    name: 'Dorfentwicklung',
-    description:
-      'Wie sich Rössing weiterentwickeln will – „Unser Dorf hat Zukunft“.',
-    href: 'https://dorfentwicklung.xn--rssing-wxa.de',
-  },
-  {
-    name: 'Digitales Dorfarchiv',
-    description: 'Die Geschichte Rössings digital gesammelt und bewahrt.',
-    href: 'https://archiv.xn--rssing-wxa.de',
-  },
-]
-
-// Vereine, die es in Rössing ebenfalls gibt, aber (noch) keine eigene bzw.
-// keine über eine bloße Kontaktseite hinausgehende Internetseite haben. Sie
-// werden hier bewusst nur genannt statt verlinkt, tauchen aber i.d.R. als
-// Veranstalter im Kalender auf.
-const vereineOhneWebsite = [
-  'Deutsches Rotes Kreuz – Ortsverein Rössing',
-  'Niedersächsische Kameradschaftsvereinigung (NKV) – Ortsgruppe Rössing',
-  'Kulturkreis Rössing',
-  'Bergmannsverein Rössing-Barnten',
-  'Arbeiterwohlfahrt (AWO) Rössing-Barnten',
-  'Bund der Vertriebenen – Ortsverband Rössing',
-  'KulTürÖffner Rössing',
-]
+// Drei zufällige Vereine für den Teaser auf der Startseite. Die Seite wird
+// statisch gebaut (astro build), dieser Code läuft also einmal pro Deploy –
+// nicht pro Seitenaufruf. Die Auswahl steht damit fest, bis zum nächsten
+// Build, und ist nicht "live" zufällig für jede:n Besucher:in.
+const vereineTeaser = [...vereine].sort(() => Math.random() - 0.5).slice(0, 3)
 ---
 
 <Layout {...metadata}>
@@ -161,61 +73,6 @@ const vereineOhneWebsite = [
       </div>
     </div>
   </Jumbotron>
-
-  {/* Die Rössing-App – ganz oben, weil wir gerade Ideen sammeln */}
-  <section class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
-    <div class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <p
-            class="text-sm font-semibold uppercase tracking-wider text-primary"
-          >
-            Ideen gesucht
-          </p>
-          <h2
-            class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
-          >
-            Was soll die Rössing-App können?
-          </h2>
-          <p class="mt-4 text-base-content/70">
-            Rössing hat seit Kurzem eine eigene Dorf-App. Den Anfang macht
-            „Mithelfen“: Die erste Funktion zeigt auf einer Karte, was gerade im
-            Dorf ansteht – welche Blumenkästen und Beete Wasser brauchen und wer
-            schon gegossen hat. Wer mag, trägt sich an einem Ort als Helfer:in
-            ein und wird gefragt, sobald dort etwas fällig wird – auf Wunsch mit
-            einer Nachricht aufs Handy. Dazu gibt es die Termine aus dem Dorf –
-            dieselben, die auch hier auf der Website stehen –, eine Rangliste,
-            ein eigenes Profil und die Liste der Dorfbewohner.
-          </p>
-          <p class="mt-3 text-base-content/70">
-            Jetzt suchen wir Ideen: Mitfahrgelegenheiten, Werkzeug verleihen,
-            Nachbarschaftshilfe – oder etwas ganz anderes. Denk
-            ruhig groß, technisch ist viel möglich, und gute Ideen werden auch
-            gebaut. Ein Satz reicht.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-4">
-            <a href="/app#ideen" class="btn btn-primary">
-              Idee vorschlagen
-            </a>
-            <a href="/app" class="btn btn-outline btn-primary">
-              Die App entdecken
-            </a>
-          </div>
-        </div>
-
-        <div class="flex justify-center lg:justify-end">
-          <Image
-            src={appKarte}
-            alt="Die Rössing-App zeigt eine Karte von Rössing mit farbigen Markern: grün für erledigte, gelb und rot für zu gießende Blumenkästen und Beete."
-            widths={[260, 390, 520]}
-            sizes="(min-width: 1024px) 260px, 60vw"
-            class="w-56 sm:w-64 rounded-box border border-base-300 shadow-md"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
 
   {/* Veranstaltungen – das Wichtigste zuerst */}
   <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
@@ -259,72 +116,89 @@ const vereineOhneWebsite = [
     class="bg-base-200 w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]"
   >
     <div class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
-      <div class="max-w-2xl mb-10">
-        <p class="text-sm font-semibold uppercase tracking-wider text-primary">
-          Mitmachen
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+        <div class="max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Mitmachen
+          </p>
+          <h2
+            class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
+          >
+            Vereine & Gruppen
+          </h2>
+          <p class="mt-3 text-base-content/70">
+            Rössing lebt von seinen Vereinen – von der Feuerwehr bis zum
+            Kleingartenverein.
+          </p>
+        </div>
+        <a href="/vereine" class="btn btn-outline btn-primary">
+          Alle Vereine
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {vereineTeaser.map((verein) => <VereinCard verein={verein} />)}
+      </div>
+    </div>
+  </section>
+
+  {/* Die Rössing-App – jetzt weiter unten, das Dorf kommt zuerst */}
+  <section class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-wider text-primary"
+        >
+          Ideen gesucht
         </p>
         <h2
           class="mt-2 text-3xl font-bold tracking-tight text-base-content sm:text-4xl"
         >
-          Vereine & Gruppen
+          Was soll die Rössing-App können?
         </h2>
+        <p class="mt-4 text-base-content/70">
+          Rössing hat seit Kurzem eine eigene Dorf-App. Den Anfang macht
+          „Mithelfen“: Die erste Funktion zeigt auf einer Karte, was gerade im
+          Dorf ansteht – welche Blumenkästen und Beete Wasser brauchen und wer
+          schon gegossen hat. Wer mag, trägt sich an einem Ort als Helfer:in
+          ein und wird gefragt, sobald dort etwas fällig wird – auf Wunsch mit
+          einer Nachricht aufs Handy. Dazu gibt es die Termine aus dem Dorf –
+          dieselben, die auch hier auf der Website stehen –, eine Rangliste,
+          ein eigenes Profil und die Liste der Dorfbewohner.
+        </p>
         <p class="mt-3 text-base-content/70">
-          Rössing lebt von seinen Vereinen. Hier eine Auswahl mit eigener
-          Internetseite – viele weitere findest du als Veranstalter in unserem
-          Veranstaltungskalender.
+          Jetzt suchen wir Ideen: Mitfahrgelegenheiten, Werkzeug verleihen,
+          Nachbarschaftshilfe – oder etwas ganz anderes. Denk
+          ruhig groß, technisch ist viel möglich, und gute Ideen werden auch
+          gebaut. Ein Satz reicht.
         </p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/app#ideen" class="btn btn-primary">
+            Idee vorschlagen
+          </a>
+          <a href="/app" class="btn btn-outline btn-primary">
+            Die App entdecken
+          </a>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          vereine.map((verein) => (
-            <a
-              href={verein.href}
-              rel="noopener noreferrer"
-              target="_blank"
-              class="card bg-base-100 border border-base-300 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-            >
-              <div class="card-body">
-                <h3 class="card-title text-base-content">{verein.name}</h3>
-                <p class="text-base-content/70">{verein.description}</p>
-                <span class="mt-2 text-sm font-medium text-primary">
-                  Zur Seite →
-                </span>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-
-      <div class="mt-12 max-w-3xl">
-        <h3 class="text-lg font-semibold text-base-content">
-          Weitere Vereine in Rössing
-        </h3>
-        <p class="mt-2 text-base-content/70">
-          Es gibt in Rössing noch mehr Vereine – sie haben aber (noch) keine
-          eigene Internetseite, die einen Besuch lohnt. Damit sie trotzdem
-          nicht fehlen, hier zumindest die Namen:
-        </p>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {
-            vereineOhneWebsite.map((name) => (
-              <li class="badge badge-lg badge-outline text-base-content/80 py-3">
-                {name}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <div class="mt-8">
-        <a href="/events" class="link link-primary font-medium">
-          Alle Vereine als Veranstalter im Kalender entdecken →
-        </a>
+      <div class="flex justify-center lg:justify-end">
+        <Image
+          src={appKarte}
+          alt="Die Rössing-App zeigt eine Karte von Rössing mit farbigen Markern: grün für erledigte, gelb und rot für zu gießende Blumenkästen und Beete."
+          widths={[260, 390, 520]}
+          sizes="(min-width: 1024px) 260px, 60vw"
+          class="w-56 sm:w-64 rounded-box border border-base-300 shadow-md"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
 
   {/* Digitales Dorf – eine bescheidene spätere Sektion */}
+
   <section class="container max-w-5xl mx-auto px-4 py-16 sm:py-20">
     <div
       class="rounded-box border border-base-300 bg-gradient-to-br from-base-100 to-base-200 p-8 sm:p-12 text-center"

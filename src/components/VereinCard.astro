@@ -1,0 +1,38 @@
+---
+import type { Verein } from '@/data/vereine'
+
+interface Props {
+  verein: Verein
+}
+
+const { verein } = Astro.props
+const Tag = verein.href ? 'a' : 'div'
+const suchtext = `${verein.name} ${verein.description}`.toLowerCase()
+---
+
+<Tag
+  href={verein.href}
+  rel={verein.href ? 'noopener noreferrer' : undefined}
+  target={verein.href ? '_blank' : undefined}
+  class:list={[
+    'verein-karte card border shadow-sm transition-all duration-300',
+    verein.href
+      ? 'bg-base-100 border-base-300 hover:shadow-lg hover:-translate-y-0.5'
+      : 'bg-base-100/60 border-base-300/60',
+  ]}
+  data-suchtext={suchtext}
+>
+  <div class="card-body">
+    <h3 class="card-title text-base-content">{verein.name}</h3>
+    <p class="text-base-content/70">{verein.description}</p>
+    {
+      verein.href ? (
+        <span class="mt-2 text-sm font-medium text-primary">Zur Seite →</span>
+      ) : (
+        <span class="mt-2 text-sm font-medium text-base-content/40">
+          Keine eigene Webseite
+        </span>
+      )
+    }
+  </div>
+</Tag>

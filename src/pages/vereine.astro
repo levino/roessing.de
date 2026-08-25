@@ -1,0 +1,91 @@
+---
+import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import VereinCard from '@/components/VereinCard.astro'
+import { vereine } from '@/data/vereine'
+
+const metadata = {
+  title: 'Vereine in Rössing',
+  description: 'Alle Vereine und Gruppen in Rössing im Überblick – mit Suche.',
+}
+
+const alleVereine = [...vereine].sort((a, b) =>
+  a.name.localeCompare(b.name, 'de'),
+)
+---
+
+<Layout {...metadata}>
+  <div class="container max-w-7xl mx-auto px-4 py-16 sm:py-20">
+    <div class="max-w-2xl mb-8">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary">
+        Mitmachen
+      </p>
+      <h1
+        class="mt-2 text-4xl font-bold tracking-tight text-base-content sm:text-5xl"
+      >
+        Vereine in Rössing
+      </h1>
+      <p class="mt-3 text-base-content/70">
+        Alle {alleVereine.length} Vereine und Gruppen, die wir in Rössing kennen
+        – alphabetisch. Wer eine eigene Internetseite mit brauchbarem Inhalt
+        hat, ist verlinkt; die anderen stehen trotzdem hier, damit sie nicht
+        fehlen.
+      </p>
+    </div>
+
+    <div class="mb-10 max-w-md">
+      <label for="verein-suche" class="sr-only">Verein suchen</label>
+      <input
+        type="search"
+        id="verein-suche"
+        placeholder="Verein suchen…"
+        class="input input-bordered w-full"
+        autocomplete="off"
+      />
+    </div>
+
+    <p
+      id="vereine-keine-treffer"
+      class="hidden rounded-box bg-base-200 p-10 text-center text-base-content/60"
+    >
+      Kein Verein gefunden.
+    </p>
+
+    <div
+      id="vereine-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {alleVereine.map((verein) => <VereinCard verein={verein} />)}
+    </div>
+
+    <div class="mt-8">
+      <a href="/events" class="link link-primary font-medium">
+        Vereine als Veranstalter im Kalender entdecken →
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Reine Client-Suche ohne Netzwerk-Roundtrip: filtert bei jeder Eingabe
+  // direkt im Browser anhand von data-suchtext auf den Karten.
+  const eingabe = document.getElementById('verein-suche')
+  const karten = Array.from(document.querySelectorAll('#vereine-grid > *'))
+  const keineTreffer = document.getElementById('vereine-keine-treffer')
+
+  const filtern = () => {
+    const suchwert =
+      eingabe instanceof HTMLInputElement
+        ? eingabe.value.trim().toLowerCase()
+        : ''
+    let treffer = 0
+    for (const karte of karten) {
+      const suchtext = karte.getAttribute('data-suchtext') || ''
+      const passt = !suchwert || suchtext.includes(suchwert)
+      karte.classList.toggle('hidden', !passt)
+      if (passt) treffer++
+    }
+    keineTreffer?.classList.toggle('hidden', treffer > 0)
+  }
+
+  eingabe?.addEventListener('input', filtern)
+</script>

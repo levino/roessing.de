@@ -1,0 +1,7 @@
+name: Festplatz Rössing
+address:
+  '@type': PostalAddress
+  streetAddress: Maschstraße 15
+  addressLocality: Nordstemmen
+  postalCode: '31171'
+'@type': Place

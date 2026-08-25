@@ -41,13 +41,74 @@ const upcomingEvents = (await getCollection(
 
 const nextEvents = upcomingEvents.slice(0, 3)
 
-// Vereine & Gruppen mit öffentlicher Internetseite. Interne, zugangsgeschützte
-// Tools werden hier bewusst nicht verlinkt.
+// Vereine & Gruppen mit öffentlicher Internetseite, die auch tatsächlich
+// eigenständigen Inhalt bietet (keine reinen Kontakt-Stubs). Interne,
+// zugangsgeschützte Tools werden hier bewusst nicht verlinkt.
 const vereine = [
   {
     name: 'Freiwillige Feuerwehr',
     description: 'Retten, sichern und bergen in und um Rössing.',
     href: 'https://www.ff-roessing.de',
+  },
+  {
+    name: 'Musikzug der Feuerwehr',
+    description:
+      'Blasorchester der Freiwilligen Feuerwehr Rössing – samt Förderverein.',
+    href: 'https://www.ff-roessing.de/musikzug/',
+  },
+  {
+    name: 'Dorfpflege Rössing',
+    description:
+      'Pflegt Grünflächen und Streuobstwiese, organisiert Osterfeuer & Weihnachtsmarkt.',
+    href: 'https://www.dorfpflege-roessing.de',
+  },
+  {
+    name: 'Bürgerstiftung Rössing',
+    description: 'Fördert bürgerschaftliches Engagement in Rössing.',
+    href: 'https://buergerstiftung-roessing.de',
+  },
+  {
+    name: 'Freizeitsee Rössing',
+    description:
+      'Renaturierung und Pflege der ehemaligen Kiesgrube als Naherholungsraum.',
+    href: 'https://freizeitsee-roessing.de',
+  },
+  {
+    name: 'VSV Rössing',
+    description:
+      'Volkssportvereinigung von 1897 – Fußball, Leichtathletik und mehr.',
+    href: 'https://vsv-roessing.de',
+  },
+  {
+    name: 'Kleingartenverein Rössing',
+    description: 'Gärten in der Kolonie Abendfrieden am Rössingbach.',
+    href: 'https://www.kgv-roessing.de',
+  },
+  {
+    name: 'Kirchengemeinde St. Peter und Paul',
+    description:
+      'Ev.-luth. Kirchengemeinde Rössing – mit Kirchenstiftung und Kindergarten.',
+    href: 'https://www.kirche-roessing.de',
+  },
+  {
+    name: 'Landfrauen Rössing-Barnten',
+    description: 'Vorträge, Ausflüge und Programm rund ums Landleben.',
+    href: 'https://kreis-landfrauen-hildesheim.de/ortsvereine/lf-roessing/',
+  },
+  {
+    name: 'CDU Rössing-Barnten-Adensen',
+    description: 'Ortsverband der CDU für Rössing, Barnten und Adensen.',
+    href: 'https://cdu-rba.de',
+  },
+  {
+    name: 'Grüne Nordstemmen',
+    description: 'Ortsverband für die ganze Gemeinde, aktiv auch in Rössing.',
+    href: 'https://gruene-nordstemmen.de',
+  },
+  {
+    name: 'SPD Barnten-Rössing',
+    description: 'Ortsverein der SPD, Teil des Gemeindeverbands Nordstemmen.',
+    href: 'https://spd-nordstemmen.de',
   },
   {
     name: 'Dorfentwicklung',
@@ -60,6 +121,20 @@ const vereine = [
     description: 'Die Geschichte Rössings digital gesammelt und bewahrt.',
     href: 'https://archiv.xn--rssing-wxa.de',
   },
+]
+
+// Vereine, die es in Rössing ebenfalls gibt, aber (noch) keine eigene bzw.
+// keine über eine bloße Kontaktseite hinausgehende Internetseite haben. Sie
+// werden hier bewusst nur genannt statt verlinkt, tauchen aber i.d.R. als
+// Veranstalter im Kalender auf.
+const vereineOhneWebsite = [
+  'Deutsches Rotes Kreuz – Ortsverein Rössing',
+  'Niedersächsische Kameradschaftsvereinigung (NKV) – Ortsgruppe Rössing',
+  'Kulturkreis Rössing',
+  'Bergmannsverein Rössing-Barnten',
+  'Arbeiterwohlfahrt (AWO) Rössing-Barnten',
+  'Bund der Vertriebenen – Ortsverband Rössing',
+  'KulTürÖffner Rössing',
 ]
 ---
 
@@ -194,7 +269,7 @@ const vereine = [
           Vereine & Gruppen
         </h2>
         <p class="mt-3 text-base-content/70">
-          Rössing lebt von seinen Vereinen. Eine Auswahl mit eigener
+          Rössing lebt von seinen Vereinen. Hier eine Auswahl mit eigener
           Internetseite – viele weitere findest du als Veranstalter in unserem
           Veranstaltungskalender.
         </p>
@@ -219,6 +294,26 @@ const vereine = [
             </a>
           ))
         }
+      </div>
+
+      <div class="mt-12 max-w-3xl">
+        <h3 class="text-lg font-semibold text-base-content">
+          Weitere Vereine in Rössing
+        </h3>
+        <p class="mt-2 text-base-content/70">
+          Es gibt in Rössing noch mehr Vereine – sie haben aber (noch) keine
+          eigene Internetseite, die einen Besuch lohnt. Damit sie trotzdem
+          nicht fehlen, hier zumindest die Namen:
+        </p>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {
+            vereineOhneWebsite.map((name) => (
+              <li class="badge badge-lg badge-outline text-base-content/80 py-3">
+                {name}
+              </li>
+            ))
+          }
+        </ul>
       </div>
 
       <div class="mt-8">

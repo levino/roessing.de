@@ -2,7 +2,7 @@
 startDate: 2026-10-03T17:00:00+02:00
 endDate: 2026-10-03T19:30:00+02:00
 location: schlosssaal
-organizer: kulturoeffner
+organizer: kultueroeffner
 description: Szenische Lesung "Trug und Schein" – eine Liebesgeschichte in Briefen von 1938 bis 1945, mit Musik und Gespräch, im Schlosssaal Rössing.
 name: Trug und Schein
 ---

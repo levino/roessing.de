@@ -2,7 +2,7 @@
 startDate: 2026-06-21T14:00:00+02:00
 endDate: 2026-06-21T17:30:00+02:00
 location: dgh
-organizer: kulturoeffner
+organizer: kultueroeffner
 description: Ideenwerkstatt Rössing – moderierter Austausch und kreativer Kaffeeklatsch zur gemeinsamen Gestaltung unseres Dorfes.
 name: Ideenwerkstatt Rössing – Themenwanderung & Dorfschnack
 ---

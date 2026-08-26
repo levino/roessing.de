@@ -196,6 +196,9 @@ Beim Build entsteht zusätzlich `/events.json` (`src/pages/events.json.ts`). Die
 - `url` gesetzt → `url` zeigt auf die externe Primärquelle und `external: true`; die interne Detailseite taucht dann nirgends auf (gleiche Regel wie auf der Website).
 - Die Datei entsteht beim Build und altert zwischen zwei Builds: Wer sie anzeigt, filtert die Vergangenheit noch einmal selbst.
 
+### Nach dem Anlegen eines neuen Events: Deep-Link nicht vergessen
+Wenn ein neues Event hinterlegt wird, **immer** einen Deep-Link zur Detailseite (`/events/{id}`, `{id}` = Dateiname ohne `.md`) angeben – sowohl in der PR-Beschreibung/einem PR-Kommentar (Preview-URL, sobald das Cloudflare-Deployment durchgelaufen ist: `https://{branch}-roessing-de.post-505.workers.dev/events/{id}`) als auch in der Chat-Antwort an den Auftraggeber.
+
 ## ⚡ Wichtige Hinweise
 
 1. **Immer auf Deutsch antworten** - keine Ausnahmen!

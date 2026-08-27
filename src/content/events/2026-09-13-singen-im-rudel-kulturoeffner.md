@@ -1,7 +1,7 @@
 ---
 name: Singen im Rudel
 description: Gemeinsames Karaoke-Singen für alle – herzlich willkommen!
-startDate: 2026-06-07T16:00:00+02:00
+startDate: 2026-09-13T16:00:00+02:00
 location: hof-baumgarten
 organizer: kultueroeffner
 ---

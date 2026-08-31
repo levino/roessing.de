@@ -16,6 +16,22 @@ import { kontaktMail, kontaktTelefon, mailtoMitBetreff } from '@/data/kontakt'
  * eingeladen werden muss – ein öffentlicher Store-Link existiert also nicht.
  */
 const playStoreUrl: string | null = null
+
+/**
+ * iOS: offener TestFlight-Test. Der Link funktioniert für jeden, der ihn
+ * anklickt – deshalb steht er hier offen auf der Seite.
+ */
+const testFlightUrl = 'https://testflight.apple.com/join/eV8Tu46T'
+
+/**
+ * Android: Opt-in-Link des INTERNEN Tests. Er darf offen hier stehen, weil er
+ * nur für Adressen funktioniert, die vorher in der Play Console auf die
+ * Testerliste gesetzt wurden – alle anderen sehen eine Fehlermeldung. Deshalb
+ * kommt auf der Seite immer erst die Bitte, sich zu melden, und danach der
+ * Link.
+ */
+const androidTestUrl =
+  'https://play.google.com/apps/internaltest/4701602027040859945'
 ---
 
 <section id="mitmachen" class="container max-w-4xl mx-auto px-4 py-16 sm:py-20">
@@ -52,61 +68,83 @@ const playStoreUrl: string | null = null
             </h2>
             <p class="mt-4 text-base-content/70">
               Die Rössing-App wird gerade im Dorf ausprobiert und ist deshalb
-              noch nicht öffentlich zum Herunterladen zu finden. Wer mitmachen
-              möchte, meldet sich einfach kurz.
+              noch nicht ganz normal in den Stores zu finden. Wie du sie
+              trotzdem bekommst, hängt an deinem Telefon.
             </p>
           </div>
 
           <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="rounded-box border border-base-300 bg-base-200 p-6">
+            <div class="rounded-box border border-base-300 bg-base-200 p-6 flex flex-col">
               <h3 class="font-semibold text-base-content">
-                Du willst die App ausprobieren
+                Du hast ein iPhone oder iPad
               </h3>
-              <p class="mt-2 text-base-content/70">
-                Melde dich kurz – am besten mit der Google-Adresse, mit der du
-                auf deinem Android-Handy angemeldet bist. Du bekommst dann eine
-                Einladung zum Test. Wie es weitergeht, steht unten.
+              <p class="mt-2 grow text-base-content/70">
+                Hier geht es sofort los: Der Test ist offen für alle. Du
+                brauchst nur Apples App <em>TestFlight</em> – der Link führt
+                dich hin und erklärt den Rest.
               </p>
+              <a
+                href={testFlightUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn btn-primary mt-4"
+              >
+                Mit TestFlight installieren
+              </a>
             </div>
-            <div class="rounded-box border border-base-300 bg-base-200 p-6">
+            <div class="rounded-box border border-base-300 bg-base-200 p-6 flex flex-col">
               <h3 class="font-semibold text-base-content">
-                Testen musst du nicht
+                Du hast ein Android-Handy
               </h3>
-              <p class="mt-2 text-base-content/70">
-                Wenn du kein Android-Handy hast oder schlicht keine Lust aufs
-                Testen: Deine{' '}
-                <a class="link link-primary" href="#ideen">
-                  Idee für eine Funktion
-                </a>{' '}
-                ist trotzdem willkommen. Genauso: was hakt, was unverständlich
-                ist, was fehlt.
+              <p class="mt-2 grow text-base-content/70">
+                Hier läuft der Test noch in einer geschlossenen Runde. Schreib
+                uns kurz – am besten mit der Google-Adresse, mit der du auf
+                deinem Handy angemeldet bist. Danach kommst du über den Link
+                unten zur App.
               </p>
+              <a
+                href={mailtoMitBetreff('Rössing-App: Ich mache mit (Android)')}
+                class="btn btn-primary mt-4"
+              >
+                Schreib uns
+              </a>
             </div>
           </div>
 
           <div class="mt-10">
             <h3 class="text-lg font-semibold text-base-content">
-              So kommst du zur App
+              So kommst du auf Android zur App
             </h3>
             <ul class="steps steps-vertical mt-4 w-full">
               <li class="step step-primary">
                 <span class="text-left text-base-content/80">
-                  Du meldest dich bei uns, dass du testen möchtest.
+                  Du meldest dich bei uns, dass du testen möchtest, und nennst
+                  uns deine Google-Adresse.
                 </span>
               </li>
               <li class="step step-primary">
                 <span class="text-left text-base-content/80">
-                  Du bekommst einen Einladungslink für den internen Test.
+                  Wir tragen dich in die Testerliste ein und sagen dir Bescheid.
                 </span>
               </li>
               <li class="step step-primary">
                 <span class="text-left text-base-content/80">
-                  Den Link einmal öffnen und den Test annehmen –{' '}
+                  Dann{' '}
+                  <a
+                    class="link link-primary"
+                    href={androidTestUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    diesen Link öffnen
+                  </a>{' '}
+                  und den Test annehmen –{' '}
                   <strong>
                     wichtig: mit demselben Google-Konto, das auf deinem Telefon
                     eingerichtet ist
                   </strong>
-                  .
+                  . Vor dem Eintrag in die Liste meldet der Link, dass die Seite
+                  nicht verfügbar ist – das ist normal.
                 </span>
               </li>
               <li class="step step-primary">
@@ -118,18 +156,31 @@ const playStoreUrl: string | null = null
             </ul>
           </div>
 
+          <div class="mt-8 rounded-box border border-base-300 bg-base-200 p-6">
+            <h3 class="font-semibold text-base-content">Testen musst du nicht</h3>
+            <p class="mt-2 text-base-content/70">
+              Wenn du kein Smartphone hast oder schlicht keine Lust aufs Testen:
+              Deine{' '}
+              <a class="link link-primary" href="#ideen">
+                Idee für eine Funktion
+              </a>{' '}
+              ist trotzdem willkommen. Genauso: was hakt, was unverständlich
+              ist, was fehlt.
+            </p>
+          </div>
+
           <div class="mt-8 text-center">
-            <a
-              href={mailtoMitBetreff('Rössing-App: Ich mache mit')}
-              class="btn btn-primary btn-lg"
-            >
-              Schreib uns
-            </a>
-            <p class="mt-4 text-sm text-base-content/60">
-              Per E-Mail an <a class="link" href={`mailto:${kontaktMail}`}>{kontaktMail}</a> oder
-              telefonisch unter <a class="link" href={`tel:${kontaktTelefon}`}>{kontaktTelefon}</a>.
-              Sobald die App öffentlich verfügbar ist, findest du den Link hier
-              an dieser Stelle.
+            <p class="text-sm text-base-content/60">
+              Fragen? Per E-Mail an{' '}
+              <a class="link" href={`mailto:${kontaktMail}`}>
+                {kontaktMail}
+              </a>{' '}
+              oder telefonisch unter{' '}
+              <a class="link" href={`tel:${kontaktTelefon}`}>
+                {kontaktTelefon}
+              </a>
+              . Sobald die App öffentlich verfügbar ist, findest du den Link
+              hier an dieser Stelle.
             </p>
           </div>
         </div>

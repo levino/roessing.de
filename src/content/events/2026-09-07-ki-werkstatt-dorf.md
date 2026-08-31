@@ -1,6 +1,6 @@
 ---
 name: KI-Werkstatt fürs Dorf
-description: Offener Abend im Dorfgemeinschaftshaus: Wir überlegen gemeinsam, was uns die Rössing-App und digitale Werkzeuge im Dorf bringen können – und bauen sie mit KI direkt weiter. Für alle, ohne Vorkenntnisse.
+description: 'Offener Abend im Dorfgemeinschaftshaus: Wir überlegen gemeinsam, was uns die Rössing-App und digitale Werkzeuge im Dorf bringen können – und bauen sie mit KI direkt weiter. Für alle, ohne Vorkenntnisse.'
 startDate: 2026-09-07T19:00:00+02:00
 endDate: 2026-09-07T21:00:00+02:00
 location: dgh

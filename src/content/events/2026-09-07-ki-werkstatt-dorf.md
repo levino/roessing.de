@@ -92,14 +92,17 @@ haben. Sie ist noch im Test und deshalb nicht frei in den Stores zu finden:
 - **iPhone:** Der Test ist offen für alle. Einfach diesen Link auf dem iPhone
   öffnen und der Anleitung folgen:
   [TestFlight-Einladung](https://testflight.apple.com/join/eV8Tu46T).
-- **Android:** Hier läuft der Test noch in einer geschlossenen Gruppe, zu der
-  man eingeladen werden muss – am besten mit der Google-Adresse melden, mit der
-  das eigene Telefon eingerichtet ist.
+- **Android:** Hier läuft der Test noch in einer geschlossenen Gruppe. Dafür
+  bitte vorher kurz an [post@levinkeller.de](mailto:post@levinkeller.de)
+  schreiben – am besten mit der Google-Adresse, mit der das eigene Telefon
+  eingerichtet ist. Danach führt dieser Link zur App:
+  [Zum Test anmelden](https://play.google.com/apps/internaltest/4701602027040859945).
+  Wichtig: Der Link funktioniert erst, wenn die Adresse auf der Testerliste
+  steht, und man muss ihn mit demselben Google-Konto öffnen, das auf dem
+  Telefon eingerichtet ist.
 
-Für Android genügt eine kurze Nachricht an
-[post@levinkeller.de](mailto:post@levinkeller.de). Alles Weitere steht auf der
-Seite [Die Rössing-App](/app). Wer es vorher nicht schafft: Wir richten das am
-Abend gemeinsam ein.
+Alles Weitere steht auf der Seite [Die Rössing-App](/app). Wer es vorher nicht
+schafft: Wir richten das am Abend gemeinsam ein.
 
 ## Fragen mitbringen
 

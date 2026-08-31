@@ -1,7 +1,14 @@
 name: Dorfgemeinschaftshaus Rössing
 address:
   '@type': PostalAddress
-  streetAddress: Kirchstraße 3
+  # Das Haus steht am Peter-Winkler-Platz – so heißt es im Dorf, und so gehört
+  # es auch auf die Seite. Die Postanschrift Kirchstraße 3 taugt nur dazu, dass
+  # Google Maps das Ziel findet; sie steckt deshalb unten in `url` und wird
+  # nicht mehr angezeigt.
+  streetAddress: Peter-Winkler-Platz
   addressLocality: Nordstemmen
   postalCode: '31171'
 '@type': Place
+# Vorrang vor der aus der Anschrift gebauten Kartensuche (siehe
+# AddressLink.astro): führt zur Kirchstraße 3, die Maps kennt.
+url: https://www.google.com/maps/search/?api=1&query=Kirchstra%C3%9Fe+3%2C+31171+Nordstemmen

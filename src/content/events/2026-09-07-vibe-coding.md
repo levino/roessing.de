@@ -10,7 +10,8 @@ shortlink: k9d
 
 Was früher ein ganzes Team und Monate gebraucht hätte, schaffen heute ein paar
 Leute an einem Abend – mit KI. Genau das probieren wir aus, an unserer eigenen
-[Dorf-App](/app) und an dieser Website.
+[Dorf-App](/app) und an dieser Website. Levin Keller und Luca Elbeshausen laden
+dazu ins Dorfgemeinschaftshaus ein.
 
 Wir bauen zusammen etwas, das uns alle angeht: Mitfahrgelegenheiten,
 Sportangebote, eine Zu-verschenken-Ecke, Hilfe beim Digitalen für Ältere. Ein

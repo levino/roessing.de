@@ -119,14 +119,17 @@
 // werden. Geometrie wie in store/assets/icon.svg des App-Repos: Die Werte
 // stammen aus dem Adaptive Icon der App und sind bewusst leicht asymmetrisch
 // (das obere Blütenblatt sitzt weiter außen als das untere).
+//
+// Die Blütenblätter sind grün statt cremefarben: Auf dem weißen Grund wäre
+// Creme kaum zu sehen – es war die Farbe für den früheren grünen Kopfbalken.
 #let blume(groesse) = {
   // Umrechnung von der 512er-Zeichenfläche des Icons auf die Zielgröße.
   let f = groesse / 512
   box(width: groesse, height: groesse)[
-    #place(center + horizon, dy: -93.87 * f, circle(radius: 42.67 * f, fill: creme, stroke: none))
-    #place(center + horizon, dy: 76.80 * f, circle(radius: 42.67 * f, fill: creme, stroke: none))
-    #place(center + horizon, dx: -85.33 * f, dy: -8.53 * f, circle(radius: 42.67 * f, fill: creme, stroke: none))
-    #place(center + horizon, dx: 85.33 * f, dy: -8.53 * f, circle(radius: 42.67 * f, fill: creme, stroke: none))
+    #place(center + horizon, dy: -93.87 * f, circle(radius: 42.67 * f, fill: gruen, stroke: none))
+    #place(center + horizon, dy: 76.80 * f, circle(radius: 42.67 * f, fill: gruen, stroke: none))
+    #place(center + horizon, dx: -85.33 * f, dy: -8.53 * f, circle(radius: 42.67 * f, fill: gruen, stroke: none))
+    #place(center + horizon, dx: 85.33 * f, dy: -8.53 * f, circle(radius: 42.67 * f, fill: gruen, stroke: none))
     #place(center + horizon, circle(radius: 51.20 * f, fill: gelb, stroke: none))
   ]
 }
@@ -143,7 +146,7 @@
   let pt-s = (n) => n * s * 1pt
   let cm-s = (n) => n * s * 1cm
 
-  set page(paper: papier, margin: 0cm)
+  set page(paper: papier, margin: (x: cm-s(1.3), y: cm-s(1.0)))
   set text(
     font: ("Inter Variable", "Liberation Sans", "DejaVu Sans"),
     lang: "de",
@@ -155,40 +158,40 @@
   // Abstände werden hier bewusst einzeln über #v(...) gesetzt.
   set par(leading: 0.72em, spacing: 0.4em, justify: false)
 
-  // --- Kopf: grünes Band mit Blume und Schlagzeile --------------------------
-  block(
-    width: 100%,
-    fill: gruen,
-    inset: (x: cm-s(1.3), y: cm-s(0.78)),
-  )[
-    #set text(fill: white)
+  // --- Kopf: Blume und Schlagzeile, abgeschlossen durch eine Linie ----------
+  // Frueher ein grosser gruener Balken. Der frisst beim Nachdrucken Toner und
+  // wird auf jedem Kopierer schmutzig – die Linie leistet dieselbe Trennung.
+  block(width: 100%)[
     #grid(
       columns: (auto, 1fr),
       column-gutter: cm-s(0.8),
       align: (horizon, horizon),
       blume(cm-s(2.6)),
       [
-        #text(size: pt-s(11), weight: "semibold", tracking: 0.12em)[#kicker]
+        #text(size: pt-s(11), weight: "semibold", tracking: 0.12em, fill: gruen)[#kicker]
         #v(cm-s(0.18))
-        #text(size: pt-s(46), weight: "black", tracking: -0.02em)[#schlagzeile]
+        #text(size: pt-s(46), weight: "black", tracking: -0.02em, fill: gruen)[#schlagzeile]
         #v(cm-s(0.1))
         #text(size: pt-s(17), weight: "medium")[#unterzeile]
       ],
     )
   ]
 
+  v(cm-s(0.45))
+  line(length: 100%, stroke: pt-s(2) + gruen)
+
   // --- Körper ---------------------------------------------------------------
-  block(inset: (x: cm-s(1.3), top: cm-s(0.6), bottom: cm-s(0.2)))[
+  block(inset: (top: cm-s(0.55), bottom: cm-s(0.2)))[
     #text(size: pt-s(12.5))[#einleitung]
 
     #v(cm-s(0.45))
 
-    // Was es heute schon gibt – cremefarben abgesetzt.
+    // Was es heute schon gibt – durch einen Rahmen abgesetzt statt durch Ton.
     #block(
       width: 100%,
-      fill: creme,
       inset: cm-s(0.45),
       radius: pt-s(4),
+      stroke: pt-s(1) + gruen,
     )[
       #text(size: pt-s(14), weight: "bold", fill: gruen)[#heute-titel]
       #v(cm-s(0.22))
@@ -224,12 +227,12 @@
   v(1fr)
 
   // --- Aufruf und QR-Code -----------------------------------------------------
-  // Als cremefarbenes Band über die ganze Breite: Damit wirkt der Freiraum
-  // darüber wie eine gewollte Trennung und nicht wie ein Loch im Satz.
+  // Eine Linie trennt den Aufruf vom Freiraum darüber – früher tat das ein
+  // cremefarbenes Band über die ganze Breite.
+  line(length: 100%, stroke: pt-s(2) + gruen)
   block(
     width: 100%,
-    fill: creme,
-    inset: (x: cm-s(1.3), y: cm-s(0.62)),
+    inset: (y: cm-s(0.55)),
   )[
     #grid(
       columns: (1fr, auto),
@@ -249,8 +252,7 @@
         #text(size: pt-s(17.5), weight: "black", fill: gruen)[#ziel-url-anzeige]
       ],
       [
-        // Der weiße Grund gehört zum QR-Code (Ruhezone) und darf nicht vom
-        // cremefarbenen Band überlagert werden.
+        // Die Ruhezone des QR-Codes bleibt ausdrücklich weiß.
         #box(
           fill: white,
           stroke: pt-s(0.5) + grau,
@@ -267,10 +269,10 @@
   ]
 
   // --- Fußzeile -------------------------------------------------------------
+  line(length: 100%, stroke: pt-s(0.5) + grau)
   block(
     width: 100%,
-    fill: hellgrau,
-    inset: (x: cm-s(1.3), y: cm-s(0.35)),
+    inset: (top: cm-s(0.3)),
   )[
     #align(center)[
       #text(size: pt-s(8.5), fill: grau)[#fusszeile]

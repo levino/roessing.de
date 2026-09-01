@@ -24,7 +24,7 @@ Zwischendurch nehmen wir uns Zeit für das Thema Daten: Was passiert eigentlich 
 
 Für Interessierte zeigt Levin außerdem, wie man die Familien-Aufgaben-App *Family Todo* über einen MCP-Server mit einem KI-Chat verbindet – aber nur, wenn Zeit und Interesse da sind.
 
-Alle Fragen, auch vermeintlich „dumme", sind herzlich willkommen. Genau dafür ist der Abend da.
+Jede Frage ist willkommen, auch die ganz grundsätzlichen. Genau dafür ist der Abend da.
 
 ## Was schon da ist – KI in der Region
 

@@ -53,7 +53,14 @@ export type Organizer = z.infer<typeof organizerSchema>
 export type Address = z.infer<typeof addressSchema>
 export type Location = z.infer<typeof locationSchema>
 
-const createEventSchema = ({ image }: SchemaContext) =>
+/**
+ * Das Schema einer Veranstaltung. Wird nicht nur von den beiden
+ * Event-Collections benutzt, sondern auch von
+ * `src/tools/events/content-rules.test.ts`: Der Test parst die Frontmatter
+ * jeder Event-Datei mit js-yaml und prüft sie gegen dieses Schema, damit
+ * kaputtes YAML nicht erst im CI-Build auffällt.
+ */
+export const createEventSchema = ({ image }: SchemaContext) =>
   z.object({
     name: z.string(),
     description: z.string(),

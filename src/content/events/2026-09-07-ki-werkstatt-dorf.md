@@ -1,5 +1,5 @@
 ---
-name: KI-Werkstatt fürs Dorf
+name: Gemeinsames Vibe-Coding
 description: 'Offener Abend im Dorfgemeinschaftshaus: Was können App und Website fürs Dorf tun? Wir sammeln Ideen und bauen sie mit KI gleich weiter. Für alle, die neugierig sind.'
 startDate: 2026-09-07T19:00:00+02:00
 endDate: 2026-09-07T21:00:00+02:00

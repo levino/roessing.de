@@ -196,6 +196,28 @@ Beim Build entsteht zusätzlich `/events.json` (`src/pages/events.json.ts`). Die
 - `url` gesetzt → `url` zeigt auf die externe Primärquelle und `external: true`; die interne Detailseite taucht dann nirgends auf (gleiche Regel wie auf der Website).
 - Die Datei entsteht beim Build und altert zwischen zwei Builds: Wer sie anzeigt, filtert die Vergangenheit noch einmal selbst.
 
+### ⛔ Vergangene Termine bleiben, wie sie waren
+
+**Termine, die stattgefunden haben, werden inhaltlich nicht mehr angefasst.** Sie
+sind eine Ankündigung, die es so gegeben hat – wer sie nachträglich umschreibt,
+behauptet, es sei etwas anderes angekündigt worden, als die Leute damals gelesen
+haben. Das ist Täuschung, auch wenn die neue Formulierung die schönere ist.
+
+Das gilt für Titel, Beschreibung und Markdown-Body gleichermaßen und unabhängig
+davon, wie gut der Grund klingt: bessere Formulierung, geänderte Haltung,
+einheitlicher Sprachgebrauch, ein Wort, das man heute vermeidet.
+
+Erlaubt bleiben:
+
+- **Sachliche Korrekturen an Daten**, die den Termin auffindbar halten – ein
+  falsch übernommenes Datum, ein kaputter Link, ein umbenannter Ort.
+- **Technische Umstellungen**, die den Text unberührt lassen (Schema-Felder,
+  Referenzen auf Organizer und Locations).
+- **Löschen** eines Termins, den es nie gab.
+
+Wer den Wortlaut von damals heute anders haben möchte, legt einen neuen Termin
+an oder schreibt es in den kommenden – der vergangene bleibt stehen.
+
 ### Nach dem Anlegen eines neuen Events: Deep-Link nicht vergessen
 Wenn ein neues Event hinterlegt wird, **immer** einen Deep-Link zur Detailseite (`/events/{id}`, `{id}` = Dateiname ohne `.md`) angeben – sowohl in der PR-Beschreibung/einem PR-Kommentar (Preview-URL, sobald das Cloudflare-Deployment durchgelaufen ist: `https://{branch}-roessing-de.post-505.workers.dev/events/{id}`) als auch in der Chat-Antwort an den Auftraggeber.
 

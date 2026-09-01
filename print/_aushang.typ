@@ -2,15 +2,14 @@
 //  Aushang „Rössing-App – Ideen gesucht“
 // =============================================================================
 //
-//  Diese Datei enthält Text UND Layout des Aushangs. Gebaut werden daraus zwei
-//  Formate, jeweils über eine eigene kleine Datei:
+//  Diese Datei enthält Text UND Layout des Aushangs. Gebaut wird daraus
+//  ein Format, über eine eigene kleine Datei:
 //
 //      print/app-aushang-a4.typ   A4  – zum Aufhängen (Schaukasten, Dorfladen)
-//      print/app-aushang-a5.typ   A5  – Handzettel zum Mitnehmen
 //
-//  Beide benutzen dasselbe Layout; der Unterschied ist allein der
-//  Maßstabsfaktor (siehe `aushang(...)` ganz unten). Wer etwas am Inhalt
-//  ändern will, ändert NUR den Abschnitt „TEXTE“ direkt hier drunter.
+//  Der Maßstabsfaktor von `aushang(...)` bleibt erhalten: Ein weiteres Format
+//  braucht damit nur eine Zeile, ohne das Layout anzufassen. Wer etwas am
+//  Inhalt ändern will, ändert NUR den Abschnitt „TEXTE“ direkt hier drunter.
 //  Der Rest der Datei ist Layout und muss dafür nicht angefasst werden.
 //
 //  Kompiliert wird nicht von Hand: Die Astro-Integration
@@ -55,7 +54,7 @@
 // Einleitung im weißen Bereich.
 #let einleitung = "Die Rössing-App gibt es schon. Was als Nächstes hineinkommt, soll sich danach richten, was im Dorf wirklich gebraucht wird. Deshalb die Frage an alle: Was würde dir den Alltag in Rössing leichter machen? Ein Satz reicht – und trau dich ruhig, groß zu denken."
 
-// Der cremefarbene Kasten: was die App heute schon kann.
+// Der abgesetzte Kasten: was die App heute schon kann.
 #let heute-titel = "Das kann die App heute schon: „Mithelfen“"
 #let heute-text = "Die erste Funktion ist fertig. Auf der Dorfkarte siehst du, was gerade ansteht – welche Blumenkästen und Beete Wasser brauchen oder gejätet werden müssen. Eine Ampel zeigt, wie dringend es ist. Wer etwas erledigt hat, meldet das mit einem Tipp, und alle anderen sehen es sofort."
 
@@ -110,9 +109,7 @@
 // Farben der App (android/app/src/main/res/values/colors.xml im App-Repo).
 #let gruen = rgb("#3B6939")
 #let gelb = rgb("#F9A825")
-#let creme = rgb("#FFF3C4")
 #let grau = rgb("#5a5a5a")
-#let hellgrau = rgb("#f4f4f4")
 
 // Die Blume aus dem App-Icon, direkt gezeichnet statt als Bild eingebunden –
 // so skaliert sie verlustfrei und es muss keine Grafikdatei mitgepflegt
@@ -120,8 +117,8 @@
 // stammen aus dem Adaptive Icon der App und sind bewusst leicht asymmetrisch
 // (das obere Blütenblatt sitzt weiter außen als das untere).
 //
-// Die Blütenblätter sind grün statt cremefarben: Auf dem weißen Grund wäre
-// Creme kaum zu sehen – es war die Farbe für den früheren grünen Kopfbalken.
+// Die Blütenblätter sind grün: Auf weißem Grund braucht die Blume kräftige
+// Farben, das frühere Creme war für den grünen Kopfbalken gedacht.
 #let blume(groesse) = {
   // Umrechnung von der 512er-Zeichenfläche des Icons auf die Zielgröße.
   let f = groesse / 512
@@ -227,8 +224,7 @@
   v(1fr)
 
   // --- Aufruf und QR-Code -----------------------------------------------------
-  // Eine Linie trennt den Aufruf vom Freiraum darüber – früher tat das ein
-  // cremefarbenes Band über die ganze Breite.
+  // Eine Linie trennt den Aufruf vom Freiraum darüber.
   line(length: 100%, stroke: pt-s(2) + gruen)
   block(
     width: 100%,

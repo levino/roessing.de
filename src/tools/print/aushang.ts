@@ -58,11 +58,6 @@ const formate = [
     format: 'A4',
     beschreibung: 'Zum Aufhängen – Schaukasten, schwarzes Brett, Ladentür.',
   },
-  {
-    slug: 'app-aushang-a5',
-    format: 'A5',
-    beschreibung: 'Handzettel zum Mitnehmen oder Auslegen.',
-  },
 ] as const
 
 export const aushangFormate: AushangFormat[] = formate.map((f) => ({

@@ -30,11 +30,12 @@ Mitreden ist genauso viel wert. Jede Frage ist willkommen, auch die ganz
 grundsätzlichen – genau dafür ist der Abend da. Und er soll sich wiederholen:
 Jedes Mal geht man ein Stück mutiger nach Hause.
 
-**Vorher die Dorf-App installieren:** Auf dem iPhone über
+**Bitte vorab die Dorf-App einrichten.** Auf dem iPhone geht das über
 [TestFlight](https://testflight.apple.com/join/eV8Tu46T), offen für alle. Für
-Android bitte kurz an [post@levinkeller.de](mailto:post@levinkeller.de)
-schreiben, danach führt
+Android kurz an [post@levinkeller.de](mailto:post@levinkeller.de) schreiben,
+danach führt
 [dieser Link](https://play.google.com/apps/internaltest/4701602027040859945)
-zur App. Wir richten es auch gern am Abend gemeinsam ein.
+zur App. Beim ersten Start legst du deine Rössing-ID an – dafür genügen ein paar
+Minuten in Ruhe zu Hause. Wer das vorher erledigt, ist am Abend sofort dabei.
 
 Der Abend ist kostenlos, einfach vorbeikommen.

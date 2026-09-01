@@ -221,6 +221,53 @@ an oder schreibt es in den kommenden – der vergangene bleibt stehen.
 ### Nach dem Anlegen eines neuen Events: Deep-Link nicht vergessen
 Wenn ein neues Event hinterlegt wird, **immer** einen Deep-Link zur Detailseite (`/events/{id}`, `{id}` = Dateiname ohne `.md`) angeben – sowohl in der PR-Beschreibung/einem PR-Kommentar (Preview-URL, sobald das Cloudflare-Deployment durchgelaufen ist: `https://{branch}-roessing-de.post-505.workers.dev/events/{id}`) als auch in der Chat-Antwort an den Auftraggeber.
 
+## 🖨️ Plakate und Aushänge
+
+Plakate entstehen als Typst-Quellen (`.typ`) in `src/content/events/` (Termine)
+und `print/` (dauerhafte Drucksachen). Die PDFs baut die Integration
+`src/integrations/typst-posters.ts` bei jedem Build nach `public/posters/`; sie
+werden bewusst nicht committet.
+
+### Tonerschonend gestalten
+
+**Der Hintergrund bleibt weiß. Farbe steckt in Schrift, Linien und Rahmen –
+niemals in großen Flächen.** Ein Aushang wird nachgedruckt, kopiert und
+weitergereicht; ein flächiger Farbblock leert die Kartusche und sieht auf dem
+nächsten Kopierer grau und schmutzig aus.
+
+Konkret heißt das:
+
+- Kein `block(fill: …)` über die Breite, keine getönten Info-Kästen, keine
+  farbige Kopf- oder Fußleiste.
+- Statt Fläche: farbige Überschriften, kräftige Linien (`line(stroke: 2pt +
+  accent)`) und Rahmen (`stroke:` statt `fill:`).
+- Der QR-Code bleibt schwarz auf weiß – er muss scannbar sein.
+
+### Vor dem Commit ansehen
+
+Ein Plakat wird **angeschaut**, bevor es eingecheckt wird. Ob es auf eine Seite
+passt, sieht man der Quelle nicht an: Schon ein Satz mehr schiebt die Fußzeile
+auf Seite zwei, und im CI-Build fällt das nicht auf, weil zwei Seiten kein
+Fehler sind.
+
+In einer Umgebung ohne Netzzugang zu GitHub lässt sich Typst über PyPI holen
+(`pip install typst`) und die Seite als Bild rendern:
+
+```python
+import typst
+typst.compile('plakat.typ', output='vorschau{n}.png', format='png', ppi=100)
+```
+
+Entstehen mehrere PNG-Dateien, ist das Plakat zu lang. Dabei rendert die
+Vorschau mit einer Ersatzschrift, weil Inter nachgeladen werden muss – das
+Layout braucht deshalb etwas Puffer statt millimetergenauer Passung.
+
+### QR-Codes
+
+Nicht von Hand bauen: `npm run event-qr <event-dateiname>` erzeugt den Code aus
+dem `shortlink` des Events (`scripts/generate-event-qr.js`), `npm run print-qr`
+den für die Drucksachen in `print/`.
+
 ## ⚡ Wichtige Hinweise
 
 1. **Immer auf Deutsch antworten** - keine Ausnahmen!

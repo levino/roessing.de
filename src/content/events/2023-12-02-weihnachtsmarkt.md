@@ -13,3 +13,4 @@ Endlich ist es wieder so weit: Rössing lädt zum Weihnachtsmarkt 2023 auf den H
 des Dorfgemeinschaftshauses. Es gibt eine Vielzahl von Ständen, organisiert von
 den Rössinger Vereinen, mit vielen köstlichen Speisen und Getränken. Auch für
 Kinder wird es Unterhaltung geben. Wir freuen uns auf Ihren Besuch!
+ Es gibt lecker Glühwein!

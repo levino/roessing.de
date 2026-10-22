@@ -55,7 +55,7 @@
     "tailwindcss": "^4"
   },
   "devDependencies": {
-    "@anthropic-ai/claude-code": "^1.0.120",
+    "@anthropic-ai/claude-code": "^2.0.0",
     "@biomejs/biome": "2.2.7",
     "@lavamoat/allow-scripts": "^3.4.1",
     "@playwright/test": "^1.48.2",

@@ -10,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: biomejs/setup-biome@v2
-        with:
-          version: 2.2.4
       - run: biome ci .
   test:
     runs-on: ubuntu-latest

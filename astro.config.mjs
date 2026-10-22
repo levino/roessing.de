@@ -26,6 +26,8 @@ const site = isDevServer
 // https://astro.build/config
 export default defineConfig({
   site,
+  // Astro 7 entfernt sonst Leerraum zwischen Inline-Elementen ("Wort<a>Link</a>" klebt zusammen).
+  compressHTML: true,
   redirects: {
     // Alter englischer Pfad des Impressums bleibt erreichbar
     '/imprint': '/impressum',
@@ -90,7 +92,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
+    resolve: {
+      // fp-ts/Array & Co. sind Verzeichnis-Importe, die Node-ESM nicht auflöst – Vite muss fp-ts mitbündeln.
       noExternal: ['fp-ts'],
     },
   },
